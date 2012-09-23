@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3ar.3patsxNiipcdm05TI9Tz2Q73IZFugW_aXBZs8rUrnQjNUVdM2wL5CAcQ&client_secret=550269079582676591&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7QiIhbu5fGbbSkFm4mwyb1c3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 18:46:06 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000NdzaIAC","issued_at":"1348425967011","instance_url":"https://cs9.salesforce.com","signature":"PkHa3KS9CkhNXG6YHk6oo6xTDJGkwsVEWiORapwdvkk=","access_token":"00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw"}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 18:46:15 GMT
+recorded_with: VCR 2.2.5

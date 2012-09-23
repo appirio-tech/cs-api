@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/activate/jeffdonthemic
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMwbN_Aq9ZdpOXPmu.rAY1XAqYnfzkO62vy1fHkfk67AUcfoN7pup5rrnMzxNUJX.ahF6hOQJ2.9lgFGiJl68fHMQzgF
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 14:06:13 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"true","Message":"User is currently active."}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 14:06:21 GMT
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/data/v25.0/query?q=select%20id,%20name,%20profile_pic__c,%20email__c,%20%0A%09%09%09%09sfdc_user__r.username,%20account__c%20from%20member__c%20%0A%09%09%09%09where%20username__c='jeffdonthemic'%20and%20%0A%20%20%20%20%20%20%20%20sfdc_user__r.third_party_account__c%20=%20''
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMwbN_Aq9ZdpOXPmu.rAY1XAqYnfzkO62vy1fHkfk67AUcfoN7pup5rrnMzxNUJX.ahF6hOQJ2.9lgFGiJl68fHMQzgF
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 14:06:13 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"totalSize":0,"done":true,"records":[]}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 14:06:22 GMT
+recorded_with: VCR 2.2.5

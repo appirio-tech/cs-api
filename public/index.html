@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CloudSpokes API</title>
+</head>
+<body>
+
+<h1>Members</h1>
+<ul>
+	<li><a href="/v1/members">all members</a></li>
+	<li><a href="/v1/members/jeffdonthemic">jeffdonthemic</a></li>
+	<li><a href="/v1/members/search/jeffdonthemic">search for jeffdonthemic</a></li>
+</ul>
+
+<h1>Accounts</h1>
+<ul>
+	<li><a href="/v1/accounts/find?membername=jeffdonthemic&service=github">find jeffdonthemic</a></li>
+</ul>
+
+<h1>CURL</h1>
+
+<ul>
+	<li>curl http://localhost:3000/v1/members/search/jeffdonthemic -H 'oauth_token: 00DU0000000H5Ip!AQQAQGhd1iZu8eGuVtCr667emTbJgvNSaSnjZ.Cobonjl7m8zHH3Af9U491FoxxQWoZDjHVi6Tms7ELqVVnlzXNsiWjxc40a'</li>
+	<li>curl http://localhost:3000/v1/accounts/find?membername=jeffdonthemic&service=github -H 'Authorization: Token token="6757b55b396c51948422d915ba1f2ca2"'</li>
+	<li>curl "http://localhost:3000/v1/accounts/find?membername=jeffdonthemic&service=github"</li>
+	<li>curl "http://localhost:3000/v1/accounts/authenticate?membername=jeffdonthemic-fb&password=changeme"</li>
+</ul>
+
+</body>
+</html>

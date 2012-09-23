@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3ar.3patsxNiipcdm05TI9Tz2Q73IZFugW_aXBZs8rUrnQjNUVdM2wL5CAcQ&client_secret=550269079582676591&username=baduser1%40cloudspokes.com.sandbox&password=bad-password
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 15:36:02 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":"invalid_grant","error_description":"expired access/refresh
+        token"}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 15:36:11 GMT
+recorded_with: VCR 2.2.5

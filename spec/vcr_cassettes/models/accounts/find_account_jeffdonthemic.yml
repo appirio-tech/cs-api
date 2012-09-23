@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/credentials?username=jeffdonthemic&service=github
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMwbN_Aq9ZdpOXPmu.rAY1XAqYnfzkO62vy1fHkfk67AUcfoN7pup5rrnMzxNUJX.ahF6hOQJ2.9lgFGiJl68fHMQzgF
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 12:16:34 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"true","Profile_Pic":"http://lh3.ggpht.com/YGARma3cFBpVaDe_LIycE6SChUYD-IEMOOqh6NO2q5nON75-5uqDBz6eq3RQUQ22XEs0BloXlTf9SyedQJS4H4Eyt23n5Cc","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","SFuserId":"005U0000000M1nPIAS","Message":"Query
+        Ran","AccountId":null,"Email":"jdouglas@appirio.com","Service":"github"}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 12:16:43 GMT
+recorded_with: VCR 2.2.5

@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/credentials?username=unknown-user&service=github
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQJMANdj5r4j7nyw_sCobLhg06AbeVuvHZb2zsi6eQNrXI7ppxIpKq1O6upTPQvmSpm3RDu1OHWPPL5g_GpW6BaRecJ90
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 13:57:53 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"false","Profile_Pic":null,"SFusername":null,"Username":"unknown-user","SFuserId":null,"Message":"No
+        user could be found with specified service and username.","AccountId":null,"Email":null,"Service":"github"}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 13:58:01 GMT
+recorded_with: VCR 2.2.5

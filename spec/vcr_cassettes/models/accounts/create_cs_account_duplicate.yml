@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members
+    body:
+      encoding: US-ASCII
+      string: username__c=thirdparty-rspec-2&email__c=thirdparty-rspec-2%40test.com&first_name__c=thirdparty-rspec-2&last_name__c=thirdparty-rspec-2&third_party_account__c=github&third_party_username__c=thirdparty-rspec-2%40test.com
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 18:15:26 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"false","Message":"Username thirdparty-rspec-2 is not
+        available."}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 18:15:35 GMT
+recorded_with: VCR 2.2.5

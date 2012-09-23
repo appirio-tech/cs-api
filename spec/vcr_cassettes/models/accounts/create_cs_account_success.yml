@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members
+    body:
+      encoding: US-ASCII
+      string: username__c=cloudspokes-rspec-1&password=!abcd123456&email__c=cloudspokes-rspec-1%40test.com&first_name__c=cloudspokes-rspec-1&last_name__c=cloudspokes-rspec-1
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sun, 23 Sep 2012 17:56:06 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"password":"!abcd123456","Success":"true","memberId":"a0IK00000056OoLMAU","sfdc_username":"cloudspokes-rspec-1@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"cloudspokes-rspec-1"}'
+    http_version: '1.1'
+  recorded_at: Sun, 23 Sep 2012 17:56:15 GMT
+recorded_with: VCR 2.2.5

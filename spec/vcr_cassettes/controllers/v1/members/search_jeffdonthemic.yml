@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members?fields=id,name,profile_pic__c,summary_bio__c,challenges_entered__c,active_challenges__c,total_wins__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,total_public_money__c&search=jeffdonthemic
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQLFd9AG646qwFz00JJ0HV2MJqIXluOVRchUNZQVVGKe6OrpFG_mMJ3blneTdhFrSUP43PzaJVQHE5_siPWOjIo8g20QE
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sat, 22 Sep 2012 22:35:52 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarnMAC"},"Name":"jeffdonthemic","Challenges_Entered__c":2,"Total_2nd_Place__c":0,"Active_Challenges__c":0,"Total_1st_Place__c":1,"Id":"a0IK0000000QarnMAC","Total_Wins__c":1,"Summary_Bio__c":"afasf","Total_Public_Money__c":2001.00,"Total_3st_Place__c":0,"Profile_Pic__c":"http://lh3.ggpht.com/YGARma3cFBpVaDe_LIycE6SChUYD-IEMOOqh6NO2q5nON75-5uqDBz6eq3RQUQ22XEs0BloXlTf9SyedQJS4H4Eyt23n5Cc"}]'
+    http_version: '1.1'
+  recorded_at: Sat, 22 Sep 2012 22:35:58 GMT
+recorded_with: VCR 2.2.5
