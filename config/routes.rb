@@ -2,8 +2,11 @@ CsApi::Application.routes.draw do
 
 	namespace :v1 do
 
+	  match "/members" => "members#index", :as => :members
+	  match "/members/:membername" => "members#show", :as => :member
 	  match "/members/search/:membername" => "members#search", :as => :members_search
-		resources :members
+	  match "/members/:membername/recommendations" => "members#recommendations", :as => :recommendations
+	  match "/members/:membername/recommendations/create" => "members#recommendation_create", :as => :recommendation_create
 
 		match "/accounts/authenticate" => "accounts#authenticate", :as => :authenticate
 		match "/accounts/activate" => "accounts#activate", :as => :activate_account

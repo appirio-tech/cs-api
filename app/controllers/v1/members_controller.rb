@@ -1,6 +1,6 @@
 class V1::MembersController < V1::ApplicationController
 
-	# inherit from actual product model. challenges in this controller uses the
+	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
 	class Member < ::Member
 
@@ -15,12 +15,21 @@ class V1::MembersController < V1::ApplicationController
 	end
 
 	def show
-		member = Member.find_by_username(@oauth_token, params[:id], PUBLIC_MEMBER_FIELDS).first
-		challenges = Member.challenges(@oauth_token, params[:id])
-		recommendations = Member.recommendations(@oauth_token, params[:id],DEFAULT_RECOMMENDATION_FIELDS)
+		member = Member.find_by_username(@oauth_token, params[:membername], PUBLIC_MEMBER_FIELDS).first
+		challenges = Member.challenges(@oauth_token, params[:membername])
+		recommendations = Member.recommendations(@oauth_token, params[:membername], DEFAULT_RECOMMENDATION_FIELDS)
 		h = { 'member' => member, 'challenges' => challenges, 'recommendations' => recommendations}
 		error! :not_found unless member
 		expose h
+	end
+
+	def recommendations
+		expose Member.recommendations(@oauth_token, params[:membername], DEFAULT_RECOMMENDATION_FIELDS)
+	end
+
+	def recommendation_create
+		expose Member.recommendation_create(@oauth_token, params[:membername], 
+			params[:from_member], params[:comments])
 	end
 
 end

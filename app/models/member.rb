@@ -25,6 +25,20 @@ class Member < Salesforce
     make_pretty(get(ENV['SFDC_APEXREST_URL']+"/members/#{esc membername}?fields=#{esc fields}"))
   end
 
+  def self.recommendation_create(access_token, for_member, from_member, comments)
+    set_header_token(access_token)  
+    
+    options = {
+      :body => {
+          :recommendation_for_username => for_member,
+          :recommendation_from_username => from_member,
+          :recommendation_text => comments
+      }
+    }
+    results = post(ENV['SFDC_APEXREST_URL']+'/recommendations', options)
+    { :success => results['Success'], :message => results['Message'] }
+  end
+
   def  self.hello
     "hello world"
   end  
