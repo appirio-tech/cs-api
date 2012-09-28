@@ -26,6 +26,7 @@
 	<li>curl http://localhost:3000/v1/accounts/find?membername=jeffdonthemic&service=github -H 'Authorization: Token token="6757b55b396c51948422d915ba1f2ca2"'</li>
 	<li>curl "http://localhost:3000/v1/accounts/find?membername=jeffdonthemic&service=github"</li>
 	<li>curl "http://localhost:3000/v1/accounts/authenticate?membername=jeffdonthemic-fb&password=changeme"</li>
+	<li>curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"username": "from-terminal", "email": "email-from-terminal"}'  http://localhost:3000/v1/accounts/create</li>
 </ul>
 
 </body>

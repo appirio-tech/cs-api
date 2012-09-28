@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Account do
 
-  # create a new api_key so all methods can use it
+  # get oauth tokens for different users
   before(:all) do
     puts "[SETUP] fetching new access tokens....."
     VCR.use_cassette "models/accounts/get_public_oauth_token", :record => :all do
