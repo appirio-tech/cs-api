@@ -7,6 +7,8 @@ class V1::AccountsController < V1::ApplicationController
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - params -> hash containing values to use for new user
+  #      - for third-party: provider, provider_username, username, email, name (can be blank)
+  #      - for cloudspokes: username, email, password 
   # * *Returns* :
   #   - JSON containing the following keys: username, sfdc_username, success, message 
   # * *Raises* :
@@ -44,7 +46,7 @@ class V1::AccountsController < V1::ApplicationController
   #   - ++ ->
   #  
   def find
-  	expose Account.find_by_membername_and_service(@oauth_token, params[:membername], params[:service])
+    expose Account.find_by_membername_and_service(@oauth_token, params[:membername], params[:service])
   end
 
 end
