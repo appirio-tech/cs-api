@@ -8,11 +8,11 @@ CsApi::Application.routes.draw do
 	  match "/members/:membername/recommendations" => "members#recommendations", :as => :recommendations
 	  match "/members/:membername/recommendations/create" => "members#recommendation_create", :as => :recommendation_create
 
-		match "/accounts/authenticate" => "accounts#authenticate", :as => :authenticate
-		match "/accounts/activate" => "accounts#activate", :as => :activate_account
-		match "/accounts/create" => "accounts#create", :as => :create_account
-		match "/accounts/exists" => "accounts#exists", :as => :account_exists
-		match "/accounts/find" => "accounts#find", :as => :account_exists
+		match "/accounts/authenticate" => "accounts#authenticate", :as => :authenticate, :via => :post
+		match "/accounts/activate" => "accounts#activate", :as => :activate_account, :via => :post
+		match "/accounts/create" => "accounts#create", :as => :create_account, :via => :post
+		match "/accounts/exists" => "accounts#exists", :as => :account_exists, :via => :get
+		match "/accounts/find" => "accounts#find", :as => :account_exists, :via => :get
 
 	end  
 
