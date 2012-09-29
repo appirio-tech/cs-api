@@ -11,6 +11,17 @@ CsApi::Application.configure do
   # The underlying cache store to use.
   config.cache_store = :dalli_store
 
+ config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.mandrillapp.com",
+    :port           => "587",
+    :authentication => :plain,
+    :user_name      => ENV['MANDRILL_USERNAME'],
+    :password       => ENV['MANDRILL_APIKEY'],
+    :domain         => 'cloudspokes.com'
+  }    
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 

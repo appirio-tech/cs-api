@@ -28,6 +28,7 @@ class V1::ApplicationController < RocketPants::Base
   # from the header is found in the local database then access
   # is granted to the route. If not, returns a 401.
   def restrict_access
+    puts "==== checking for api access key..."
     authorized = ApiKey.exists?(access_key: api_key_from_header)
     error! :unauthenticated if !authorized
   end   

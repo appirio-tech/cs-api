@@ -3,7 +3,7 @@ class V1::AccountsController < V1::ApplicationController
 	before_filter :restrict_access
 
   #
-  # Creates a new member in db.com.
+  # Post method to create a new member in db.com and send welcome email
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - params -> hash containing values to use for new user
@@ -19,7 +19,7 @@ class V1::AccountsController < V1::ApplicationController
   end
 
   #
-  # Authenticates a membername and password against db.com.
+  # Post method to authenticates a membername and password against db.com.
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - membername -> the cloudspokes member name (mess)
