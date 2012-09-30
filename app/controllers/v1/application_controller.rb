@@ -17,9 +17,11 @@ class V1::ApplicationController < RocketPants::Base
   def set_oauth_token
     # use the access token if sent in the headers
     if request.headers['oauth_token']     
+      puts "=== using oauth token from header"
       @oauth_token = request.headers['oauth_token'].split(':').first
     # fetch the public token from cache (if present) or sfdc
     else
+      puts "=== using public oauth token"
       @oauth_token = public_oauth_token
     end
   end
