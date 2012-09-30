@@ -32,6 +32,7 @@ class V1::ApplicationController < RocketPants::Base
   def restrict_access
     puts "==== checking for api access key..."
     authorized = ApiKey.exists?(access_key: api_key_from_header)
+    puts "==== authorized?: #{authorized}"
     error! :unauthenticated if !authorized
   end   
 
