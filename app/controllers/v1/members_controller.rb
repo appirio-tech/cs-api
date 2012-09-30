@@ -29,7 +29,7 @@ class V1::MembersController < V1::ApplicationController
 
 	def recommendation_create
 		expose Member.recommendation_create(@oauth_token, params[:membername], 
-			params[:from_member], params[:comments])
+			params[:recommendation_from_username], params[:recommendation_text])
 	end
 
 end

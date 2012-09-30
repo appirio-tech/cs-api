@@ -35,6 +35,7 @@ class Member < Salesforce
         :recommendation_text => comments
       }
     }
+    puts "options in api call to sfdc: #{options}"
     results = post(ENV['SFDC_APEXREST_URL']+'/recommendations', options)
     { :success => results['Success'], :message => results['Message'] }
   end
