@@ -1,6 +1,6 @@
 class V1::AccountsController < V1::ApplicationController
 
-	before_filter :restrict_access
+	#before_filter :restrict_access
 
   #
   # Post method to create a new member in db.com and send welcome email
@@ -48,5 +48,36 @@ class V1::AccountsController < V1::ApplicationController
   def find
     expose Account.find_by_membername_and_service(@oauth_token, params[:membername], params[:service])
   end
+
+  #
+  # Creates a passcode in salesforce for resetting a member's password and sends email via Apex. 
+  # Only works if member is using CloudSpokes to manage their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def reset_password
+    expose Account.reset_password(@oauth_token, params[:membername])
+  end
+
+  #
+  # Resets a member's password in salesforce is CloudSpokes is managing their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  #   - passcode -> the passcode sent to them via email
+  #   - new_password -> the new password to change their account to
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def update_password
+    expose Account.update_password(@oauth_token, params[:membername], params[:passcode], params[:new_password])
+  end  
 
 end

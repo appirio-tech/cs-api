@@ -159,4 +159,16 @@ class Account < Salesforce
 
   end	
 
+  def self.reset_password(access_token, membername)
+    set_header_token(access_token)
+    results = post(ENV['SFDC_APEXREST_URL'] + "/password/reset?username=#{esc membername}",:body => {})
+    {:success => results['Success'], :message => results['Message']}
+  end
+
+  def self.update_password(access_token, membername, passcode, new_password)
+    set_header_token(access_token)
+    results = put(ENV['SFDC_APEXREST_URL'] + "/password/reset?username=#{esc membername}&passcode=#{passcode}&newpassword=#{esc new_password}",:body => {}) 
+    {:success => results['Success'], :message => results['Message']}
+  end  
+
 end

@@ -1,6 +1,7 @@
 class Member < Salesforce
 
   def self.all(access_token, fields, order_by) 
+    puts "fields: #{fields}"
     set_header_token(access_token)   
     make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members?fields=#{esc fields}&orderby=#{esc order_by}"))
   end
