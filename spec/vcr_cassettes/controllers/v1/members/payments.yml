@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/data/v25.0/query?q=select%20id,name,challenge__r.name,challenge__r.challenge_id__c,money__c,place__c,reason__c,status__c,type__c,Reference_Number__c,payment_sent__c%20from%20payment__c%20where%20member__r.name%20=%20'jeffdonthemic'%20order%20by%20id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQKwhJdP1XQd4tXYbi5Nu_8G51KggH9WAySh2J6H2hj2LPGzhZ92x1tlBQ6MamS5diJUgGOUIlx50MDFq3tUigH6JZp1L
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 02 Oct 2012 14:19:10 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Payment__c","url":"/services/data/v25.0/sobjects/Payment__c/a0bK000000150T8IAI"},"Id":"a0bK000000150T8IAI","Name":"PAY-2523","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v25.0/sobjects/Challenge__c/a0GK00000042wCgMAI"},"Name":"Really
+        Awesome Challenge","Challenge_Id__c":"32"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
+        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null}]}'
+    http_version: '1.1'
+  recorded_at: Tue, 02 Oct 2012 14:19:43 GMT
+recorded_with: VCR 2.2.5

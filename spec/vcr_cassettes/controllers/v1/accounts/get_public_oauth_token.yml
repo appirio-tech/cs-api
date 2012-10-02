@@ -31,4 +31,35 @@ http_interactions:
       string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000NdzaIAC","issued_at":"1348425967011","instance_url":"https://cs9.salesforce.com","signature":"PkHa3KS9CkhNXG6YHk6oo6xTDJGkwsVEWiORapwdvkk=","access_token":"00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw"}'
     http_version: '1.1'
   recorded_at: Sun, 23 Sep 2012 18:46:15 GMT
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3VzD8gEXsinXk7I5y6fDrR2q1MRJyFCYt4qY7F7JUMe5UH34HIOqRqKxRlS3&client_secret=6863277560065788297&username=rspec%40m.cloudspokes.com.sandbox&password=7%5Dm29%2F4YGbDw4DU5N9DrignyJ2alrVRdD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 02 Oct 2012 15:19:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005K0000000leSjIAI","issued_at":"1349191177132","instance_url":"https://cs9.salesforce.com","signature":"gL9t98HJqgnWBLMvU+r39o1JImgFjFuApJNBcrn6vd0=","access_token":"00DK0000002aZTE!AQQAQKwhJdP1XQd4tXYbi5Nu_8G51KggH9WAySh2J6H2hj2LPGzhZ92x1tlBQ6MamS5diJUgGOUIlx50MDFq3tUigH6JZp1L"}'
+    http_version: '1.1'
+  recorded_at: Tue, 02 Oct 2012 15:20:09 GMT
 recorded_with: VCR 2.2.5

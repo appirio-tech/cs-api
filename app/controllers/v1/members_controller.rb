@@ -2,6 +2,8 @@ class V1::MembersController < V1::ApplicationController
 
 	require 'forcifier'
 
+	before_filter :restrict_access, :only => [:payments, :recommendation_create]
+
 	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
 	class Member < ::Member
@@ -41,6 +43,17 @@ class V1::MembersController < V1::ApplicationController
 		expose Member.search(@oauth_token, search_fields, params[:keyword])
 	end
 
+  #
+  # Returns all data for the specified user. This includes their member info,
+  # challenges they've been involved in and their recommendations
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return all info for
+  # * *Returns* :
+  #   - a hash containing the following keys: member, challenges, recommendations
+  # * *Raises* :
+  #   - ++ ->
+  #  
 	def show
 		member = Member.find_by_username(@oauth_token, params[:membername], PUBLIC_MEMBER_FIELDS).first
 		challenges = Member.challenges(@oauth_token, params[:membername])
@@ -49,6 +62,24 @@ class V1::MembersController < V1::ApplicationController
 		error! :not_found unless member
 		expose h
 	end
+
+  #
+  # Returns all payments for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return payments for
+  #   - fields (optional) -> the fields to return in the results. Defaults
+	#	  to DEFAULT_PAYMENT_FIELDS.
+  #   - order_by (optional) -> the fields to order the results by. Defaults
+	#	  to id.		
+  # * *Returns* :
+  #   - JSON an array of payments 
+  # * *Raises* :
+  #   - ++ ->
+  # 
+	def payments
+		expose Member.payments(@oauth_token, params[:membername], payments_fields, payments_order_by)
+	end	
 
   #
   # Returns the recommendations for a member
@@ -66,6 +97,18 @@ class V1::MembersController < V1::ApplicationController
 		expose Member.recommendations(@oauth_token, params[:membername], recommendations_fields)
 	end
 
+  #
+  # Creates a recommendation for the specified member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to create the recommendations for
+  #   - recommendation_from_username -> the member the recommendation is from
+  #   - recommendation_text -> the text of the recommendation
+  # * *Returns* :
+	#   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
 	def recommendation_create
 		expose Member.recommendation_create(@oauth_token, params[:membername], 
 			params[:recommendation_from_username], params[:recommendation_text])
@@ -78,12 +121,20 @@ class V1::MembersController < V1::ApplicationController
 		end
 
 		def index_order_by
-			params[:order_by] ||= 'total_wins__c'
+			params[:order_by] ? Forcifier.enforce_fields(params[:order_by]) : 'total_wins__c'
 		end
 
 		def search_fields
 			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
 		end
+
+		def payments_fields
+			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_PAYMENT_FIELDS
+		end		
+
+		def payments_order_by
+			params[:order_by] ? Forcifier.enforce_fields(params[:order_by]) : 'id'
+		end				
 
 		def recommendations_fields
 			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_RECOMMENDATION_FIELDS			

@@ -1,6 +1,6 @@
 class Forcifier
 
-	STANDARD_FIELDS = %w(id name)
+	STANDARD_FIELDS = %w(id isdeleted name createddate createdbyid lastmodifieddate lastmodifiedbyid systemmodstamp lastactivitydate)
 
   #
   # Adds "__c" to all non-standard salesforce.com fields

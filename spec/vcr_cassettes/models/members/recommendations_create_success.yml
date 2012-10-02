@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/recommendations
+    body:
+      encoding: US-ASCII
+      string: recommendation_for_username=jeffdonthemic&recommendation_from_username=mess&recommendation_text=my%20comment
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQKwhJdP1XQd4tXYbi5Nu_8G51KggH9WAySh2J6H2hj2LPGzhZ92x1tlBQ6MamS5diJUgGOUIlx50MDFq3tUigH6JZp1L
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 02 Oct 2012 14:46:07 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"true","Message":"a0QK0000000801rMAA"}'
+    http_version: '1.1'
+  recorded_at: Tue, 02 Oct 2012 14:46:40 GMT
+recorded_with: VCR 2.2.5

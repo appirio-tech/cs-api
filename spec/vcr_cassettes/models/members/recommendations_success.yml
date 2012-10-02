@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/recommendations?fields=id,name&search=jeffdonthemic
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQKwhJdP1XQd4tXYbi5Nu_8G51KggH9WAySh2J6H2hj2LPGzhZ92x1tlBQ6MamS5diJUgGOUIlx50MDFq3tUigH6JZp1L
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 02 Oct 2012 14:44:26 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007vyVMAQ"},"Name":"R-5425","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007vyVMAQ"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIPMAY"},"Name":"R-5426","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zIPMAY"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIUMAY"},"Name":"R-5427","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zIUMAY"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIZMAY"},"Name":"R-5428","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zIZMAY"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zKRMAY"},"Name":"R-5429","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zKRMAY"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zKWMAY"},"Name":"R-5430","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zKWMAY"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zr2MAA"},"Name":"R-5432","Member__c":"a0IK0000000QarnMAC","Id":"a0QK00000007zr2MAA"}]'
+    http_version: '1.1'
+  recorded_at: Tue, 02 Oct 2012 14:44:59 GMT
+recorded_with: VCR 2.2.5

@@ -61,4 +61,36 @@ describe V1::AccountsController do
     end 
   end
 
+  describe "password reset" do
+    it "should have the correct keys" do
+      VCR.use_cassette "controllers/v1/accounts/password_reset" do
+        request.env['oauth_token'] = @public_oauth_token
+        request.env['Authorization'] = 'Token token="'+@api_key+'"'
+        get 'reset_password', 'membername' => 'mandrill4'
+        h = JSON.parse(response.body)['response']
+        keys = %w{success message}
+        keys.each do |k|
+          h.should have_key(k)
+        end
+        response.should be_success
+      end
+    end       
+  end  
+
+  describe "password update" do
+    it "should have the correct keys" do
+      VCR.use_cassette "controllers/v1/accounts/password_update" do
+        request.env['oauth_token'] = @public_oauth_token
+        request.env['Authorization'] = 'Token token="'+@api_key+'"'
+        put 'update_password', 'membername' => 'mandrill4', 'passcode' => '20367', 'new_password' => 'ABCDE12345!'
+        h = JSON.parse(response.body)['response']
+        keys = %w{success message}
+        keys.each do |k|
+          h.should have_key(k)
+        end
+        response.should be_success
+      end
+    end       
+  end    
+
 end

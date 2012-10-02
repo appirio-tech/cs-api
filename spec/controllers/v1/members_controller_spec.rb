@@ -14,11 +14,26 @@ describe V1::MembersController do
     @api_key = ApiKey.first.access_key
   end  	
 
+  describe "methods without api key" do
+    it "should return 401 for 'payments'" do
+      request.env['oauth_token'] = @public_oauth_token
+      get 'payments', 'membername' => 'jeffdonthemic'
+      response.should_not be_success
+    end
+
+    it "should return 401 for 'recommendation_create'" do
+      request.env['oauth_token'] = @public_oauth_token
+			post 'recommendation_create', 'membername' => 'jeffdonthemic', 
+				'recommendation_from_username' => 'mess', 'recommendation_text' => ''
+      response.should_not be_success
+    end          
+  end  
+
 	describe "'show' jeffdonthemic" do
 		it "returns http success" do
 			VCR.use_cassette "controllers/v1/members/show_jeffdonthemic" do
 				request.env['oauth_token'] = @public_oauth_token
-				get 'show', 'id' => 'jeffdonthemic'
+				get 'show', 'membername' => 'jeffdonthemic'
 				response.should be_success
 			end
 		end
@@ -26,7 +41,7 @@ describe V1::MembersController do
 		it "should have the correct internal hash keys" do
 			VCR.use_cassette "controllers/v1/members/show_jeffdonthemic" do
 				request.env['oauth_token'] = @public_oauth_token
-				get 'show', 'id' => 'jeffdonthemic'
+				get 'show', 'membername' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response']
 				%w{member challenges recommendations}.each do |k|
 					h.should have_key(k)
@@ -38,7 +53,7 @@ describe V1::MembersController do
 			VCR.use_cassette "controllers/v1/members/show_jeffdonthemic" do
 				keys = %w{ valid_submissions total_2nd_place total_1st_place total_public_money total_points name challenges_entered time_zone id total_wins total_3st_place profile_pic }
 				request.env['oauth_token'] = @public_oauth_token
-				get 'show', 'id' => 'jeffdonthemic'
+				get 'show', 'membername' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response']['member']
 				keys.each do |k|
 					h.should have_key(k)
@@ -50,7 +65,7 @@ describe V1::MembersController do
 			VCR.use_cassette "controllers/v1/members/show_jeffdonthemic" do
 				keys = %w{ prize_type total_prize_money end_date challenge_categories__r name top_prize challenge_id challenge_type id start_date description status }
 				request.env['oauth_token'] = @public_oauth_token
-				get 'show', 'id' => 'jeffdonthemic'
+				get 'show', 'membername' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response']['challenges'].first
 				keys.each do |k|
 					h.should have_key(k)
@@ -62,7 +77,7 @@ describe V1::MembersController do
 			VCR.use_cassette "controllers/v1/members/show_jeffdonthemic" do
 				keys = %w{ member recommendation createddate id recommendation_from recommendation_from__r }
 				request.env['oauth_token'] = @public_oauth_token
-				get 'show', 'id' => 'jeffdonthemic'
+				get 'show', 'membername' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response']['recommendations'].first
 				keys.each do |k|
 					h.should have_key(k)
@@ -88,7 +103,7 @@ describe V1::MembersController do
 		it "returns jeffdonthemic" do
 			VCR.use_cassette "controllers/v1/members/search_jeffdonthemic" do
 				request.env['oauth_token'] = @public_oauth_token
-				get 'search', 'membername' => 'jeffdonthemic'
+				get 'search', 'keyword' => 'jeffdonthemic'
 				h = JSON.parse(response.body)
 				h['response'].first['name'].should == 'jeffdonthemic'
 				h['count'].should > 0
@@ -100,7 +115,7 @@ describe V1::MembersController do
 				# keys that should exist in the returned json
 				keys = %w{name challenges_entered total_2nd_place active_challenges total_1st_place id total_wins summary_bio total_public_money total_3st_place profile_pic}
 				request.env['oauth_token'] = @public_oauth_token
-				get 'search', 'membername' => 'jeffdonthemic'
+				get 'search', 'keyword' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response'].first
 				keys.each do |k|
 					h.should have_key(k)
@@ -111,15 +126,63 @@ describe V1::MembersController do
 	end
 
 	describe "Search for unknown member" do
-		it "returns no user" do
+		it "should return no user" do
 			VCR.use_cassette "controllers/v1/members/search_unknown" do
 				request.env['oauth_token'] = @public_oauth_token
-				get 'search', 'membername' => 'unknown-user-999'
+				get 'search', 'keyword' => 'unknown-user-999'
 				response.should be_success
 				h = JSON.parse(response.body)
 				h['count'].should == 0
 			end
 		end
 	end  
+
+	describe "Recommendations" do
+		it "should return recommendations successfully" do
+			VCR.use_cassette "controllers/v1/members/recommendations" do
+				request.env['oauth_token'] = @public_oauth_token
+				get 'recommendations', 'membername' => 'jeffdonthemic'
+				response.should be_success
+			end
+		end
+
+		it "should return success when recommendation created successfully" do
+			VCR.use_cassette "controllers/v1/members/recommendation_create_success" do
+				request.env['oauth_token'] = @public_oauth_token
+				request.env['Authorization'] = 'Token token="'+@api_key+'"'				
+				post 'recommendation_create', 'membername' => 'jeffdonthemic', 
+					'recommendation_from_username' => 'mess', 'recommendation_text' => 'My text'
+				h = JSON.parse(response.body)['response']
+        h['success'].should == 'true'
+        h['message'].should_not be_empty				
+				response.should be_success
+			end
+		end
+
+		it "should return error message when recommendation is not created successfully" do
+			VCR.use_cassette "controllers/v1/members/recommendation_create_failure" do
+				request.env['oauth_token'] = @public_oauth_token
+				request.env['Authorization'] = 'Token token="'+@api_key+'"'				
+				post 'recommendation_create', 'membername' => 'jeffdonthemic', 
+					'recommendation_from_username' => 'mess', 'recommendation_text' => ''
+				h = JSON.parse(response.body)['response']
+        h['success'].should == 'false'
+        h['message'].should_not be_empty				
+				response.should be_success
+			end
+		end		
+
+	end  		
+
+	describe "Payments" do
+		it "should return payments successfully" do
+			VCR.use_cassette "controllers/v1/members/payments" do
+				request.env['oauth_token'] = @public_oauth_token
+				request.env['Authorization'] = 'Token token="'+@api_key+'"'
+				get 'payments', 'membername' => 'jeffdonthemic'
+				response.should be_success
+			end
+		end
+	end  	
 
 end

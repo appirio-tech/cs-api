@@ -54,8 +54,9 @@ describe Account do
   describe "authenticate" do
     it "should authenticate correctly" do
       VCR.use_cassette "models/accounts/authenticate_success" do
+        puts "=== calling Account.authenticate..."
         results = Account.authenticate(@public_oauth_token, 
-          'shareduser', ENV['SFDC_PUBLIC_PASSWORD'])
+          'rspec', ENV['SFDC_PUBLIC_PASSWORD'])
         results[:success].should == 'true'
         results[:message].should == 'Successful sfdc login.'
         results.should have_key(:access_token)
@@ -65,7 +66,7 @@ describe Account do
     it "should display the correct message if no password match" do
       VCR.use_cassette "models/accounts/authenticate_failure_bad_password" do
         results = Account.authenticate(@public_oauth_token, 
-          'shareduser', 'bad-password')
+          'rspec', 'bad-password')
         results[:success].should == 'false'
         results[:message].should == 'authentication failure - Invalid Password'
       end
@@ -145,5 +146,57 @@ describe Account do
     end    
 
   end   
+
+  describe "password reset" do
+    it "should send the passcode correctly" do
+      VCR.use_cassette "models/accounts/reset_password_success" do
+        membername = 'mandrill4'
+        results = Account.reset_password(@public_oauth_token, membername)
+        results[:success].should == 'true'
+        results[:message].should == "An email containing a passcode code is being sent to the registered email address of #{membername}."
+      end
+    end
+
+    it "should return failure for non-existent member" do
+      VCR.use_cassette "models/accounts/reset_password_bad_member" do
+        membername = 'bad-member'
+        results = Account.reset_password(@public_oauth_token, membername)
+        results[:success].should == 'false'
+        results[:message].should == "The username that you specified was not found: #{membername}"
+      end
+    end    
+
+  end
+
+  describe "upate password" do
+
+    it "should return failure for non-matching passcode" do
+      VCR.use_cassette "models/accounts/reset_update_bad_passcode" do
+        membername = 'mandrill4'
+        results = Account.update_password(@public_oauth_token, membername, '0', 'ABCDE12345')
+        results[:success].should == 'false'
+        results[:message].should == "Could not find a matching passcode for the provided username: #{membername}"
+      end
+    end  
+
+    it "should return failure for invalid password" do
+      VCR.use_cassette "models/accounts/reset_update_invalid_password" do
+        membername = 'mandrill4'
+        results = Account.update_password(@public_oauth_token, membername, '86675', 'A')
+        results[:success].should == 'false'
+        results[:message].should == "INVALID_NEW_PASSWORD: Your password must be at least 5 characters long."
+      end
+    end      
+
+    it "should update the password successfully" do
+      VCR.use_cassette "models/accounts/reset_update_success" do
+        membername = 'mandrill4'
+        results = Account.update_password(@public_oauth_token, membername, '86675', 'ABCDE12345!')
+        results[:success].should == 'true'
+        results[:message].should == "Password changed successfully."
+      end
+    end  
+
+  end    
 
 end
