@@ -20,4 +20,6 @@ CsApi::Application.routes.draw do
 
 	end  
 
+	root :to => redirect("http://www.cloudspokes.com")
+
 end
