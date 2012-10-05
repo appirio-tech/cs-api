@@ -5,9 +5,9 @@ class Member < Salesforce
     make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members?fields=#{esc fields}&orderby=#{esc order_by}"))
   end
 
-  def self.search(access_token, fields, membername)
+  def self.search(access_token, keyword, fields)
     set_header_token(access_token)    
-    make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members?fields=#{esc fields}&search=#{esc membername}"))
+    make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members?fields=#{esc fields}&search=#{esc keyword}"))
   end
 
   def self.challenges(access_token, membername)
@@ -15,7 +15,7 @@ class Member < Salesforce
     make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members/#{esc membername}/challenges"))
   end
 
-  def self.find_by_username(access_token, membername, fields)
+  def self.find_by_membername(access_token, membername, fields)
     set_header_token(access_token)    
     make_pretty(get(ENV['SFDC_APEXREST_URL']+"/members/#{esc membername}?fields=#{esc fields}"))
   end
