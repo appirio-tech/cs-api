@@ -34,6 +34,19 @@ class V1::AccountsController < V1::ApplicationController
   end
 
   #
+  # Activates a member and their sfdc account
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess)
+  #   - JSON containing the following keys: access_token, success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def activate
+    expose Account.activate(@oauth_token, params[:membername])
+  end  
+
+  #
   # Finds a user by their membername and service ('cloudspokes' or third party).
   # * *Args*    :
   #   - access_token -> the oauth token to use
@@ -45,8 +58,8 @@ class V1::AccountsController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-  def find
-    expose Account.find_by_membername_and_service(@oauth_token, params[:membername], params[:service])
+  def find_by_service
+    expose Account.find_by_service(@oauth_token, params[:service], params[:service_username])
   end
 
   #
