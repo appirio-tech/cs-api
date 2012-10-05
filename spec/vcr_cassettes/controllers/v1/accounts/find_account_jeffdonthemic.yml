@@ -10,7 +10,7 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw
+      - OAuth 00DK0000002aZTE!AQQAQI.SnMHYf4v_6riRQpjZ_U3a5F8ggJWxkTIWAXeq0HsqSq7qgMU1Q2EQ6vvmmb90Bb2CtB8f1NTTmrB.l2wzYvkSDLjX
   response:
     status:
       code: 200
@@ -23,7 +23,7 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Sun, 23 Sep 2012 18:32:46 GMT
+      - Wed, 03 Oct 2012 21:02:16 GMT
       connection:
       - close
     body:
@@ -31,5 +31,5 @@ http_interactions:
       string: ! '{"Success":"true","Profile_Pic":"http://lh3.ggpht.com/YGARma3cFBpVaDe_LIycE6SChUYD-IEMOOqh6NO2q5nON75-5uqDBz6eq3RQUQ22XEs0BloXlTf9SyedQJS4H4Eyt23n5Cc","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","SFuserId":"005U0000000M1nPIAS","Message":"Query
         Ran","AccountId":null,"Email":"jdouglas@appirio.com","Service":"github"}'
     http_version: '1.1'
-  recorded_at: Sun, 23 Sep 2012 18:32:55 GMT
+  recorded_at: Wed, 03 Oct 2012 21:02:16 GMT
 recorded_with: VCR 2.2.5

@@ -21,8 +21,8 @@ describe Account do
   describe "'find' account" do
     it "should return jeffdonthemic with github" do
       VCR.use_cassette "models/accounts/find_account_jeffdonthemic" do
-        results = Account.find_by_membername_and_service(@admin_oauth_token, 
-          'jeffdonthemic', 'github')
+        results = Account.find_by_service(@admin_oauth_token, 
+          'github', 'jeffdonthemic')
         results[:success].should == 'true'
         results[:username].should == 'jeffdonthemic'
         results[:sfdc_username].should == "jeffdonthemic@m.cloudspokes.com.sandbox"
@@ -34,8 +34,8 @@ describe Account do
 
     it "should not return a non-existent account" do
       VCR.use_cassette "models/accounts/find_account_unknown_user" do
-        results = Account.find_by_membername_and_service(@admin_oauth_token , 
-          'unknown-user', 'github')
+        results = Account.find_by_service(@admin_oauth_token , 
+          'github', 'unknown-user')
         results[:success].should == 'false'
         results[:message].should == 'No user could be found with specified service and username.'
       end
@@ -43,7 +43,7 @@ describe Account do
 
     it "should not return jeffdonthemic for wrong service" do
       VCR.use_cassette "models/accounts/find_jeffdothemic_cs_failure" do
-        results = Account.find_by_membername_and_service(@admin_oauth_token, 'jeffdonthemic', 'cloudspokes')
+        results = Account.find_by_service(@admin_oauth_token, 'cloudspokes', 'jeffdonthemic')
         results[:success].should == 'false'
         results[:message].should == 'CloudSpokes managed member not found for jeffdonthemic.'
       end

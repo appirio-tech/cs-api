@@ -17,7 +17,7 @@ describe V1::AccountsController do
   describe "methods without api key" do
     it "should return 401 for 'find'" do
       request.env['oauth_token'] = @public_oauth_token
-      get 'find', 'membername' => 'jeffdonthemic', 'service' => 'github'
+      get 'find_by_service', 'service' => 'github', 'service_username' => 'jeffdonthemic'
       response.should_not be_success
     end
 
@@ -40,7 +40,7 @@ describe V1::AccountsController do
       VCR.use_cassette "controllers/v1/accounts/find_account_jeffdonthemic" do
         request.env['oauth_token'] = @public_oauth_token
         request.env['Authorization'] = 'Token token="'+@api_key+'"'
-        get 'find', 'membername' => 'jeffdonthemic', 'service' => 'github'
+        get 'find_by_service', 'service' => 'github', 'service_username' => 'jeffdonthemic'
         response.should be_success
       end
     end       
@@ -51,7 +51,7 @@ describe V1::AccountsController do
       VCR.use_cassette "controllers/v1/accounts/find_account_jeffdonthemic" do
         request.env['oauth_token'] = @public_oauth_token
         request.env['Authorization'] = 'Token token="'+@api_key+'"'
-        get 'find', 'membername' => 'jeffdonthemic', 'service' => 'github'
+        get 'find_by_service', 'service' => 'github', 'service_username' => 'jeffdonthemic' 
         h = JSON.parse(response.body)['response']
         keys = %w{success username sfdc_username profile_pic email accountid}
         keys.each do |k|
