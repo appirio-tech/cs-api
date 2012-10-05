@@ -40,7 +40,7 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   #  
 	def search
-		expose Member.search(@oauth_token, search_fields, params[:keyword])
+		expose Member.search(@oauth_token, params[:keyword], search_fields)
 	end
 
   #
@@ -54,8 +54,8 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def show
-		member = Member.find_by_username(@oauth_token, params[:membername], PUBLIC_MEMBER_FIELDS).first
+	def find_by_membername
+		member = Member.find_by_membername(@oauth_token, params[:membername], PUBLIC_MEMBER_FIELDS).first
 		challenges = Member.challenges(@oauth_token, params[:membername])
 		recommendations = Member.recommendations(@oauth_token, params[:membername], DEFAULT_RECOMMENDATION_FIELDS)
 		h = { 'member' => member, 'challenges' => challenges, 'recommendations' => recommendations}
