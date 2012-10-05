@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMilBM6P.7Y0oaWmq_d7u3az8dCfM6uYIncZHVs.QGSsmihHGo8rkTLFnZ8ijW7heSh5KdziceHsKpOb7EPryUKBWodk
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Thu, 04 Oct 2012 12:13:49 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarnMAC"},"Valid_Submissions__c":2,"Twitter__c":"jeffdonthemic","Total_2nd_Place__c":0,"School__c":"ACME
+        University","Total_1st_Place__c":1,"Country__c":"United States","Total_Public_Money__c":2001.00,"Name":"jeffdonthemic","Total_Points__c":1050,"Challenges_Entered__c":3,"Time_Zone__c":"(GMT+11:30)
+        Norfolk Islands Time (Pacific/Norfolk)","Id":"a0IK0000000QarnMAC","Summary_Bio__c":"afasf","Total_Wins__c":1,"Quote__c":"fasdf","Total_3st_Place__c":0,"Profile_Pic__c":"http://lh3.ggpht.com/YGARma3cFBpVaDe_LIycE6SChUYD-IEMOOqh6NO2q5nON75-5uqDBz6eq3RQUQ22XEs0BloXlTf9SyedQJS4H4Eyt23n5Cc"}]'
+    http_version: '1.1'
+  recorded_at: Thu, 04 Oct 2012 12:13:49 GMT
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members/jeffdonthemic/challenges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMilBM6P.7Y0oaWmq_d7u3az8dCfM6uYIncZHVs.QGSsmihHGo8rkTLFnZ8ijW7heSh5KdziceHsKpOb7EPryUKBWodk
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Thu, 04 Oct 2012 12:13:50 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000041uOIMAY"},"Prize_Type__c":"Currency","Total_Prize_Money__c":1500,"End_Date__c":"2012-10-11T18:37:00.000+0000","Challenge_Categories__r":{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QbIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBvIAO"},"Name":"BUG","Color__c":"000000","Id":"a07K0000002ASBvIAO"},"Category__c":"a07K0000002ASBvIAO","Id":"a08K0000000j5QbIAI","Challenge__c":"a0GK00000041uOIMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QcIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBpIAO"},"Name":"Salesforce.com","Color__c":"000000","Id":"a07K0000002ASBpIAO"},"Category__c":"a07K0000002ASBpIAO","Id":"a08K0000000j5QcIAI","Challenge__c":"a0GK00000041uOIMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QdIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBsIAO"},"Name":"DESIGN","Color__c":"000000","Id":"a07K0000002ASBsIAO"},"Category__c":"a07K0000002ASBsIAO","Id":"a08K0000000j5QdIAI","Challenge__c":"a0GK00000041uOIMAY"}]},"Name":"Really
+        Awesome Challenge","Top_Prize__c":"$1000","Challenge_Id__c":"3","Challenge_Type__c":"Code","Id":"a0GK00000041uOIMAY","Start_Date__c":"2012-08-30T18:37:00.000+0000","Description__c":"sample
+        Description","Status__c":"Created","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK0000003yneAMAQ"},"Has_Submission__c":true,"Money_Awarded__c":0.00,"Score__c":0,"Member__c":"a0IK0000000QarnMAC","Id":"a0AK0000003yneAMAQ","Status__c":"Submitted","Challenge__c":"a0GK00000041uOIMAY"}]}},{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000041upTMAQ"},"Prize_Type__c":"Currency","Total_Prize_Money__c":100,"End_Date__c":"2012-06-30T15:31:00.000+0000","Challenge_Categories__r":{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChWIAU"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBwIAO"},"Name":"HACKATHON","Color__c":"000000","Id":"a07K0000002ASBwIAO"},"Category__c":"a07K0000002ASBwIAO","Id":"a08K0000000jChWIAU","Challenge__c":"a0GK00000041upTMAQ"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChgIAE"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBrIAO"},"Name":"Ruby","Color__c":"000000","Id":"a07K0000002ASBrIAO"},"Category__c":"a07K0000002ASBrIAO","Id":"a08K0000000jChgIAE","Challenge__c":"a0GK00000041upTMAQ"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChbIAE"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBvIAO"},"Name":"BUG","Color__c":"000000","Id":"a07K0000002ASBvIAO"},"Category__c":"a07K0000002ASBvIAO","Id":"a08K0000000jChbIAE","Challenge__c":"a0GK00000041upTMAQ"}]},"Name":"Race
+        Test","Top_Prize__c":"$100","Challenge_Id__c":"6","Challenge_Type__c":"Race","Id":"a0GK00000041upTMAQ","Start_Date__c":"2012-06-19T14:30:00.000+0000","Description__c":"Test
+        Quick Quiz","Status__c":"Review","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK00000036rCIMAY"},"Has_Submission__c":false,"Money_Awarded__c":0.00,"Score__c":0,"Member__c":"a0IK0000000QarnMAC","Id":"a0AK00000036rCIMAY","Status__c":"Registered","Challenge__c":"a0GK00000041upTMAQ"}]}},{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000042wCgMAI"},"Prize_Type__c":"Currency","Total_Prize_Money__c":1500,"End_Date__c":"2012-09-27T16:33:00.000+0000","Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jbVRIAY"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBpIAO"},"Name":"Salesforce.com","Color__c":"000000","Id":"a07K0000002ASBpIAO"},"Category__c":"a07K0000002ASBpIAO","Id":"a08K0000000jbVRIAY","Challenge__c":"a0GK00000042wCgMAI"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jbVSIAY"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBsIAO"},"Name":"DESIGN","Color__c":"000000","Id":"a07K0000002ASBsIAO"},"Category__c":"a07K0000002ASBsIAO","Id":"a08K0000000jbVSIAY","Challenge__c":"a0GK00000042wCgMAI"}]},"Name":"Really
+        Awesome Challenge","Top_Prize__c":"$1000","Challenge_Id__c":"32","Challenge_Type__c":"Race","Id":"a0GK00000042wCgMAI","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"My
+        description..","Status__c":"Submission","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK0000003S0BRMA0"},"Has_Submission__c":true,"Money_Awarded__c":1000.00,"Score__c":80,"Place__c":"1","Member__c":"a0IK0000000QarnMAC","Id":"a0AK0000003S0BRMA0","Status__c":"Submitted","Challenge__c":"a0GK00000042wCgMAI"}]}}]'
+    http_version: '1.1'
+  recorded_at: Thu, 04 Oct 2012 12:13:50 GMT
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/recommendations?fields=recommendation_from__r.name,recommendation_from__r.profile_pic__c,recommendation__c,createddate&search=jeffdonthemic
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQMilBM6P.7Y0oaWmq_d7u3az8dCfM6uYIncZHVs.QGSsmihHGo8rkTLFnZ8ijW7heSh5KdziceHsKpOb7EPryUKBWodk
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Thu, 04 Oct 2012 12:13:50 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007vyVMAQ"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"This
+        guy is awesome!!!","CreatedDate":"2012-09-01T12:39:03.000+0000","Id":"a0QK00000007vyVMAQ","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIPMAY"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"awesome!!!!!","CreatedDate":"2012-09-24T10:10:37.000+0000","Id":"a0QK00000007zIPMAY","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIUMAY"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"awesome","CreatedDate":"2012-09-24T10:12:34.000+0000","Id":"a0QK00000007zIUMAY","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zIZMAY"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"awesome","CreatedDate":"2012-09-24T10:15:20.000+0000","Id":"a0QK00000007zIZMAY","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zKRMAY"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"asdfasd","CreatedDate":"2012-09-24T21:18:24.000+0000","Id":"a0QK00000007zKRMAY","Recommendation_From__c":"a0IK00000056P4hMAE","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK00000056P4hMAE"},"Name":"appirio1","Id":"a0IK00000056P4hMAE","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zKWMAY"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"111","CreatedDate":"2012-09-24T21:19:15.000+0000","Id":"a0QK00000007zKWMAY","Recommendation_From__c":"a0IK00000056P4hMAE","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK00000056P4hMAE"},"Name":"appirio1","Id":"a0IK00000056P4hMAE","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK00000007zr2MAA"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"from
+        new api","CreatedDate":"2012-10-01T00:51:13.000+0000","Id":"a0QK00000007zr2MAA","Recommendation_From__c":"a0IK00000056TdKMAU","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK00000056TdKMAU"},"Name":"mandrill4","Id":"a0IK00000056TdKMAU","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK0000000801rMAA"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"my
+        comment","CreatedDate":"2012-10-02T14:46:07.000+0000","Id":"a0QK0000000801rMAA","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QK0000000802VMAQ"},"Member__c":"a0IK0000000QarnMAC","Recommendation__c":"My
+        text","CreatedDate":"2012-10-02T15:13:05.000+0000","Id":"a0QK0000000802VMAQ","Recommendation_From__c":"a0IK0000000QarxMAC","Recommendation_From__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IK0000000QarxMAC"},"Name":"mess","Id":"a0IK0000000QarxMAC","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}}]'
+    http_version: '1.1'
+  recorded_at: Thu, 04 Oct 2012 12:13:51 GMT
+recorded_with: VCR 2.2.5
