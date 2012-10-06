@@ -18,22 +18,92 @@ describe Member do
     end
   end 	
 
-  describe "Payments" do
+  describe "all" do
+	  it "should return members successfully" do
+	    VCR.use_cassette "models/members/all_members" do
+	      results = Member.all(@public_oauth_token, 'id,name', 'name')
+	      # should return an array
+	      results.count.should > 0
+	    end
+	  end
+  end  
+
+  describe "search" do
+	  it "should return jeffdonthemic successfully" do
+	    VCR.use_cassette "models/members/search_jeffdonthemic" do
+	      results = Member.search(@public_oauth_token, 'jeffdonthemic', 'id,name')
+	      # should return an array
+	      results.count.should > 0
+	      results.first['name'].should == 'jeffdonthemic'
+	    end
+	  end
+
+	  it "should not return a non-existent member" do
+	    VCR.use_cassette "models/members/search_unknown" do
+	      results = Member.search(@public_oauth_token, 'novaliduser', 'id,name')
+	      # should return an array
+	      results.count.should == 0
+	    end
+	  end	  
+  end  
+
+  describe "challenges" do
+	  it "should return challenges successfully for a member" do
+	    VCR.use_cassette "models/members/challenges_jeffdonthemic" do
+	      results = Member.challenges(@public_oauth_token, 'jeffdonthemic')
+	      # should return an array
+	      results.count.should > 0
+	    end
+	  end
+	  it "should not return challenges successfully for a non-existent member" do
+	    VCR.use_cassette "models/members/challenges_novaliduser" do
+	      results = Member.challenges(@public_oauth_token, 'novaliduser')
+	      # should return an array
+	      results.count.should == 0
+	    end
+	  end	  
+  end    
+
+  describe "find by membername" do
+	  it "should return jeffdonthemc" do
+	    VCR.use_cassette "models/members/find_jeffdonthemic" do
+	      results = Member.find_by_membername(@public_oauth_token, 'jeffdonthemic', 'id,name')
+	      # should return an array
+	      results.count.should == 1
+	      results.first.should have_key('name')
+	      results.first.should have_key('id')
+	      results.first['name'].should == 'jeffdonthemic'
+	    end
+	  end
+	  it "should not return a non-existent member" do
+	    VCR.use_cassette "models/members/find_novaliduser" do
+	      results = Member.find_by_membername(@public_oauth_token, 'novaliduser', 'id,name')
+	      # should return an array
+	      results.count.should == 0
+	    end
+	  end	  
+  end    
+
+  describe "payments" do
 	  it "should return payments successfully" do
 	    VCR.use_cassette "models/members/payments_success" do
 	      results = Member.payments(@public_oauth_token, 'jeffdonthemic', 'id,name', 'name')
 	      # should return an array
 	      results.count.should >= 0
+	      results.first.should have_key('name')
+	      results.first.should have_key('id')	      
 	    end
 	  end
   end
 
-  describe "Recommendations" do
+  describe "recommendations" do
 	  it "should return recommendations successfully" do
 	    VCR.use_cassette "models/members/recommendations_success" do
 	      results = Member.recommendations(@public_oauth_token, 'jeffdonthemic', 'id,name')
 	      # should return an array
 	      results.count.should >= 0
+	      results.first.should have_key('name')
+	      results.first.should have_key('id')	      
 	    end
 	  end
 

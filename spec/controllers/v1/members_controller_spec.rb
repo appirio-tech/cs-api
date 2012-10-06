@@ -14,7 +14,7 @@ describe V1::MembersController do
     @api_key = ApiKey.first.access_key
   end  	
 
-  describe "methods without api key" do
+  describe "restricted methods without api key" do
     it "should return 401 for 'payments'" do
       request.env['oauth_token'] = @public_oauth_token
       get 'payments', 'membername' => 'jeffdonthemic'

@@ -18,11 +18,10 @@ class V1::ApplicationController < RocketPants::Base
   def set_oauth_token
     # use the access token if sent in the headers
     if request.headers['oauth_token']     
-      puts "=== using oauth token from header"
       @oauth_token = request.headers['oauth_token'].split(':').first
     # fetch the public token from cache (if present) or sfdc
     else
-      puts "=== using public oauth token"
+      puts "[INFO][Application] Using passed oauth token"
       @oauth_token = public_oauth_token
     end
   end
@@ -31,9 +30,9 @@ class V1::ApplicationController < RocketPants::Base
   # from the header is found in the local database then access
   # is granted to the route. If not, returns a 401.
   def restrict_access
-    puts "==== checking for api access key..."
+    puts "[INFO][Application] Checking for API key"
     authorized = ApiKey.exists?(access_key: api_key_from_header)
-    puts "==== authorized?: #{authorized}"
+    puts "[INFO][Application] Access authorized? #{authorized}"
     error! :unauthenticated if !authorized
   end   
 
@@ -55,7 +54,7 @@ class V1::ApplicationController < RocketPants::Base
     # returns an access token from db.com authentication unless it exists in the cache
     def public_oauth_token
       pubic_oauth_token = Rails.cache.fetch('pubic_oauth_token', :expires_in => 30.minute) do
-        puts '[APPLICATION_CONTROLLER][INFO] fetching public access token from sfdc'
+        puts '[APPLICATION_CONTROLLER][INFO] Fetching public access token from sfdc'
         config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
         client = Databasedotcom::Client.new(config)
         client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']

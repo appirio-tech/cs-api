@@ -56,10 +56,10 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Fri, 05 Oct 2012 22:20:27 GMT
+      - Sat, 06 Oct 2012 12:32:08 GMT
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000M1nPIAS","issued_at":"1349475627447","instance_url":"https://cs9.salesforce.com","signature":"Ma11NOztOfVybhUy69TuEFkQftFX8CrdDmwCdrQGGwc=","access_token":"00DK0000002aZTE!AQQAQIjrvV6pRIRPYxLCSe8u2Rfdo60QcSmFFzbnUqOtEWKEHsISoKgZjMBZBRmAbd5WnTwRQrUPqXBFI3nEfZUo.iqpYnhi"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000M1nPIAS","issued_at":"1349526729309","instance_url":"https://cs9.salesforce.com","signature":"575Rfnl0RfRWe39ttYyT23VrDLyKZ78kD61k4LSC1cA=","access_token":"00DK0000002aZTE!AQQAQGezBmrWhYsBfAh0ZTOsmM9P9NBP8x.CaZ0i.1DB6oHl30CDQ5voH7l1pyjubeehvSZHGVic1rAZIhmxtm5tgEXzB4Oj"}'
     http_version: '1.1'
-  recorded_at: Fri, 05 Oct 2012 22:20:24 GMT
+  recorded_at: Sat, 06 Oct 2012 12:32:09 GMT
 recorded_with: VCR 2.2.5

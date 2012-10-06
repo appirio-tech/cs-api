@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members/jeffdonthemic/challenges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQDN9tfD2FmXH71v7NcOK__g5c9Tog0yfpF_o8f2y_M45bI3bfG5DhmQtX_Wc4mGjy._Mf3bfgKnNvkp7p_1kETmqLhSm
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sat, 06 Oct 2012 12:07:37 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000041uOIMAY"},"Prize_Type__c":"Currency","Total_Prize_Money__c":1500,"End_Date__c":"2012-10-11T18:37:00.000+0000","Challenge_Categories__r":{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QbIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBvIAO"},"Name":"BUG","Color__c":"000000","Id":"a07K0000002ASBvIAO"},"Category__c":"a07K0000002ASBvIAO","Id":"a08K0000000j5QbIAI","Challenge__c":"a0GK00000041uOIMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QcIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBpIAO"},"Name":"Salesforce.com","Color__c":"000000","Id":"a07K0000002ASBpIAO"},"Category__c":"a07K0000002ASBpIAO","Id":"a08K0000000j5QcIAI","Challenge__c":"a0GK00000041uOIMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000j5QdIAI"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBsIAO"},"Name":"DESIGN","Color__c":"000000","Id":"a07K0000002ASBsIAO"},"Category__c":"a07K0000002ASBsIAO","Id":"a08K0000000j5QdIAI","Challenge__c":"a0GK00000041uOIMAY"}]},"Name":"Really
+        Awesome Challenge","Top_Prize__c":"$1000","Challenge_Id__c":"3","Challenge_Type__c":"Code","Id":"a0GK00000041uOIMAY","Start_Date__c":"2012-08-30T18:37:00.000+0000","Description__c":"sample
+        Description","Status__c":"Created","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK0000003yneAMAQ"},"Has_Submission__c":true,"Money_Awarded__c":0.00,"Score__c":0,"Member__c":"a0IK0000000QarnMAC","Id":"a0AK0000003yneAMAQ","Status__c":"Submitted","Challenge__c":"a0GK00000041uOIMAY"}]}},{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000041upTMAQ"},"Prize_Type__c":"Currency","Total_Prize_Money__c":100,"End_Date__c":"2012-06-30T15:31:00.000+0000","Challenge_Categories__r":{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChWIAU"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBwIAO"},"Name":"HACKATHON","Color__c":"000000","Id":"a07K0000002ASBwIAO"},"Category__c":"a07K0000002ASBwIAO","Id":"a08K0000000jChWIAU","Challenge__c":"a0GK00000041upTMAQ"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChgIAE"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBrIAO"},"Name":"Ruby","Color__c":"000000","Id":"a07K0000002ASBrIAO"},"Category__c":"a07K0000002ASBrIAO","Id":"a08K0000000jChgIAE","Challenge__c":"a0GK00000041upTMAQ"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jChbIAE"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBvIAO"},"Name":"BUG","Color__c":"000000","Id":"a07K0000002ASBvIAO"},"Category__c":"a07K0000002ASBvIAO","Id":"a08K0000000jChbIAE","Challenge__c":"a0GK00000041upTMAQ"}]},"Name":"Race
+        Test","Top_Prize__c":"$100","Challenge_Id__c":"6","Challenge_Type__c":"Race","Id":"a0GK00000041upTMAQ","Start_Date__c":"2012-06-19T14:30:00.000+0000","Description__c":"Test
+        Quick Quiz","Status__c":"Review","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK00000036rCIMAY"},"Has_Submission__c":false,"Money_Awarded__c":0.00,"Score__c":0,"Member__c":"a0IK0000000QarnMAC","Id":"a0AK00000036rCIMAY","Status__c":"Registered","Challenge__c":"a0GK00000041upTMAQ"}]}},{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GK00000042wCgMAI"},"Prize_Type__c":"Currency","Total_Prize_Money__c":1500,"End_Date__c":"2012-09-27T16:33:00.000+0000","Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jbVRIAY"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBpIAO"},"Name":"Salesforce.com","Color__c":"000000","Id":"a07K0000002ASBpIAO"},"Category__c":"a07K0000002ASBpIAO","Id":"a08K0000000jbVRIAY","Challenge__c":"a0GK00000042wCgMAI"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08K0000000jbVSIAY"},"Category__r":{"attributes":{"type":"Category__c","url":"/services/data/v22.0/sobjects/Category__c/a07K0000002ASBsIAO"},"Name":"DESIGN","Color__c":"000000","Id":"a07K0000002ASBsIAO"},"Category__c":"a07K0000002ASBsIAO","Id":"a08K0000000jbVSIAY","Challenge__c":"a0GK00000042wCgMAI"}]},"Name":"Really
+        Awesome Challenge","Top_Prize__c":"$1000","Challenge_Id__c":"32","Challenge_Type__c":"Race","Id":"a0GK00000042wCgMAI","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"My
+        description..","Status__c":"Submission","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AK0000003S0BRMA0"},"Has_Submission__c":true,"Money_Awarded__c":1000.00,"Score__c":80,"Place__c":"1","Member__c":"a0IK0000000QarnMAC","Id":"a0AK0000003S0BRMA0","Status__c":"Submitted","Challenge__c":"a0GK00000042wCgMAI"}]}}]'
+    http_version: '1.1'
+  recorded_at: Sat, 06 Oct 2012 12:07:37 GMT
+recorded_with: VCR 2.2.5

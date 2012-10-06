@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/members/novaliduser/challenges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DK0000002aZTE!AQQAQDN9tfD2FmXH71v7NcOK__g5c9Tog0yfpF_o8f2y_M45bI3bfG5DhmQtX_Wc4mGjy._Mf3bfgKnNvkp7p_1kETmqLhSm
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sat, 06 Oct 2012 12:10:23 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[]'
+    http_version: '1.1'
+  recorded_at: Sat, 06 Oct 2012 12:10:23 GMT
+recorded_with: VCR 2.2.5

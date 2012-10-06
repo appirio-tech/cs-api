@@ -38,7 +38,8 @@ class V1::AccountsController < V1::ApplicationController
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - membername -> the cloudspokes member name (mess)
-  #   - JSON containing the following keys: access_token, success, message
+   # * *Returns* : 
+  #   - boolean
   # * *Raises* :
   #   - ++ ->
   #  

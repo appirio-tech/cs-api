@@ -1,6 +1,17 @@
 class Account < Salesforce
 
-	# log into sfdc with their credentials to return their access token
+  #
+  # Uses the databasedotcom gem to authenticates a user 
+  # with sfdc and return a session token
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name to authenticate
+  #   - password -> the member's sfdc password
+  # * *Returns* :
+  #   - JSON containing the following keys: access_token, success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
 	def self.authenticate(access_token, membername, password)
     config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
     client = Databasedotcom::Client.new(config)
@@ -27,7 +38,8 @@ class Account < Salesforce
   #   - membername -> the cloudspokes member name (mess) to find
   #   - service -> the thirdparty or 'cloudspokes' service
   # * *Returns* :
-  #   - JSON containing user info
+  #   - JSON containing the following keys: username, sfdc_username, success
+  #     profile_pic, email and accountid
   # * *Raises* :
   #   - ++ ->
   #  
@@ -83,6 +95,18 @@ class Account < Salesforce
 
 	end
 
+  #
+  # Create a new member in db.com and send welcome email
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - params -> hash containing values to use for new user
+  #      - for third-party: provider, provider_username, username, email, name (can be blank)
+  #      - for cloudspokes: username, email, password 
+  # * *Returns* :
+  #   - JSON containing the following keys: username, sfdc_username, success, message 
+  # * *Raises* :
+  #   - ++ ->
+  #  
 	def self.create(access_token, params={})
     set_header_token(access_token)
           
@@ -159,18 +183,51 @@ class Account < Salesforce
 
   end	
 
+  #
+  # Creates a passcode in salesforce for resetting a member's password and sends email via Apex. 
+  # Only works if member is using CloudSpokes to manage their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
   def self.reset_password(access_token, membername)
     set_header_token(access_token)
     results = post(ENV['SFDC_APEXREST_URL'] + "/password/reset?username=#{esc membername}",:body => {})
     {:success => results['Success'], :message => results['Message']}
   end
 
+  #
+  # Resets a member's password in salesforce is CloudSpokes is managing their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  #   - passcode -> the passcode sent to them via email
+  #   - new_password -> the new password to change their account to
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
   def self.update_password(access_token, membername, passcode, new_password)
     set_header_token(access_token)
     results = put(ENV['SFDC_APEXREST_URL'] + "/password/reset?username=#{esc membername}&passcode=#{passcode}&newpassword=#{esc new_password}",:body => {}) 
     {:success => results['Success'], :message => results['Message']}
   end  
 
+  #
+  # Activates a member and their sfdc account
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess)
+  # * *Returns* :  
+  #   - boolean
+  # * *Raises* :
+  #   - ++ ->
+  #  
   def self.activate(access_token, membername)
     set_header_token(access_token)
     results = get(ENV['SFDC_APEXREST_URL'] + "/activate/#{membername}") 
