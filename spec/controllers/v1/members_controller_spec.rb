@@ -38,53 +38,6 @@ describe V1::MembersController do
 			end
 		end
 
-		it "should have the correct internal hash keys" do
-			VCR.use_cassette "controllers/v1/members/find_by_membername_jeffdonthemic" do
-				request.env['oauth_token'] = @public_oauth_token
-				get 'find_by_membername', 'membername' => 'jeffdonthemic'
-				h = JSON.parse(response.body)['response']
-				%w{member challenges recommendations}.each do |k|
-					h.should have_key(k)
-				end
-			end
-		end
-
-		it "should have the correct member hash keys" do
-			VCR.use_cassette "controllers/v1/members/find_by_membername_jeffdonthemic" do
-				keys = %w{ valid_submissions total_2nd_place total_1st_place total_public_money total_points name challenges_entered time_zone id total_wins total_3st_place profile_pic }
-				request.env['oauth_token'] = @public_oauth_token
-				get 'find_by_membername', 'membername' => 'jeffdonthemic'
-				h = JSON.parse(response.body)['response']['member']
-				keys.each do |k|
-					h.should have_key(k)
-				end
-			end
-		end  
-
-		it "should have the correct challenge hash keys" do
-			VCR.use_cassette "controllers/v1/members/find_by_membername_jeffdonthemic" do
-				keys = %w{ prize_type total_prize_money end_date challenge_categories__r name top_prize challenge_id challenge_type id start_date description status }
-				request.env['oauth_token'] = @public_oauth_token
-				get 'find_by_membername', 'membername' => 'jeffdonthemic'
-				h = JSON.parse(response.body)['response']['challenges'].first
-				keys.each do |k|
-					h.should have_key(k)
-				end
-			end
-		end 
-
-		it "should have the correct recommendation hash keys" do
-			VCR.use_cassette "controllers/v1/members/find_by_membername_jeffdonthemic" do
-				keys = %w{ member recommendation createddate id recommendation_from recommendation_from__r }
-				request.env['oauth_token'] = @public_oauth_token
-				get 'find_by_membername', 'membername' => 'jeffdonthemic'
-				h = JSON.parse(response.body)['response']['recommendations'].first
-				keys.each do |k|
-					h.should have_key(k)
-				end
-			end
-		end
-
 	end
 
 	describe "GET 'index'" do

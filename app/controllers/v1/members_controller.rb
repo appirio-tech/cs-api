@@ -49,18 +49,17 @@ class V1::MembersController < V1::ApplicationController
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - membername -> the member to return all info for
+  #   - fields (optional) -> the fields to return in the results. Defaults
+  #   to PUBLIC_MEMBER_FIELDS.
   # * *Returns* :
   #   - a hash containing the following keys: member, challenges, recommendations
   # * *Raises* :
   #   - ++ ->
   #  
 	def find_by_membername
-		member = Member.find_by_membername(@oauth_token, params[:membername], PUBLIC_MEMBER_FIELDS).first
-		challenges = Member.challenges(@oauth_token, params[:membername])
-		recommendations = Member.recommendations(@oauth_token, params[:membername], DEFAULT_RECOMMENDATION_FIELDS)
-		h = { 'member' => member, 'challenges' => challenges, 'recommendations' => recommendations}
+		member = Member.find_by_membername(@oauth_token, params[:membername], find_by_membername_fields).first
 		error! :not_found unless member
-		expose h
+		expose member
 	end
 
   #
@@ -137,6 +136,10 @@ class V1::MembersController < V1::ApplicationController
 		def index_order_by
 			params[:order_by] ? Forcifier.enforce_fields(params[:order_by]) : 'total_wins__c'
 		end
+
+    def find_by_membername_fields
+      params[:fields] ? Forcifier.enforce_fields(params[:fields]) : PUBLIC_MEMBER_FIELDS
+    end    
 
 		def search_fields
 			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
