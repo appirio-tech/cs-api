@@ -64,6 +64,20 @@ class V1::MembersController < V1::ApplicationController
 	end
 
   #
+  # Returns all of the challenges that a member has been involved in
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return payments for
+  # * *Returns* :
+  #   - JSON an array of challenges 
+  # * *Raises* :
+  #   - ++ ->
+  # 
+  def challenges
+    expose Member.challenges(@oauth_token, params[:membername])
+  end   
+
+  #
   # Returns all payments for a member
   # * *Args*    :
   #   - access_token -> the oauth token to use

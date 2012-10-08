@@ -4,6 +4,7 @@ CsApi::Application.routes.draw do
 
 	  match "/members" => "members#index", :as => :members, :via => :get
 	  match "/members/search" => "members#search", :as => :members_search	  
+		match "/members/:membername/challenges" => "members#challenges", :as => :members_challenges, :via => :get	  
 	  match "/members/:membername/payments" => "members#payments", :as => :members_payments, :via => :get
 	  match "/members/:membername/recommendations" => "members#recommendations", :as => :recommendations, :via => :get
 	  match "/members/:membername/recommendations/create" => "members#recommendation_create", :as => :recommendation_create, :via => :post
