@@ -17,7 +17,12 @@ class Forcifier
 			if STANDARD_FIELDS.include?(f)
 				forced_fields << f
 			else
-				forced_fields << "#{f}__c"
+				# catch instances of 'total_wins desc' for order_by
+				if f.split(' ').count == 2
+					forced_fields << "#{f.split(' ').first}__c #{f.split(' ').last}"					
+				else
+					forced_fields << "#{f}__c"					
+				end
 			end
 		end
 		forced_fields.join(",")
