@@ -48,47 +48,47 @@ class Account < Salesforce
     # cloudspokes credentials
     if service.downcase.eql?('cloudspokes')
 
-    activate_results = get(ENV['SFDC_APEXREST_URL']+'/activate/'+service_name)
-    puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
+      activate_results = get(ENV['SFDC_APEXREST_URL']+'/activate/'+service_name)
+      puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
 
-    # do rest query and find member and all their info
-    query_results = soql_query("select id, name, profile_pic__c, email__c, 
-    sfdc_user__r.username, account__c from member__c 
-    where username__c='" + service_name + "' and 
-    sfdc_user__r.third_party_account__c = ''")
+      # do rest query and find member and all their info
+      query_results = soql_query("select id, name, profile_pic__c, email__c, 
+        sfdc_user__r.username, account__c from member__c 
+        where username__c='" + service_name + "' and 
+        sfdc_user__r.third_party_account__c = ''")
 
-    if query_results['totalSize'].eql?(0)
-    puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
-    {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
-    else
-    m = query_results['records'].first
-    {:success => 'true', :username => m['Name'], :sfdc_username => m['SFDC_User__r']['Username'], 
-    :profile_pic => m['Profile_Pic__c'], :email => m['Email__c'], :accountid => m['Account__c']}
-    end
+      if query_results['totalSize'].eql?(0)
+        puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
+        {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
+      else
+        m = query_results['records'].first
+        {:success => 'true', :username => m['Name'], :sfdc_username => m['SFDC_User__r']['Username'], 
+        :profile_pic => m['Profile_Pic__c'], :email => m['Email__c'], :accountid => m['Account__c']}
+      end
 
     # third party credentials -- activating user is part of credentials service
     else   
 
-    options = {
-    :query => {
-    :username => service_name,
-    :service  => service
-    }
-    }
+      options = {
+        :query => {
+        :username => service_name,
+        :service  => service
+        }
+      }
 
-    results = get(ENV['SFDC_APEXREST_URL']+'/credentials', options)
+      results = get(ENV['SFDC_APEXREST_URL']+'/credentials', options)
 
-    begin
-    if results['Success'].eql?('true')
-    {:success => 'true', :username => results['Username'], :sfdc_username => results['SFusername'], 
-    :profile_pic => results['Profile_Pic'], :email => results['Email'], :accountid => results['AccountId']}
-    else
-    {:success => 'false', :message => results['Message']}
-    end
-    # something bad.. probably expired token
-    rescue Exception => exc
-    return {:success => 'false', :message => results[0]['message']}
-    end
+      begin
+        if results['Success'].eql?('true')
+          {:success => 'true', :username => results['Username'], :sfdc_username => results['SFusername'], 
+          :profile_pic => results['Profile_Pic'], :email => results['Email'], :accountid => results['AccountId']}
+        else
+          {:success => 'false', :message => results['Message']}
+        end
+      # something bad.. probably expired token
+      rescue Exception => exc
+        {:success => 'false', :message => results[0]['message']}
+      end
 
     end
 
