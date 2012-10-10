@@ -17,7 +17,7 @@ class Account < Salesforce
     client = Databasedotcom::Client.new(config)
     sfdc_username = membername+'@'+ENV['SFDC_USERNAME_DOMAIN']
     begin
-    	puts "[INFO][Account] Logging into salesforce with sfdc username: #{sfdc_username}"
+      puts "[INFO][Account] Logging into salesforce with sfdc username: #{sfdc_username}"
       access_token = client.authenticate :username => sfdc_username, :password => password
       puts "[INFO][Account] Successful login for #{membername} with sfdc username #{sfdc_username}."
       {:success => 'true', :message => 'Successful sfdc login.', :access_token => access_token}
@@ -42,57 +42,57 @@ class Account < Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-	def self.find_by_service(access_token, service, service_name)
-		set_header_token(access_token) 
+  def self.find_by_service(access_token, service, service_name)
+    set_header_token(access_token) 
 
-		# cloudspokes credentials
-		if service.downcase.eql?('cloudspokes')
+    # cloudspokes credentials
+    if service.downcase.eql?('cloudspokes')
 
-	    activate_results = get(ENV['SFDC_APEXREST_URL']+'/activate/'+service_name)
-	    puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
+    activate_results = get(ENV['SFDC_APEXREST_URL']+'/activate/'+service_name)
+    puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
 
-	    # do rest query and find member and all their info
-			query_results = soql_query("select id, name, profile_pic__c, email__c, 
-				sfdc_user__r.username, account__c from member__c 
-				where username__c='" + service_name + "' and 
-        sfdc_user__r.third_party_account__c = ''")
-			
-			if query_results['totalSize'].eql?(0)
-        puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
-				{:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
-			else
-				m = query_results['records'].first
-				{:success => 'true', :username => m['Name'], :sfdc_username => m['SFDC_User__r']['Username'], 
-					:profile_pic => m['Profile_Pic__c'], :email => m['Email__c'], :accountid => m['Account__c']}
-			end
-			
-		# third party credentials -- activating user is part of credentials service
-		else   
+    # do rest query and find member and all their info
+    query_results = soql_query("select id, name, profile_pic__c, email__c, 
+    sfdc_user__r.username, account__c from member__c 
+    where username__c='" + service_name + "' and 
+    sfdc_user__r.third_party_account__c = ''")
 
-	    options = {
-	      :query => {
-	          :username => service_name,
-	          :service  => service
-	      }
-	    }
+    if query_results['totalSize'].eql?(0)
+    puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
+    {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
+    else
+    m = query_results['records'].first
+    {:success => 'true', :username => m['Name'], :sfdc_username => m['SFDC_User__r']['Username'], 
+    :profile_pic => m['Profile_Pic__c'], :email => m['Email__c'], :accountid => m['Account__c']}
+    end
 
-	    results = get(ENV['SFDC_APEXREST_URL']+'/credentials', options)
+    # third party credentials -- activating user is part of credentials service
+    else   
 
-	    begin
-	      if results['Success'].eql?('true')
-	        {:success => 'true', :username => results['Username'], :sfdc_username => results['SFusername'], 
-	          :profile_pic => results['Profile_Pic'], :email => results['Email'], :accountid => results['AccountId']}
-	      else
-	        {:success => 'false', :message => results['Message']}
-	      end
-	    # something bad.. probably expired token
-	    rescue Exception => exc
-	      return {:success => 'false', :message => results[0]['message']}
-	    end
+    options = {
+    :query => {
+    :username => service_name,
+    :service  => service
+    }
+    }
 
-		end
+    results = get(ENV['SFDC_APEXREST_URL']+'/credentials', options)
 
-	end
+    begin
+    if results['Success'].eql?('true')
+    {:success => 'true', :username => results['Username'], :sfdc_username => results['SFusername'], 
+    :profile_pic => results['Profile_Pic'], :email => results['Email'], :accountid => results['AccountId']}
+    else
+    {:success => 'false', :message => results['Message']}
+    end
+    # something bad.. probably expired token
+    rescue Exception => exc
+    return {:success => 'false', :message => results[0]['message']}
+    end
+
+    end
+
+  end
 
   #
   # Create a new member in db.com and send welcome email
@@ -160,7 +160,7 @@ class Account < Salesforce
       puts "[INFO][Account] Results from the create new user call: #{new_account_results}" 
       if new_account_results['Success'].eql?('true')
         success_results =  {:success => 'true', 
-        	:username => new_account_results["username"], 
+          :username => new_account_results["username"], 
           :sfdc_username => new_account_results["sfdc_username"], 
           :message => new_account_results["Message"]}
 
