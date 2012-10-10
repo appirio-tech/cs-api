@@ -12,7 +12,7 @@ class Account < Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-	def self.authenticate(access_token, membername, password)
+  def self.authenticate(access_token, membername, password)
     config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
     client = Databasedotcom::Client.new(config)
     sfdc_username = membername+'@'+ENV['SFDC_USERNAME_DOMAIN']
@@ -25,8 +25,7 @@ class Account < Salesforce
       puts "[FATAL][Account] Could not log into salesforce using gem to get access_token for #{membername}: #{exc.message}"
       {:success => 'false', :message => exc.message}
     end
-
-	end
+  end
 
   #
   # Activites a user and returns the users info. only sysadmin profiles
@@ -107,7 +106,7 @@ class Account < Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-	def self.create(access_token, params={})
+  def self.create(access_token, params={})
     set_header_token(access_token)
           
     # third party      
