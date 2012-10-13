@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cs9.salesforce.com/services/apexrest/v.9/members
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=thirdparty-rspec-1&email__c=thirdparty-rspec-1%40test.com&first_name__c=Jeff&last_name__c=Douglas&third_party_account__c=github&third_party_username__c=thirdparty-rspec-1%40test.com
+      string: username__c=rspec-test-member-2&email__c=rspec-test-member-2%40test.com&first_name__c=Rspec&last_name__c=TestUser&third_party_account__c=github&third_party_username__c=rspec-test-member-2%40test.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw
+      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
   response:
     status:
       code: 200
@@ -23,13 +23,13 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Sun, 23 Sep 2012 18:04:15 GMT
+      - Fri, 12 Oct 2012 13:25:26 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IK00000056OoVMAU","sfdc_username":"thirdparty-rspec-1@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"thirdparty-rspec-1"}'
+      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IJ0000000erLyMAI","Message":"Member
+        created successfully.","sfdc_username":"rspec-test-member-2@m.cloudspokes.com.sandbox","username":"rspec-test-member-2"}'
     http_version: '1.1'
-  recorded_at: Sun, 23 Sep 2012 18:04:24 GMT
+  recorded_at: Fri, 12 Oct 2012 13:25:28 GMT
 recorded_with: VCR 2.2.5

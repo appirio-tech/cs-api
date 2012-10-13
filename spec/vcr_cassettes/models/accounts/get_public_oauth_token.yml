@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3ar.3patsxNiipcdm05TI9Tz2Q73IZFugW_aXBZs8rUrnQjNUVdM2wL5CAcQ&client_secret=550269079582676591&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7QiIhbu5fGbbSkFm4mwyb1c3
+    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9_7ddP9KqTzehRpxziFtY9nmn2oOVDv8tskZz8EOojfspAwywZNShuvC9ReP3Q3xtOgsdywVqd3iaMD_i&client_secret=7790069153057450798&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7Q
     body:
       encoding: US-ASCII
       string: ''
@@ -25,72 +25,10 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Sun, 23 Sep 2012 18:46:07 GMT
+      - Sat, 13 Oct 2012 10:48:02 GMT
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000NdzaIAC","issued_at":"1348425967827","instance_url":"https://cs9.salesforce.com","signature":"MytQgUv9h3Y+2LanzPVw6tneq3yDcb8oWdblV4pOch8=","access_token":"00DK0000002aZTE!AQQAQGF1V_o56pGKQxVEV8_H1G4558Hqo9fB82nVzGX9zIk0VmqghxAx_K2V_WXAxz8SbzOUVhJ70cdnZh_wuTfnCvGDAXlw"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1350125282855","instance_url":"https://cs10.salesforce.com","signature":"XoiyCsv9Ta65PIQ3r+u41l2L8sR6apuswU0365TQl+k=","access_token":"00DJ00000007l7H!AQQAQJt1IHJy.w21g0xqyUy6doOj3YD29UZiWsKa5QHI346wO9hSCc0jwB5PO.NkhkvCJToACQdU1DaNuZtCcfWghIfeZ9p7"}'
     http_version: '1.1'
-  recorded_at: Sun, 23 Sep 2012 18:46:16 GMT
-- request:
-    method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3VzD8gEXsinXk7I5y6fDrR2q1MRJyFCYt4qY7F7JUMe5UH34HIOqRqKxRlS3&client_secret=6863277560065788297&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7QiIhbu5fGbbSkFm4mwyb1c3
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      server:
-      - ''
-      content-type:
-      - application/json; charset=UTF-8
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
-      date:
-      - Tue, 02 Oct 2012 13:28:33 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005U0000000NdzaIAC","issued_at":"1349184513489","instance_url":"https://cs9.salesforce.com","signature":"AmSxqUJILbxs36htw/oausHOYvz4PTLRczAkogpEtKk=","access_token":"00DK0000002aZTE!AQQAQKWt2I8ndArAryadQJE1ot1yOgxR1eWBFekNcwt2EUgsDUMx3iNT_SjaOe2iYWpd.mrP2LyOEmwA.viGwGA4E1_93_qt"}'
-    http_version: '1.1'
-  recorded_at: Tue, 02 Oct 2012 13:29:06 GMT
-- request:
-    method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9FS3IyroMOh4MAEAjkmHk3VzD8gEXsinXk7I5y6fDrR2q1MRJyFCYt4qY7F7JUMe5UH34HIOqRqKxRlS3&client_secret=6863277560065788297&username=rspec%40m.cloudspokes.com.sandbox&password=7%5Dm29%2F4YGbDw4DU5N9DrignyJ2alrVRdD
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      server:
-      - ''
-      content-type:
-      - application/json; charset=UTF-8
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
-      date:
-      - Mon, 08 Oct 2012 11:28:50 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DK0000002aZTEMA2/005K0000000leSjIAI","issued_at":"1349695730800","instance_url":"https://cs9.salesforce.com","signature":"wygGMn5TWrYU73wreVl9VkQc3BLzKWSXm+jw2fUBj3g=","access_token":"00DK0000002aZTE!AQQAQKD2UYkROCZDm3680wJjax7D1G2e3YrfMA3EY2_R9QT3S0AJOvwbO3EVMSNUFzWuRdOxCMTY38LG.M9BE030.cV5b94O"}'
-    http_version: '1.1'
-  recorded_at: Mon, 08 Oct 2012 11:28:50 GMT
+  recorded_at: Sat, 13 Oct 2012 10:48:04 GMT
 recorded_with: VCR 2.2.5

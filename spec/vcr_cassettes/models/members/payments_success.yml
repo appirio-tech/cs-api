@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs9.salesforce.com/services/data/v25.0/query?q=select%20id,name%20from%20payment__c%20where%20member__r.name%20=%20'jeffdonthemic'%20order%20by%20name
+    uri: https://cs10.salesforce.com/services/data/v25.0/query?q=select%20id,name%20from%20payment__c%20where%20member__r.name%20=%20'jeffdonthemic'%20order%20by%20name
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DK0000002aZTE!AQQAQKwhJdP1XQd4tXYbi5Nu_8G51KggH9WAySh2J6H2hj2LPGzhZ92x1tlBQ6MamS5diJUgGOUIlx50MDFq3tUigH6JZp1L
+      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
   response:
     status:
       code: 200
@@ -23,12 +23,12 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Tue, 02 Oct 2012 14:42:43 GMT
+      - Fri, 12 Oct 2012 12:57:17 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Payment__c","url":"/services/data/v25.0/sobjects/Payment__c/a0bK000000150T8IAI"},"Id":"a0bK000000150T8IAI","Name":"PAY-2523"}]}'
+      string: ! '{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Payment__c","url":"/services/data/v25.0/sobjects/Payment__c/a0bJ0000003ykOzIAI"},"Id":"a0bJ0000003ykOzIAI","Name":"PAY-3530"},{"attributes":{"type":"Payment__c","url":"/services/data/v25.0/sobjects/Payment__c/a0bJ0000003ykP4IAI"},"Id":"a0bJ0000003ykP4IAI","Name":"PAY-3531"}]}'
     http_version: '1.1'
-  recorded_at: Tue, 02 Oct 2012 14:43:16 GMT
+  recorded_at: Fri, 12 Oct 2012 12:57:19 GMT
 recorded_with: VCR 2.2.5

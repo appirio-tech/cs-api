@@ -84,6 +84,34 @@ describe Member do
 	  end	  
   end    
 
+  describe "update member" do
+	  it "should update successfully" do
+	    VCR.use_cassette "models/members/update_success" do
+	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'Jabber__c' => 'somejabbername'})
+        results[:success].should == 'true'
+	    end
+	    # make sure it was updated successfully
+	    VCR.use_cassette "models/members/update_success_check" do
+        results2 = Member.find_by_membername(@public_oauth_token, 'jeffdonthemic', 'jabber__c')
+        results2.first['jabber'].should == 'somejabbername'
+	    end
+	  end
+	  it "should not update successfully with a bad field" do
+	    VCR.use_cassette "models/members/update_failure" do
+	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'Email__c' => 'bademail'})
+        results[:success].should == 'false'
+        results[:message].should == 'Email: invalid email address: bademail'
+	    end
+	  end
+	  it "should not update successfully an unknown" do
+	    VCR.use_cassette "models/members/update_failure_unknown" do
+	      results = Member.update(@public_oauth_token, 'badrspecuser', {'Email__c' => 'bademail'})
+        results[:success].should == 'false'
+        results[:message].should == 'Member not found for: badrspecuser'
+	    end
+	  end	  
+  end  
+
   describe "payments" do
 	  it "should return payments successfully" do
 	    VCR.use_cassette "models/members/payments_success" do

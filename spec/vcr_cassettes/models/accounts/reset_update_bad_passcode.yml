@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://cs9.salesforce.com/services/apexrest/v.9/password/reset?username=mandrill4&passcode=0&newpassword=ABCDE12345
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/password/reset?username=rspec-test-member-1&passcode=0&newpassword=ABCDE12345
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DK0000002aZTE!AQQAQKWt2I8ndArAryadQJE1ot1yOgxR1eWBFekNcwt2EUgsDUMx3iNT_SjaOe2iYWpd.mrP2LyOEmwA.viGwGA4E1_93_qt
+      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
   response:
     status:
       code: 200
@@ -23,13 +23,13 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Tue, 02 Oct 2012 13:16:24 GMT
+      - Fri, 12 Oct 2012 13:25:21 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
       string: ! '{"Success":"false","Message":"Could not find a matching passcode
-        for the provided username: mandrill4"}'
+        for the provided username: rspec-test-member-1"}'
     http_version: '1.1'
-  recorded_at: Tue, 02 Oct 2012 13:16:57 GMT
+  recorded_at: Fri, 12 Oct 2012 13:25:23 GMT
 recorded_with: VCR 2.2.5

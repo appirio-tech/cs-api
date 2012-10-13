@@ -15,6 +15,12 @@ describe V1::MembersController do
   end  	
 
   describe "restricted methods without api key" do
+    it "should return 401 for 'update member'" do
+      request.env['oauth_token'] = @public_oauth_token
+      put 'update', 'membername' => 'jeffdonthemic'
+      response.should_not be_success
+    end
+
     it "should return 401 for 'payments'" do
       request.env['oauth_token'] = @public_oauth_token
       get 'payments', 'membername' => 'jeffdonthemic'
@@ -37,8 +43,20 @@ describe V1::MembersController do
 				response.should be_success
 			end
 		end
-
 	end
+
+	describe "update member" do
+		it "returns http success" do
+			VCR.use_cassette "controllers/v1/members/update_member" do
+				request.env['oauth_token'] = @public_oauth_token
+				request.env['Authorization'] = 'Token token="'+@api_key+'"'						
+				put 'update', 'membername' => 'jeffdonthemic', 'jabber' => 'anothername'
+				h = JSON.parse(response.body)
+				response.should be_success
+				h['response']['success'].should == 'true'
+			end
+		end
+	end	
 
 	describe "GET 'index'" do
 		it "returns http success" do

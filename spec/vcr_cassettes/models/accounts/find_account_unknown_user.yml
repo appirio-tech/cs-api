@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs9.salesforce.com/services/apexrest/v.9/credentials?username=unknown-user&service=github
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/credentials?username=unknown-user&service=github
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DK0000002aZTE!AQQAQOvJlN51Deui.Pasm_DSI9Tmfpfp9KgxdTyMDOQsqTOwyhGPeWT49wK1ut9m2MeTpWLnTrOXkKHZ3kXqaZsEViVcl._B
+      - OAuth 00DJ00000007l7H!AQQAQLpi.b1ZSvBU7fNIsC_37kuDUT5XyWakg5rof3z1IYz0NRLaNNoWTAElZh.U49hbyd69v8xW0GXEK8sw_D6TxcPKm413
   response:
     status:
       code: 200
@@ -23,13 +23,13 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Wed, 03 Oct 2012 21:00:23 GMT
+      - Fri, 12 Oct 2012 13:25:18 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"false","Profile_Pic":null,"SFusername":null,"Username":"unknown-user","SFuserId":null,"Message":"No
-        user could be found with specified service and username.","AccountId":null,"Email":null,"Service":"github"}'
+      string: ! '{"Success":"false","Profile_Pic":null,"SFusername":null,"Username":"unknown-user","Message":"No
+        user could be found with specified service and username.","SFuserId":null,"Email":null,"AccountId":null,"Service":"github"}'
     http_version: '1.1'
-  recorded_at: Wed, 03 Oct 2012 21:00:23 GMT
+  recorded_at: Fri, 12 Oct 2012 13:25:20 GMT
 recorded_with: VCR 2.2.5

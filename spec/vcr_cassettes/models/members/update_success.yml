@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/members?fields=id,name&search=jeffdonthemic
+    method: put
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?Jabber__c=somejabbername
     body:
       encoding: US-ASCII
       string: ''
@@ -23,12 +23,12 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Fri, 12 Oct 2012 12:57:12 GMT
+      - Fri, 12 Oct 2012 13:51:53 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA"}]'
+      string: ! '{"Success":"true","Message":"a0IJ0000000d0r8MAA"}'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 12:57:14 GMT
+  recorded_at: Fri, 12 Oct 2012 13:51:55 GMT
 recorded_with: VCR 2.2.5
