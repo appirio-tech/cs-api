@@ -2,7 +2,7 @@ class V1::MembersController < V1::ApplicationController
 
 	require 'forcifier'
 
-	before_filter :restrict_access, :only => [:payments, :recommendation_create]
+	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create]
 
 	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -28,6 +28,21 @@ class V1::MembersController < V1::ApplicationController
 	end
 
   #
+  # Updates a member in sfdc
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to update
+  #   - params -> hash of values to be updated
+  # * *Returns* :
+  #   - a hash containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def update
+    expose Member.update(@oauth_token, params[:membername], params)
+  end    
+
+  #
   # Searches for a member by keywords search.
   # * *Args*    :
   #   - access_token -> the oauth token to use
@@ -50,7 +65,7 @@ class V1::MembersController < V1::ApplicationController
   #   - access_token -> the oauth token to use
   #   - membername -> the member to return all info for
   #   - fields (optional) -> the fields to return in the results. Defaults
-  #   to PUBLIC_MEMBER_FIELDS.
+  #   to DEFAULT_MEMBER_FIELDS.
   # * *Returns* :
   #   - a hash containing the following keys: member, challenges, recommendations
   # * *Raises* :
@@ -138,7 +153,7 @@ class V1::MembersController < V1::ApplicationController
 		end
 
     def find_by_membername_fields
-      params[:fields] ? Forcifier.enforce_fields(params[:fields]) : PUBLIC_MEMBER_FIELDS
+      params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_MEMBER_FIELDS
     end    
 
 		def search_fields

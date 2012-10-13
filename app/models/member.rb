@@ -18,6 +18,23 @@ class Member < Salesforce
     set_header_token(access_token)   
     make_pretty(get(ENV['SFDC_APEXREST_URL'] +  "/members?fields=#{esc fields}&orderby=#{esc order_by}"))
   end
+
+  #
+  # Updates a member in sfdc
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to update
+  #   - params -> hash of values to be updated
+  # * *Returns* :
+  #   - a hash containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def self.update(access_token, membername, params)
+    set_header_token(access_token)   
+    results = put(ENV['SFDC_APEXREST_URL'] + "/members/#{esc membername}",:query => params)
+    {:success => results['Success'], :message => results['Message']}
+  end  
   
   #
   # Performs a keyword search (like 'keyword%') for members in sfdc
