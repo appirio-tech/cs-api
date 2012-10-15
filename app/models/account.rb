@@ -231,10 +231,8 @@ class Account < Salesforce
     set_header_token(access_token)
     results = get(ENV['SFDC_APEXREST_URL'] + "/activate/#{membername}") 
     if results['Success'].eql?('true') 
-      puts "[INFO][Account] #{membername} successfully activated in sfdc." 
       true
     else
-      puts "[FATAL][Account] Could not activate #{membername} in sfdc: #{results}" 
       false
     end
   end 
