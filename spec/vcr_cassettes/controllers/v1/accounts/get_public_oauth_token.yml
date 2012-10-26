@@ -20,15 +20,15 @@ http_interactions:
       - ''
       content-type:
       - application/json; charset=UTF-8
-      connection:
-      - close
       transfer-encoding:
       - chunked
       date:
-      - Sat, 13 Oct 2012 10:48:01 GMT
+      - Fri, 26 Oct 2012 10:33:20 GMT
+      connection:
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1350125282128","instance_url":"https://cs10.salesforce.com","signature":"d4U2EmLm+asKJrlZOl/xri3YB6c9PoYy74Y+ICPBf5c=","access_token":"00DJ00000007l7H!AQQAQJt1IHJy.w21g0xqyUy6doOj3YD29UZiWsKa5QHI346wO9hSCc0jwB5PO.NkhkvCJToACQdU1DaNuZtCcfWghIfeZ9p7"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1351247600128","instance_url":"https://cs10.salesforce.com","signature":"sNkeX6YZCriM1g/ZiseVucX7ys2+VFSi9YFarsb30Bg=","access_token":"00DJ00000007l7H!AQQAQEaXi8oo4UesPDXKL8Hh2ljAa3zKRO6CizFzbKs4cpt_kyBVcewcTpq0Uwn5v3tPZ1PbySSAhe3NaXalR88yBLygMKAE"}'
     http_version: '1.1'
-  recorded_at: Sat, 13 Oct 2012 10:48:03 GMT
+  recorded_at: Fri, 26 Oct 2012 10:33:20 GMT
 recorded_with: VCR 2.2.5

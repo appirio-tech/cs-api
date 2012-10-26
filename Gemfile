@@ -9,9 +9,9 @@ gem 'rocket_pants', '~> 1.0'
 gem 'httparty'
 gem 'pg'
 gem 'thin'
-gem 'exception_notification'
 gem 'dalli'
 gem 'debugger'
+gem 'airbrake'
 
 group :development, :test do
 	gem 'sqlite3-ruby'
