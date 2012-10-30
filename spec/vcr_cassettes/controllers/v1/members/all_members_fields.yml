@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/members?fields=id,name,profile_pic__c&orderby=total_wins__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQIWDxvW6u_7TsUxMoKGZywRp_A.wIv9x2gBJsDg83JuSEaIioDRA.K9s5L4COUjsDY7LL2PLfncAmhmMMqDa1Gwt7i_s
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 30 Oct 2012 14:33:59 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000eil5MAA"},"Name":"cloudspokes-rspec-1","Id":"a0IJ0000000eil5MAA","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d1ZMMAY"},"Name":"tehnrd","Id":"a0IJ0000000d1ZMMAY","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000fSAGMA2"},"Name":"test2localhost","Id":"a0IJ0000000fSAGMA2","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000eilFMAQ"},"Name":"thirdparty-rspec-2","Id":"a0IJ0000000eilFMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000erLtMAI"},"Name":"rspec-test-member-1","Id":"a0IJ0000000erLtMAI","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r9MAA"},"Name":"salpartovi","Id":"a0IJ0000000d0r9MAA","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rBMAQ"},"Name":"apextestmember","Id":"a0IJ0000000d0rBMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rCMAQ"},"Name":"tnjitsu","Id":"a0IJ0000000d0rCMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rDMAQ"},"Name":"romin","Id":"a0IJ0000000d0rDMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rEMAQ"},"Name":"aquacdr","Id":"a0IJ0000000d0rEMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rFMAQ"},"Name":"cmc","Id":"a0IJ0000000d0rFMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000eilAMAQ"},"Name":"thirdparty-rspec-1","Id":"a0IJ0000000eilAMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000erLyMAI"},"Name":"rspec-test-member-2","Id":"a0IJ0000000erLyMAI","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000erM3MAI"},"Name":"rspec-test-member-3","Id":"a0IJ0000000erM3MAI","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEAlMAO"},"Name":"testlogin2","Id":"a0IJ0000001QEAlMAO","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEBdMAO"},"Name":"testlogin3","Id":"a0IJ0000001QEBdMAO","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEAaMAO"},"Name":"testlogin1","Id":"a0IJ0000001QEAaMAO","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEf4MAG"},"Name":"testlogin6","Id":"a0IJ0000001QEf4MAG","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEepMAG"},"Name":"testlogin4","Id":"a0IJ0000001QEepMAG","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QEeuMAG"},"Name":"testlogin5","Id":"a0IJ0000001QEeuMAG","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000001QGVMMA4"},"Name":"testlogin7","Id":"a0IJ0000001QGVMMA4","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"}]'
+    http_version: '1.1'
+  recorded_at: Tue, 30 Oct 2012 14:34:00 GMT
+recorded_with: VCR 2.2.5

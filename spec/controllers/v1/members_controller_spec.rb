@@ -70,6 +70,40 @@ describe V1::MembersController do
 		end
 	end
 
+	describe "GET 'index' with field" do
+		it "returns only the specified fields" do
+			VCR.use_cassette "controllers/v1/members/all_members_fields" do
+				request.env['oauth_token'] = @public_oauth_token
+				get 'index', 'fields' => 'id,name,profile_pic'
+				response.should be_success
+				h = JSON.parse(response.body)['response'].first
+				keys = %w{id name profile_pic}.each do |k|
+					h.should have_key(k)
+				end
+			end
+		end
+	end	
+
+	describe "GET 'index' with order_by" do
+		it "returns success" do
+			VCR.use_cassette "controllers/v1/members/all_members_order_by" do
+				request.env['oauth_token'] = @public_oauth_token
+				get 'index', 'order_by' => 'id'
+				response.should be_success
+			end
+		end
+	end		
+
+	describe "GET 'index' with order_by desc" do
+		it "returns success" do
+			VCR.use_cassette "controllers/v1/members/all_members_order_by_desc" do
+				request.env['oauth_token'] = @public_oauth_token
+				get 'index', 'order_by' => 'id%20desc'
+				response.should be_success
+			end
+		end
+	end		
+
 	describe "'search' for jeffdonthemic" do
 		it "returns jeffdonthemic" do
 			VCR.use_cassette "controllers/v1/members/search_jeffdonthemic" do
