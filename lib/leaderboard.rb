@@ -1,6 +1,5 @@
 class Leaderboard < Salesforce
 
-
   #
   # Returns the public leaderboard results
   # * *Args*    :

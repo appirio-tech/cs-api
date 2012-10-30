@@ -18,6 +18,8 @@ CsApi::Application.routes.draw do
 		match "/accounts/reset_password/:membername" => "accounts#reset_password", :via => :get
 		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put
 
+	  match "/leaderboard" => "leaderboard#index", :via => :get		
+
 	end  
 
 	root :to => redirect("http://www.cloudspokes.com")
