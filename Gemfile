@@ -4,7 +4,7 @@ gem 'rails', '3.2.6'
 
 gem 'databasedotcom'
 gem 'databasedotcom-rails'
-
+gem 'forcifier', git: 'git://github.com/jeffdonthemic/forcifier.git'
 gem 'rocket_pants', '~> 1.0'
 gem 'httparty'
 gem 'pg'

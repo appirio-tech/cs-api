@@ -1,7 +1,5 @@
 class V1::MembersController < V1::ApplicationController
 
-	require 'forcifier'
-
 	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create]
 
 	# inherit from actual member model. Members in this controller uses the
@@ -145,31 +143,31 @@ class V1::MembersController < V1::ApplicationController
 	protected
 
 		def index_fields
-			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
+			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
 		end
 
 		def index_order_by
-			params[:order_by] ? Forcifier.enforce_fields(params[:order_by]) : 'total_wins__c'
+			params[:order_by] ? Forcifier::FieldMassager.enforce_fields(params[:order_by]) : 'total_wins__c'
 		end
 
     def find_by_membername_fields
-      params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_MEMBER_FIELDS
+      params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_MEMBER_FIELDS
     end    
 
 		def search_fields
-			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
+			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
 		end
 
 		def payments_fields
-			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_PAYMENT_FIELDS
+			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_PAYMENT_FIELDS
 		end		
 
 		def payments_order_by
-			params[:order_by] ? Forcifier.enforce_fields(params[:order_by]) : 'id'
+			params[:order_by] ? Forcifier::FieldMassager.enforce_fields(params[:order_by]) : 'id'
 		end				
 
 		def recommendations_fields
-			params[:fields] ? Forcifier.enforce_fields(params[:fields]) : DEFAULT_RECOMMENDATION_FIELDS			
+			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_RECOMMENDATION_FIELDS			
 		end		
 
 end
