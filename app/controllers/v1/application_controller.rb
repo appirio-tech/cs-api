@@ -35,6 +35,21 @@ class V1::ApplicationController < RocketPants::Base
     error! :unauthenticated if !authorized
   end   
 
+  # for 'order_by' params, it could be passed as 'wins desc'
+  # so need to enforce 'wins' and not desc
+  def enforce_order_by_params(order_by, default_return)
+    if order_by
+      if order_by.split(' ').length.eql?(1)
+        Forcifier::FieldMassager.enforce_fields(order_by)
+      else 
+        # if it has something like 'wins desc'
+        Forcifier::FieldMassager.enforce_fields(order_by.split(' ').first) + ' ' + order_by.split(' ').second
+      end
+    else
+      default_return
+    end    
+  end  
+
   private
 
     # parses the api_key from the Authorization request header:
