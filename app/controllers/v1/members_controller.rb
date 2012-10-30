@@ -147,7 +147,7 @@ class V1::MembersController < V1::ApplicationController
 		end
 
 		def index_order_by
-			params[:order_by] ? Forcifier::FieldMassager.enforce_fields(params[:order_by]) : 'total_wins__c'
+      enforce_order_by_params(params[:order_by], 'total_wins__c')
 		end
 
     def find_by_membername_fields
@@ -163,7 +163,7 @@ class V1::MembersController < V1::ApplicationController
 		end		
 
 		def payments_order_by
-			params[:order_by] ? Forcifier::FieldMassager.enforce_fields(params[:order_by]) : 'id'
+      enforce_order_by_params(params[:order_by], 'id')
 		end				
 
 		def recommendations_fields
