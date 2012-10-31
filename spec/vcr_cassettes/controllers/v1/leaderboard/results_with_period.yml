@@ -25,15 +25,15 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Wed, 31 Oct 2012 00:05:35 GMT
+      - Wed, 31 Oct 2012 00:05:38 GMT
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1351641935469","instance_url":"https://cs10.salesforce.com","signature":"PU4Y5ajEq5BKjMRroaOVf7SFtcQvh5pr0to+5QsTdj0=","access_token":"00DJ00000007l7H!AQQAQNTqvkxYAzZ8q_S4z_wM9fstiZZI8wqsgIQugEpKkKSH1yQ3F0YykE7Q4Uyjq7fhux6g8v7e_ALS.0M5cBvU2xCxnaFS"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1351641939037","instance_url":"https://cs10.salesforce.com","signature":"fYcnoSHT6fZue+qlN4+V/2oixvmzkg11087Fd4FVUwQ=","access_token":"00DJ00000007l7H!AQQAQNTqvkxYAzZ8q_S4z_wM9fstiZZI8wqsgIQugEpKkKSH1yQ3F0YykE7Q4Uyjq7fhux6g8v7e_ALS.0M5cBvU2xCxnaFS"}'
     http_version: '1.1'
-  recorded_at: Wed, 31 Oct 2012 00:05:35 GMT
+  recorded_at: Wed, 31 Oct 2012 00:05:39 GMT
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/leaderboard?1=1&limit=1000
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/leaderboard?1=1&period=month&limit=1000
     body:
       encoding: US-ASCII
       string: ''
@@ -54,12 +54,12 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Wed, 31 Oct 2012 00:05:35 GMT
+      - Wed, 31 Oct 2012 00:05:39 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"total_money":"600.0","wins":"0","country__c":"Afghanistan","active":"0","profile_pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","username":"jeffdonthemic"},{"total_money":"50.0","wins":"0","country__c":null,"active":"1","profile_pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","username":"mess"}]'
+      string: ! '[]'
     http_version: '1.1'
-  recorded_at: Wed, 31 Oct 2012 00:05:36 GMT
+  recorded_at: Wed, 31 Oct 2012 00:05:39 GMT
 recorded_with: VCR 2.2.5
