@@ -1,5 +1,7 @@
 # CloudSpokes API
 
+A full list of the API controllers and models is available [here](https://docs.google.com/a/appirio.com/spreadsheet/ccc?key=0AibvDu-BSYDZdDdWTHFKcjVwVDlKS3FieE1wZHhCbVE#gid=0)
+
 ## Key Features
 
 1. Built using [Rocket Pants!](https://github.com/filtersquad/rocket_pants) so it fully supports versioning (v1 currently).
