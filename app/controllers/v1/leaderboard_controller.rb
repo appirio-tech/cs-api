@@ -21,7 +21,7 @@ class V1::LeaderboardController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def index
+	def public
 		expose Leaderboard.public(@oauth_token, :period => params[:period] || nil, 
       :category => params[:category] || nil, :limit => params[:limit] || 1000)
 	end

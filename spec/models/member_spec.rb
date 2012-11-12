@@ -115,7 +115,8 @@ describe Member do
   describe "payments" do
 	  it "should return payments successfully" do
 	    VCR.use_cassette "models/members/payments_success" do
-	      results = Member.payments(@public_oauth_token, 'jeffdonthemic', 'id,name', 'name')
+	      results = Member.payments(@public_oauth_token, 
+	      	'jeffdonthemic', 'id,name', 'name')
 	      # should return an array
 	      results.count.should >= 0
 	      results.first.should have_key('name')

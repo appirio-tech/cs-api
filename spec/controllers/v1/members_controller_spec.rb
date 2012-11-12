@@ -179,6 +179,16 @@ describe V1::MembersController do
 
 	end  		
 
+	describe "Challenges" do
+		it "should return challenges successfully" do
+			VCR.use_cassette "controllers/v1/members/challenges" do
+				request.env['oauth_token'] = @public_oauth_token
+				get 'challenges', 'membername' => 'jeffdonthemic'
+				response.should be_success
+			end
+		end
+	end  	
+
 	describe "Payments" do
 		it "should return payments successfully" do
 			VCR.use_cassette "controllers/v1/members/payments" do

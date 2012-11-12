@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/participants/jeffdonthemic?challengeId=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQCWwml0xaUXJlmZ3T.1yh8m_4VgmdGQssqsTk_E8YUzsR47VJANuefvqfaqzUbY_PF45YSzGXyqSkV3PpmF3kZpCYxf9
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Sat, 03 Nov 2012 19:38:11 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HRnQMAW"},"Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000002ZBv7MAG"},"Name":"Test
+        Challenge 1","Id":"a0GJ0000002ZBv7MAG"},"Name":"CP-39459","Has_Submission__c":false,"Money_Awarded__c":0.00,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Valid_Submissions__c":0,"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA"},"Member__c":"a0IJ0000000d0r8MAA","Send_Discussion_Emails__c":true,"Id":"a0AJ0000004HRnQMAW","Status__c":"Registered","Challenge__c":"a0GJ0000002ZBv7MAG"}]'
+    http_version: '1.1'
+  recorded_at: Sat, 03 Nov 2012 19:38:11 GMT
+recorded_with: VCR 2.2.5

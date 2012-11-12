@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/jeffdonthemic/forcifier.git
-  revision: ab5ccc54c0a9bba9d941c2ffdf69b76696b338ed
+  revision: c7fbb7d13cfb1213b18a2ad80a1403b2fbe66dfc
   specs:
-    forcifier (0.0.1)
+    forcifier (0.0.2)
 
 GEM
   remote: https://rubygems.org/

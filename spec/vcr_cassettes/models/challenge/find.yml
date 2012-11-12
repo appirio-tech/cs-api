@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/challenges/8?comments=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQH9HuRy0LqL79cIG.HKnpcye9QNWai5QSMQyyiyHv4m5d_UGsbV99LK2okixjDra0QvfDADcgfE8F76TmXcDj7ZLCKIT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Wed, 07 Nov 2012 22:48:53 GMT
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000006VS5LMAW"},"Discussion_Board__c":"Show","Prize_Type__c":"Currency","Total_Prize_Money__c":22424,"End_Date__c":"2012-04-17T18:02:00.000+0000","Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CFIAY"},"Name":"CC-14359","Category__c":"a07J00000038esJIAQ","Display_Name__c":"Heroku","Id":"a08J0000002b4CFIAY","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CEIAY"},"Name":"CC-14358","Category__c":"a07J00000038esMIAQ","Display_Name__c":"Java","Id":"a08J0000002b4CEIAY","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Registered_Members__c":0,"Terms_of_Service__c":"a0kJ0000000AoTDIA0","Submissions__c":0,"Name":"RSpec
+        Challenge","Challenge_Prizes__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Prize__c","url":"/services/data/v22.0/sobjects/Challenge_Prize__c/a0BJ0000002cICCMA2"},"Place__c":1,"Prize__c":"1000","Id":"a0BJ0000002cICCMA2","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Prize__c","url":"/services/data/v22.0/sobjects/Challenge_Prize__c/a0BJ0000002cICBMA2"},"Place__c":2,"Prize__c":"122","Id":"a0BJ0000002cICBMA2","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Terms_of_Service__r":{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v22.0/sobjects/Terms_of_Service__c/a0kJ0000000AoTDIA0"},"Default_TOS__c":true,"Id":"a0kJ0000000AoTDIA0"},"Top_Prize__c":"1000","Challenge_Id__c":"8","Challenge_Type__c":"Code","Submission_Details__c":"<em>&#39;Some
+        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","Id":"a0GJ0000006VS5LMAW","Winner_Announced__c":"2012-05-17","Description__c":"sample
+        Description","Is_Open__c":"false","Start_Date__c":"2012-03-17T18:02:00.000+0000","Requirements__c":"Hello
+        this is a sample requirement with some interesting stuff like<br><br>Bullets<br><ul><li>Bull1</li><li>Bull2</li></ul>\n<div
+        style=\"text-align: center; \">Links <br><br><a href=\"http://developer.force.com\"
+        target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
+        - Italics<br></em></strike><br><br>","Release_to_Open_Source__c":false,"Status__c":"Planned"}]'
+    http_version: '1.1'
+  recorded_at: Wed, 07 Nov 2012 22:48:54 GMT
+recorded_with: VCR 2.2.5
