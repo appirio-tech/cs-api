@@ -19,4 +19,17 @@ class Salesforce
     get(ENV['SFDC_REST_API_URL']+"/query?q=#{esc soql}")
   end
 
+  #
+  # Makes generic 'get' apex rest calls
+  # * *Args*    :
+  #   - url_string -> the string to be appended to teh end of the url
+  # * *Returns* :
+    #   - a results object
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.get_apex_rest(url_string)
+    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL']+"#{url_string}"))
+  end
+
 end
