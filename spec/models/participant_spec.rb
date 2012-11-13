@@ -47,7 +47,7 @@ describe Participant do
   describe "'update'" do
 	  it "should update a participant record successfully" do
 	    VCR.use_cassette "models/participants/update_success" do
-	      results = Participant.create(@public_oauth_token, 'jeffdonthemic', 
+	      results = Participant.update(@public_oauth_token, 'jeffdonthemic', 
 	      	@challenge_id, {'status' => 'Watching'})
 	      results[:success].should == 'true'
 	      results[:message].should have(18).characters

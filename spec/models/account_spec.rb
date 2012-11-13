@@ -191,6 +191,17 @@ describe Account do
       end
     end  
 
-  end    
+  end   
+
+  describe "activate" do
+    it "should successfully activate an account" do
+      VCR.use_cassette "models/accounts/activate" do
+        results = Account.activate(@public_oauth_token, 
+          @rspec_user1_name)
+        puts results.should == true
+      end
+    end
+
+  end      
 
 end

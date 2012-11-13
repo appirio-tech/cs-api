@@ -116,6 +116,49 @@ describe Challenge do
 		  	results[:challengeId].to_i.should be_a_kind_of(Numeric)
 		  end
 	  end
-  end  	    
+  end  	
+
+  describe "Challenge participants" do
+	  it "should a collection with the correct keys" do
+	  	VCR.use_cassette "models/challenge/participants" do
+		  	results = Challenge.participants(@public_oauth_token, @challenge_id)
+		  	results.first.should have_key('has_submission')
+		  	results.first.should have_key('member')
+		  	results.first.should have_key('id')
+		  	results.first.should have_key('status')
+		  	results.first.should have_key('challenge')
+		  	results.first['member__r'].should have_key('name')
+		  	results.first['member__r'].should have_key('id')
+		  	results.first['member__r'].should have_key('summary_bio')
+		  	results.first['member__r'].should have_key('total_wins')
+		  	results.first['member__r'].should have_key('profile_pic')
+		  end
+	  end
+  end       
+
+  describe "Challenge comments" do
+	  it "should a collection with the correct keys" do
+	  	VCR.use_cassette "models/challenge/comments" do
+		  	results = Challenge.comments(@public_oauth_token, @challenge_id)
+		  	results.first.should have_key('comment')
+		  	results.first.should have_key('member')
+		  	results.first.should have_key('createddate')
+		  	results.first.should have_key('id')
+				results.first.should have_key('challenge')
+				results.first['member__r'].should have_key('id')
+				results.first['member__r'].should have_key('name')
+				results.first['member__r'].should have_key('profile_pic')
+				results.first['challenge_comments__r']['records'].first.should have_key('comment')
+				results.first['challenge_comments__r']['records'].first.should have_key('member')
+				results.first['challenge_comments__r']['records'].first.should have_key('createddate')
+				results.first['challenge_comments__r']['records'].first.should have_key('id')
+				results.first['challenge_comments__r']['records'].first.should have_key('reply_to')
+				results.first['challenge_comments__r']['records'].first.should have_key('member')
+				results.first['challenge_comments__r']['records'].first['member__r'].should have_key('name')
+				results.first['challenge_comments__r']['records'].first['member__r'].should have_key('id')
+				results.first['challenge_comments__r']['records'].first['member__r'].should have_key('profile_pic')
+		  end
+	  end
+  end      
 
 end

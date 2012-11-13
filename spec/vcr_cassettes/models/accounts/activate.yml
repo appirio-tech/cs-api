@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: put
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/participants/jeffdonthemic?challengeid=2&status__c=Watching
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/activate/rspec-test-member-1
     body:
       encoding: US-ASCII
       string: ''
@@ -23,12 +23,12 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Tue, 13 Nov 2012 00:47:47 GMT
+      - Tue, 13 Nov 2012 00:53:57 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"true","Message":"a0AJ0000004HuBZMA0"}'
+      string: ! '{"Success":"true","Message":"User is currently active."}'
     http_version: '1.1'
-  recorded_at: Tue, 13 Nov 2012 00:47:47 GMT
+  recorded_at: Tue, 13 Nov 2012 00:53:57 GMT
 recorded_with: VCR 2.2.5

@@ -12,6 +12,7 @@ gem 'thin'
 gem 'dalli'
 gem 'debugger'
 gem 'airbrake'
+gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
 
 group :development, :test do
 	gem 'sqlite3-ruby'
