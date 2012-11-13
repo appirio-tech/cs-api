@@ -39,7 +39,8 @@ CsApi::Application.routes.draw do
 	  match "/leaderboard" => "leaderboard#public", :via => :get		
 
 	  # misc
-	  match "/categories" => "categories#all", :via => :get		
+	  match "/categories" => "categories#all", :via => :get	
+	  match "/tos" => "tos#all", :via => :get		
 	  match "/tos/:id" => "tos#find", :via => :get		
 
 	end  
