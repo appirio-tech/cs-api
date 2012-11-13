@@ -22,6 +22,7 @@ CsApi::Application.routes.draw do
 
 		# challenges	
 		match "/challenges" => "challenges#open", :via => :get
+		match "/challenges" => "challenges#create", :via => :post		
 		match "/challenges/closed" => "challenges#closed", :via => :get
 		match "/challenges/recent" => "challenges#recent", :via => :get
 		match "/challenges/:challenge_id" => "challenges#find", :via => :get
