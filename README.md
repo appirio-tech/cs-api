@@ -12,6 +12,11 @@ You can see the code metrics at [cloudspokes/cs-api](https://codeclimate.com/git
 4. Support for passing existing OAuth token via the header. Therefore, if no OAuth token is passed, the API will fetch a public token therfore implementing a public API functionality. Support for an exising OAuth token or Admin token being passed via the header will be passed through to Salesforce.
 5. Fully tested with RSpec and VCR.
 
+## Key Features
+
+1. Add JSONP support via RocketPants
+2. Implement better pagination with Header Metadata via RocketPants
+
 ## Contributors
 
 - [Jeff Douglas](https://github.com/jeffdonthemic) - Main developer, current maintainer.
