@@ -72,13 +72,11 @@ describe V1::ChallengesController do
       end
     end 
 
-    it "should return nil for a non-existent challengex" do
+    it "should return nil for a non-existent challenges" do
       VCR.use_cassette "controllers/v1/challenges/find_non_exist" do
         request.env['oauth_token'] = @public_oauth_token
         get 'find', 'challenge_id' => '12345678'
-        response.should be_success
-        h = JSON.parse(response.body)['response']
-        h.should be_nil
+        response.response_code.should == 404
       end
     end 
 

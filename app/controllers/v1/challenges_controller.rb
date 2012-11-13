@@ -17,10 +17,12 @@ class V1::ChallengesController < V1::ApplicationController
   #   - JSON a challenge object containing a terms_of_service__r
   #   and collection of challenge_categories__r and challenge_prizes__r
   # * *Raises* :
-  #   - ++ ->
+  #   - ++ -> 404 if not found
   #  	
 	def find
-		expose Challenge.find(@oauth_token, params[:challenge_id].strip)
+		c = Challenge.find(@oauth_token, params[:challenge_id].strip)
+		error! :not_found if c.nil?
+		expose c
 	end					
 
   #
