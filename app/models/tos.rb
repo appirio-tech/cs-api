@@ -1,6 +1,22 @@
 class Tos < Salesforce
 
   #
+  # Returns all TOS records
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  # * *Returns* :
+  #   - JSON a collection of TOS objects
+  # * *Raises* :
+  #   - ++ ->
+  # 
+  def self.all(access_token) 
+    set_header_token(access_token)   
+    query_results = soql_query("select id, name, terms__c, default_tos__c 
+      from terms_of_service__c order by name")
+    Forcifier::JsonMassager.deforce_json(query_results['records'])
+  end  
+
+  #
   # Returns a specific TOS by ID using the SFDC REST API.
   # * *Args*    :
   #   - access_token -> the oauth token to use

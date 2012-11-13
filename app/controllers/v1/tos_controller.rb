@@ -6,6 +6,10 @@ class V1::TosController < V1::ApplicationController
 
 	end	
 
+  def all
+    expose Tos.all(@oauth_token)
+  end     
+
   #
   # Returns a specific TOS by ID
   # * *Args*    :

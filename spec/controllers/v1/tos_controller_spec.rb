@@ -21,4 +21,14 @@ describe V1::TosController do
     end       
   end
 
+  describe "'all'" do
+    it "should return successfully" do
+      VCR.use_cassette "controllers/v1/tos/all" do
+        request.env['oauth_token'] = @public_oauth_token
+        get 'all'
+        response.should be_success
+      end
+    end       
+  end  
+
 end

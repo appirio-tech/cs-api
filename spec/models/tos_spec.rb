@@ -23,4 +23,16 @@ describe Tos do
 	  end
   end  	
 
+  describe "'all' tos" do
+    it "should return a collection with correct keys" do
+      VCR.use_cassette "models/tos/all" do
+        results = Tos.all(@public_oauth_token)
+        results.first.should have_key('id')
+        results.first.should have_key('name')
+        results.first.should have_key('terms')
+        results.first.should have_key('default_tos')
+      end
+    end
+  end     
+
 end

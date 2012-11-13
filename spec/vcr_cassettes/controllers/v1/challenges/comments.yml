@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/comments/8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 13 Nov 2012 10:53:07 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Challenge_Comment__c","url":"/services/data/v22.0/sobjects/Challenge_Comment__c/a09J0000003Tc08IAC"},"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Comment__c":"Good
+        sutff!!","Member__c":"a0IJ0000000d0rAMAQ","CreatedDate":"2012-11-13T01:13:34.000+0000","Challenge_Comments__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Comment__c","url":"/services/data/v22.0/sobjects/Challenge_Comment__c/a09J0000003Tc61IAC"},"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Comment__c":"test","Member__c":"a0IJ0000000d0r8MAA","CreatedDate":"2012-11-13T01:14:03.000+0000","Id":"a09J0000003Tc61IAC","Reply_To__c":"a09J0000003Tc08IAC"}]},"Id":"a09J0000003Tc08IAC","Challenge__c":"a0GJ0000006VS5LMAW"}]'
+    http_version: '1.1'
+  recorded_at: Tue, 13 Nov 2012 10:53:07 GMT
+recorded_with: VCR 2.2.5

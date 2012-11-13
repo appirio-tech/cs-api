@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/challenges/8?comments=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 13 Nov 2012 10:47:46 GMT
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000006VS5LMAW"},"Total_Prize_Money__c":22424,"Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CFIAY"},"Name":"CC-14359","Category__c":"a07J00000038esJIAQ","Display_Name__c":"Heroku","Id":"a08J0000002b4CFIAY","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CEIAY"},"Name":"CC-14358","Category__c":"a07J00000038esMIAQ","Display_Name__c":"Java","Id":"a08J0000002b4CEIAY","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Terms_of_Service__c":"a0kJ0000000AoTDIA0","Submissions__c":0,"Challenge_Id__c":"8","Challenge_Type__c":"Code","Start_Date__c":"2012-03-17T18:02:00.000+0000","Is_Open__c":"true","Requirements__c":"Hello
+        this is a sample requirement with some interesting stuff like<br><br>Bullets<br><ul><li>Bull1</li><li>Bull2</li></ul>\n<div
+        style=\"text-align: center; \">Links <br><br><a href=\"http://developer.force.com\"
+        target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
+        - Italics<br></em></strike><br><br>","Release_to_Open_Source__c":false,"Challenge_Participants__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HuN4MAK"},"Has_Submission__c":false,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA"},"Member__c":"a0IJ0000000d0r8MAA","CreatedDate":"2012-11-13T01:03:52.000+0000","Id":"a0AJ0000004HuN4MAK","Status__c":"Registered","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HuN8MAK"},"Has_Submission__c":false,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ"},"Member__c":"a0IJ0000000d0rAMAQ","CreatedDate":"2012-11-13T01:03:42.000+0000","Id":"a0AJ0000004HuN8MAK","Status__c":"Registered","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Prize_Type__c":"Currency","Discussion_Board__c":"Show","End_Date__c":"2013-04-17T18:02:00.000+0000","Registered_Members__c":2,"Challenge_Comments__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Comment__c","url":"/services/data/v22.0/sobjects/Challenge_Comment__c/a09J0000003Tc08IAC"},"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Comment__c":"Good
+        sutff!!","Member__c":"a0IJ0000000d0rAMAQ","CreatedDate":"2012-11-13T01:13:34.000+0000","Id":"a09J0000003Tc08IAC","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Comment__c","url":"/services/data/v22.0/sobjects/Challenge_Comment__c/a09J0000003Tc61IAC"},"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA","Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Comment__c":"test","Member__c":"a0IJ0000000d0r8MAA","CreatedDate":"2012-11-13T01:14:03.000+0000","Id":"a09J0000003Tc61IAC","Reply_To__c":"a09J0000003Tc08IAC","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Name":"RSpec
+        Challenge","Challenge_Prizes__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Prize__c","url":"/services/data/v22.0/sobjects/Challenge_Prize__c/a0BJ0000002cICCMA2"},"Place__c":1,"Prize__c":"1000","Id":"a0BJ0000002cICCMA2","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Prize__c","url":"/services/data/v22.0/sobjects/Challenge_Prize__c/a0BJ0000002cICBMA2"},"Place__c":2,"Prize__c":"122","Id":"a0BJ0000002cICBMA2","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Top_Prize__c":"1000","Terms_of_Service__r":{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v22.0/sobjects/Terms_of_Service__c/a0kJ0000000AoTDIA0"},"Default_TOS__c":true,"Id":"a0kJ0000000AoTDIA0"},"Id":"a0GJ0000006VS5LMAW","Submission_Details__c":"<em>&#39;Some
+        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","Description__c":"sample
+        Description","Winner_Announced__c":"2014-05-17","Status__c":"Created"}]'
+    http_version: '1.1'
+  recorded_at: Tue, 13 Nov 2012 10:47:46 GMT
+recorded_with: VCR 2.2.5

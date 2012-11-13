@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=true&orderby=name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 13 Nov 2012 10:43:14 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000006VS5LMAW"},"Name":"RSpec
+        Challenge","End_Date__c":"2013-04-17T18:02:00.000+0000","Total_Prize_Money__c":22424,"Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CFIAY"},"Display_Name__c":"Heroku","Id":"a08J0000002b4CFIAY","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002b4CEIAY"},"Display_Name__c":"Java","Id":"a08J0000002b4CEIAY","Challenge__c":"a0GJ0000006VS5LMAW"}]},"Registered_Members__c":2,"Challenge_Id__c":"8","Challenge_Type__c":"Code","Id":"a0GJ0000006VS5LMAW","Is_Open__c":"true","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":155}]'
+    http_version: '1.1'
+  recorded_at: Tue, 13 Nov 2012 10:43:14 GMT
+recorded_with: VCR 2.2.5

@@ -93,6 +93,7 @@ describe Challenge do
 		  	results = Challenge.create(@public_oauth_token, json)
 		  	results[:success].should == true
 		  	results[:challengeId].to_i.should be_a_kind_of(Numeric)
+		  	results[:errors].count.should == 0
 		  end
 	  end
 	  it "should return errors gracefully" do

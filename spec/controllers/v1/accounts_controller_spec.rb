@@ -7,7 +7,8 @@ describe V1::AccountsController do
     VCR.use_cassette "controllers/v1/accounts/get_public_oauth_token", :record => :all do
       config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
       client = Databasedotcom::Client.new(config)
-      @public_oauth_token = client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']
+      @public_oauth_token = client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], 
+        :password => ENV['SFDC_PUBLIC_PASSWORD']
     end
 
     ApiKey.create!
@@ -121,7 +122,8 @@ describe V1::AccountsController do
       VCR.use_cassette "controllers/v1/accounts/password_update" do
         request.env['oauth_token'] = @public_oauth_token
         request.env['Authorization'] = 'Token token="'+@api_key+'"'
-        put 'update_password', 'membername' => 'mandrill4', 'passcode' => '20367', 'new_password' => 'ABCDE12345!'
+        put 'update_password', 'membername' => 'mandrill4', 'passcode' => '20367', 
+          'new_password' => 'ABCDE12345!'
         h = JSON.parse(response.body)['response']
         keys = %w{success message}
         keys.each do |k|

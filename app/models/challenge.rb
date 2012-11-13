@@ -28,33 +28,28 @@ class Challenge < Salesforce
 
   def self.find(access_token, challenge_id)  
     set_header_token(access_token) 
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] +
-    	"/challenges/#{challenge_id}?comments=true")).first
+    get_apex_rest("/challenges/#{challenge_id}?comments=true").first
   end  	
 
   def self.participants(access_token, challenge_id)  
     set_header_token(access_token) 
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] +
-    	"/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name"))
+    get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
   end  	      
 
   def self.comments(access_token, challenge_id)  
     set_header_token(access_token) 
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] +
-    	"/comments/#{challenge_id}"))
+    get_apex_rest("/comments/#{challenge_id}")
   end  	   
 
   def self.all(access_token, open, category, order_by) 
     set_header_token(access_token)   
     qry_category = category.nil? ? '' : "&category=#{esc category}"    
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] +
-    	"/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}"+qry_category))
+    get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}"+qry_category)
   end
 
   def self.recent(access_token)  
     set_header_token(access_token) 
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] +
-    	'/challenges/recent'))
+    get_apex_rest('/challenges/recent')
   end  
 
 end

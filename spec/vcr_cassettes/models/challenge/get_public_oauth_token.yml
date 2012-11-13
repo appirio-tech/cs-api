@@ -25,10 +25,10 @@ http_interactions:
       transfer-encoding:
       - chunked
       date:
-      - Tue, 13 Nov 2012 02:01:52 GMT
+      - Tue, 13 Nov 2012 11:22:40 GMT
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1352772112570","instance_url":"https://cs10.salesforce.com","signature":"hhUM6Vfh82HS0xAQr9tl8pLjTpHGLmkzFoQ5gjEhsZ8=","access_token":"00DJ00000007l7H!AQQAQO45PIy_M.9h6T9ZB73Ml5G.lOo6zHDFAEFYwtInRFm3EzKIv947BwlxNOS0JKBCQ_eh7Ug8tRI34jGvbdNcEYyXENQ7"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005U0000000NdzaIAC","issued_at":"1352805760546","instance_url":"https://cs10.salesforce.com","signature":"fpAbX7Gr+why679ehMr0Hi8clkIpX0QwiLl2ZJdr8Ok=","access_token":"00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4"}'
     http_version: '1.1'
-  recorded_at: Tue, 13 Nov 2012 02:01:52 GMT
+  recorded_at: Tue, 13 Nov 2012 11:22:40 GMT
 recorded_with: VCR 2.2.5
