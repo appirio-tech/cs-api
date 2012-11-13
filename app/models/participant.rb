@@ -13,8 +13,7 @@ class Participant < Salesforce
   #  
   def self.status(access_token, membername, challenge_id) 
     set_header_token(access_token)  
-    Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL'] + 
-    	"/participants/#{esc membername}?challengeId=#{challenge_id}").first)
+    get_apex_rest("/participants/#{esc membername}?challengeId=#{challenge_id}").first
   end		
 
   #
