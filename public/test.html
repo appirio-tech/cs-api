@@ -44,28 +44,5 @@
 	</a></li>
 </ul>
 
-<h1>CURL</h1>
-
-<ul>
-	<li>curl http://localhost:3002/v1/members/search/jeffdonthemic -H 'oauth_token: 00DU0000000H5Ip!AQQAQGhd1iZu8eGuVtCr667emTbJgvNSaSnjZ.Cobonjl7m8zHH3Af9U491FoxxQWoZDjHVi6Tms7ELqVVnlzXNsiWjxc40a'</li>
-	<li>curl http://localhost:3002/v1/accounts/find?membername=jeffdonthemic&service=github -H 'Authorization: Token token="6757b55b396c51948422d915ba1f2ca2"'</li>
-	<li>curl "http://localhost:3002/v1/accounts/find?membername=jeffdonthemic&service=github"</li>
-	<li>curl "http://localhost:3002/v1/accounts/authenticate?membername=jeffdonthemic-fb&password=changeme"</li>
-	<li>curl -v -H "Authorization: Token token="6757b55b396c51948422d915ba1f2ca2"" -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"username": "testemail1", "email": "testemail1@jeffdougls.com", "password": "1234ABCD"}'  http://localhost:3002/v1/accounts/create</li>
-	<li>curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"fields": {"status": "Watching"}}'  http://localhost:3002/v1/participants/jeffdonthemic/2</li> 	
-	<li>curl -v -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d ' {"fields": {"status": "Registered"}}'  http://localhost:3002/v1/participants/jeffdonthemic/2</li> 
-	<li>curl -v -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d ' {"data": {"challenge" : {"detail" : {"description":"Updated description"}, "categories" : [{"name" : "javascript"}, {"name": "ruby"}]}}}'  http://localhost:3002/v1/challenges/2</li> 	
-</ul>
-
-curl https://cs10.salesforce.com/services/data/v25.0/sobjects/Challenge_Participant__c/ -H "Authorization: Bearer 00DJ00000007l7H\!AQQAQMC9bwamBN0bZxflTVSLxk28mYw2iz_6o8BLa7CRgPzsrwSFXgBGAM671IyEZ8lT1EROM5t1ef4wqJpap7BGFTopW0Yz" -H "Content-Type: application/json" -d '{"Name" : "Express Logistics and Transport" }'
-
-curl -X GET https://cs10.salesforce.com/services/data/v25.0/sobjects/Account/001J000000GLfCZIA1 -H "Authorization: OAuth 00DJ00000007l7H\!AQQAQFoO2UJWwn5FFfr.IfjQK70Y1zkN1jgOF7013Dlc44RzalGf2WVmt0vhbE.oMQ.4QWPqoi5KqzP2j5bX4jYgUDCwhvGp.txt"  -H "X-PrettyPrint:1"
-
-curl -d "grant_type=password&client_id=3MVG9_7ddP9KqTzehRpxziFtY9nmn2oOVDv8tskZz8EOojfspAwywZNShuvC9ReP3Q3xtOgsdywVqd3iaMD_i&client_secret=7790069153057450798&username=jeffdonthemic@m.cloudspokes.com.sandbox&password=cloudspokes963" https://test.salesforce.com/services/oauth2/token
-
-
-
-
-
 </body>
 </html>
