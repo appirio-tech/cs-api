@@ -1,6 +1,6 @@
 class V1::ChallengesController < V1::ApplicationController
 
-	before_filter :restrict_access, :only => [:create, :update]
+	before_filter :restrict_access, :only => [:create, :update, :survey]
 
 	# inherit from actual challenge model. Challenges in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -135,6 +135,22 @@ class V1::ChallengesController < V1::ApplicationController
   #  
 	def comments
 		expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
-	end				
+	end		
+
+  #
+  # Creates a new survey for a challenge
+  # * *Args*    :
+  #   - access_token -> the oauth token to use 
+  #   - challenge_id -> the id of the challenge to create the survey for
+  #   - params[:data] -> the hash containing the survey responses
+  # * *Returns* :
+  #   - a hash containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def survey
+    expose Survey.create(@oauth_token, params[:challenge_id].strip, 
+      params[:data])
+  end     		
 
 end
