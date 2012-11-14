@@ -29,7 +29,7 @@ CsApi::Application.routes.draw do
 		match "/challenges/:challenge_id" => "challenges#update", :via => :put		
 		match "/challenges/:challenge_id/comments" => "challenges#comments", :via => :get
 		match "/challenges/:challenge_id/participants" => "challenges#participants", :via => :get
-		match "/challenges/:challenge_id/survey", => "challenges#survey", :via => :post	
+		match "/challenges/:challenge_id/survey" => "challenges#survey", :via => :post	
 
 		# participants
 		match "/participants/:membername/:challenge_id" => "participants#current_status", :via => :get
