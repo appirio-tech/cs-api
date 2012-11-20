@@ -37,8 +37,9 @@ CsApi::Application.routes.draw do
 		match "/participants/:membername/:challenge_id" => "participants#update", :via => :put	
 
 		# leaderboard
-	  match "/leaderboard" => "leaderboard#public", :via => :get		
-
+	  match "/leaderboard" => "leaderboard#public", :via => :get
+	  # stats
+	  match "/stats" => "stats#public", :via => :get
 	  # misc
 	  match "/categories" => "categories#all", :via => :get	
 	  match "/tos" => "tos#all", :via => :get		
