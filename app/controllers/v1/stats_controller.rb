@@ -20,19 +20,7 @@ class V1::StatsController < V1::ApplicationController
   #   - ++ ->
   #  
   def public
-    sessionId = @oauth_token
-    member_stats = Rails.cache.fetch('member_stats', expires_in: 15.minute) do
-      puts "[INFO][Stats] Fetching member count from SOAP service as cache expired."
-      client = Savon.client(ENV['STATS_WSDL_URL'])
-      response = client.request(:stat, :platform_stats) do
-        soap.namespaces["xmlns:stat"] = "http://soap.sforce.com/schemas/class/StatsWS"
-        soap.header = { 'stat:SessionHeader' => { 'stat:sessionId' => sessionId }}
-      end
-      response.to_array(:platform_stats_response, :result).first
-    end
-    platform_stats = Stats.public(@oauth_token)
-    platform_stats['members'] = member_stats[:members]
-    expose platform_stats
+    expose Stats.public(@oauth_token)
   end  
 
 end
