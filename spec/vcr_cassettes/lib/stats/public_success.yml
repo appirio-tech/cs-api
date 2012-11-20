@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs10.salesforce.com/services/apexrest/v.9/stats
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DJ00000007l7H!AQQAQG.Gm9wtiltR4zJDuUipGHzu9.DBrfLAr4u5WFIUvrFY7.dEWvPtFG4xXChxeixEHjeBMJ8P3arx5uOvORD3jA2GSc4t
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - ''
+      content-type:
+      - application/json; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Tue, 20 Nov 2012 15:26:00 GMT
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"challenges_won":"1","featured_challenge_id":"2","featured_challenge_details":"Updated
+        description","challenges_open":"1","featured_member_wins":"0","money_up_for_grabs":"22424.0","featured_challenge_prize":"$100","money_pending":"650.0","featured_member_pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","entries_submitted":"1","featured_member_active":"0","featured_member_username":"jeffdonthemic","featured_challenge_name":"Test
+        Challenge 1","featured_member_money":"600.00"}'
+    http_version: '1.1'
+  recorded_at: Tue, 20 Nov 2012 15:26:00 GMT
+recorded_with: VCR 2.2.5
