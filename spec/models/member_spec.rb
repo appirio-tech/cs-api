@@ -125,6 +125,21 @@ describe Member do
 	  end
   end
 
+  describe "referrals" do
+	  it "should return referrals with the corret keys" do
+	    VCR.use_cassette "models/members/referrals_success" do
+	      results = Member.referrals(@public_oauth_token, 
+	      	'jeffdonthemic')
+	      results.count.should >= 0
+	      results.first.should have_key('signup_date')
+	      results.first.should have_key('referral_money')	
+	      results.first.should have_key('referral_id')	
+	      results.first.should have_key('membername')	
+	      results.first.should have_key('first_year_money')	      
+	    end
+	  end
+  end  
+
   describe "recommendations" do
 	  it "should return recommendations successfully" do
 	    VCR.use_cassette "models/members/recommendations_success" do

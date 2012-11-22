@@ -1,6 +1,6 @@
 class V1::MembersController < V1::ApplicationController
 
-	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create]
+	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, :referrals]
 
 	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -139,6 +139,20 @@ class V1::MembersController < V1::ApplicationController
 		expose Member.recommendation_create(@oauth_token, params[:membername], 
 			params[:recommendation_from_username], params[:recommendation_text])
 	end
+
+  #
+  # Returns all member referrals for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return referrals for
+  # * *Returns* :
+  #   - JSON an array of referral objects 
+  # * *Raises* :
+  #   - ++ ->
+  # 
+  def referrals
+    expose Member.referrals(@oauth_token, params[:membername])
+  end   
 
 	protected
 

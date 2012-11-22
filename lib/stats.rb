@@ -12,7 +12,7 @@ class Stats < Salesforce
   #   
 	def self.public(access_token)
 		set_header_token(access_token)
-    # get the members stats from the soap service
+    # get the members stats from the soap service or cache
     public_member_stats = Rails.cache.fetch('public_member_stats', expires_in: 15.minute) do
       puts "[INFO][Stats] Fetching member count from SOAP service as cache expired."
       client = Savon.client(ENV['STATS_WSDL_URL'])

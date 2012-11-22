@@ -32,7 +32,13 @@ describe V1::MembersController do
 			post 'recommendation_create', 'membername' => 'jeffdonthemic', 
 				'recommendation_from_username' => 'mess', 'recommendation_text' => ''
       response.should_not be_success
-    end          
+    end     
+
+    it "should return 401 for 'referrals'" do
+      request.env['oauth_token'] = @public_oauth_token
+			get 'referrals', 'membername' => 'jeffdonthemic'
+      response.should_not be_success
+    end            
   end  
 
 	describe "'find_by_membername' jeffdonthemic" do
@@ -199,5 +205,16 @@ describe V1::MembersController do
 			end
 		end
 	end  	
+
+	describe "Referrals" do
+		it "should return referrals successfully" do
+			VCR.use_cassette "controllers/v1/members/referrals" do
+				request.env['oauth_token'] = @public_oauth_token
+				request.env['Authorization'] = 'Token token="'+@api_key+'"'
+				get 'referrals', 'membername' => 'jeffdonthemic'
+				response.should be_success
+			end
+		end
+	end  		
 
 end

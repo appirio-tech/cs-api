@@ -151,4 +151,19 @@ class Member < Salesforce
     { :success => results['Success'], :message => results['Message'] }
   end 
 
+  #
+  # Returns a collection of referral objects for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the recommendations for   
+  # * *Returns* :
+  #   - JSON containing a collection of recommendations
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.referrals(access_token, membername) 
+    set_header_token(access_token)    
+    get_apex_rest("/referrals/#{esc membername}")
+  end    
+
 end
