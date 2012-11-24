@@ -1,4 +1,4 @@
-# CloudSpokes API
+# CloudSpokes API [![travis-ci](https://travis-ci.org/cloudspokes/cs-api.png)](https://travis-ci.org/cloudspokes/cs-api) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/cloudspokes/cs-api)
 
 A full list of the API controllers and models is available [here](https://docs.google.com/a/appirio.com/spreadsheet/ccc?key=0AibvDu-BSYDZdDdWTHFKcjVwVDlKS3FieE1wZHhCbVE#gid=0)
 
