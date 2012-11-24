@@ -16,7 +16,7 @@ gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
 gem 'savon'
 
 group :development, :test do
-	gem 'sqlite3-ruby'
+	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.6'
 	gem 'vcr'
 	gem 'fakeweb'
