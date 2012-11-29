@@ -239,4 +239,24 @@ class Account < Salesforce
     end
   end 
 
+  #
+  # Disables a member and their sfdc account
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess)
+  # * *Returns* :  
+  #   - boolean
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.disable(access_token, membername)
+    set_header_token(access_token)
+    results = get(ENV['SFDC_APEXREST_URL'] + "/disable/#{membername}") 
+    if results['Success'].eql?('true') 
+      true
+    else
+      false
+    end
+  end   
+
 end

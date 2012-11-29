@@ -48,6 +48,20 @@ class V1::AccountsController < V1::ApplicationController
   end  
 
   #
+  # Disables a member and their sfdc account
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess)
+   # * *Returns* : 
+  #   - boolean
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def disable
+    expose Account.disable(@oauth_token, params[:membername])
+  end    
+
+  #
   # Finds a user by their membername and service ('cloudspokes' or third party).
   # * *Args*    :
   #   - access_token -> the oauth token to use
