@@ -14,6 +14,7 @@ gem 'debugger'
 gem 'airbrake'
 gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
 gem 'savon'
+gem 'bunny'
 
 group :development, :test do
 	gem 'sqlite3'
