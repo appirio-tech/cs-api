@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=id,name
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=id,name
     body:
       encoding: US-ASCII
       string: ''
@@ -10,25 +10,23 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:28:55 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Fri, 12 Oct 2012 12:57:16 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA"}]'
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Name":"jeffdonthemic","Id":"a0IZ0000000FyJUMA0"}]'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 12:57:18 GMT
+  recorded_at: Wed, 05 Dec 2012 19:28:55 GMT
 recorded_with: VCR 2.2.5

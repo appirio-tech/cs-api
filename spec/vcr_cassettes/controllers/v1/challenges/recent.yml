@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/challenges/recent
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/challenges/recent
     body:
       encoding: US-ASCII
       string: ''
@@ -10,26 +10,25 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:28:57 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Tue, 13 Nov 2012 10:45:10 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000002ZCVoMAO"},"Name":"Test
-        Challenge 2","Total_Prize_Money__c":0,"End_Date__c":"2012-10-11T22:57:00.000+0000","Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08J0000002NsayIAC"},"Name":"CC-14316","Category__c":"a07J00000038esGIAQ","Display_Name__c":"Salesforce.com","Id":"a08J0000002NsayIAC","Challenge__c":"a0GJ0000002ZCVoMAO"}]},"Top_Prize__c":"$100","Challenge_Id__c":"3","Id":"a0GJ0000002ZCVoMAO","Description__c":"test","Challenge_Participants__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HDzYMAW"},"Money_Awarded__c":0.00,"Score__c":0,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ"},"Member__c":"a0IJ0000000d0rAMAQ","Points_Awarded__c":0,"Id":"a0AJ0000004HDzYMAW","Status__c":"Registered","Challenge__c":"a0GJ0000002ZCVoMAO"}]}}]'
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
+        Challenge - Design","Total_Prize_Money__c":0,"End_Date__c":"2012-11-26T02:30:00.000+0000","Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08Z0000000RMChIAO"},"Name":"CC-16799","Category__c":"a07Z0000001S9WlIAK","Display_Name__c":"Heroku","Id":"a08Z0000000RMChIAO","Challenge__c":"a0GZ0000005Vtz1MAC"}]},"Top_Prize__c":"$100","Challenge_Id__c":"15","Id":"a0GZ0000005Vtz1MAC","Description__c":"My
+        cool challenge"}]'
     http_version: '1.1'
-  recorded_at: Tue, 13 Nov 2012 10:45:10 GMT
+  recorded_at: Wed, 05 Dec 2012 19:28:58 GMT
 recorded_with: VCR 2.2.5

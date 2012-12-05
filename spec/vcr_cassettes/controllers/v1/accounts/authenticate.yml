@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9_7ddP9KqTzehRpxziFtY9nmn2oOVDv8tskZz8EOojfspAwywZNShuvC9ReP3Q3xtOgsdywVqd3iaMD_i&client_secret=7790069153057450798&username=test-rspec-create1%40m.cloudspokes.com.sandbox&password=1111AAAAA!
+    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=test-rspec-create1%40m.cloudspokes.com.sandbox&password=1111AAAAA!
     body:
       encoding: US-ASCII
       string: ''
@@ -16,19 +16,15 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:29:13 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       connection:
       - close
-      transfer-encoding:
-      - chunked
-      date:
-      - Mon, 12 Nov 2012 12:10:10 GMT
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DJ00000007l7HMAQ/005J0000000xxxBIAQ","issued_at":"1352722210673","instance_url":"https://cs10.salesforce.com","signature":"ND3xfNwMa2GA0TcR5UPaX2+VYq0eLJYabUhCuU11Zwo=","access_token":"00DJ00000007l7H!AQQAQDL7pNUWAOFQSFc3jRqYqYvmuppshT4SuormoP3dPH9HijX02V2xGrenWngrsHvpjeywESVYr6szLuWpqxCcT8VwRTd_"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005Z0000000fSzFIAU","issued_at":"1354735753527","instance_url":"https://cs11.salesforce.com","signature":"akgoxfLokfsRmRzolCH5Wd3li2AI6lwfn2qa6JL7iLU=","access_token":"00DZ00000007ybt!AQQAQDaTldPi8iRNt3YoyvsCT5rL4cWVVNBvsJSrU1R2shmJchjII1jaPSwKNerLCnuMJl8.EYGvAtjz2vvtjAaCvVIhmD1Q"}'
     http_version: '1.1'
-  recorded_at: Mon, 12 Nov 2012 12:10:10 GMT
+  recorded_at: Wed, 05 Dec 2012 19:29:13 GMT
 recorded_with: VCR 2.2.5

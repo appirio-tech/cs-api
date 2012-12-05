@@ -2,34 +2,31 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/members
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=rspec-test-member-1&email__c=rspec-test-member-1%40test.com&first_name__c=rspec-test-member-1&last_name__c=rspec-test-member-1&third_party_account__c=github&third_party_username__c=rspec-test-member-1%40test.com
+      string: username__c=XBGUFS31&email__c=XBGUFS31%40rspec.cloudspokes.com&first_name__c=XBGUFS31&last_name__c=XBGUFS31&third_party_account__c=github&third_party_username__c=XBGUFS31%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:53:30 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Fri, 12 Oct 2012 13:28:13 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"false","Message":"Username rspec-test-member-1 is not
-        available."}'
+      string: ! '{"Success":"false","Message":"Username XBGUFS31 is not available."}'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 13:28:15 GMT
+  recorded_at: Wed, 05 Dec 2012 19:53:30 GMT
 recorded_with: VCR 2.2.5

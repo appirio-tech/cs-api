@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/admin/challenges
+    body:
+      encoding: US-ASCII
+      string: ! '{"challenge":{"detail":{"winner_announced__c":"2015-05-17","terms_of_service__c":"Standard
+        Terms & Conditions","scorecard_type__c":"Sandbox Scorecard","submission_details__c":"<em>&#39;Some
+        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","status__c":"Planned","start_date__c":"2012-03-17T18:02:00.000+0000","requirements__c":"Hello
+        this is a sample requirement with some interesting stuff like<br><br>Bullets<br><ul><li>Bull1</li><li>Bull2</li></ul>\n<div
+        style=\"text-align: center; \">Links <br><br><a href=\"http://developer.force.com\"
+        target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
+        - Italics<br></em></strike><br><br>","name":"RSpec Challenge","end_date__c":"2014-04-17T18:02:00.000+0000","description__c":"sample
+        Description"},"reviewers":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories":[{"name":"java"},{"name":"heroku"}],"prizes":[{"place__c":2,"points__c":222,"prize__c":"122","value__c":1212},{"place__c":1,"points__c":2120,"prize__c":"1000","value__c":21212}],"commentNotifiers":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}],"reviewers_to_delete":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories_to_delete":[{"name":"java"},{"name":"heroku"}],"prizes_to_delete":[{"place__c":2,"points__c":222,"prize__c":"122","value__c":1212},{"place__c":1,"points__c":2120,"prize__c":"1000","value__c":21212}],"commentNotifiers_to_delete":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}]}}'
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 05 Dec 2012 19:28:31 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":true,"errors":[],"challengeId":"77"}'
+    http_version: '1.1'
+  recorded_at: Wed, 05 Dec 2012 19:28:32 GMT
+recorded_with: VCR 2.2.5

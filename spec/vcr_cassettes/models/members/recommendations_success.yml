@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/recommendations?fields=id,name&search=jeffdonthemic
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/recommendations?fields=id,name&search=jeffdonthemic
     body:
       encoding: US-ASCII
       string: ''
@@ -10,25 +10,23 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:28:50 GMT
       content-type:
-      - application/json; charset=UTF-8
-      connection:
-      - close
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Fri, 12 Oct 2012 12:57:13 GMT
+      connection:
+      - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QJ0000000ORWnMAO"},"Name":"R-6342","Member__c":"a0IJ0000000d0r8MAA","Id":"a0QJ0000000ORWnMAO"}]'
+      string: ! '[{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QZ00000007EG2MAM"},"Name":"R-6786","Member__c":"a0IZ0000000FyJUMA0","Id":"a0QZ00000007EG2MAM"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QZ00000007EFsMAM"},"Name":"R-6785","Member__c":"a0IZ0000000FyJUMA0","Id":"a0QZ00000007EFsMAM"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QZ00000007EG7MAM"},"Name":"R-6787","Member__c":"a0IZ0000000FyJUMA0","Id":"a0QZ00000007EG7MAM"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QZ00000007EHeMAM"},"Name":"R-6806","Member__c":"a0IZ0000000FyJUMA0","Id":"a0QZ00000007EHeMAM"},{"attributes":{"type":"Recommendation__c","url":"/services/data/v22.0/sobjects/Recommendation__c/a0QZ00000007EIdMAM"},"Name":"R-6807","Member__c":"a0IZ0000000FyJUMA0","Id":"a0QZ00000007EIdMAM"}]'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 12:57:15 GMT
+  recorded_at: Wed, 05 Dec 2012 19:28:50 GMT
 recorded_with: VCR 2.2.5

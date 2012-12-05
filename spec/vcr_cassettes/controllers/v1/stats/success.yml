@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/stats
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/stats
     body:
       encoding: US-ASCII
       string: ''
@@ -10,27 +10,25 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQG.Gm9wtiltR4zJDuUipGHzu9.DBrfLAr4u5WFIUvrFY7.dEWvPtFG4xXChxeixEHjeBMJ8P3arx5uOvORD3jA2GSc4t
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:49:22 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Tue, 20 Nov 2012 15:16:30 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"challenges_won":"1","featured_challenge_id":"2","featured_challenge_details":"Updated
-        description","challenges_open":"1","featured_member_wins":"0","money_up_for_grabs":"22424.0","featured_challenge_prize":"$100","money_pending":"650.0","featured_member_pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","entries_submitted":"1","featured_member_active":"0","featured_member_username":"jeffdonthemic","featured_challenge_name":"Test
-        Challenge 1","featured_member_money":"600.00"}'
+      string: ! '{"challenges_won":"1","featured_challenge_id":"2","featured_challenge_details":"sample
+        Description","challenges_open":"4","featured_member_wins":"1","money_up_for_grabs":"134544.0","featured_challenge_prize":"1000","money_pending":"5003.0","featured_member_pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","entries_submitted":"1","featured_member_active":"0","featured_member_username":"jeffdonthemic","featured_challenge_name":"RSpec
+        Challenge","featured_member_money":"5002.00"}'
     http_version: '1.1'
-  recorded_at: Tue, 20 Nov 2012 15:16:30 GMT
+  recorded_at: Wed, 05 Dec 2012 19:49:22 GMT
 recorded_with: VCR 2.2.5

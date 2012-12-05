@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/recommendations
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/recommendations
     body:
       encoding: US-ASCII
       string: recommendation_for_username=jeffdonthemic&recommendation_from_username=mess&recommendation_text=
@@ -10,20 +10,18 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQDot_Gr.sY5OusLIBjAa5L3Ag33cidOjZGU.hl.xV3LldVM.ABtZDU.OHNSabOl.R0TVPt.IKiyKaWUB0Z0thJO2M9U7
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:29:18 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Fri, 12 Oct 2012 12:57:07 GMT
       connection:
       - close
     body:
@@ -32,5 +30,5 @@ http_interactions:
         must pass values for the following: recommendation_for_username, recommendation_from_username,
         recommendation_text."}'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 12:57:10 GMT
+  recorded_at: Wed, 05 Dec 2012 19:29:18 GMT
 recorded_with: VCR 2.2.5

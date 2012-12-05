@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/comments
+    body:
+      encoding: US-ASCII
+      string: username=jeffdonthemic&challenge=77&comment=These%20are%20my%20reply&replyto=a09Z0000000k81XIAQ
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 05 Dec 2012 19:28:38 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"Success":"true","Message":"a09Z0000000k81cIAA"}'
+    http_version: '1.1'
+  recorded_at: Wed, 05 Dec 2012 19:28:39 GMT
+recorded_with: VCR 2.2.5

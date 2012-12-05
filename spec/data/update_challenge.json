@@ -1,25 +1,20 @@
 {
   "challenge" : {
     "detail" : {
-      "winner_announced":"2012-05-17",
+      "winner_announced":"2015-05-17",
+      "end_date":"2014-04-17T18:02:00.000+0000",
       "terms_of_service":"Standard Terms & Conditions",
       "scorecard_type":"Sandbox Scorecard",
       "submission_details":"<em>&#39;Some submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>",
-      "status":"Hidden",
       "start_date":"2012-03-17T18:02:00.000+0000",
       "requirements":"Hello this is a sample requirement with some interesting stuff like<br><br>Bullets<br><ul><li>Bull1</li><li>Bull2</li></ul>\n<div style=\"text-align: center; \">Links <br><br><a href=\"http://developer.force.com\" target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed - Italics<br></em></strike><br><br>",
       "name":"RSpec Challenge",
       "status":"Planned",
-      "end_date":"2012-04-17T18:02:00.000+0000",
       "description":"sample Description"
       }, 
     "reviewers" : [{"name" : "mess"}, {"name" : "jeffdonthemic"}],
     "categories" : [{"name" : "java"}, {"name": "heroku"}],
     "prizes" : [{"place":2,"points":222,"prize":"122","value":1212}, {"place":1,"points":2120,"prize":"1000","value":21212}],
-    "commentNotifiers" : [{"email" : "jdouglas@appirio.com"}, {"name" : "mess"}],
-    "reviewers_to_delete" : [{"name" : "mess"}, {"name" : "jeffdonthemic"}],
-    "categories_to_delete" : [{"name" : "java"}, {"name": "heroku"}],
-    "prizes_to_delete" : [{"place":2,"points":222,"prize":"122","value":1212}, {"place":1,"points":2120,"prize":"1000","value":21212}],
-    "commentNotifiers_to_delete" : [{"email" : "jdouglas@appirio.com"}, {"name" : "mess"}]
+    "commentNotifiers" : [{"email" : "jdouglas@appirio.com"}, {"name" : "mess"}]
   }
 }

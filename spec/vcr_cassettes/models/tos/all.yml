@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/data/v20.0/query?q=select%20id,%20name,%20terms__c,%20default_tos__c%20%0A%20%20%20%20%20%20from%20terms_of_service__c%20order%20by%20name
+    uri: https://cs11.salesforce.com/services/data/v20.0/query?q=select%20id,%20name,%20terms__c,%20default_tos__c%20%0A%20%20%20%20%20%20from%20terms_of_service__c%20order%20by%20name
     body:
       encoding: US-ASCII
       string: ''
@@ -10,27 +10,24 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:29:31 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Tue, 13 Nov 2012 11:59:17 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v20.0/sobjects/Terms_of_Service__c/a0kJ0000000AoTDIA0"},"Id":"a0kJ0000000AoTDIA0","Name":"Standard
-        Terms & Conditions","Terms__c":"CloudSpokes Default TOS Text","Default_TOS__c":true},{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v20.0/sobjects/Terms_of_Service__c/a0kJ0000000B3BuIAK"},"Id":"a0kJ0000000B3BuIAK","Name":"YATOS","Terms__c":"My
-        text","Default_TOS__c":false}]}'
+      string: ! '{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v20.0/sobjects/Terms_of_Service__c/a0kZ0000000YyG0IAK"},"Id":"a0kZ0000000YyG0IAK","Name":"Standard
+        Terms & Conditions","Terms__c":"CloudSpokes Default TOS Text","Default_TOS__c":true}]}'
     http_version: '1.1'
-  recorded_at: Tue, 13 Nov 2012 11:59:17 GMT
+  recorded_at: Wed, 05 Dec 2012 19:29:31 GMT
 recorded_with: VCR 2.2.5

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/participants?challengeid=8&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/participants?challengeid=8&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name
     body:
       encoding: US-ASCII
       string: ''
@@ -10,26 +10,23 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQB_QjHAmE5Vn.Yq9FYQ3e1K.1PAI8s_5Qm.hkffHv9Mp4SUeqOU.Y85lutphQbq7o.Q5q.uC5ytdrdVG4oEscOc4t._4
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:28:57 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Tue, 13 Nov 2012 11:01:46 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HuN4MAK"},"Has_Submission__c":false,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA","Summary_Bio__c":"This
-        is my summary!!!","Total_Wins__c":0,"Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Member__c":"a0IJ0000000d0r8MAA","Id":"a0AJ0000004HuN4MAK","Status__c":"Registered","Challenge__c":"a0GJ0000006VS5LMAW"},{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HuN8MAK"},"Has_Submission__c":false,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0rAMAQ"},"Name":"mess","Id":"a0IJ0000000d0rAMAQ","Total_Wins__c":0,"Profile_Pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg"},"Member__c":"a0IJ0000000d0rAMAQ","Id":"a0AJ0000004HuN8MAK","Status__c":"Registered","Challenge__c":"a0GJ0000006VS5LMAW"}]'
+      string: ! '[]'
     http_version: '1.1'
-  recorded_at: Tue, 13 Nov 2012 11:01:46 GMT
+  recorded_at: Wed, 05 Dec 2012 19:28:57 GMT
 recorded_with: VCR 2.2.5

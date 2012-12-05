@@ -4,7 +4,7 @@ describe V1::MembersController do
 
   # create a new api_key so all methods can use it
   before(:all) do
-    VCR.use_cassette "controllers/v1/accounts/get_public_oauth_token", :record => :all do
+    VCR.use_cassette "shared/public_oauth_token", :record => :all do
       config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
       client = Databasedotcom::Client.new(config)
       @public_oauth_token = client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']
@@ -124,7 +124,7 @@ describe V1::MembersController do
 		it "should have all of the correct keys" do
 			VCR.use_cassette "controllers/v1/members/search_jeffdonthemic" do
 				# keys that should exist in the returned json
-				keys = %w{name challenges_entered total_2nd_place active_challenges total_1st_place id total_wins summary_bio total_public_money total_3st_place profile_pic}
+				keys = %w{name challenges_entered total_2nd_place active_challenges total_1st_place id total_wins total_public_money total_3st_place profile_pic}
 				request.env['oauth_token'] = @public_oauth_token
 				get 'search', 'keyword' => 'jeffdonthemic'
 				h = JSON.parse(response.body)['response'].first

@@ -2,40 +2,33 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/admin/challenges
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/admin/challenges
     body:
       encoding: US-ASCII
-      string: ! '{"challenge":{"detail":{"winner_announced__c":"2012-03-17","submission_details__c":"<em>&#39;Some
-        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","status__c":"Hidden","start_date__c":"2012-03-17T18:02:00.000+0000","requirements__c":"Hello
-        this is a sample requirement with some interesting stuff like<br><br>Bullets<br><ul><li>Bull1</li><li>Bull2</li></ul>\n<div
-        style=\"text-align: center; \">Links\u00a0<br><br><a href=\"http://developer.force.com\"
-        target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
-        - Italics<br></em></strike><br><br>","name":"C1","end_date__c":"2012-03-17T18:02:00.000+0000","description__c":"sample
-        Description"},"reviewers":[{"email__c":"jeff@gmail.com"},{"name":"anjan2"},{"id":"a0Bd000000392BS"}],"categories":[{"name":"java"},{"id":"a05d0000000V9Cc"}],"prizes":[{"place__c":2,"points__c":222,"prize__c":"122","value__c":1212},{"place__c":1,"points__c":2120,"prize__c":"1000","value__c":21212}],"commentNotifiers":[{"email__c":"jeff@gmail.com"},{"name":"anjan"}]}}'
+      string: ! '{"challenge":{"detail":{"winner_announced__c":"2015-05-17","description__c":"sample
+        Description"}}}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQEq49v.6FN4WuYUDSCjqrMbbYOrAiB6_VIiSNyvFlmEhb.Ch6f_C3mJ014Gqiha8q2O44cwoUo5r49GiiYhFhyv5k7eZ
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 400
       message: Bad Request
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:28:44 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Tue, 06 Nov 2012 19:51:15 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"success":false,"errors":[{"errorMessage":"The End Date must be
-        after the Start Date.","errorCode":"FIELD_CUSTOM_VALIDATION_EXCEPTION"}],"challengeId":null}'
+      string: ! '{"success":false,"errors":[{"errorMessage":"Required fields are missing:
+        [End_Date__c, Start_Date__c]","errorCode":"REQUIRED_FIELD_MISSING"}],"challengeId":null}'
     http_version: '1.1'
-  recorded_at: Tue, 06 Nov 2012 19:51:15 GMT
+  recorded_at: Wed, 05 Dec 2012 19:28:44 GMT
 recorded_with: VCR 2.2.5

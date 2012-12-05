@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/credentials?username=jeffdonthemic&service=github
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/credentials?username=jeffdonthemic&service=github
     body:
       encoding: US-ASCII
       string: ''
@@ -10,26 +10,24 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQLpi.b1ZSvBU7fNIsC_37kuDUT5XyWakg5rof3z1IYz0NRLaNNoWTAElZh.U49hbyd69v8xW0GXEK8sw_D6TxcPKm413
+      - OAuth 00DZ00000007ybt!AQQAQJ0k96FtI0f4MDdllG0lwLhLdcVVm5YoJB4bWluga_FoEJ0hsjHGyF1EMWki3UNCWdZaIp6aPl8V9mOlsCPpcmPFLhnD
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:21:01 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Fri, 12 Oct 2012 13:25:19 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"true","Profile_Pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","Message":"Query
-        Ran","SFuserId":"005U0000000M1nPIAS","Email":"jdouglas@appirio.com","AccountId":null,"Service":"github"}'
+      string: ! '{"Success":"true","Profile_Pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","SFuserId":"005U0000000M1nPIAS","Message":"Query
+        Ran","AccountId":null,"Email":"jdouglas@appirio.com","Service":"github"}'
     http_version: '1.1'
-  recorded_at: Fri, 12 Oct 2012 13:25:21 GMT
+  recorded_at: Wed, 05 Dec 2012 19:21:01 GMT
 recorded_with: VCR 2.2.5

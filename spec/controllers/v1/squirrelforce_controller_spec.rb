@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe SquirrelforceController do
+describe V1::SquirrelforceController do
 
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs10.salesforce.com/services/apexrest/v.9/participants/jeffdonthemic?challengeId=2
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/participants/jeffdonthemic?challengeId=2
     body:
       encoding: US-ASCII
       string: ''
@@ -10,26 +10,24 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DJ00000007l7H!AQQAQMhP0kp4bWF5pzc7sEYktM6tujwV4aaFiVRZtlqjERjUlCiFVXd9y5fBwFzW68RbesV7IRGqCAVxFYlGqgnQJm6b.C_z
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Wed, 05 Dec 2012 19:29:33 GMT
       content-type:
-      - application/json; charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Mon, 12 Nov 2012 11:51:13 GMT
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AJ0000004HuBZMA0"},"Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GJ0000002ZBv7MAG"},"Name":"Test
-        Challenge 1","Id":"a0GJ0000002ZBv7MAG"},"Name":"CP-39484","Has_Submission__c":false,"Money_Awarded__c":0.00,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IJ0000000d0r8MAA"},"Valid_Submissions__c":0,"Name":"jeffdonthemic","Id":"a0IJ0000000d0r8MAA"},"Member__c":"a0IJ0000000d0r8MAA","Send_Discussion_Emails__c":true,"Id":"a0AJ0000004HuBZMA0","Status__c":"Watching","Challenge__c":"a0GJ0000002ZBv7MAG"}]'
+      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AZ0000000n8XuMAI"},"Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
+        Challenge","Id":"a0GZ0000005VQogMAG"},"Name":"CP-43722","Has_Submission__c":false,"Money_Awarded__c":0.00,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Valid_Submissions__c":0,"Name":"jeffdonthemic","Id":"a0IZ0000000FyJUMA0"},"Member__c":"a0IZ0000000FyJUMA0","Send_Discussion_Emails__c":true,"Id":"a0AZ0000000n8XuMAI","Status__c":"Watching","Challenge__c":"a0GZ0000005VQogMAG"}]'
     http_version: '1.1'
-  recorded_at: Mon, 12 Nov 2012 11:51:13 GMT
+  recorded_at: Wed, 05 Dec 2012 19:29:33 GMT
 recorded_with: VCR 2.2.5

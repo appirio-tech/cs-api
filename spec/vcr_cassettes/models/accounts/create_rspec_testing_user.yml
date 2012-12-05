@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members
+    body:
+      encoding: US-ASCII
+      string: username__c=XBGUFS31&password=abcd123456&email__c=XBGUFS31%40rspec.cloudspokes.com&first_name__c=XBGUFS31&last_name__c=XBGUFS31
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 05 Dec 2012 19:21:00 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"password":"abcd123456","Success":"true","memberId":"a0IZ0000000GDZzMAO","sfdc_username":"XBGUFS31@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"XBGUFS31"}'
+    http_version: '1.1'
+  recorded_at: Wed, 05 Dec 2012 19:21:00 GMT
+recorded_with: VCR 2.2.5
