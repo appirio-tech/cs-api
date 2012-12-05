@@ -137,6 +137,21 @@ class V1::ChallengesController < V1::ApplicationController
 		expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
 	end		
 
+  # DO NOT USE THIS WITH THE CURRENT SITE
+  # Creates a new discussion board comment for the challenge
+  # * *Args*    :
+  #   - access_token -> the oauth token to use   
+  #   - params[:data] -> the JSON to use to create the
+  #   comment. 
+  # * *Returns* :
+  #   - a hash containing the following keys: success, errors
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def comment
+    expose Challenge.comment(@oauth_token, params[:data])
+  end     
+
   #
   # Creates a new survey for a challenge
   # * *Args*    :
