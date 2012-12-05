@@ -32,7 +32,7 @@ class Judging  < Salesforce
 		elsif current_participant.count > 0
 			{:success => false, :message => 'Unable to add you. You are already a participant on this challenge.'}
 		elsif total_judges.count == 2
-			{:success => false, :message => 'Unable to add you. There are already a maximum of two reviewers for this challenge.'}				
+			{:success => false, :message => 'Unable to add you. There are already a maximum of two judges for this challenge.'}				
 		else
 			create(access_token, 'Challenge_Reviewer__c', 
 				{'Challenge__c' => Challenge.salesforce_id(access_token, challenge_id), 
