@@ -9,7 +9,7 @@ class V1::MembersController < V1::ApplicationController
 	end	
 
   #
-  # Returns all challenges.
+  # Returns all members.
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - fields (optional) -> the fields to return in the results. Defaults
