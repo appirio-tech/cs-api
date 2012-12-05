@@ -39,7 +39,20 @@ class Challenge < Salesforce
   def self.comments(access_token, challenge_id)  
     set_header_token(access_token) 
     get_apex_rest("/comments/#{challenge_id}")
-  end  	   
+  end  	 
+
+  def self.comment(access_token, data)
+    options = {
+      :body => {
+          :username => data[:membername],
+          :challenge => data[:challenge_id],
+          :comment => data[:comments],
+          :replyto => data[:reply_to]
+      }
+    }
+    results = post(ENV['SFDC_APEXREST_URL'] + "/comments", options)    
+    {:success => results['Success'], :message => results['Message']}
+  end    
 
   # TODO - implement a limit & offset -- challenge in progress (1928)
   def self.all(access_token, open, category, order_by) 
