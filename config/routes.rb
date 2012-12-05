@@ -38,6 +38,15 @@ CsApi::Application.routes.draw do
 		match "/participants/:membername/:challenge_id" => "participants#create", :via => :post		
 		match "/participants/:membername/:challenge_id" => "participants#update", :via => :put	
 
+		# squirrelforce
+		match "/squirrelforce/reserve_server" => "squirrelforce#reserve_server", :via => :get
+		match "/squirrelforce/release_server" => "squirrelforce#release_server", :via => :get
+		match "/squirrelforce/unleash_squirrel" => "squirrelforce#unleash_squirrel", :via => :get
+
+		# judging
+		match "/judging" => "judging#queue", :via => :get
+		match "/judging/add" => "judging#add", :via => :post
+
 		# leaderboard
 	  match "/leaderboard" => "leaderboard#public", :via => :get
 	  # stats
