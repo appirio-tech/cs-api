@@ -13,7 +13,7 @@ class Member < Salesforce
   # * *Raises* :
   #   - ++ ->
   #   
-  # TODO - implement a limit   
+  # TODO - implement a limit & offset -- challenge in progress (1927)
   def self.all(access_token, fields, order_by) 
     set_header_token(access_token) 
     get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}")
@@ -48,7 +48,7 @@ class Member < Salesforce
   # * *Raises* :
   #   - ++ ->
   #   
-  # TODO - implement a limit
+  # TODO - implement a limit & offset -- challenge in progress (1927)
   def self.search(access_token, keyword, fields)
     set_header_token(access_token)    
     get_apex_rest("/members?fields=#{esc fields}&search=#{esc keyword}")
@@ -164,6 +164,40 @@ class Member < Salesforce
   def self.referrals(access_token, membername) 
     set_header_token(access_token)    
     get_apex_rest("/referrals/#{esc membername}")
-  end    
+  end  
+
+  #
+  # Returns the salesforce member id for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the id for
+  # * *Returns* :
+  #   - salesforce member id
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.salesforce_member_id(access_token, membername) 
+    query(access_token, "select id from member__c where name = '#{membername}'").first['id']
+  rescue Exception => e
+    puts "[FATAL][Member] Cannot fetch member id for #{membername}: #{e.message}"     
+    nil
+  end     
+
+  #
+  # Returns the salesforce user id for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the id for
+  # * *Returns* :
+  #   - salesforce user id
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.salesforce_user_id(access_token, membername)  
+    query(access_token, "select sfdc_user__c from member__c where name = '#{membername}'").first['sfdc_user']
+  rescue Exception => e
+    puts "[FATAL][Member] Cannot fetch salesforce user id for #{membername}: #{e.message}"     
+    nil
+  end     
 
 end
