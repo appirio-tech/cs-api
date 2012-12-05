@@ -24,7 +24,21 @@ class Salesforce
   end
 
   #
-  # Makes generic 'get' apex rest calls
+  # Returns a restforce client from an access_token
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  # * *Returns* :
+    #   - Restforce client
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.restforce_client(access_token)
+    Restforce.new :oauth_token => access_token,
+      :instance_url  => ENV['SFDC_INSTANCE_URL']
+  end
+
+  #
+  # Makes generic 'get' to CloudSpokes Apex REST services
   # * *Args*    :
   #   - url_string -> the string to be appended to teh end of the url
   # * *Returns* :
@@ -34,34 +48,44 @@ class Salesforce
   #  
   def self.get_apex_rest(url_string)
     Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_URL']+"#{url_string}"))
-  end
-
-  #
-  # Makes generic 'post' apex rest calls to create records in salesforce
-  # * *Args*    :
-  #   - sobject -> the sObject to create
-  #   - params -> hash with the fields and values to be used to create
-  # * *Returns* :
-  #   - a hash containing the following keys: success, message
-  # * *Raises* :
-  #   - ++ ->
-  #  
-  def self.post_apex_rest(sobject, params)
-    options = {
-      :body => params.to_json
-    }
-
-    begin
-      post_results = Forcifier::JsonMassager.deforce_json(post(ENV['SFDC_REST_API_URL']+
-        "/sobjects/#{sobject}", options))
-      {:success => true, :message => post_results['id']}
-    rescue Exception => e
-      {:success => false, :message => post_results}
-    end     
   end  
 
   #
-  # Makes generic 'delete' apex rest calls to delete a records in salesforce
+  # Performs a soql query against salesforce
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - soql -> the soql query
+  # * *Returns* :
+    #   - a results object
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.query(access_token, soql)
+    Forcifier::JsonMassager.deforce_json(restforce_client(access_token).query(soql))
+  rescue Exception => e
+    puts "[FATAL][Salesforce] Query exception: #{soql} -- #{e.message}" 
+    nil
+  end  
+
+  #
+  # Creates a new record in salesforce
+  # * *Args*    :
+  #   - access_token -> the oauth token to use  
+  #   - params -> the hash of values for the new record
+  # * *Returns* :
+    #   - new record id
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.create(access_token, sobject, params)
+    {:success => true, :message => restforce_client(access_token).create!(sobject, params)}      
+  rescue Exception => e
+    puts "[FATAL][Salesforce] Create exception: #{e.message}" 
+    {:success => false, :message => e.message}    
+  end
+
+  #
+  # Makes generic destroy to delete a records in salesforce
   # * *Args*    :
   #   - sobject -> the sObject to create
   #   - id -> the id of the record to delete
@@ -70,15 +94,12 @@ class Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.delete_apex_rest(sobject, id)
-    delete_results = Forcifier::JsonMassager.deforce_json(delete(ENV['SFDC_REST_API_URL']+
-      "/sobjects/#{sobject}/#{id}"))
-    # a return value of null means a successful delete
-    if delete_results
-      {:success => false, :message => delete_results.first['message']}
-    else
-      {:success => true, :message => 'Record successfully deleted.'}
-    end
-  end    
+  def self.destroy(access_token, sobject, id)
+    restforce_client(access_token).destroy!(sobject, id)
+    {:success => true, :message => 'Record successfully deleted.'} 
+  rescue Exception => e
+    puts "[FATAL][Salesforce] Destroy exception for Id #{id}: #{e.message}" 
+    {:success => false, :message => e.message}   
+  end 
 
 end
