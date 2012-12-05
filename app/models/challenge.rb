@@ -41,6 +41,7 @@ class Challenge < Salesforce
     get_apex_rest("/comments/#{challenge_id}")
   end  	   
 
+  # TODO - implement a limit & offset -- challenge in progress (1928)
   def self.all(access_token, open, category, order_by) 
     set_header_token(access_token)   
     qry_category = category.nil? ? '' : "&category=#{esc category}"    
@@ -51,5 +52,11 @@ class Challenge < Salesforce
     set_header_token(access_token) 
     get_apex_rest('/challenges/recent')
   end  
+
+  def self.salesforce_id(access_token, challenge_id) 
+    query(access_token, "select id from challenge__c where challenge_id__c = '#{challenge_id}'").first['id']
+  rescue Exception => e  
+    nil
+  end      
 
 end
