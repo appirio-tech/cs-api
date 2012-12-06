@@ -165,8 +165,11 @@ class Account < Salesforce
           :message => new_account_results["Message"]}
 
         # send the welcome email
-        puts "[INFO][Account] Sending new member 'Welcome Email' to #{params[:email]}" 
-        MemberMailer.welcome_email(params[:username],params[:email]).deliver          
+        if ENV['WELCOME_EMAIL_SENDER'].eql?('enabled')
+          puts "[INFO][Account] Sending new member 'Welcome Email' to #{params[:email]}" 
+          MemberMailer.welcome_email(params[:username],params[:email]).deliver          
+        end
+        
         success_results
       else
         puts "[WARN][Account] Could not create new user. sfdc replied: #{new_account_results["Message"]}" 
