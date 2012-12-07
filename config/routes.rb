@@ -48,6 +48,11 @@ CsApi::Application.routes.draw do
 		match "/judging" => "judging#queue", :via => :get
 		match "/judging/add" => "judging#add", :via => :post
 
+		# communities
+		match "/communities" => "communities#all", :via => :get
+		match "/communities/:community_id" => "communities#find", :via => :get	
+		match "/communities/add_member" => "communities#add_member", :via => :post		
+
 		# leaderboard
 	  match "/leaderboard" => "leaderboard#public", :via => :get
 	  # stats
