@@ -8,7 +8,7 @@ class Squirrelforce  < Salesforce
 		b = Bunny.new ENV['CLOUDAMQP_URL']
 		b.start
 		q = b.queue(ENV['SQUIRRELFORCE_QUEUE'])
-		q.publish('{"url":"https://google.com","Type":"apex","Name":"CPS-1234","ID":"a0GU0000007AGDa"}')
+		q.publish('{"url":"http://cs-production.s3.amazonaws.com/challenges/1884/wcheung/octavius3.zip","Type":"apex","Name":"CPS-1234","ID":"a0GU0000007AGDa"}')
 		b.stop
 		'.... and we are off!!'
 
