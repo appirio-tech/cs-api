@@ -17,7 +17,7 @@ class Squirrelforce  < Salesforce
 	def self.reserve_server(access_token, membername)
 		set_header_token(access_token) 
 		  
-		fetch_server_results = query(access_token, "select Id, Installed_Services__c, Instance_URL__c, 
+		fetch_server_results = query(access_token, "select Id, Name, Installed_Services__c, Instance_URL__c, 
 			Operating_System__c, Password__c, Platform__c, Security_Token__c, 
 			Supported_Programming_Language__c, Username__c from Server__c where 
 			platform__c = 'Salesforce.com' and Reserved_text__c = 'FREE' limit 1")
