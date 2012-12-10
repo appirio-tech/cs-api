@@ -17,7 +17,9 @@ class Squirrelforce  < Salesforce
 	def self.reserve_server(access_token, membername)
 		set_header_token(access_token) 
 		  
-		fetch_server_results = query(access_token, "select Id from Server__c where 
+		fetch_server_results = query(access_token, "select Id, Installed_Services__c, Instance_URL__c, 
+			Operating_System__c, Password__c, Platform__c, Security_Token__c, 
+			Supported_Programming_Language__c, Username__c from Server__c where 
 			platform__c = 'Salesforce.com' and Reserved_text__c = 'FREE' limit 1")
 
 		unless fetch_server_results.empty?
@@ -26,6 +28,7 @@ class Squirrelforce  < Salesforce
 			create(access_token, 'Reservation__c', {'Reserved_Server__c' => server['id'], 
 				'Reserved_Member__c' => Member.salesforce_member_id(access_token, membername), 
 				'Start_Date__c' => DateTime.now})
+			{:success => true, :message => 'Server successfully reserved.' :server => server}
 		else
 			{:success => false, :message => 'No available server with requested specifications.'}
 		end
