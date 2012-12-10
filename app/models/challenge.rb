@@ -54,16 +54,18 @@ class Challenge < Salesforce
     {:success => results['Success'], :message => results['Message']}
   end    
 
-  # TODO - implement a limit & offset -- challenge in progress (1928)
-  def self.all(access_token, open, category, order_by) 
+  def self.all(access_token, open, category, order_by, limit, offset) 
     set_header_token(access_token)   
     qry_category = category.nil? ? '' : "&category=#{esc category}"    
-    get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}"+qry_category)
+    get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}"+qry_category)
   end
 
-  def self.recent(access_token)  
-    set_header_token(access_token) 
-    get_apex_rest('/challenges/recent')
+  def self.recent(access_token, limit, offset)  
+    query(access_token, "SELECT Blog_URL__c, Name, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, Source_Code_URL__c,
+        Total_Prize_Money__c, Top_Prize__c, (SELECT Money_Awarded__c,Place__c,Member__c,
+        Member__r.Name, Points_Awarded__c,Score__c,Status__c FROM Challenge_Participants__r where Has_Submission__c = true), 
+        (Select Name, Category__c, Display_Name__c From Challenge_Categories__r) 
+        FROM Challenge__c where Status__c = 'Winner Selected' Order By End_Date__c DESC LIMIT #{limit} OFFSET #{offset}")
   end  
 
   def self.salesforce_id(access_token, challenge_id) 

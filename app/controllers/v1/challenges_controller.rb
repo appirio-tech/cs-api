@@ -41,7 +41,9 @@ class V1::ChallengesController < V1::ApplicationController
 	def open
 		expose Challenge.all(@oauth_token, 'true', 
 			params[:category] ||= nil, 
-			enforce_order_by_params(params[:order_by], 'name'))
+			enforce_order_by_params(params[:order_by], 'name'),
+      params[:limit] ||= 25,
+      params[:offset] ||= 0)
 	end	
 
   #
@@ -52,6 +54,9 @@ class V1::ChallengesController < V1::ApplicationController
 	#	  to nil.	
   #   - order_by (optional) -> the field to order the results by. Defaults
 	#	  to name.		
+  #   - limit -> the number of records to return
+  #   - offset -> specifies the starting row offset into the result set 
+  # returned by your query  
   # * *Returns* :
   #   - JSON a collection of challenge objects with challenge_categories__r 
   # * *Raises* :
@@ -60,13 +65,18 @@ class V1::ChallengesController < V1::ApplicationController
 	def closed
 		expose Challenge.all(@oauth_token, 'false', 
 			params[:category] ||= nil, 
-			enforce_order_by_params(params[:order_by], 'name'))
+      enforce_order_by_params(params[:order_by], 'name'),
+      params[:limit] ||= 25,
+      params[:offset] ||= 0)
 	end		
 
   #
   # Returns all recently closed challenges with winners selected
   # * *Args*    :
-  #   - access_token -> the oauth token to use	
+  #   - access_token -> the oauth token to use
+  #   - limit -> the number of records to return
+  #   - offset -> specifies the starting row offset into the result set 
+  # returned by your query  	
   # * *Returns* :
   #   - JSON a collection of challenge objects with 
   #   challenge_categories__r and challenge_participants__r
@@ -74,7 +84,9 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #  	
 	def recent
-		expose Challenge.recent(@oauth_token)
+		expose Challenge.recent(@oauth_token,
+      params[:limit] ||= 25,
+      params[:offset] ||= 0)
 	end		
 
   #
@@ -166,6 +178,6 @@ class V1::ChallengesController < V1::ApplicationController
   def survey
     expose Survey.create(@oauth_token, params[:challenge_id].strip, 
       params[:data])
-  end     		
+  end   
 
 end
