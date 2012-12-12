@@ -8,15 +8,17 @@ class Member < Salesforce
   # to return are in the application_controller.
   #   - order_by -> the field to order the results by. Defaults to 'total_wins__c'
   # in the members_controller  
+  #   - limit -> the number of records to return
+  #   - offset -> specifies the starting row offset into the result set 
+  # returned by your query
   # * *Returns* :
   #   - JSON containing a collection of members
   # * *Raises* :
   #   - ++ ->
   #   
-  # TODO - implement a limit & offset -- challenge in progress (1927)
-  def self.all(access_token, fields, order_by) 
+  def self.all(access_token, fields, order_by, limit, offset) 
     set_header_token(access_token) 
-    get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}")
+    get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}")
   end
 
   #

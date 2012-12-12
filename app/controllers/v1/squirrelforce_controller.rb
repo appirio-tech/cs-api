@@ -2,8 +2,9 @@ class V1::SquirrelforceController < V1::ApplicationController
 
 	# before_filter :restrict_access
 
+  # may not need the admin_oauth_token but right now only admins have access to Deliverable__c
   def unleash_squirrel
-    expose Squirrelforce.unleash_squirrel
+    expose Squirrelforce.unleash_squirrel(admin_oauth_token, params[:submission_deliverable_id])
   end	
 
   def reserve_server

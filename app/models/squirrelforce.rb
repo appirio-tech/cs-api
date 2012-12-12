@@ -3,14 +3,22 @@ require 'bunny'
 
 class Squirrelforce  < Salesforce
 
-	def self.unleash_squirrel
+	def self.unleash_squirrel(access_token, submission_deliverable_id)
+
+		deliverable = query(access_token, "select Id, Name, Language__c, URL__c 
+			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")		
+
+		#rename the key from laugnage to type for rabbitmq
+		deliverable = Forcifier::JsonMassager.deforce_json(deliverable.first)
+		# rabbit expects a key called 'type' instead of language
+		deliverable.rename_key!('language','type')
 
 		b = Bunny.new ENV['CLOUDAMQP_URL']
 		b.start
 		q = b.queue(ENV['SQUIRRELFORCE_QUEUE'])
-		q.publish('{"url":"http://cs-production.s3.amazonaws.com/challenges/1884/wcheung/octavius3.zip","Type":"apex","Name":"CPS-1234","ID":"a0GU0000007AGDa"}')
+		q.publish(deliverable.to_json)
 		b.stop
-		'.... and we are off!!'
+		deliverable
 
 	end
 

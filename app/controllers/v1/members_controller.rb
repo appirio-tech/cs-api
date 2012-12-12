@@ -16,13 +16,20 @@ class V1::MembersController < V1::ApplicationController
 	#	  to MEMBER_SEARCH_FIELDS.
   #   - order_by (optional) -> the fields to order the results by. Defaults
 	#	  to total_wins__c.	
+  #   - limit -> the number of records to return
+  #   - offset -> specifies the starting row offset into the result set 
+  # returned by your query  
   # * *Returns* :
   #   - JSON an array of challenges 
   # * *Raises* :
   #   - ++ ->
   #  
 	def index
-		expose Member.all(@oauth_token, index_fields, index_order_by)
+		expose Member.all(@oauth_token, 
+      index_fields, 
+      index_order_by,       
+      params[:limit] ||= 25,
+      params[:offset] ||= 0)
 	end
 
   #

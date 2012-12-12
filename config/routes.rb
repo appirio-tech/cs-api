@@ -42,7 +42,7 @@ CsApi::Application.routes.draw do
 		# squirrelforce
 		match "/squirrelforce/reserve_server" => "squirrelforce#reserve_server", :via => :get
 		match "/squirrelforce/release_server" => "squirrelforce#release_server", :via => :get
-		match "/squirrelforce/unleash_squirrel" => "squirrelforce#unleash_squirrel", :via => :get
+		match "/squirrelforce/unleash_squirrel/:submission_deliverable_id" => "squirrelforce#unleash_squirrel", :via => :get
 
 		# judging
 		match "/judging" => "judging#queue", :via => :get
