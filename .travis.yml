@@ -1,10 +1,9 @@
 language: ruby
 rvm:
   - 1.9.2
-  - jruby-18mode
-  - jruby-19mode
  env:
   - DB=sqlite
+before_install: gem install debugger-linecache -v '1.1.2' -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p286/
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate --trace   
 script: bundle exec rake 
