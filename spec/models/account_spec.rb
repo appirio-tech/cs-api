@@ -24,6 +24,9 @@ describe Account do
       @admin_oauth_token = client.authenticate :username => ENV['SFDC_ADMIN_USERNAME'], :password => ENV['SFDC_ADMIN_PASSWORD']
     end
 
+    @restforce_client = Restforce.new :oauth_token => @admin_oauth_token,
+      :instance_url  => ENV['SFDC_INSTANCE_URL']    
+
     @rspec_test_password = 'abcd123456'
 
     # create the rspec testing user
@@ -195,16 +198,40 @@ describe Account do
     end  
 
     it "should return failure for invalid password" do
-      VCR.use_cassette "models/accounts/reset_update_invalid_password" do
-        results = Account.update_password(@public_oauth_token, @rspec_test_membername, '83647', 'A')
+      # reset the password
+      VCR.use_cassette "models/accounts/reset_password_for_invalid", :record => :all do
+        results = Account.reset_password(@public_oauth_token, @rspec_test_membername)
+        puts "Resetting password ..... #{results}"
+      end         
+      # get the actual passcode for the user
+      VCR.use_cassette "models/accounts/get_user_passcode", :record => :all do
+        @passcode = @restforce_client.query("select passcode__c from user where 
+          username = '#{@rspec_test_membername}@m.cloudspokes.com.sandbox'").first['Passcode__c']  
+        puts "Getting the user's passcode ..... #{@passcode}"
+      end
+      VCR.use_cassette "models/accounts/reset_update_invalid_password", :record => :all do
+        puts "Updating password ...."
+        results = Account.update_password(@public_oauth_token, @rspec_test_membername, @passcode, 'A')
         results[:success].should == 'false'
         results[:message].should == "INVALID_NEW_PASSWORD: Your password must be at least 5 characters long."
       end
     end      
 
     it "should update the password successfully" do
-      VCR.use_cassette "models/accounts/reset_update_success" do
-        results = Account.update_password(@public_oauth_token, @rspec_test_membername, '83647', @rspec_test_password)
+      # reset the password
+      VCR.use_cassette "models/accounts/reset_password_for_success", :record => :all do
+        results = Account.reset_password(@public_oauth_token, @rspec_test_membername)
+        puts "Resetting password ..... #{results}"
+      end          
+      # get the actual passcode for the user
+      VCR.use_cassette "models/accounts/get_user_passcode", :record => :all do
+        @passcode = @restforce_client.query("select passcode__c from user where 
+          username = '#{@rspec_test_membername}@m.cloudspokes.com.sandbox'").first['Passcode__c'] 
+        puts "Getting the user's passcode ..... #{@passcode}" 
+      end    
+      VCR.use_cassette "models/accounts/reset_update_success", :record => :all do
+        puts "Updating password ...."
+        results = Account.update_password(@public_oauth_token, @rspec_test_membername, @passcode, @rspec_test_password)
         results[:success].should == 'true'
         results[:message].should == "Password changed successfully."
       end

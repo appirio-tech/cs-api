@@ -16,19 +16,17 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      server:
-      - ''
+      date:
+      - Thu, 13 Dec 2012 17:35:11 GMT
       content-type:
-      - application/json; charset=UTF-8
-      connection:
-      - close
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
-      date:
-      - Wed, 05 Dec 2012 19:53:27 GMT
+      connection:
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1354737208146","instance_url":"https://cs11.salesforce.com","signature":"mMnCb4n1R02+oJMh4GaNnMT4jTUCRQ4ueI/ebgFOiD0=","access_token":"00DZ00000007ybt!AQQAQJ0k96FtI0f4MDdllG0lwLhLdcVVm5YoJB4bWluga_FoEJ0hsjHGyF1EMWki3UNCWdZaIp6aPl8V9mOlsCPpcmPFLhnD"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1355420112066","instance_url":"https://cs11.salesforce.com","signature":"4e5jno6UozwnZVDIQqcAV1WA2vBRIBJRtEFLn0IfZuA=","access_token":"00DZ00000007ybt!AQQAQLP_aAnEMuh4wfwxjUp_mWvElx6RO_VzAQH8AgmUclrhCKOPTO53CAqeRRV6Ns25GmEQIiXpSIaF6pm2iOAb1N0P6AJ1"}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:53:28 GMT
+  recorded_at: Thu, 13 Dec 2012 17:35:12 GMT
 recorded_with: VCR 2.2.5

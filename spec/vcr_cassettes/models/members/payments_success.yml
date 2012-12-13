@@ -2,31 +2,43 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v20.0/query?q=select%20id,name%20from%20payment__c%20where%20member__r.name%20=%20'jeffdonthemic'%20order%20by%20name
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2Cname+from+payment__c+where+member__r.name+%3D+%27jeffdonthemic%27+order+by+name
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      content-type:
-      - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:28:54 GMT
+      - Thu, 13 Dec 2012 12:32:18 GMT
       content-type:
       - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
-      encoding: US-ASCII
-      string: ! '{"totalSize":8,"done":true,"records":[{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqLIAU"},"Id":"a0bZ0000000xLqLIAU","Name":"PAY-3940"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqQIAU"},"Id":"a0bZ0000000xLqQIAU","Name":"PAY-3941"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqVIAU"},"Id":"a0bZ0000000xLqVIAU","Name":"PAY-3942"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvlIAE"},"Id":"a0bZ0000000xXvlIAE","Name":"PAY-3946"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvqIAE"},"Id":"a0bZ0000000xXvqIAE","Name":"PAY-3947"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvvIAE"},"Id":"a0bZ0000000xXvvIAE","Name":"PAY-3948"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXw0IAE"},"Id":"a0bZ0000000xXw0IAE","Name":"PAY-3949"},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXw5IAE"},"Id":"a0bZ0000000xXw5IAE","Name":"PAY-3950"}]}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAL3UTY/CIBAG4P8yZ1zwo65668FDk2azxmhWjWloy6GmtluY
+        4rqN/12iJiYGjsIJ5h3gOU0HWCMvl8W/gNmEQF5XZoOyFQSkyGqZK5jtOuCI
+        skhbFObYAZ5/TRd88/NRVJgkGRBoZWlKVAmpi0womnPkVA9GH4yqOj2IDBV9
+        XqCcpVt2X39xE0fhCi4Eoty8YYkIfPHj7ctw0xtOR8w0vx21cKMWNlTfB2rt
+        Rq1tqMH7UT+6jMK5FfWIXlFjH6jGjWpsqE8fKO1GaRtq4gF1Yk7UPXpFTX2g
+        AjcqsKACMxL2lyur+4bkzwQAAA==
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:28:54 GMT
+  recorded_at: Thu, 13 Dec 2012 12:32:18 GMT
 recorded_with: VCR 2.2.5

@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:53:32 GMT
+      - Thu, 13 Dec 2012 17:35:18 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"Success":"false","Message":"Required parameters are missing. You
         must pass values for the following: username__c, email__c, last_name__c, first_name__c."}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:53:32 GMT
+  recorded_at: Thu, 13 Dec 2012 17:35:18 GMT
 recorded_with: VCR 2.2.5

@@ -2,47 +2,47 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v20.0/query?q=select%20id,name,challenge__r.name,challenge__r.challenge_id__c,money__c,place__c,reason__c,status__c,type__c,Reference_Number__c,payment_sent__c%20from%20payment__c%20where%20member__r.name%20=%20'jeffdonthemic'%20order%20by%20id
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2Cname%2Cchallenge__r.name%2Cchallenge__r.challenge_id__c%2Cmoney__c%2Cplace__c%2Creason__c%2Cstatus__c%2Ctype__c%2CReference_Number__c%2Cpayment_sent__c+from+payment__c+where+member__r.name+%3D+%27jeffdonthemic%27+order+by+id
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      content-type:
-      - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:16 GMT
+      - Thu, 13 Dec 2012 12:29:54 GMT
       content-type:
       - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
-      encoding: US-ASCII
-      string: ! '{"totalSize":8,"done":true,"records":[{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqLIAU"},"Id":"a0bZ0000000xLqLIAU","Name":"PAY-3940","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
-        Challenge","Challenge_Id__c":"2"},"Money__c":1.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqQIAU"},"Id":"a0bZ0000000xLqQIAU","Name":"PAY-3941","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
-        Challenge","Challenge_Id__c":"2"},"Money__c":1.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xLqVIAU"},"Id":"a0bZ0000000xLqVIAU","Name":"PAY-3942","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
-        Challenge","Challenge_Id__c":"2"},"Money__c":1.0,"Place__c":"1","Reason__c":"Reviewer
-        payments","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvlIAE"},"Id":"a0bZ0000000xXvlIAE","Name":"PAY-3946","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Challenge_Id__c":"15"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvqIAE"},"Id":"a0bZ0000000xXvqIAE","Name":"PAY-3947","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Challenge_Id__c":"15"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXvvIAE"},"Id":"a0bZ0000000xXvvIAE","Name":"PAY-3948","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Challenge_Id__c":"15"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXw0IAE"},"Id":"a0bZ0000000xXw0IAE","Name":"PAY-3949","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Challenge_Id__c":"15"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null},{"attributes":{"type":"Payment__c","url":"/services/data/v20.0/sobjects/Payment__c/a0bZ0000000xXw5IAE"},"Id":"a0bZ0000000xXw5IAE","Name":"PAY-3950","Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v20.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Challenge_Id__c":"15"},"Money__c":1000.0,"Place__c":"1","Reason__c":"Contest
-        payment","Status__c":"Owed","Type__c":null,"Reference_Number__c":null,"Payment_Sent__c":null}]}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAO3XQW+CMBQA4L9CekYBJ5t6I24xJOpUnHFbFlPhzbEgaFtw
+        avzvK6DOmZLssjgdnOh7r+1rv3BgjVjAsGe5K0C1ioycwOcvjIQgIwJ2QByK
+        as9rhBkj7jhkwIdrxJYzXoU6eDkFn41GNpJRSDweUiiQyLWBKg5mWIlK5aKq
+        0GD8DjajytcEBavjJzV9Pprzpmk8oI2MTIevIUjJqI2nyZbGY+GqWlZ5pP6G
+        PQ/8CYxGJG5K2OJB0U+bPJzC22xse9EH3WDSMhpxm9tmetYMbGlf/60n04l3
+        rKFSXN/it7pMxlpRlVHHwzakaY1P6gGmgZ+O64HPD8CkWXpTPGsxzEKaZu8X
+        4PBQn58tCfih58XzX4GAz5dsh9MxkIPU7sKtLVMS3si/7tnN9uyKPLXc8097
+        DrI9ByLP0qV69iByYQFkB0rPU3QYeaZxJxTdpo5Fr08hylZay6gfiPbjb2lf
+        LhWkW6DuxBfKavoRLV/yP3ytw2iebTsX2d7ktmdjG2XbRiLbSm57LrYLNdM2
+        TR3bVnPbs7HVs211ga1+kj+ci7R92XwCpECnteUOAAA=
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:16 GMT
+  recorded_at: Thu, 13 Dec 2012 12:29:54 GMT
 recorded_with: VCR 2.2.5

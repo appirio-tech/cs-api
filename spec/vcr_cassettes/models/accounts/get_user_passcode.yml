@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+passcode__c+from+user+where+%0A++++++++++username+%3D+%27XXHKYX54%40m.cloudspokes.com.sandbox%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQLP_aAnEMuh4wfwxjUp_mWvElx6RO_VzAQH8AgmUclrhCKOPTO53CAqeRRV6Ns25GmEQIiXpSIaF6pm2iOAb1N0P6AJ1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 13 Dec 2012 17:35:15 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAACWMywrCMBBF/+Wug4m1PuiuS3eCuFGkpMkIlWpkZlrQ0n83
+        4l2dA4c7QZP6/th9CNXSIKZnBuWBDJhC4iioLhO8KnftoJR1gr5fucJJiGEw
+        cJ/FZhm7QGKjV2/Holw4K6m9U1Cxv9Q6tz67/25cPPZ1jdng4EVCitQ0Id/s
+        Vptyi/k6fwFO210xmgAAAA==
+    http_version: '1.1'
+  recorded_at: Thu, 13 Dec 2012 17:35:15 GMT
+recorded_with: VCR 2.2.5

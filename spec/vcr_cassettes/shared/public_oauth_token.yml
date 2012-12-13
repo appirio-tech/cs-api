@@ -17,14 +17,16 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:53:34 GMT
+      - Thu, 13 Dec 2012 17:35:10 GMT
       content-type:
       - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1354737214183","instance_url":"https://cs11.salesforce.com","signature":"6bmJv4Jc5akp7vT/kadA9h/ELuJw5oR3XDDo7lMFr1g=","access_token":"00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1355420110990","instance_url":"https://cs11.salesforce.com","signature":"UEZ8eiUn6ch2nDlyKe9uIQ34ZrucehHJvoHGLxgAcP4=","access_token":"00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio"}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:53:34 GMT
+  recorded_at: Thu, 13 Dec 2012 17:35:11 GMT
 recorded_with: VCR 2.2.5

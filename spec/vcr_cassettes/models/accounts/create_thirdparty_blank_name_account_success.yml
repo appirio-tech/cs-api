@@ -5,19 +5,19 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=QQNDCTFLHY47&email__c=QQNDCTFLHY47%40rspec.cloudspokes.com&first_name__c=QQNDCTFLHY47&last_name__c=QQNDCTFLHY47&third_party_account__c=github&third_party_username__c=QQNDCTFLHY47%40rspec.cloudspokes.com
+      string: username__c=PHZEZJKFNT8&email__c=PHZEZJKFNT8%40rspec.cloudspokes.com&first_name__c=PHZEZJKFNT8&last_name__c=PHZEZJKFNT8&third_party_account__c=github&third_party_username__c=PHZEZJKFNT8%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:53:31 GMT
+      - Thu, 13 Dec 2012 17:35:18 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000GDe6MAG","sfdc_username":"QQNDCTFLHY47@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"QQNDCTFLHY47"}'
+      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000GMEjMAO","sfdc_username":"PHZEZJKFNT8@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"PHZEZJKFNT8"}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:53:31 GMT
+  recorded_at: Thu, 13 Dec 2012 17:35:20 GMT
 recorded_with: VCR 2.2.5

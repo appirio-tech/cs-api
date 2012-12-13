@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJ0k96FtI0f4MDdllG0lwLhLdcVVm5YoJB4bWluga_FoEJ0hsjHGyF1EMWki3UNCWdZaIp6aPl8V9mOlsCPpcmPFLhnD
+      - OAuth 00DZ00000007ybt!AQQAQLP_aAnEMuh4wfwxjUp_mWvElx6RO_VzAQH8AgmUclrhCKOPTO53CAqeRRV6Ns25GmEQIiXpSIaF6pm2iOAb1N0P6AJ1
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:38 GMT
+      - Thu, 13 Dec 2012 16:39:09 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,34 +28,42 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"User is currently active."}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:38 GMT
+  recorded_at: Thu, 13 Dec 2012 16:39:09 GMT
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v20.0/query?q=select%20id,%20name,%20profile_pic__c,%20email__c,%20%0A%20%20%20%20%20%20%20%20sfdc_user__r.username,%20account__c%20from%20member__c%20%0A%20%20%20%20%20%20%20%20where%20username__c='jeffdonthemic'%20and%20%0A%20%20%20%20%20%20%20%20sfdc_user__r.third_party_account__c%20=%20''
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+name%2C+profile_pic__c%2C+email__c%2C+%0A++++++++sfdc_user__r.username%2C+account__c+from+member__c+%0A++++++++where+username__c%3D%27jeffdonthemic%27+and+%0A++++++++sfdc_user__r.third_party_account__c+%3D+%27%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      content-type:
-      - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJ0k96FtI0f4MDdllG0lwLhLdcVVm5YoJB4bWluga_FoEJ0hsjHGyF1EMWki3UNCWdZaIp6aPl8V9mOlsCPpcmPFLhnD
+      - OAuth 00DZ00000007ybt!AQQAQLP_aAnEMuh4wfwxjUp_mWvElx6RO_VzAQH8AgmUclrhCKOPTO53CAqeRRV6Ns25GmEQIiXpSIaF6pm2iOAb1N0P6AJ1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:38 GMT
+      - Thu, 13 Dec 2012 16:39:09 GMT
       content-type:
       - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
-      encoding: US-ASCII
-      string: ! '{"totalSize":0,"done":true,"records":[]}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:38 GMT
+  recorded_at: Thu, 13 Dec 2012 16:39:09 GMT
 recorded_with: VCR 2.2.5

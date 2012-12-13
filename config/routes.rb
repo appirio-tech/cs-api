@@ -37,7 +37,10 @@ CsApi::Application.routes.draw do
 		# participants
 		match "/participants/:membername/:challenge_id" => "participants#current_status", :via => :get
 		match "/participants/:membername/:challenge_id" => "participants#create", :via => :post		
-		match "/participants/:membername/:challenge_id" => "participants#update", :via => :put	
+		match "/participants/:membername/:challenge_id" => "participants#update", :via => :put
+		match "/participants/:membername/:challenge_id/deliverables" => "deliverables#all", :via => :get
+		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#create", :via => :post
+		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#update", :via => :put
 
 		# squirrelforce
 		match "/squirrelforce/reserve_server" => "squirrelforce#reserve_server", :via => :get

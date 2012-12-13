@@ -21,7 +21,7 @@ describe Member do
   describe "all" do
 	  it "should return members successfully" do
 	    VCR.use_cassette "models/members/all_members" do
-	      results = Member.all(@public_oauth_token, 'id,name', 'name')
+	      results = Member.all(@public_oauth_token, 'id,name', 'name', 25, 0)
 	      # should return an array
 	      results.count.should > 0
 	    end

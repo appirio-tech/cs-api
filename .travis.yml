@@ -1,4 +1,5 @@
-before_install: gem install debugger-linecache -v '1.1.2' -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p286/
+before_install: 
+  - gem install debugger-linecache -v '1.1.2' -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p286/
 language: ruby
 rvm:
   - 1.9.2

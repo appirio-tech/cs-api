@@ -5,19 +5,19 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=XBGUFS31&email__c=XBGUFS31%40rspec.cloudspokes.com&first_name__c=XBGUFS31&last_name__c=XBGUFS31&third_party_account__c=github&third_party_username__c=XBGUFS31%40rspec.cloudspokes.com
+      string: username__c=XXHKYX54&email__c=XXHKYX54%40rspec.cloudspokes.com&first_name__c=XXHKYX54&last_name__c=XXHKYX54&third_party_account__c=github&third_party_username__c=XXHKYX54%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:53:30 GMT
+      - Thu, 13 Dec 2012 17:35:21 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"false","Message":"Username XBGUFS31 is not available."}'
+      string: ! '{"Success":"false","Message":"Username XXHKYX54 is not available."}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:53:30 GMT
+  recorded_at: Thu, 13 Dec 2012 17:35:21 GMT
 recorded_with: VCR 2.2.5
