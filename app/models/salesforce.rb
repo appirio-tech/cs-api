@@ -60,7 +60,7 @@ class Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.query(access_token, soql)
+  def self.query_salesforce(access_token, soql)
     Forcifier::JsonMassager.deforce_json(restforce_client(access_token).query(soql))
   rescue Exception => e
     puts "[FATAL][Salesforce] Query exception: #{soql} -- #{e.message}" 
@@ -77,7 +77,7 @@ class Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.create(access_token, sobject, params)
+  def self.create_in_salesforce(access_token, sobject, params)
     {:success => true, :message => restforce_client(access_token).create!(sobject, params)}      
   rescue Exception => e
     puts "[FATAL][Salesforce] Create exception: #{e.message}" 
@@ -94,7 +94,7 @@ class Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.destroy(access_token, sobject, id)
+  def self.destroy_in_salesforce(access_token, sobject, id)
     restforce_client(access_token).destroy!(sobject, id)
     {:success => true, :message => 'Record successfully deleted.'} 
   rescue Exception => e

@@ -5,7 +5,7 @@ class Squirrelforce  < Salesforce
 
 	def self.unleash_squirrel(access_token, submission_deliverable_id)
 
-		deliverable = query(access_token, "select Id, Name, Language__c, URL__c 
+		deliverable = query_salesforce(access_token, "select Id, Name, Language__c, URL__c 
 			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")		
 
 		#rename the key from laugnage to type for rabbitmq
@@ -25,7 +25,7 @@ class Squirrelforce  < Salesforce
 	def self.reserve_server(access_token, membername)
 		set_header_token(access_token) 
 		  
-		fetch_server_results = query(access_token, "select Id, Name, Installed_Services__c, Instance_URL__c, 
+		fetch_server_results = query_salesforce(access_token, "select Id, Name, Installed_Services__c, Instance_URL__c, 
 			Operating_System__c, Password__c, Platform__c, Security_Token__c, 
 			Supported_Programming_Language__c, Username__c from Server__c where 
 			platform__c = 'Salesforce.com' and Reserved_text__c = 'FREE' limit 1")
@@ -33,7 +33,7 @@ class Squirrelforce  < Salesforce
 		unless fetch_server_results.empty?
 			server = Forcifier::JsonMassager.deforce_json(fetch_server_results.first)
 			# add a new reservation for this server
-			create(access_token, 'Reservation__c', {'Reserved_Server__c' => server['id'], 
+			create_in_salesforce(access_token, 'Reservation__c', {'Reserved_Server__c' => server['id'], 
 				'Reserved_Member__c' => Member.salesforce_member_id(access_token, membername), 
 				'Start_Date__c' => DateTime.now})
 			{:success => true, :message => 'Server successfully reserved.', :server => server}
@@ -44,7 +44,7 @@ class Squirrelforce  < Salesforce
 	end
 
 	def self.release_server(access_token, reservation_id)
-		destroy(access_token, 'Reservation__c', reservation_id)
+		destroy_in_salesforce(access_token, 'Reservation__c', reservation_id)
 	end	
 
 end
