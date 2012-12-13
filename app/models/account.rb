@@ -57,13 +57,13 @@ class Account < Salesforce
         where username__c='" + service_name + "' and 
         sfdc_user__r.third_party_account__c = ''")
 
-      if query_results.count.eql?(0)
-        puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
-        {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
-      else
+      unless query_results.empty?
         m = query_results.first
         {:success => 'true', :username => m['name'], :sfdc_username => m['sfdc_user__r']['username'], 
         :profile_pic => m['profile_pic'], :email => m['email'], :accountid => m['account']}
+      else        
+        puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
+        {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
       end
 
     # third party credentials -- activating user is part of credentials service
