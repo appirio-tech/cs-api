@@ -52,18 +52,18 @@ class Account < Salesforce
       puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
 
       # do rest query and find member and all their info
-      query_results = soql_query("select id, name, profile_pic__c, email__c, 
+      query_results = query_salesforce(access_token, "select id, name, profile_pic__c, email__c, 
         sfdc_user__r.username, account__c from member__c 
         where username__c='" + service_name + "' and 
         sfdc_user__r.third_party_account__c = ''")
 
-      if query_results['totalSize'].eql?(0)
+      if query_results.count.eql?(0)
         puts "[WARN][Account] Query returned no CloudSpokes managed member for #{service_name}." 
         {:success => 'false', :message => "CloudSpokes managed member not found for #{service_name}."}
       else
-        m = query_results['records'].first
-        {:success => 'true', :username => m['Name'], :sfdc_username => m['SFDC_User__r']['Username'], 
-        :profile_pic => m['Profile_Pic__c'], :email => m['Email__c'], :accountid => m['Account__c']}
+        m = query_results.first
+        {:success => 'true', :username => m['name'], :sfdc_username => m['sfdc_user__r']['username'], 
+        :profile_pic => m['profile_pic'], :email => m['email'], :accountid => m['account']}
       end
 
     # third party credentials -- activating user is part of credentials service

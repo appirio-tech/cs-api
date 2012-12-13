@@ -10,10 +10,8 @@ class Tos < Salesforce
   #   - ++ ->
   # 
   def self.all(access_token) 
-    set_header_token(access_token)   
-    query_results = soql_query("select id, name, terms__c, default_tos__c 
+    query_salesforce(access_token, "select id, name, terms__c, default_tos__c 
       from terms_of_service__c order by name")
-    Forcifier::JsonMassager.deforce_json(query_results['records'])
   end  
 
   #

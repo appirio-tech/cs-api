@@ -61,7 +61,7 @@ class Challenge < Salesforce
   end
 
   def self.recent(access_token, limit, offset)  
-    query(access_token, "SELECT Blog_URL__c, Name, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, Source_Code_URL__c,
+    query_salesforce(access_token, "SELECT Blog_URL__c, Name, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, Source_Code_URL__c,
         Total_Prize_Money__c, Top_Prize__c, (SELECT Money_Awarded__c,Place__c,Member__c,
         Member__r.Name, Points_Awarded__c,Score__c,Status__c FROM Challenge_Participants__r where Has_Submission__c = true), 
         (Select Name, Category__c, Display_Name__c From Challenge_Categories__r) 
@@ -69,7 +69,7 @@ class Challenge < Salesforce
   end  
 
   def self.salesforce_id(access_token, challenge_id) 
-    query(access_token, "select id from challenge__c where challenge_id__c = '#{challenge_id}'").first['id']
+    query_salesforce(access_token, "select id from challenge__c where challenge_id__c = '#{challenge_id}'").first['id']
   rescue Exception => e  
     nil
   end      

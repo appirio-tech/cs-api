@@ -15,14 +15,6 @@ class Salesforce
     headers 'Authorization' => "OAuth #{access_token}" 
   end  
 
-  def self.soql_query(soql)
-    begin
-      get(ENV['SFDC_REST_API_URL']+"/query?q=#{esc soql}")
-    rescue Exception => e
-      nil
-    end     
-  end
-
   #
   # Returns a restforce client from an access_token
   # * *Args*    :

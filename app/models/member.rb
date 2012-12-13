@@ -103,11 +103,9 @@ class Member < Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.payments(access_token, membername, fields, order_by) 
-    set_header_token(access_token)    
-    query_results = soql_query("select "+ fields +" from payment__c where member__r.name = '" + 
+  def self.payments(access_token, membername, fields, order_by)  
+    query_salesforce(access_token, "select "+ fields +" from payment__c where member__r.name = '" + 
       membername + "' order by " + order_by)
-    Forcifier::JsonMassager.deforce_json(query_results['records'])
   end    
 
   #
@@ -179,7 +177,7 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.salesforce_member_id(access_token, membername) 
-    query(access_token, "select id from member__c where name = '#{membername}'").first['id']
+    query_salesforce(access_token, "select id from member__c where name = '#{membername}'").first['id']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch member id for #{membername}: #{e.message}"     
     nil
@@ -196,7 +194,7 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.salesforce_user_id(access_token, membername)  
-    query(access_token, "select sfdc_user__c from member__c where name = '#{membername}'").first['sfdc_user']
+    query_salesforce(access_token, "select sfdc_user__c from member__c where name = '#{membername}'").first['sfdc_user']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch salesforce user id for #{membername}: #{e.message}"     
     nil
