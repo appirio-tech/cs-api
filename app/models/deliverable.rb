@@ -19,9 +19,18 @@ class Deliverable < Salesforce
   end 
 
   def self.create(access_token, membername, challenge_id, data)
-    results = create_in_salesforce(access_token, 'Submission_Deliverable__c', Forcifier::JsonMassager.enforce_json(data))
-    puts results
-    {:success => 'Unknown', :message => 'Stubbed out'}
+    # get the challenge participant's id
+    data['challenge_participant'] = query_salesforce(access_token, 
+      "select id from challenge_participant__c where member__r.name = '#{membername}' 
+      and challenge__r.challenge_id__c = '#{challenge_id}'").first['id']
+
+    create_in_salesforce(access_token, 'Submission_Deliverable__c', 
+      Forcifier::JsonMassager.enforce_json(data))
+  end     
+
+  def self.update(access_token, data)
+    update_in_salesforce(access_token, 'Submission_Deliverable__c', 
+      Forcifier::JsonMassager.enforce_json(data))
   end        
 
 end

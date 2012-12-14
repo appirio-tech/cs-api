@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://cs11.salesforce.com/services/data/v24.0/sobjects/Submission_Deliverable__c/a19Z00000009wfkIAA
+    body:
+      encoding: UTF-8
+      string: ! '{"type__c":"Code","url__c":"http://www.google.com","hosting_platform__c":"Heroku","language__c":null}'
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Fri, 14 Dec 2012 14:54:34 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"fields":["Language__c"],"message":"Language is required for Code
+        deliverables.","errorCode":"FIELD_CUSTOM_VALIDATION_EXCEPTION"}]'
+    http_version: '1.1'
+  recorded_at: Fri, 14 Dec 2012 14:54:34 GMT
+recorded_with: VCR 2.2.5

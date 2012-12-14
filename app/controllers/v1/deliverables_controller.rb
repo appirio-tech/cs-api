@@ -1,6 +1,6 @@
 class V1::DeliverablesController < V1::ApplicationController
 
-  # before_filter :restrict_access
+  before_filter :restrict_access
 
 	# inherit from actual member model. Submissions in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -31,13 +31,27 @@ class V1::DeliverablesController < V1::ApplicationController
   #   - challenge_id -> the participant's challenge id
   #   - params[:data] -> the JSON to use to create the deliverable
   # * *Returns* :
-  #   - a hash containing the following keys: success, errors
+  #   - JSON containing the following keys: success, message
   # * *Raises* :
   #   - ++ ->
   #   
   def create
     expose Deliverable.create(@oauth_token, params[:membername].strip,
       params[:challenge_id].strip, params[:data])
+  end       
+
+  # Updates a deliverable for a participant
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - params[:data] -> the JSON to use to create the deliverable, must
+  #     contain the id of the deliverable to update
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def update
+    expose Deliverable.update(@oauth_token, params[:data])
   end       
 
 end

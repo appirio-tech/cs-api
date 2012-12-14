@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Type__c%2C+Comments__c%2C+Username__c%2C+Password__c%2C+Language__c%2C+%0A++++++URL__c%2C+Hosting_Platform__c+from+Submission_Deliverable__c+%0A++++++where+Challenge_Participant__r.Member__r.Name+%3D+%27salpartovi%27+and+%0A++++++Challenge_Participant__r.Challenge__r.Challenge_Id__c+%3D+%272%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 14 Dec 2012 15:03:22 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAO3US0/CQBAA4L9i5tywYEyMvSEkgPYAIhw0pNm2Q13dB9lH
+        GyX8d5fHgRhXEmOCh/bUnZ2Znf3SdA1WWcqn7AMhvo6gUNK/WO0wAo250oWB
+        +HkN1FrNMmfRL9dg31c+C6YuE8wYpmTaR84q1DTjmKY5ROA09xnEoK5YjoYU
+        1FJSXV612sSo7BVza0iwntDOzVN7/3Q7/dtRtw2bCEaFb/nNVgSPfqDtuTH0
+        VIE+0FNCoLRmF5SO8whmfhZJBR6FxtSY2t/xKJRQWTpaHrrd0Yr6brOHZL9+
+        sXYVE1LXdatUquTYypXwCUNlLJNlOubULpUW++whavXm/ORn9huE/QZf/foo
+        1IW/758ZHgp/JbitPbteEtZLGr1TepOw3qTRO6U3D+vNmz/faT866t4H/HZb
+        zdf3k94yrLf8/3qLzSf+3olw3QgAAA==
+    http_version: '1.1'
+  recorded_at: Fri, 14 Dec 2012 15:03:22 GMT
+recorded_with: VCR 2.2.5

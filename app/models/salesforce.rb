@@ -77,6 +77,23 @@ class Salesforce
   end
 
   #
+  # Updates a new record in salesforce
+  # * *Args*    :
+  #   - access_token -> the oauth token to use  
+  #   - params -> the hash of values for the new record
+  # * *Returns* :
+    #   - new record id
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.update_in_salesforce(access_token, sobject, params)
+    {:success => restforce_client(access_token).update!(sobject, params), :message => ''}      
+  rescue Exception => e
+    puts "[FATAL][Salesforce] Update exception: #{e.message}" 
+    {:success => false, :message => e.message}    
+  end  
+
+  #
   # Makes generic destroy to delete a records in salesforce
   # * *Args*    :
   #   - sobject -> the sObject to create
