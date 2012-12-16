@@ -54,7 +54,7 @@ class Challenge < Salesforce
     {:success => results['Success'], :message => results['Message']}
   end    
 
-  def self.all(access_token, open, category, order_by, limit, offset) 
+  def self.all(access_token, open, category, order_by, limit=25, offset=0) 
     set_header_token(access_token)   
     qry_category = category.nil? ? '' : "&category=#{esc category}"    
     get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}"+qry_category)
@@ -72,6 +72,54 @@ class Challenge < Salesforce
     query_salesforce(access_token, "select id from challenge__c where challenge_id__c = '#{challenge_id}'").first['id']
   rescue Exception => e  
     nil
-  end      
+  end  
+
+  # run via rake task, updates all currently open public challenge with 
+  # probability of success
+  def self.run_health_check
+
+    # get all of the public, open challenges
+    Challenge.all(access_token, 'true', nil, 'name').each do |c|
+      
+      id = c['id']
+      days_till_close = c['days_till_close']    
+      registered_members = c['registered_members']
+      participating_members = 0 
+
+      status = :yellow
+      if days_till_close <= 2
+        status = :green if registered_members >= 3
+        status = :red if registered_members <= 1
+      elsif days_till_close <= 4
+        number_of_comments = public_comments_count(id)
+        status = :green if number_of_comments >= 4 && registered_members <= 1
+        status = :green if registered_members >= 2
+        status = :red if registered_members == 0
+      elsif days_till_close <= 6
+        status = :green if registered_members > 2
+      end 
+      #update the health status back in salesforce
+      update_in_salesforce(access_token, 'Challenge__c', {'Id' => id, 'health__c' => status})
+    end
+
+  end  
+
+  private 
+
+    # used by run_health_check
+    def self.public_comments_count(challenge_id)
+        public_comments = 0
+        # get all of the comments
+        comments = Forcifier::JsonMassager.deforce_json(query_salesforce(access_token, 
+          "select id, member__r.email__c from challenge_comment__c 
+          where challenge__c = '#{challenge_id}'"))
+        
+        if comments.count > 0
+          comments.each do |c|
+            public_comments = public_comments + 1 unless c['member__r']['email'].include?('@appirio.com')
+          end
+        end
+        public_comments
+    end      
 
 end
