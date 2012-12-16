@@ -78,8 +78,11 @@ class Challenge < Salesforce
   # probability of success
   def self.run_health_check
 
+    # get an oauth token
+    oauth_token = access_token
+
     # get all of the public, open challenges
-    Challenge.all(access_token, 'true', nil, 'name').each do |c|
+    Challenge.all(oauth_token, 'true', nil, 'name').each do |c|
       
       id = c['id']
       days_till_close = c['days_till_close']    
@@ -91,7 +94,7 @@ class Challenge < Salesforce
         status = :green if registered_members >= 3
         status = :red if registered_members <= 1
       elsif days_till_close <= 4
-        number_of_comments = public_comments_count(id)
+        number_of_comments = public_comments_count(oauth_token, id)
         status = :green if number_of_comments >= 4 && registered_members <= 1
         status = :green if registered_members >= 2
         status = :red if registered_members == 0
@@ -99,7 +102,7 @@ class Challenge < Salesforce
         status = :green if registered_members > 2
       end 
       #update the health status back in salesforce
-      update_in_salesforce(access_token, 'Challenge__c', {'Id' => id, 'health__c' => status})
+      update_in_salesforce(oauth_token, 'Challenge__c', {'Id' => id, 'health__c' => status})
     end
 
   end  
@@ -107,10 +110,10 @@ class Challenge < Salesforce
   private 
 
     # used by run_health_check
-    def self.public_comments_count(challenge_id)
+    def self.public_comments_count(oauth_token, challenge_id)
         public_comments = 0
         # get all of the comments
-        comments = Forcifier::JsonMassager.deforce_json(query_salesforce(access_token, 
+        comments = Forcifier::JsonMassager.deforce_json(query_salesforce(oauth_token, 
           "select id, member__r.email__c from challenge_comment__c 
           where challenge__c = '#{challenge_id}'"))
         
