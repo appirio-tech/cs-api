@@ -26,7 +26,7 @@ class Squirrelforce  < Salesforce
 		set_header_token(access_token) 
 		  
 		fetch_server_results = query_salesforce(access_token, "select Id, Name, Installed_Services__c, Instance_URL__c, 
-			Operating_System__c, Password__c, Platform__c, Security_Token__c, Git_URL__c,
+			Operating_System__c, Password__c, Platform__c, Security_Token__c, Repo_Name__c,
 			Supported_Programming_Language__c, Username__c from Server__c where 
 			platform__c = 'Salesforce.com' and Reserved_text__c = 'FREE' limit 1")
 
