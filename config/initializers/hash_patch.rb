@@ -14,6 +14,16 @@ class Hash
     
     return true
   end
+
+  #non-destructive version
+  def remove_key(*keys)
+    self.dup.remove!(*keys)
+  end  
+
+  def remove_key!(*keys)
+    keys.each{|key| self.delete(key) }
+    self
+  end
   
   private
     def self.rename_key(hsh, old_key, new_key)

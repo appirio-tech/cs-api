@@ -15,6 +15,8 @@ class Squirrelforce  < Salesforce
 		deliverable.rename_key!('language','type')
 		# make the membername a little easier to work with
 		deliverable['membername'] = deliverable['challenge_participant__r']['member__r']['name']
+		# remove the old key
+		deliverable.remove_key!('challenge_participant__r')
 
 		b = Bunny.new ENV['CLOUDAMQP_URL']
 		b.start
