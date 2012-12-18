@@ -5,7 +5,8 @@ class Squirrelforce  < Salesforce
 
 	def self.unleash_squirrel(access_token, submission_deliverable_id)
 
-		deliverable = query_salesforce(access_token, "select Id, Name, Language__c, URL__c 
+		deliverable = query_salesforce(access_token, "select Id, Name, Language__c, 
+			URL__c, Challenge_Participant__r.Member__r.Name
 			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")		
 
 		#rename the key from laugnage to type for rabbitmq
