@@ -95,6 +95,7 @@ class PrivateMessage < Salesforce
     }
 
     results = post(ENV['SFDC_APEXREST_URL']+'/notifications', options)
+    puts "[INFO][PrivateMessage] Results from notification reply post: #{results}"
     if results.first.has_key?('errorCode') 
       raise 'Sorry! Could not send private message!'
     else
