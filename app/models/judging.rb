@@ -39,7 +39,9 @@ class Judging  < Salesforce
 				'Member__c' => Member.salesforce_member_id(access_token, membername)})			
 			{:success => true, :message => 'Thank you! You are now a judge for this challenge.'}
 		end
-	  
+  rescue Exception => e
+    puts "[FATAL][Judging] Error adding judge: #{e.message}" 
+    {:success => false, :message => e.message} 
 	end
 
 end
