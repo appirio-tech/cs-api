@@ -83,46 +83,18 @@ class Challenge < Salesforce
 
     # get all of the public, open challenges
     Challenge.all(oauth_token, 'true', nil, 'name').each do |c|
-      
-      id = c['id']
-      days_till_close = c['days_till_close']    
-      registered_members = c['registered_members']
-      participating_members = 0 
 
-      status = :yellow
-      if days_till_close <= 2
-        status = :green if registered_members >= 3
-        status = :red if registered_members <= 1
-      elsif days_till_close <= 4
-        number_of_comments = public_comments_count(oauth_token, id)
-        status = :green if number_of_comments >= 4 && registered_members <= 1
-        status = :green if registered_members >= 2
-        status = :red if registered_members == 0
-      elsif days_till_close <= 6
-        status = :green if registered_members > 2
-      end 
+      # get the comments for the challenge
+      comments = Forcifier::JsonMassager.deforce_json(query_salesforce(access_token, 
+        "select id, member__r.email__c from challenge_comment__c 
+        where challenge__c = '#{c['id']}'"))      
+  
       #update the health status back in salesforce
-      update_in_salesforce(oauth_token, 'Challenge__c', {'Id' => id, 'health__c' => status})
+      update_in_salesforce(oauth_token, 'Challenge__c', {'Id' => c['id'], 
+        'health__c' => HealthCheck.status(c, comments)})
+  
     end
 
-  end  
-
-  private 
-
-    # used by run_health_check
-    def self.public_comments_count(oauth_token, challenge_id)
-        public_comments = 0
-        # get all of the comments
-        comments = Forcifier::JsonMassager.deforce_json(query_salesforce(oauth_token, 
-          "select id, member__r.email__c from challenge_comment__c 
-          where challenge__c = '#{challenge_id}'"))
-        
-        if comments.count > 0
-          comments.each do |c|
-            public_comments = public_comments + 1 unless c['member__r']['email'].include?('@appirio.com')
-          end
-        end
-        public_comments
-    end      
+  end      
 
 end
