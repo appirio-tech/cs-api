@@ -42,6 +42,16 @@ CsApi::Application.routes.draw do
 		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#create", :via => :post
 		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#update", :via => :put
 
+		# private messages
+		match "/messages" => "private_messages#all", :via => :get
+		match "/messages" => "private_messages#create", :via => :post		
+		match "/messages/:id" => "private_messages#find", :via => :get
+		match "/messages/:id" => "private_messages#update", :via => :put
+		match "/messages/:id/reply" => "private_messages#reply", :via => :post
+		match "/messages/inbox/:membername" => "private_messages#inbox", :via => :get			
+		match "/messages/to/:membername" => "private_messages#to", :via => :get	
+		match "/messages/from/:membername" => "private_messages#from", :via => :get				
+
 		# squirrelforce
 		match "/squirrelforce/reserve_server" => "squirrelforce#reserve_server", :via => :get
 		match "/squirrelforce/release_server" => "squirrelforce#release_server", :via => :get
