@@ -180,7 +180,7 @@ class Member < Salesforce
     query_salesforce(access_token, "select id from member__c where name = '#{membername}'").first['id']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch member id for #{membername}: #{e.message}"     
-    nil
+    raise "Member #{membername} not found."
   end     
 
   #
@@ -197,7 +197,7 @@ class Member < Salesforce
     query_salesforce(access_token, "select sfdc_user__c from member__c where name = '#{membername}'").first['sfdc_user']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch salesforce user id for #{membername}: #{e.message}"     
-    nil
+    raise "Salesforce User not found for member #{membername}."
   end     
 
 end
