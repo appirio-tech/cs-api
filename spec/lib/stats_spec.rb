@@ -28,6 +28,4 @@ describe Stats do
     end
   end	
 
-
-
 end

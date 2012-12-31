@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+challenge__c+limit+1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQD6FoHE1FkM6SvZiAegyAb_5tNPT4awtSbNKMWYHmMaKLii1Z4SAJlGBerZC4Hydo6aAjNNckKpkHXG5H.GBeJbKisOw
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 23 Dec 2012 20:17:44 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAG1MvQrCMBB+l5uDiVKXbiIiDi4VHBQp1+TQlNDI5VrQ0Hc3
+        ODn4Td9/BomC4eTfBPVSgYtDIcIjKWCykV2C+poBRdh3o1CRGeT1LC3YPjAE
+        Gu7UthYUjByKqRPx5C0l7VBQT6tqYXSKXU9Wkv6daDT7i/lifW52zXFTwazg
+        4MrLv+g2fwD4UUx8rgAAAA==
+    http_version: '1.1'
+  recorded_at: Sun, 23 Dec 2012 20:17:49 GMT
+recorded_with: VCR 2.2.5
