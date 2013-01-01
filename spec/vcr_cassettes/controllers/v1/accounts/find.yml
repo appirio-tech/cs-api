@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+To__c%2C+To__r.Name%2C%0A++++++From__c%2C+From__r.Name%2C+Subject__c%2C+Status_From__c%2C+Status_To__c%2C++Replies__c%2C%0A++++++%28select+id%2C+from__r.name%2C+from__r.profile_pic__c%2C+body__c%2C+createddate+from+%0A++++++Private_Message_Texts__r+order+by+createddate%29+from+Private_Message__c+where+Id+%3D+%271%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Tue, 01 Jan 2013 17:58:22 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"message":"\nfrom Private_Message__c where Id = ''1''\n                              ^\nERROR
+        at Row:4:Column:84\ninvalid ID field: 1","errorCode":"INVALID_QUERY_FILTER_OPERATOR"}]'
+    http_version: '1.1'
+  recorded_at: Tue, 01 Jan 2013 17:58:22 GMT
+recorded_with: VCR 2.2.5

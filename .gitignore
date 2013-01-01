@@ -16,4 +16,5 @@
 .DS_Store
 config/initializers/development_settings.rb
 .env
+.env-production
 coverage

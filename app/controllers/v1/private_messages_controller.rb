@@ -8,10 +8,6 @@ class V1::PrivateMessagesController < V1::ApplicationController
 
 	end	
 
-  def all
-    expose PrivateMessage.all(@oauth_token)
-  end	
-
   def find
     expose PrivateMessage.find(@oauth_token, params[:id])
   end  

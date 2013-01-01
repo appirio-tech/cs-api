@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+member__c+where+name+%3D+%27badmember%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Jan 2013 16:31:03 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
+    http_version: '1.1'
+  recorded_at: Tue, 01 Jan 2013 16:31:03 GMT
+recorded_with: VCR 2.2.5

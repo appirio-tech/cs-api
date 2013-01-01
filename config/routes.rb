@@ -43,7 +43,6 @@ CsApi::Application.routes.draw do
 		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#update", :via => :put
 
 		# private messages
-		match "/messages" => "private_messages#all", :via => :get
 		match "/messages" => "private_messages#create", :via => :post		
 		match "/messages/:id" => "private_messages#find", :via => :get
 		match "/messages/:id" => "private_messages#update", :via => :put

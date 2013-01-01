@@ -1,13 +1,5 @@
 class PrivateMessage < Salesforce
 
-  def self.all(access_token) 
-    query_salesforce(access_token, "select Id, Name, CreatedDate, LastModifiedDate, 
-      To__c, To__r.Name, To__r.Profile_Pic__c, From__c, From__r.Name, From__r.Profile_Pic__c, Subject__c, 
-      Status_From__c, Status_To__c, Replies__c
-      from Private_Message__c 
-      order by lastmodifieddate desc")
-  end  
-
   def self.inbox(access_token, membername) 
     query_salesforce(access_token, "select Id, Name, CreatedDate, LastModifiedDate, 
       To__c, To__r.Name, To__r.Profile_Pic__c, From__c, From__r.Name, From__r.Profile_Pic__c, Subject__c, 
@@ -52,11 +44,7 @@ class PrivateMessage < Salesforce
     }
 
     results = post(ENV['SFDC_APEXREST_URL']+'/notifications', options)
-    if results.first.has_key?('errorCode') 
-      raise 'Sorry! Could not send private message!'
-    else
-      {:success => true, :message => 'Private message successfully sent.'}  
-    end
+    {:success => results['Success'].to_bool, :message => results['Message']}
   rescue Exception => e
     puts "[FATAL][PrivateMessage] Create new message exception: #{e.message} - #{results}" 
     {:success => false, :message => e.message}  
@@ -95,12 +83,7 @@ class PrivateMessage < Salesforce
     }
 
     results = post(ENV['SFDC_APEXREST_URL']+'/notifications', options)
-    puts "[INFO][PrivateMessage] Results from notification reply post: #{results}"
-    if results.first.has_key?('errorCode') 
-      raise 'Sorry! Could not send private message!'
-    else
-      {:success => true, :message => 'Private message reply successfully sent.'}  
-    end
+    {:success => results['Success'].to_bool, :message => results['Message']}
   rescue Exception => e
     puts "[FATAL][PrivateMessage] Private message reply exception: #{e.message} - #{results}" 
     {:success => false, :message => e.message}  
