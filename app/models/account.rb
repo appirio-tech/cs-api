@@ -22,7 +22,7 @@ class Account < Salesforce
       puts "[INFO][Account] Successful login for #{membername} with sfdc username #{sfdc_username}."
       {:success => 'true', :message => 'Successful sfdc login.', :access_token => access_token}
     rescue Exception => exc
-      puts "[FATAL][Account] Could not log into salesforce using gem to get access_token for #{membername}: #{exc.message}"
+      # puts "[FATAL][Account] Could not log into salesforce using gem to get access_token for #{membername}: #{exc.message}"
       {:success => 'false', :message => exc.message}
     end
   end
