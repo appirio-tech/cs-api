@@ -2,33 +2,46 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/challenges/recent
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=SELECT+Blog_URL__c%2C+Name%2C+Description__c%2C+End_Date__c%2C+Challenge_Id__c%2C+License_Type__r.Name%2C+Source_Code_URL__c%2C%0A++++++++Total_Prize_Money__c%2C+Top_Prize__c%2C+%28SELECT+Money_Awarded__c%2CPlace__c%2CMember__c%2C%0A++++++++Member__r.Name%2C+Points_Awarded__c%2CScore__c%2CStatus__c+FROM+Challenge_Participants__r+where+Has_Submission__c+%3D+true%29%2C+%0A++++++++%28Select+Name%2C+Category__c%2C+Display_Name__c+From+Challenge_Categories__r%29+%0A++++++++FROM+Challenge__c+where+Status__c+%3D+%27Winner+Selected%27+Order+By+End_Date__c+DESC+LIMIT+25+OFFSET+0
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      content-type:
-      - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:28:57 GMT
+      - Thu, 03 Jan 2013 13:52:05 GMT
       content-type:
       - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
-      encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Total_Prize_Money__c":0,"End_Date__c":"2012-11-26T02:30:00.000+0000","Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08Z0000000RMChIAO"},"Name":"CC-16799","Category__c":"a07Z0000001S9WlIAK","Display_Name__c":"Heroku","Id":"a08Z0000000RMChIAO","Challenge__c":"a0GZ0000005Vtz1MAC"}]},"Top_Prize__c":"$100","Challenge_Id__c":"15","Id":"a0GZ0000005Vtz1MAC","Description__c":"My
-        cool challenge"}]'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAK1R0U7CMBT9laXxzeHaKSJ7w2mUCEoENdGYpnQ3WK3r0nYm
+        k/Dv3sJQ4qNx2UPbe849596zJN54oafqE0jGYlKYEg/e1hATC9LYwpHsaUmE
+        91bNaw94XRLfVIgi+YvQGsoFcC5JTGqr8TFxYD+UBJcUwovkIz06oIkz81eQ
+        3iW7lETQi0e6/rr3/pONBzlZxeRUmwW/ux2FpllZax2Ta/Ee9GbgfPTdIepE
+        Z+DUokRpPEirKq9MuaaRcRNJY3Qkt2gEnZcFPxMeNoiUsrTDWCc9ntE0O6QZ
+        pQfoZD/YQfCP0WGxIbAuPo9wstIBn+EGOLdbg1NTWwk8NwX8sj4L6+UTiwvm
+        Y1xus66hVChVbWHdf4/9Ep4I65VUlSi929H6AeQ4zMJYBZvy8n+ybLs2fwl1
+        h4vpnrTp0ttx/jIc3IR02yjzvMOOe/1+GHhHLyOC9loWm/Yf9HBwFeJVrtKi
+        4YG8gV2CNW81WT2v8P8CIm1qMMUCAAA=
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:28:58 GMT
+  recorded_at: Thu, 03 Jan 2013 13:52:06 GMT
 recorded_with: VCR 2.2.5

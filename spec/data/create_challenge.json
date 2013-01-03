@@ -12,12 +12,15 @@
       "name":"RSpec Challenge",
       "status":"Planned",
       "end_date":"2014-04-17T18:02:00.000+0000",
-      "description":"sample Description"
+      "description":"sample Description",
+      "comments":"My challenge comments",
+      "challenge_type":"Design"
       }, 
     "reviewers" : [{"name" : "mess"}, {"name" : "jeffdonthemic"}],
     "categories" : [{"name" : "java"}, {"name": "heroku"}],
     "prizes" : [{"place":2,"points":222,"prize":"122","value":1212}, {"place":1,"points":2120,"prize":"1000","value":21212}],
     "commentNotifiers" : [{"email" : "jdouglas@appirio.com"}, {"name" : "mess"}],
+    "assets" : [{"filename" : "img.png"}, {"filename": "logo.jpg"}],
     "reviewers_to_delete" : [{"name" : "mess"}, {"name" : "jeffdonthemic"}],
     "categories_to_delete" : [{"name" : "java"}, {"name": "heroku"}],
     "prizes_to_delete" : [{"place":2,"points":222,"prize":"122","value":1212}, {"place":1,"points":2120,"prize":"1000","value":21212}],

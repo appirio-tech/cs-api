@@ -104,7 +104,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 18:49:13 GMT
+      - Thu, 03 Jan 2013 13:52:02 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -113,7 +113,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1357066153842","instance_url":"https://cs11.salesforce.com","signature":"I9QseQ7K0/OJ71ZmihpTSHZKbXP+kxJ9ie5AS/UPSvM=","access_token":"00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1357221122641","instance_url":"https://cs11.salesforce.com","signature":"zdAsBZ1Ee7EnyXulnJVtHrO6Ku3Tvj9les8YmsIYfeE=","access_token":"00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK"}'
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 18:49:13 GMT
+  recorded_at: Thu, 03 Jan 2013 13:52:03 GMT
 recorded_with: VCR 2.2.5

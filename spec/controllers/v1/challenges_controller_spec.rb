@@ -24,7 +24,7 @@ describe V1::ChallengesController do
       response.response_code.should == 401
     end
 
-    it "should return 401 for 'update'" do
+    it "should return 401 for 'create'" do
       request.env['oauth_token'] = @public_oauth_token
       post 'create', params = { :name => 'some name' }
       response.response_code.should == 401
@@ -72,7 +72,7 @@ describe V1::ChallengesController do
       end
     end 
 
-    it "should return nil for a non-existent challenges" do
+    it "should return 404 for a non-existent challenges" do
       VCR.use_cassette "controllers/v1/challenges/find_non_exist" do
         request.env['oauth_token'] = @public_oauth_token
         get 'find', 'challenge_id' => '12345678'

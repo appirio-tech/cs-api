@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=false&orderby=name
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=false&orderby=name&limit=25&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:28:59 GMT
+      - Thu, 03 Jan 2013 13:52:06 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,11 +26,19 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VtzkMAC"},"Name":"Test
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VzUCMA0"},"Total_Prize_Money__c":44848,"End_Date__c":"2012-12-19T16:08:31.000+0000","Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmmlIAC"},"Display_Name__c":"Java","Id":"a08Z0000000RmmlIAC","Challenge__c":"a0GZ0000005VzUCMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmmmIAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmmmIAC","Challenge__c":"a0GZ0000005VzUCMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmmqIAC"},"Display_Name__c":"Java","Id":"a08Z0000000RmmqIAC","Challenge__c":"a0GZ0000005VzUCMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmmrIAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmmrIAC","Challenge__c":"a0GZ0000005VzUCMA0"}]},"Registered_Members__c":0,"Community__r":{"attributes":{"type":"Community__c","url":"/services/data/v26.0/sobjects/Community__c/a12Z0000000BT9PIAW"},"Name":"Appirio","Id":"a12Z0000000BT9PIAW"},"Name":"Private
+        Challenge","Challenge_Id__c":"65","Community__c":"a12Z0000000BT9PIAW","Challenge_Type__c":"Race","Id":"a0GZ0000005VzUCMA0","Description__c":"sample
+        Description","Start_Date__c":"2012-03-17T18:02:00.000+0000","Is_Open__c":"false","Days_till_Close__c":0},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VzRcMAK"},"Name":"RSpec
+        Challenge","End_Date__c":"2012-12-21T18:44:00.000+0000","Total_Prize_Money__c":22424,"Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmhvIAC"},"Display_Name__c":"Java","Id":"a08Z0000000RmhvIAC","Challenge__c":"a0GZ0000005VzRcMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmhwIAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmhwIAC","Challenge__c":"a0GZ0000005VzRcMAK"}]},"Registered_Members__c":0,"Challenge_Id__c":"52","Challenge_Type__c":"Race","Id":"a0GZ0000005VzRcMAK","Is_Open__c":"false","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":0},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
+        Challenge - 2","End_Date__c":"2012-12-22T18:44:00.000+0000","Total_Prize_Money__c":22424,"Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RKB0IAO"},"Display_Name__c":"Salesforce.com","Id":"a08Z0000000RKB0IAO","Challenge__c":"a0GZ0000005VQogMAG"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RKB5IAO"},"Display_Name__c":"Ruby","Id":"a08Z0000000RKB5IAO","Challenge__c":"a0GZ0000005VQogMAG"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmhSIAS"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmhSIAS","Challenge__c":"a0GZ0000005VQogMAG"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmhRIAS"},"Display_Name__c":"Java","Id":"a08Z0000000RmhRIAS","Challenge__c":"a0GZ0000005VQogMAG"}]},"Registered_Members__c":2,"Challenge_Id__c":"2","Challenge_Type__c":"Race","Id":"a0GZ0000005VQogMAG","Is_Open__c":"false","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":0},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VzTTMA0"},"Name":"RSpec
+        Challenge for Testing","End_Date__c":"2012-12-17T18:45:00.000+0000","Total_Prize_Money__c":44848,"Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000Rmk6IAC"},"Display_Name__c":"Java","Id":"a08Z0000000Rmk6IAC","Challenge__c":"a0GZ0000005VzTTMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000Rmk7IAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000Rmk7IAC","Challenge__c":"a0GZ0000005VzTTMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmkBIAS"},"Display_Name__c":"Java","Id":"a08Z0000000RmkBIAS","Challenge__c":"a0GZ0000005VzTTMA0"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmkCIAS"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmkCIAS","Challenge__c":"a0GZ0000005VzTTMA0"}]},"Registered_Members__c":1,"Challenge_Id__c":"58","Challenge_Type__c":"Race","Id":"a0GZ0000005VzTTMA0","Is_Open__c":"false","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":0},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VtzkMAC"},"Name":"Test
         Challenge - Code w/Submission","End_Date__c":"2012-11-26T02:31:00.000+0000","Total_Prize_Money__c":0,"Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RMCrIAO"},"Display_Name__c":"Heroku","Id":"a08Z0000000RMCrIAO","Challenge__c":"a0GZ0000005VtzkMAC"}]},"Registered_Members__c":1,"Challenge_Id__c":"17","Challenge_Type__c":"Code","Id":"a0GZ0000005VtzkMAC","Is_Open__c":"false","Start_Date__c":"2012-11-21T14:22:00.000+0000","Description__c":"My
         cool challenge","Days_till_Close__c":0},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
         Challenge - Design","End_Date__c":"2012-11-26T02:30:00.000+0000","Total_Prize_Money__c":0,"Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RMChIAO"},"Display_Name__c":"Heroku","Id":"a08Z0000000RMChIAO","Challenge__c":"a0GZ0000005Vtz1MAC"}]},"Registered_Members__c":2,"Challenge_Id__c":"15","Challenge_Type__c":"Design","Id":"a0GZ0000005Vtz1MAC","Is_Open__c":"false","Start_Date__c":"2012-11-21T14:22:00.000+0000","Description__c":"My
         cool challenge","Days_till_Close__c":0}]'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:00 GMT
+  recorded_at: Thu, 03 Jan 2013 13:52:07 GMT
 recorded_with: VCR 2.2.5
