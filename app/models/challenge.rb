@@ -1,3 +1,5 @@
+require 'health_check'
+
 class Challenge < Salesforce
 
   def self.create(access_token, data)
