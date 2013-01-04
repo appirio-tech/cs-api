@@ -97,6 +97,21 @@ class V1::MembersController < V1::ApplicationController
   end   
 
   #
+  # Returns all of the challenges the member has been judge, 
+  # contact or notifier
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return payments for
+  # * *Returns* :
+  #   - JSON an array of challenges 
+  # * *Raises* :
+  #   - ++ ->
+  # 
+  def challenges_as_admin
+    expose Member.challenges_as_admin(@oauth_token, params[:membername])
+  end   
+
+  #
   # Returns all payments for a member
   # * *Args*    :
   #   - access_token -> the oauth token to use

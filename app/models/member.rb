@@ -90,6 +90,28 @@ class Member < Salesforce
   end
 
   #
+  # Returns all of the challenges the member has been judge, 
+  # contact or notifier
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the challenges for
+  # * *Returns* :
+  #   - JSON containing a collection of challenges
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.challenges_as_admin(access_token, membername) 
+    query_salesforce(access_token, "select id, status__c, end_date__c, start_date__c, 
+      challenge_id__c, name, submissions__c, registered_members__c, health__c
+      from challenge__c where id in (select challenge__c 
+      from challenge_reviewer__c where member__r.name = '#{membername}') 
+      order by end_date__c desc")
+  rescue Exception => e
+    puts "[FATAL][Member] Error fetching admin challenge for #{membername}: #{e.message}"     
+    raise e.message
+  end    
+
+  #
   # Returns a collection of all payments for a member
   # * *Args*    :
   #   - access_token -> the oauth token to use
