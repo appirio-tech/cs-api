@@ -52,6 +52,23 @@ class Salesforce
   end  
 
   #
+  # Makes generic 'get' to CloudSpokes Apex REST services
+  # and returns success
+  # * *Args*    :
+  #   - url_string -> the string to be appended to teh end of the url
+  # * *Returns* :
+    #   - true/false
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.get_apex_rest_return_boolean(url_string)
+    success = false
+    success = true if get(ENV['SFDC_APEXREST_URL'] + 
+      "#{url_string}")['Success'].eql?('true')  
+    success
+  end    
+
+  #
   # Performs a soql query against salesforce
   # * *Args*    :
   #   - access_token -> the oauth token to use
