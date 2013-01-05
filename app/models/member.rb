@@ -101,13 +101,10 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.challenges_as_admin(access_token, membername) 
-    query_salesforce(access_token, "select id, status__c, end_date__c, start_date__c, 
-      challenge_id__c, name, submissions__c, registered_members__c, health__c
-      from challenge__c where id in (select challenge__c 
-      from challenge_reviewer__c where member__r.name = '#{membername}') 
-      order by end_date__c desc")
+    set_header_token(access_token)
+    get_apex_rest("/members/#{esc membername}/admin/challenges")
   rescue Exception => e
-    puts "[FATAL][Member] Error fetching admin challenge for #{membername}: #{e.message}"     
+    puts "[FATAL][Member] Error fetching admin challenges for #{membername}: #{e.message}"     
     raise e.message
   end    
 
