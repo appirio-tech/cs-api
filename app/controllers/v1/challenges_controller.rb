@@ -26,49 +26,26 @@ class V1::ChallengesController < V1::ApplicationController
 	end					
 
   #
-  # Returns all currently open challenges
+  # Returns all currently open or closed challenges
   # * *Args*    :
   #   - access_token -> the oauth token to use
+  #   - open -> 'true'/'false'    
   #   - category (optional) -> the category of challenges to return. Defaults
-	#	  to nil.	
+  #   to nil. 
   #   - order_by (optional) -> the field to order the results by. Defaults
-	#	  to name.		
+  #   to name.    
   # * *Returns* :
   #   - JSON a collection of challenge objects with challenge_categories__r 
   # * *Raises* :
   #   - ++ ->
-  #  	
-	def open
-		expose Challenge.all(@oauth_token, 'true', 
-			params[:category] ||= nil, 
-			enforce_order_by_params(params[:order_by], 'name'),
-      params[:limit] ||= 25,
-      params[:offset] ||= 0)
-	end	
-
-  #
-  # Returns all closed hallenges
-  # * *Args*    :
-  #   - access_token -> the oauth token to use
-  #   - category (optional) -> the category of challenges to return. Defaults
-	#	  to nil.	
-  #   - order_by (optional) -> the field to order the results by. Defaults
-	#	  to name.		
-  #   - limit -> the number of records to return
-  #   - offset -> specifies the starting row offset into the result set 
-  # returned by your query  
-  # * *Returns* :
-  #   - JSON a collection of challenge objects with challenge_categories__r 
-  # * *Raises* :
-  #   - ++ ->
-  #  	
-	def closed
-		expose Challenge.all(@oauth_token, 'false', 
-			params[:category] ||= nil, 
+  #   
+  def all
+    expose Challenge.all(@oauth_token, params[:open], 
+      params[:category] ||= nil, 
       enforce_order_by_params(params[:order_by], 'name'),
       params[:limit] ||= 25,
       params[:offset] ||= 0)
-	end		
+  end   
 
   #
   # Returns all recently closed challenges with winners selected

@@ -24,9 +24,9 @@ CsApi::Application.routes.draw do
 		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put
 
 		# challenges	
-		match "/challenges" => "challenges#open", :via => :get
+		match "/challenges" => "challenges#all", :open => 'true', :via => :get
 		match "/challenges" => "challenges#create", :via => :post		
-		match "/challenges/closed" => "challenges#closed", :via => :get
+		match "/challenges/closed" => "challenges#all", :open => 'false', :via => :get
 		match "/challenges/recent" => "challenges#recent", :via => :get
 		match "/challenges/:challenge_id" => "challenges#find", :via => :get
 		match "/challenges/:challenge_id" => "challenges#update", :via => :put		
