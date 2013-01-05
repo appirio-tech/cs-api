@@ -232,14 +232,10 @@ class Account < Salesforce
   #  
   def self.activate(access_token, membername)
     set_header_token(access_token)
-    results = get(ENV['SFDC_APEXREST_URL'] + "/activate/#{membername}") 
-    if results['Success'].eql?('true') 
-      # puts "[INFO][Account] #{membername} successfully activated in sfdc." 
-      true
-    else
-      # puts "[FATAL][Account] Could not activate #{membername} in sfdc: #{results}" 
-      false
-    end
+    success = false
+    success = true if get(ENV['SFDC_APEXREST_URL'] + 
+      "/activate/#{membername}")['Success'].eql?('true')  
+    success
   end 
 
   #
@@ -254,12 +250,10 @@ class Account < Salesforce
   #  
   def self.disable(access_token, membername)
     set_header_token(access_token)
-    results = get(ENV['SFDC_APEXREST_URL'] + "/disable/#{membername}") 
-    if results['Success'].eql?('true') 
-      true
-    else
-      false
-    end
+    success = false
+    success = true if get(ENV['SFDC_APEXREST_URL'] + 
+      "/disable/#{membername}")['Success'].eql?('true')  
+    success
   end   
 
 end
