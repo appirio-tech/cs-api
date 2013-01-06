@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+sfdc_user__c+from+member__c+where+name+%3D+%27jeffdonthemic%27
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+sfdc_user__c+%0A++++++++from+member__c+where+name+%3D+%27jeffdonthemic%27
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 02:29:47 GMT
+      - Sun, 06 Jan 2013 03:04:02 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -38,5 +38,5 @@ http_interactions:
         FPRsyNe1gcDgu5jIQH5sDQVpNWs5bncbJYNrHmQ4yB8vtcqvatVpOldFprAI
         5Da++FMJlKfjoa7COpZCqX31ZYqkv+RZieW+fADWp0VBzAAAAA==
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 02:29:47 GMT
+  recorded_at: Sun, 06 Jan 2013 03:04:02 GMT
 recorded_with: VCR 2.2.5

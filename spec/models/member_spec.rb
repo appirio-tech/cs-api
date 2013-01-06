@@ -177,8 +177,7 @@ describe Member do
 	  end  	  
 	  it "should return the nil for a member that does not exist" do
 	    VCR.use_cassette "models/members/member_id_badmember" do
-	      results = Member.salesforce_member_id(@public_oauth_token, 'idonotexist')
-	      results.should be_nil     
+	      expect { Member.salesforce_member_id(@public_oauth_token, 'idonotexist') }.to raise_error
 	    end
 	  end  		  
   end  
@@ -192,8 +191,7 @@ describe Member do
 	  end  	  
 	  it "should return the nil for a member that does not exist" do
 	    VCR.use_cassette "models/members/user_id_badmember" do
-	      results = Member.salesforce_user_id(@public_oauth_token, 'idonotexist')
-	      results.should be_nil     
+	    	expect { Member.salesforce_user_id(@public_oauth_token, 'idonotexist') }.to raise_error
 	    end
 	  end  		  
   end    
