@@ -45,9 +45,9 @@ class Account < Salesforce
   def self.find_by_service(access_token, service, service_name)
     set_header_token(access_token) 
     if service.downcase.eql?('cloudspokes')
-      activate_cloudspokes
+      activate_cloudspokes(access_token, service_name)
     else   
-      activate_third_party
+      activate_third_party(access_token, service, service_name)
     end
   end
 
@@ -205,7 +205,7 @@ class Account < Salesforce
 
   private
 
-    def self.activate_third_party
+    def self.activate_third_party(access_token, service, service_name)
 
       options = {
         :query => {
@@ -218,8 +218,11 @@ class Account < Salesforce
 
       begin
         if results['Success'].eql?('true')
-          {:success => 'true', :username => results['Username'], :sfdc_username => results['SFusername'], 
-          :profile_pic => results['Profile_Pic'], :email => results['Email'], :accountid => results['AccountId']}
+          {:success => 'true', :username => results['Username'], 
+            :sfdc_username => results['SFusername'], 
+            :profile_pic => results['Profile_Pic'], 
+            :email => results['Email'], 
+            :accountid => results['AccountId']}
         else
           {:success => 'false', :message => results['Message']}
         end
@@ -230,7 +233,7 @@ class Account < Salesforce
 
     end
 
-    def self.activate_cloudspokes
+    def self.activate_cloudspokes(access_token, service_name)
       activate_results = get_apex_rest("/activate/#{service_name}")
       puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
 

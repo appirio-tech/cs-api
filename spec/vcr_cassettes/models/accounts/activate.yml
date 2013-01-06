@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/activate/XXHKYX54
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/activate/BCROAJ9
     body:
       encoding: US-ASCII
       string: ''
@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      - OAuth 00DZ00000007ybt!AQQAQNezypgbKXNUt1MudR1SgAfYvPQJVWLJYkv8gA.RUEXPDzpPfadr.563mVCHb3J2KemSjD1Qe2OG0WjPat.wW.OHm2Rj
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 13 Dec 2012 16:39:08 GMT
+      - Sun, 06 Jan 2013 15:49:20 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"User is currently active."}'
     http_version: '1.1'
-  recorded_at: Thu, 13 Dec 2012 16:39:08 GMT
+  recorded_at: Sun, 06 Jan 2013 15:49:18 GMT
 recorded_with: VCR 2.2.5

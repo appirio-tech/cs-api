@@ -5,19 +5,19 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=PHZEZJKFNT8&email__c=PHZEZJKFNT8%40rspec.cloudspokes.com&first_name__c=PHZEZJKFNT8&last_name__c=PHZEZJKFNT8&third_party_account__c=github&third_party_username__c=PHZEZJKFNT8%40rspec.cloudspokes.com
+      string: username__c=KPZQGUKQJF19&email__c=KPZQGUKQJF19%40rspec.cloudspokes.com&first_name__c=KPZQGUKQJF19&last_name__c=KPZQGUKQJF19&third_party_account__c=github&third_party_username__c=KPZQGUKQJF19%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      - OAuth 00DZ00000007ybt!AQQAQNezypgbKXNUt1MudR1SgAfYvPQJVWLJYkv8gA.RUEXPDzpPfadr.563mVCHb3J2KemSjD1Qe2OG0WjPat.wW.OHm2Rj
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 13 Dec 2012 17:35:18 GMT
+      - Sun, 06 Jan 2013 15:49:12 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000GMEjMAO","sfdc_username":"PHZEZJKFNT8@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"PHZEZJKFNT8"}'
+      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000kHGnMAM","sfdc_username":"KPZQGUKQJF19@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"KPZQGUKQJF19"}'
     http_version: '1.1'
-  recorded_at: Thu, 13 Dec 2012 17:35:20 GMT
+  recorded_at: Sun, 06 Jan 2013 15:49:11 GMT
 recorded_with: VCR 2.2.5
