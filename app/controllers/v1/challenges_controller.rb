@@ -20,7 +20,8 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ -> 404 if not found
   #  	
 	def find
-		challenge = Challenge.find(@oauth_token, params[:challenge_id].strip)
+		challenge = Challenge.find(@oauth_token, params[:challenge_id].strip, 
+      params[:admin] ||= false)
 		error! :not_found unless challenge
 		expose challenge
 	end					

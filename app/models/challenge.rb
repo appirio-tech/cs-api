@@ -28,10 +28,26 @@ class Challenge < Salesforce
       :errors => results['errors']}
   end  
 
-  def self.find(access_token, challenge_id)  
+  def self.find(access_token, challenge_id, for_admin)  
     set_header_token(access_token) 
-    get_apex_rest("/challenges/#{challenge_id}?comments=true").first
-  end  	
+    fetch_comments = for_admin ? '' : '?comments=true'
+    challenge = get_apex_rest("/challenges/#{challenge_id}#{fetch_comments}").first
+    if for_admin && !challenge.nil?
+      challenge.remove_key!('challenge_participants__r')
+      challenge['challenge_reviewers__r'] = query_salesforce(access_token, 
+        "select id, member__r.name from challenge_reviewer__c 
+        where challenge__r.challenge_id__c = '#{challenge_id}'")
+      challenge['challenge_comment_notifiers__r'] = query_salesforce(access_token, 
+        "select id, member__r.name from challenge_comment_notifier__c 
+        where challenge__r.challenge_id__c = '#{challenge_id}'")
+    end
+    challenge
+  end 
+
+  def self.find_for_admin(access_token, challenge_id)  
+    set_header_token(access_token) 
+    get_apex_rest("/challenges/#{challenge_id}").first
+  end 	
 
   def self.participants(access_token, challenge_id)  
     set_header_token(access_token) 
