@@ -65,50 +65,9 @@ class Account < Salesforce
   #  
   def self.create(access_token, params={})
     set_header_token(access_token)
-          
-    # third party      
-    if params.has_key?(:provider)
-      
-      # if the name if blank
-      if params[:name].empty?
-        first_name = params[:username]
-        last_name = params[:username]
-      else
-        # split up the name into a first and last
-        names = params[:name].split
-        first_name = names[0]
-        last_name = first_name
-        last_name = names[1] if names.length > 1
-      end
-      
-      options = {
-        :body => {
-            :username__c => params[:username],
-            :email__c  => params[:email],
-            :first_name__c => first_name,
-            :last_name__c => last_name,
-            :third_party_account__c => params[:provider],
-            :third_party_username__c => params[:provider_username]
-        }
-      }
-    
-    # cloudspokes        
-    else
-
-      options = {
-        :body => {
-            :username__c => params[:username],
-            :password => params[:password],
-            :email__c  => params[:email],
-            :first_name__c => params[:username],
-            :last_name__c => params[:username] 
-        }
-      }
-
-    end    
-    
+            
     puts "[INFO][Account] Making the call to create the user for #{options}"  
-    new_account_results = post_apex_rest('/members', options)
+    new_account_results = post_apex_rest('/members', create_options(params))
                 
     begin
       puts "[INFO][Account] Results from the create new user call: #{new_account_results}" 
@@ -204,6 +163,51 @@ class Account < Salesforce
   end   
 
   private
+
+    def create_options(params)
+
+      # third party      
+      if params.has_key?(:provider)
+        
+        # if the name if blank
+        if params[:name].empty?
+          first_name = params[:username]
+          last_name = params[:username]
+        else
+          # split up the name into a first and last
+          names = params[:name].split
+          first_name = names[0]
+          last_name = first_name
+          last_name = names[1] if names.length > 1
+        end
+        
+        options = {
+          :body => {
+              :username__c => params[:username],
+              :email__c  => params[:email],
+              :first_name__c => first_name,
+              :last_name__c => last_name,
+              :third_party_account__c => params[:provider],
+              :third_party_username__c => params[:provider_username]
+          }
+        }
+      
+      # cloudspokes        
+      else
+
+        options = {
+          :body => {
+              :username__c => params[:username],
+              :password => params[:password],
+              :email__c  => params[:email],
+              :first_name__c => params[:username],
+              :last_name__c => params[:username] 
+          }
+        }
+
+      end        
+
+    end
 
     def self.activate_third_party(access_token, service, service_name)
 
