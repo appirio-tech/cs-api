@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+sfdc_user__c+from+member__c+where+name+%3D+%27idonotexist%27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQOALuT.JFLU0T7iiCEKBuPDdyjwzgzkxdlhlzym3sksFtCMjFQKXon0Xs5..Z3rnMBI.ypnfLkL9THlQ4jv6LneDdoO2
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 06 Jan 2013 02:31:04 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
+    http_version: '1.1'
+  recorded_at: Sun, 06 Jan 2013 02:31:04 GMT
+recorded_with: VCR 2.2.5

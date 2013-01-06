@@ -168,4 +168,34 @@ describe Member do
 	  end	  	  
   end  
 
+  describe "get member id" do
+	  it "should return the correct member id for jeffdonthemic" do
+	    VCR.use_cassette "models/members/member_id_jeffdonthemic" do
+	      results = Member.salesforce_member_id(@public_oauth_token, 'jeffdonthemic')
+	      results.should_not be_nil     
+	    end
+	  end  	  
+	  it "should return the nil for a member that does not exist" do
+	    VCR.use_cassette "models/members/member_id_badmember" do
+	      results = Member.salesforce_member_id(@public_oauth_token, 'idonotexist')
+	      results.should be_nil     
+	    end
+	  end  		  
+  end  
+
+  describe "get salesforce user id" do
+	  it "should return the correct user id for jeffdonthemic" do
+	    VCR.use_cassette "models/members/user_id_jeffdonthemic" do
+	      results = Member.salesforce_user_id(@public_oauth_token, 'jeffdonthemic')
+	      results.should_not be_nil     
+	    end
+	  end  	  
+	  it "should return the nil for a member that does not exist" do
+	    VCR.use_cassette "models/members/user_id_badmember" do
+	      results = Member.salesforce_user_id(@public_oauth_token, 'idonotexist')
+	      results.should be_nil     
+	    end
+	  end  		  
+  end    
+
 end
