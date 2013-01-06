@@ -29,6 +29,18 @@ class PrivateMessage < Salesforce
       From__c, From__r.Name, Subject__c, Status_From__c, Status_To__c,  Replies__c,
       (select id, from__r.name, from__r.profile_pic__c, body__c, createddate from 
       Private_Message_Texts__r order by createddate) from Private_Message__c where Id = '#{id}'").first
+  end  
+
+  def self.update(access_token, id, data)
+    # add the id of the record into the payload
+    data['Id'] = id
+    #update the private message
+    update_results = update_in_salesforce(access_token, 'Private_Message__c', 
+      Forcifier::JsonMassager.enforce_json(data)) 
+    {:success => update_results[:success], :message => update_results[:message]}  
+  rescue Exception => e
+    puts "[FATAL][PrivateMessage] Update to message exception: #{e.message}" 
+    {:success => false, :message => e.message}     
   end    
 
   def self.create(access_token, data)
@@ -42,25 +54,8 @@ class PrivateMessage < Salesforce
           :body => data['body'] 
       }.to_json
     }
-
-    results = post(ENV['SFDC_APEXREST_URL']+'/notifications', options)
-    {:success => results['Success'].to_bool, :message => results['Message']}
-  rescue Exception => e
-    puts "[FATAL][PrivateMessage] Create new message exception: #{e.message} - #{results}" 
-    {:success => false, :message => e.message}  
-  end
-
-  def self.update(access_token, id, data)
-    # add the id of the record into the payload
-    data['Id'] = id
-    #update the private message
-    update_results = update_in_salesforce(access_token, 'Private_Message__c', 
-      Forcifier::JsonMassager.enforce_json(data)) 
-    {:success => update_results[:success], :message => update_results[:message]}  
-  rescue Exception => e
-    puts "[FATAL][PrivateMessage] Update to message exception: #{e.message}" 
-    {:success => false, :message => e.message}     
-  end   
+    post_private_message(options) 
+  end 
 
   def self.reply(access_token, id, data)
     set_header_token(access_token)
@@ -81,12 +76,17 @@ class PrivateMessage < Salesforce
           :parentId => id
       }.to_json
     }
+    post_private_message(options)
+  end  
 
-    results = post(ENV['SFDC_APEXREST_URL']+'/notifications', options)
-    {:success => results['Success'].to_bool, :message => results['Message']}
-  rescue Exception => e
-    puts "[FATAL][PrivateMessage] Private message reply exception: #{e.message} - #{results}" 
-    {:success => false, :message => e.message}  
-  end      
+  private
+
+    def post_private_message(options)
+      results = post_apex_rest('/notifications', options)
+      {:success => results['success'].to_bool, :message => results['message']}
+    rescue Exception => e
+      puts "[FATAL][PrivateMessage] Private message reply exception: #{e.message} - #{results}" 
+      {:success => false, :message => e.message}        
+    end    
 
 end

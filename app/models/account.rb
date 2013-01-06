@@ -74,9 +74,9 @@ class Account < Salesforce
       puts "[INFO][Account] Results from the create new user call: #{new_account_results}" 
       if new_account_results['success'].eql?('true')
         success_results =  {:success => 'true', 
-          :username => new_account_results["username"], 
-          :sfdc_username => new_account_results["sfdc_username"], 
-          :message => new_account_results["message"]}
+          :username => new_account_results['username'], 
+          :sfdc_username => new_account_results['sfdc_username'], 
+          :message => new_account_results['message']}
 
         # send the welcome email
         if ENV['WELCOME_EMAIL_SENDER'].eql?('enabled')
@@ -86,7 +86,7 @@ class Account < Salesforce
         success_results
       else
         puts "[WARN][Account] Could not create new user. sfdc replied: #{new_account_results["message"]}" 
-        {:success => 'false', :message => new_account_results["message"]}
+        {:success => 'false', :message => new_account_results['message']}
       end
     rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e      
       puts "[FATAL][Account] SMTP Error sending 'Welcome Email'! Cause: #{e.message}"   
