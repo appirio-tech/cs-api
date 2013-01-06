@@ -68,8 +68,33 @@ class Account < Salesforce
           
     # third party      
     if params.has_key?(:provider)
-      prepare_create_third_party 
+      
+      # if the name if blank
+      if params[:name].empty?
+        first_name = params[:username]
+        last_name = params[:username]
+      else
+        # split up the name into a first and last
+        names = params[:name].split
+        first_name = names[0]
+        last_name = first_name
+        last_name = names[1] if names.length > 1
+      end
+      
+      options = {
+        :body => {
+            :username__c => params[:username],
+            :email__c  => params[:email],
+            :first_name__c => first_name,
+            :last_name__c => last_name,
+            :third_party_account__c => params[:provider],
+            :third_party_username__c => params[:provider_username]
+        }
+      }
+    
+    # cloudspokes        
     else
+
       options = {
         :body => {
             :username__c => params[:username],
@@ -79,6 +104,7 @@ class Account < Salesforce
             :last_name__c => params[:username] 
         }
       }
+
     end    
     
     puts "[INFO][Account] Making the call to create the user for #{options}"  
@@ -178,33 +204,6 @@ class Account < Salesforce
   end   
 
   private
-
-    def self.prepare_create_third_party
-
-      # if the name if blank
-      if params[:name].empty?
-        first_name = params[:username]
-        last_name = params[:username]
-      else
-        # split up the name into a first and last
-        names = params[:name].split
-        first_name = names[0]
-        last_name = first_name
-        last_name = names[1] if names.length > 1
-      end
-      
-      options = {
-        :body => {
-            :username__c => params[:username],
-            :email__c  => params[:email],
-            :first_name__c => first_name,
-            :last_name__c => last_name,
-            :third_party_account__c => params[:provider],
-            :third_party_username__c => params[:provider_username]
-        }
-      }
-
-    end
 
     def self.activate_third_party
 

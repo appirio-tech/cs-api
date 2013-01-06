@@ -196,7 +196,7 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.salesforce_member_id(access_token, membername) 
-    query_salesforce(access_token, "select id from member__c where name = '#{membername}'").first['id']
+    get_member.first['id']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch member id for #{membername}: #{e.message}"     
     raise "Member #{membername} not found."
@@ -213,10 +213,16 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.salesforce_user_id(access_token, membername)  
-    query_salesforce(access_token, "select sfdc_user__c from member__c where name = '#{membername}'").first['sfdc_user']
+    get_member.first['sfdc_user']
   rescue Exception => e
     puts "[FATAL][Member] Cannot fetch salesforce user id for #{membername}: #{e.message}"     
     raise "Salesforce User not found for member #{membername}."
   end     
+
+  private 
+
+    def self.get_member(access_token, membername)
+      query_salesforce(access_token, "select id, sfdc_user__c from member__c where name = '#{membername}'")
+    end
 
 end
