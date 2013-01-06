@@ -235,7 +235,7 @@ class Account < Salesforce
     end
 
     def self.activate_cloudspokes
-      activate_results = get(ENV['SFDC_APEXREST_URL']+'/activate/'+service_name)
+      activate_results = get_apex_rest("/activate/#{service_name}")
       puts "[INFO][Account] activating user #{service_name}: #{activate_results}"
 
       # do rest query and find member and all their info
