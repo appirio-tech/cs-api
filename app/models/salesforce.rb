@@ -52,6 +52,19 @@ class Salesforce
   end  
 
   #
+  # Makes generic 'post' to CloudSpokes Apex REST services
+  # * *Args*    :
+  #   - url_string -> the string to be appended to teh end of the url
+  # * *Returns* :
+    #   - a results object
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.post_apex_rest(url_string, options)
+    Forcifier::JsonMassager.deforce_json(post(ENV['SFDC_APEXREST_URL']+"#{url_string}", options))
+  end    
+
+  #
   # Makes generic 'get' to CloudSpokes Apex REST services
   # and returns success
   # * *Args*    :

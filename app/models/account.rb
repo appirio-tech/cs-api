@@ -77,11 +77,8 @@ class Account < Salesforce
         # split up the name into a first and last
         names = params[:name].split
         first_name = names[0]
-        if names.length > 1
-          last_name = names[1]
-        else
-          last_name = first_name
-        end
+        last_name = first_name
+        last_name = names[1] if names.length > 1
       end
       
       options = {
@@ -111,26 +108,25 @@ class Account < Salesforce
     end    
     
     puts "[INFO][Account] Making the call to create the user for #{options}"  
-    new_account_results = post(ENV['SFDC_APEXREST_URL']+'/members', options)
+    new_account_results = post_apex_rest('/members', options)
                 
     begin
       puts "[INFO][Account] Results from the create new user call: #{new_account_results}" 
-      if new_account_results['Success'].eql?('true')
+      if new_account_results['success'].eql?('true')
         success_results =  {:success => 'true', 
           :username => new_account_results["username"], 
           :sfdc_username => new_account_results["sfdc_username"], 
-          :message => new_account_results["Message"]}
+          :message => new_account_results["message"]}
 
         # send the welcome email
         if ENV['WELCOME_EMAIL_SENDER'].eql?('enabled')
           puts "[INFO][Account] Sending new member 'Welcome Email' to #{params[:email]}" 
           MemberMailer.welcome_email(params[:username],params[:email]).deliver          
         end
-        
         success_results
       else
-        puts "[WARN][Account] Could not create new user. sfdc replied: #{new_account_results["Message"]}" 
-        {:success => 'false', :message => new_account_results["Message"]}
+        puts "[WARN][Account] Could not create new user. sfdc replied: #{new_account_results["message"]}" 
+        {:success => 'false', :message => new_account_results["message"]}
       end
     rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e      
       puts "[FATAL][Account] SMTP Error sending 'Welcome Email'! Cause: #{e.message}"   
