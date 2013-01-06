@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/password/reset?username=BCROAJ9&passcode=40269&newpassword=abcd123456
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/password/reset?username=JZVSCG72&passcode=83647&newpassword=abcd123456
     body:
       encoding: US-ASCII
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:05 GMT
+      - Sun, 06 Jan 2013 16:27:58 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"Password changed successfully."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:03 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:56 GMT
 recorded_with: VCR 2.2.5

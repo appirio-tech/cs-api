@@ -5,7 +5,7 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=somebadname&password=!abcd123456&email__c=&first_name__c=somebadname&last_name__c=somebadname
+      string: username__c=somebadname&email__c=&password=!abcd123456&first_name__c=somebadname&last_name__c=somebadname
     headers:
       content-type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:10 GMT
+      - Sun, 06 Jan 2013 16:27:55 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"Success":"false","Message":"Required parameters are missing. You
         must pass values for the following: username__c, email__c, last_name__c, first_name__c."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:08 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:54 GMT
 recorded_with: VCR 2.2.5

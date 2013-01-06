@@ -66,8 +66,9 @@ class Account < Salesforce
   def self.create(access_token, params={})
     set_header_token(access_token)
             
+    options = create_options(params)
     puts "[INFO][Account] Making the call to create the user for #{options}"  
-    new_account_results = post_apex_rest('/members', create_options(params))
+    new_account_results = post_apex_rest('/members', options)
                 
     begin
       puts "[INFO][Account] Results from the create new user call: #{new_account_results}" 
@@ -164,7 +165,14 @@ class Account < Salesforce
 
   private
 
-    def create_options(params)
+    def self.create_options(params)
+
+      options = {
+        :body => {
+            :username__c => params[:username],
+            :email__c  => params[:email]
+        }
+      }      
 
       # third party      
       if params.has_key?(:provider)
@@ -181,31 +189,25 @@ class Account < Salesforce
           last_name = names[1] if names.length > 1
         end
         
-        options = {
-          :body => {
-              :username__c => params[:username],
-              :email__c  => params[:email],
-              :first_name__c => first_name,
-              :last_name__c => last_name,
-              :third_party_account__c => params[:provider],
-              :third_party_username__c => params[:provider_username]
-          }
+        new_options = {
+          :first_name__c => first_name,
+          :last_name__c => last_name,
+          :third_party_account__c => params[:provider],
+          :third_party_username__c => params[:provider_username]
         }
       
       # cloudspokes        
       else
 
-        options = {
-          :body => {
-              :username__c => params[:username],
-              :password => params[:password],
-              :email__c  => params[:email],
-              :first_name__c => params[:username],
-              :last_name__c => params[:username] 
-          }
+        new_options = {
+          :password => params[:password],
+          :first_name__c => params[:username],
+          :last_name__c => params[:username] 
         }
 
-      end        
+      end 
+      options[:body].merge!(new_options)  
+      options 
 
     end
 

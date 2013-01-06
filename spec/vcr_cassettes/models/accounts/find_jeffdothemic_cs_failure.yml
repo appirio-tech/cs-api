@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:14 GMT
+      - Sun, 06 Jan 2013 16:27:46 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,7 +28,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"User is currently active."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:12 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:45 GMT
 - request:
     method: get
     uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+name%2C+profile_pic__c%2C+email__c%2C+%0A++++++++sfdc_user__r.username%2C+account__c+from+member__c+%0A++++++++where+username__c%3D%27jeffdonthemic%27+and+%0A++++++++sfdc_user__r.third_party_account__c+%3D+%27%27
@@ -50,7 +50,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:15 GMT
+      - Sun, 06 Jan 2013 16:27:47 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -65,5 +65,5 @@ http_interactions:
         H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
         rKJjawGoICe+KAAAAA==
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:14 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:45 GMT
 recorded_with: VCR 2.2.5

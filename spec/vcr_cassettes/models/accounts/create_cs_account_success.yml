@@ -5,7 +5,7 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=YXLJCRWVMY4&password=abcd123456&email__c=YXLJCRWVMY4%40rspec.cloudspokes.com&first_name__c=YXLJCRWVMY4&last_name__c=YXLJCRWVMY4
+      string: username__c=FSPGVYVALB43&email__c=FSPGVYVALB43%40rspec.cloudspokes.com&password=abcd123456&first_name__c=FSPGVYVALB43&last_name__c=FSPGVYVALB43
     headers:
       content-type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:10 GMT
+      - Sun, 06 Jan 2013 16:27:50 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"abcd123456","Success":"true","memberId":"a0IZ0000000kHGiMAM","sfdc_username":"YXLJCRWVMY4@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"YXLJCRWVMY4"}'
+      string: ! '{"password":"abcd123456","Success":"true","memberId":"a0IZ0000000kHH8MAM","sfdc_username":"FSPGVYVALB43@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"FSPGVYVALB43"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:10 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:49 GMT
 recorded_with: VCR 2.2.5

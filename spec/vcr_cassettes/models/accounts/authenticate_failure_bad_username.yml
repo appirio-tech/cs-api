@@ -17,7 +17,7 @@ http_interactions:
       message: Bad Request
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:18 GMT
+      - Sun, 06 Jan 2013 16:27:49 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"error":"invalid_grant","error_description":"expired access/refresh
         token"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:16 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:47 GMT
 recorded_with: VCR 2.2.5

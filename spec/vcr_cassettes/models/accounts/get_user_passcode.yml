@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+passcode__c+from+user+where+%0A++++++++++username+%3D+%27BCROAJ9%40m.cloudspokes.com.sandbox%27
+    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+passcode__c+from+user+where+%0A++++++++++username+%3D+%27JZVSCG72%40m.cloudspokes.com.sandbox%27
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:06 GMT
+      - Sun, 06 Jan 2013 16:27:59 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,10 +33,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAACWMywrCMBBF/+Wug4mPonbn0oWgiC4UKWkySKQYyUwKWvrv
-        Rryrc+BwB0gU2x3Dh1BPFXx8FpCUSSGRi8kz6usAK5JCm4WKDpD3q1Q4MSUo
-        5NQV0UX64Ii1t2J1P1tMjObYPsgJ61+qjaku5r/7+SDbzQ6jwt4yu+ipaVy5
-        Wa5X1RzjbfwCrER+nJoAAAA=
+        H4sIAAAAAAAAACWMywrCMBBF/+Wug4m1PujOZXei6EKRkiaDpBQjmWlBS//d
+        iHd1DhzuBIli+1P4EKqlgo/PDJIGUkjkYvKM6jbBiqTQDkJZJ8j7lSucmRIU
+        htRn0VnG4Ii1t2L1WJQLozm2HTlh/Uu1Meur+e9xOdb1vsCscLDMLnpqGpdv
+        dqtNucV8n7/VI3eXmgAAAA==
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:04 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:57 GMT
 recorded_with: VCR 2.2.5

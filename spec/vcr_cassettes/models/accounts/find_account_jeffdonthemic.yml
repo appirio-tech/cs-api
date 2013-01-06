@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:16 GMT
+      - Sun, 06 Jan 2013 16:27:48 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"Success":"true","Profile_Pic":"http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","SFuserId":"005U0000000M1nPIAS","Message":"Query
         Ran","AccountId":null,"Email":"jdouglas@appirio.com","Service":"github"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:15 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:46 GMT
 recorded_with: VCR 2.2.5

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/password/reset?username=BCROAJ9&passcode=0&newpassword=ABCDE12345
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/password/reset?username=JZVSCG72&passcode=0&newpassword=ABCDE12345
     body:
       encoding: US-ASCII
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:07 GMT
+      - Sun, 06 Jan 2013 16:28:00 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -27,7 +27,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"Success":"false","Message":"Could not find a matching passcode
-        for the provided username: BCROAJ9"}'
+        for the provided username: JZVSCG72"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:06 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:58 GMT
 recorded_with: VCR 2.2.5

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=BCROAJ9&email__c=BCROAJ9%40rspec.cloudspokes.com&first_name__c=BCROAJ9&last_name__c=BCROAJ9&third_party_account__c=github&third_party_username__c=BCROAJ9%40rspec.cloudspokes.com
+      string: username__c=JZVSCG72&email__c=JZVSCG72%40rspec.cloudspokes.com&first_name__c=JZVSCG72&last_name__c=JZVSCG72&third_party_account__c=github&third_party_username__c=JZVSCG72%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:08 GMT
+      - Sun, 06 Jan 2013 16:27:56 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"false","Message":"Username BCROAJ9 is not available."}'
+      string: ! '{"Success":"false","Message":"Username JZVSCG72 is not available."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:06 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:54 GMT
 recorded_with: VCR 2.2.5

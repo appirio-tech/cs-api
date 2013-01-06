@@ -5,7 +5,7 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=KPZQGUKQJF19&email__c=KPZQGUKQJF19%40rspec.cloudspokes.com&first_name__c=KPZQGUKQJF19&last_name__c=KPZQGUKQJF19&third_party_account__c=github&third_party_username__c=KPZQGUKQJF19%40rspec.cloudspokes.com
+      string: username__c=BDRYWOFZOI91&email__c=BDRYWOFZOI91%40rspec.cloudspokes.com&first_name__c=BDRYWOFZOI91&last_name__c=BDRYWOFZOI91&third_party_account__c=github&third_party_username__c=BDRYWOFZOI91%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:12 GMT
+      - Sun, 06 Jan 2013 16:27:51 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000kHGnMAM","sfdc_username":"KPZQGUKQJF19@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"KPZQGUKQJF19"}'
+      string: ! '{"password":"!cloudspokes963","Success":"true","memberId":"a0IZ0000000kHHCMA2","sfdc_username":"BDRYWOFZOI91@m.cloudspokes.com.sandbox","Message":"Member
+        created successfully.","username":"BDRYWOFZOI91"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:11 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:52 GMT
 recorded_with: VCR 2.2.5

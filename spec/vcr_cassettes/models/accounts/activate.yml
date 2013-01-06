@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/activate/BCROAJ9
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/activate/JZVSCG72
     body:
       encoding: US-ASCII
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:20 GMT
+      - Sun, 06 Jan 2013 16:27:20 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"User is currently active."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:18 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:18 GMT
 recorded_with: VCR 2.2.5

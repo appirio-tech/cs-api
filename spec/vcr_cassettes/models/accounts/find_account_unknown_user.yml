@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 15:49:16 GMT
+      - Sun, 06 Jan 2013 16:27:47 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"Success":"false","Profile_Pic":null,"SFusername":null,"Username":"unknown-user","SFuserId":null,"Message":"No
         user could be found with specified service and username.","AccountId":null,"Email":null,"Service":"github"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 15:49:14 GMT
+  recorded_at: Sun, 06 Jan 2013 16:27:46 GMT
 recorded_with: VCR 2.2.5
