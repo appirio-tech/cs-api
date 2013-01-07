@@ -28,7 +28,7 @@ class PrivateMessage < Salesforce
     query_salesforce(access_token, "select Id, Name, CreatedDate, LastModifiedDate, To__c, To__r.Name,
       From__c, From__r.Name, Subject__c, Status_From__c, Status_To__c,  Replies__c,
       (select id, from__r.name, from__r.profile_pic__c, body__c, createddate from 
-      Private_Message_Texts__r order by createddate) from Private_Message__c where Id = '#{id}'").first
+      Private_Message_Texts__r order by createddate desc) from Private_Message__c where Id = '#{id}'").first
   end  
 
   def self.update(access_token, id, data)
@@ -81,7 +81,7 @@ class PrivateMessage < Salesforce
 
   private
 
-    def post_private_message(options)
+    def self.post_private_message(options)
       results = post_apex_rest('/notifications', options)
       {:success => results['success'].to_bool, :message => results['message']}
     rescue Exception => e
