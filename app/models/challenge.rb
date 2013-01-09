@@ -78,6 +78,25 @@ class Challenge < Salesforce
     get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}"+qry_category)
   end
 
+
+  #
+  # Performs a simple (name-only_, keyword search against open challenges
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - keyword -> the keyword to search for
+  # * *Returns* :
+  #   - JSON an array of challenges 
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.search(access_token, keyword)  
+    query_salesforce(access_token, "select name, end_date__c, total_prize_money__c, 
+      registered_members__c, challenge_id__c, challenge_type__c, id, start_date__c, 
+      description__c, days_till_close__c, (select id, display_name__c 
+      from challenge_categories__r) from challenge__c where is_open__c = 'true' 
+      and name like '%#{keyword}%' order by name")
+  end    
+
   def self.recent(access_token, limit, offset)  
     query_salesforce(access_token, "SELECT Blog_URL__c, Name, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, Source_Code_URL__c,
         Total_Prize_Money__c, Top_Prize__c, (SELECT Money_Awarded__c,Place__c,Member__c,

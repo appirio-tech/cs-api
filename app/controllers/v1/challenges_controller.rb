@@ -99,6 +99,20 @@ class V1::ChallengesController < V1::ApplicationController
 	end	
 
   #
+  # Performs simple, keyword search against open challenges
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - keyword -> the keyword used in the search
+  # * *Returns* :
+  #   - JSON an array of challenges 
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def search
+    expose Challenge.search(@oauth_token, params[:keyword])
+  end  
+
+  #
   # Returns a collection of participants for a challenge
   # * *Args*    :
   #   - access_token -> the oauth token to use

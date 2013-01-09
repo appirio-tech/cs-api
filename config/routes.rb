@@ -28,6 +28,7 @@ CsApi::Application.routes.draw do
 		match "/challenges" => "challenges#create", :via => :post		
 		match "/challenges/closed" => "challenges#all", :open => 'false', :via => :get
 		match "/challenges/recent" => "challenges#recent", :via => :get
+		match "/challenges/search" => "challenges#search", :via => :get
 		match "/challenges/:challenge_id" => "challenges#find", :via => :get
 		match "/challenges/:challenge_id" => "challenges#update", :via => :put		
 		match "/challenges/:challenge_id/comments" => "challenges#comments", :via => :get
