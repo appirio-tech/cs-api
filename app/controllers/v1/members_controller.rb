@@ -1,5 +1,5 @@
 class V1::MembersController < V1::ApplicationController
-  jsonp
+  jsonp :parameter => :jsonp
 
 	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, :referrals]
 
