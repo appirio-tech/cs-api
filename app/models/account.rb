@@ -1,7 +1,7 @@
 class Account < Salesforce
 
   #
-  # Uses the databasedotcom gem to authenticates a user 
+  # Uses the restforce gem to authenticates a user 
   # with sfdc and return a session token
   # * *Args*    :
   #   - access_token -> the oauth token to use
@@ -13,16 +13,19 @@ class Account < Salesforce
   #   - ++ ->
   #  
   def self.authenticate(access_token, membername, password)
-    config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
-    client = Databasedotcom::Client.new(config)
     sfdc_username = membername+'@'+ENV['SFDC_USERNAME_DOMAIN']
+    client = Restforce.new :username => sfdc_username,
+      :password       => password,
+      :client_id      => ENV['DATABASEDOTCOM_CLIENT_ID'],
+      :client_secret  => ENV['DATABASEDOTCOM_CLIENT_SECRET'],
+      :host           => ENV['DATABASEDOTCOM_HOST']
     begin
       puts "[INFO][Account] Logging into salesforce with sfdc username: #{sfdc_username}"
-      access_token = client.authenticate :username => sfdc_username, :password => password
+      access_token = client.authenticate!.access_token
       puts "[INFO][Account] Successful login for #{membername} with sfdc username #{sfdc_username}."
       {:success => 'true', :message => 'Successful sfdc login.', :access_token => access_token}
     rescue Exception => exc
-      # puts "[FATAL][Account] Could not log into salesforce using gem to get access_token for #{membername}: #{exc.message}"
+      puts "[FATAL][Account] Could not log into salesforce using gem to get access_token for #{membername}: #{exc.message}"
       {:success => 'false', :message => exc.message}
     end
   end

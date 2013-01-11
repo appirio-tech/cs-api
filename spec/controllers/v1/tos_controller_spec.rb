@@ -5,9 +5,7 @@ describe V1::TosController do
   # create a new api_key so all methods can use it
   before(:all) do
     VCR.use_cassette "shared/public_oauth_token", :record => :all do
-      config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
-      client = Databasedotcom::Client.new(config)
-      @public_oauth_token = client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']
+      @public_oauth_token = SfdcHelper.public_access_token
     end
   end  
 

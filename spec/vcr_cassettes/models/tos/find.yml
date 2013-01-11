@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 13 Dec 2012 12:25:52 GMT
+      - Fri, 11 Jan 2013 13:06:15 GMT
       last-modified:
       - Wed, 21 Nov 2012 14:07:24 GMT
       content-type:
@@ -32,5 +32,5 @@ http_interactions:
         Terms & Conditions","CreatedDate":"2012-11-21T14:07:24.000+0000","CreatedById":"005U0000000M1nPIAS","LastModifiedDate":"2012-11-21T14:07:24.000+0000","LastModifiedById":"005U0000000M1nPIAS","SystemModstamp":"2012-11-21T14:07:24.000+0000","LastActivityDate":null,"Terms__c":"CloudSpokes
         Default TOS Text","Default_TOS__c":true}'
     http_version: '1.1'
-  recorded_at: Thu, 13 Dec 2012 12:25:52 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 13:06:16 GMT
+recorded_with: VCR 2.4.0

@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
 
-gem 'databasedotcom'
-gem 'databasedotcom-rails'
 gem 'restforce'
 gem 'forcifier', git: 'git://github.com/jeffdonthemic/forcifier.git'
 gem 'rocket_pants', '~> 1.0'

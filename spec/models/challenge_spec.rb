@@ -4,12 +4,9 @@ describe Challenge do
 
   # get oauth tokens for different users
   before(:all) do
-    puts "[SETUP] fetching new access tokens....."
-    VCR.use_cassette "shared/public_oauth_token", :record => :all do
-      config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
-      client = Databasedotcom::Client.new(config)
-      @public_oauth_token = client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']
-    end
+		VCR.use_cassette "shared/public_oauth_token", :record => :all do
+		  @public_oauth_token = SfdcHelper.public_access_token
+		end
 
   	VCR.use_cassette "models/challenge/create_rspec_challenge" do
 	  	json = JSON.parse(File.read("spec/data/create_challenge.json"))

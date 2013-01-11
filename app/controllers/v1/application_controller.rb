@@ -68,20 +68,26 @@ class V1::ApplicationController < RocketPants::Base
 
     # returns a 'public' access token from db.com authentication unless it exists in the cache
     def public_oauth_token
-      pubic_oauth_token = Rails.cache.fetch('pubic_oauth_token', :expires_in => 30.minute) do
+      public_oauth_token = Rails.cache.fetch('pubic_oauth_token', :expires_in => 30.minute) do
         puts '[APPLICATION_CONTROLLER][INFO] Fetching public access token from sfdc'
-        config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
-        client = Databasedotcom::Client.new(config)
-        client.authenticate :username => ENV['SFDC_PUBLIC_USERNAME'], :password => ENV['SFDC_PUBLIC_PASSWORD']
-      end
+        client = Restforce.new :username => ENV['SFDC_PUBLIC_USERNAME'],
+          :password       => ENV['SFDC_PUBLIC_PASSWORD'],
+          :client_id      => ENV['DATABASEDOTCOM_CLIENT_ID'],
+          :client_secret  => ENV['DATABASEDOTCOM_CLIENT_SECRET'],
+          :host           => ENV['DATABASEDOTCOM_HOST']
+        client.authenticate!.access_token
+      end 
     end  
 
     # returns an 'admin' access token from db.com authentication
     def admin_oauth_token
       puts '[APPLICATION_CONTROLLER][INFO] Fetching admin access token from sfdc'
-      config = YAML.load_file(File.join(::Rails.root, 'config', 'databasedotcom.yml'))
-      client = Databasedotcom::Client.new(config)
-      client.authenticate :username => ENV['SFDC_ADMIN_USERNAME'], :password => ENV['SFDC_ADMIN_PASSWORD']
+      client = Restforce.new :username => ENV['SFDC_ADMIN_USERNAME'],
+        :password       => ENV['SFDC_ADMIN_PASSWORD'],
+        :client_id      => ENV['DATABASEDOTCOM_CLIENT_ID'],
+        :client_secret  => ENV['DATABASEDOTCOM_CLIENT_SECRET'],
+        :host           => ENV['DATABASEDOTCOM_HOST']
+      client.authenticate!.access_token      
     end      
 
 end

@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=jeffdonthemic%40m.cloudspokes.com.sandbox&password=!cloudspokes963
+    uri: https://cs11.salesforce.com/services/oauth2/token
     body:
       encoding: US-ASCII
-      string: ''
+      string: grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7Q
     headers:
       accept:
       - ! '*/*'
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 23 Dec 2012 20:17:42 GMT
+      - Fri, 11 Jan 2013 13:55:19 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,94 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1356293862918","instance_url":"https://cs11.salesforce.com","signature":"fWur2mvQ2i7PbcbgAHVMpl/NdwRMhvnvmj9TtyMNfsA=","access_token":"00DZ00000007ybt!AQQAQD6FoHE1FkM6SvZiAegyAb_5tNPT4awtSbNKMWYHmMaKLii1Z4SAJlGBerZC4Hydo6aAjNNckKpkHXG5H.GBeJbKisOw"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1357912520216","instance_url":"https://cs11.salesforce.com","signature":"e2nVN/WtYOXMOigUcR62R2wbSmKyMj6cVjQQof+n/Cw=","access_token":"00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo"}'
     http_version: '1.1'
-  recorded_at: Sun, 23 Dec 2012 20:17:47 GMT
-- request:
-    method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7Q
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Mon, 31 Dec 2012 18:21:59 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1356978119972","instance_url":"https://cs11.salesforce.com","signature":"vmYpyKGDTuZFLnb7QAnjFG+hEtz7TWYWzhNyx2FePTo=","access_token":"00DZ00000007ybt!AQQAQAQxXqROhCnRnkLvnw7ksHa9BcFTtMx_WvFGDOpjHTc4WnFO42bfhJeKK9VEJntkt31rfjTIGNGU010EqXlZs26jjMXc"}'
-    http_version: '1.1'
-  recorded_at: Mon, 31 Dec 2012 18:21:59 GMT
-- request:
-    method: post
-    uri: https://cs11.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=jeffdonthemic%40m.cloudspokes.com.sandbox&password=!cloudspokes963
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Tue, 01 Jan 2013 18:39:39 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1357065579364","instance_url":"https://cs11.salesforce.com","signature":"m4DwdgyMeXI7xqvkMWebAFk/xMyDuqJUhuSeGOUlkuI=","access_token":"00DZ00000007ybt!AQQAQNb5EUD9c1hGLoc9mVtxN3TbZk18E684lUa0S24Vb28ZF7HW4ZpWyWzMWQAU4AW7QKwF7Hql4eM0284wg9hR5gLyh1Uv"}'
-    http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 18:39:38 GMT
-- request:
-    method: post
-    uri: https://cs11.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7Q
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Sun, 06 Jan 2013 16:27:45 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1357489665777","instance_url":"https://cs11.salesforce.com","signature":"HYCxOIey72FovdJkn2GVilTwiyw5bd4/JJ6mf6o9EmY=","access_token":"00DZ00000007ybt!AQQAQNezypgbKXNUt1MudR1SgAfYvPQJVWLJYkv8gA.RUEXPDzpPfadr.563mVCHb3J2KemSjD1Qe2OG0WjPat.wW.OHm2Rj"}'
-    http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 16:27:44 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 13:55:20 GMT
+recorded_with: VCR 2.4.0
