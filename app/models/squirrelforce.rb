@@ -40,9 +40,11 @@ class Squirrelforce  < Salesforce
 		unless fetch_server_results.empty?
 			server = Forcifier::JsonMassager.deforce_json(fetch_server_results.first)
 			# add a new reservation for this server
+=begin			
 			create_in_salesforce(access_token, 'Reservation__c', {'Reserved_Server__c' => server['id'], 
 				'Reserved_Member__c' => Member.salesforce_member_id(access_token, membername), 
 				'Start_Date__c' => DateTime.now})
+=end				
 			{:success => true, :message => 'Server successfully reserved.', :server => server}
 		else
 			{:success => false, :message => 'No available server with requested specifications.'}
