@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+challenge__c+limit+1
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+sfdc_user__c+%0A++++++++from+member__c+where+name+%3D+%27idonotexist%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQD6FoHE1FkM6SvZiAegyAb_5tNPT4awtSbNKMWYHmMaKLii1Z4SAJlGBerZC4Hydo6aAjNNckKpkHXG5H.GBeJbKisOw
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 23 Dec 2012 20:17:44 GMT
+      - Fri, 11 Jan 2013 15:13:50 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,10 +33,8 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAG1MvQrCMBB+l5uDiVKXbiIiDi4VHBQp1+TQlNDI5VrQ0Hc3
-        ODn4Td9/BomC4eTfBPVSgYtDIcIjKWCykV2C+poBRdh3o1CRGeT1LC3YPjAE
-        Gu7UthYUjByKqRPx5C0l7VBQT6tqYXSKXU9Wkv6daDT7i/lifW52zXFTwazg
-        4MrLv+g2fwD4UUx8rgAAAA==
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
     http_version: '1.1'
-  recorded_at: Sun, 23 Dec 2012 20:17:49 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:13:50 GMT
+recorded_with: VCR 2.4.0

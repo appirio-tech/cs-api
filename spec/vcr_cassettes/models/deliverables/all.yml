@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Type__c%2C+Comments__c%2C+Username__c%2C+Password__c%2C+Language__c%2C+%0A++++++URL__c%2C+Hosting_Platform__c+from+Submission_Deliverable__c+%0A++++++where+Challenge_Participant__r.Member__r.Name+%3D+%27salpartovi%27+and+%0A++++++Challenge_Participant__r.Challenge__r.Challenge_Id__c+%3D+%272%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+Id%2C+Type__c%2C+Comments__c%2C+Username__c%2C+Password__c%2C+Language__c%2C+%0A++++++URL__c%2C+Hosting_Platform__c+from+Submission_Deliverable__c+%0A++++++where+Challenge_Participant__r.Member__r.Name+%3D+%27apextestmember%27+and+%0A++++++Challenge_Participant__r.Challenge__r.Challenge_Id__c+%3D+%27106%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 14 Dec 2012 14:54:39 GMT
+      - Fri, 11 Jan 2013 15:13:05 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,14 +33,13 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAO2UTUsDMRCG/4rMeWmq6MG91Rbayh5aa3tQZMnujms0yZRk
-        dhct/e+mtociLgURitCcMm/e+XoOWQETSz1THwjxVQQF2XBhV2EEDnNyhYf4
-        cQWS2amsYgzhCvh9GVwwqzKjvFdk0wFqVaOTmcY0zSGCyungEB5drXL0opAs
-        RX1x2ekKT9kr5uxFa76Q59cP3e3pnQ9uxr0urCMYF6HkD08R3IeBNn1j6FOB
-        QeiTMWjZf4m20jqCeZjFSoN70kR634Qd96RE2rKS5a7araxlqDa/S7bxC/My
-        FqJpmk5JVGrs5GSCYUSelS3TiZb8TM5s3SN09FaFyY/Mb9jOb/id3wANnYV9
-        /4zhLvFXBDe5R6eXtNNLTvQO0Zu205ue6B2it2int/gPP9/T+hMiRxtDYQYA
-        AA==
+        H4sIAAAAAAAAAMVQsU7DMBD9FXRzVJcOlchWtUOLOlSULiAUOckRDLavss+J
+        IMq/c6UdKkQXhIQn3/N7z+9eD0ys7dZ8IOSTDGrycuGQMIOAFYU6Qv7Yg2YO
+        pkyMMvbA73thwTaVzsRoyBcLtKbFoEuLRVFBBilYYaiIoTUVRlVr1qqdTEdj
+        Fal8xYqjuqhX+vrmYXw8sym71WwOQwarWix/eMrgXgId/s1hTjUKMCfn0HP8
+        An2yNoOdZPHa4Rm00TF2suMZtNa+Sbo5ud3qVovb7m59nF+Y97lSXdeNGqLG
+        4qgiJ4QlRTa+KTZW8zMFd2QvMdBbkuT/3F+43F/43t8CHV3Jvn/W4Un4qwYP
+        2uFp+AT3fGLOpQIAAA==
     http_version: '1.1'
-  recorded_at: Fri, 14 Dec 2012 14:54:39 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:13:05 GMT
+recorded_with: VCR 2.4.0

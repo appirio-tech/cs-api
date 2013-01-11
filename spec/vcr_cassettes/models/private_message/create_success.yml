@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+member__c+where+name+%3D+%27jeffdonthemic%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+sfdc_user__c+%0A++++++++from+member__c+where+name+%3D+%27jeffdonthemic%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 16:31:04 GMT
+      - Fri, 11 Jan 2013 15:15:03 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,21 +33,21 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAG2MOwvCMBSF/8uZg4ni1M1FqNBJXBQpedwhUk25uS3U0P9u
-        QHDyTOfxcQokiR3O8U1otgohvaoRnkiByScOGc2twIpwdJNQjQWyjJVCR09H
-        3PceChMPtdGZeI6esg5WrJ53+43RObkHecn6x2tr2qv56ricLt3BYFVoQ734
-        N93XD9zq52aoAAAA
+        H4sIAAAAAAAAAG2NQQuCQBSE/8ucl3YN6uBNisBACMRLEbLuvoNhbuw+BRP/
+        ewtGp+Y0b+bjzQx2rLuyfRPSRMC6Phr2Awl4Ms7bgPQ2QzP7thmY4jmDp1ek
+        UNCzIV/XBgKD72IiA/mxNRSk1azluN1vlAyueZDhIH+81Cq/qlWn6VwVmcIi
+        kNv44k8lUJ6Oh7oK61gKpXbVlymS/pJnJZb78gHnIKEWzAAAAA==
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 16:31:04 GMT
+  recorded_at: Fri, 11 Jan 2013 15:15:03 GMT
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+member__c+where+name+%3D+%27mess%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+sfdc_user__c+%0A++++++++from+member__c+where+name+%3D+%27mess%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -60,7 +60,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 16:31:04 GMT
+      - Fri, 11 Jan 2013 15:15:04 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -72,12 +72,12 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAG2MOwvCMBSF/8uZg4ni1M1FqNDJQVCk5HGHSDXl5rZQQ/+7
-        AcHJM53HxymQJHY4xzeh2SqE9KpGeCIFJp84ZDS3AivC0U1CNRbIMlYKHT0d
-        cd97KEw81EZn4jl6yjpYsXre7TdG5+Qe5CXrH6+taa/mq+NyunQHg1WhDfXi
-        33RfP3DEj2CoAAAA
+        H4sIAAAAAAAAAG2NQQuCQBSE/8ucl3YL7OBNCsHEk0hQhKy772BYxu5TMPG/
+        t2B0ak7zZj7ezOCedVe2b0K8FbD9Mxh2Awk4Mr2zHvF1hmZ2bTMwhXMGT69A
+        oaBHQ66uDQQG14VEenJja8hLq1nLcbffKOn75k6GvfzxUqvsolal0+lcJAqL
+        QGbDiz+VQJkeD3Xl17EYSkXVlymivMuSHMtt+QBVFoxuzAAAAA==
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 16:31:05 GMT
+  recorded_at: Fri, 11 Jan 2013 15:15:04 GMT
 - request:
     method: post
     uri: https://cs11.salesforce.com/services/apexrest/v.9/notifications
@@ -89,14 +89,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 16:31:05 GMT
+      - Fri, 11 Jan 2013 15:15:04 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -107,5 +107,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"Notification successfully sent."}'
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 16:31:06 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:15:08 GMT
+recorded_with: VCR 2.4.0

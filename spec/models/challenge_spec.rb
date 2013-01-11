@@ -26,7 +26,7 @@ describe Challenge do
 	  # need to add participants  
     VCR.use_cassette "models/challenge/create_rspec_participant" do
     	puts "[SETUP] Adding participants for #{@challenge_id} for rspec testing"
-      results = Participant.create(@public_oauth_token, 'jeffdonthemic', 
+      results = Participant.create(@public_oauth_token, 'apextestmember', 
       	@challenge_id, {'status' => 'Registered'})
     end	  
 
@@ -68,15 +68,14 @@ describe Challenge do
   end      
 
   describe "'Recent' challenges" do
-	  it "should return more than one" do
+	  it "should return more than one with the right keys" do
 	  	VCR.use_cassette "models/challenge/recent" do
-		  	results = Challenge.recent(@public_oauth_token)
+		  	results = Challenge.recent(@public_oauth_token, 25, 0)
 		  	results.first.should have_key('name')
 		  	results.first.should have_key('total_prize_money')
 		  	results.first.should have_key('end_date')
 		  	results.first.should have_key('top_prize')
 		  	results.first.should have_key('challenge_id')
-		  	results.first.should have_key('id')
 		  	results.first.should have_key('description')
 		  	# results.first.should have_key('challenge_participants__r') -- issues with sandbox
 		  	results.first.should have_key('challenge_categories__r')
@@ -85,9 +84,9 @@ describe Challenge do
   end    
 
   describe "'Find' a challenge" do
-	  it "should return the correct challenge with correct keys" do
-	  	VCR.use_cassette "models/challenge/find" do
-		  	results = Challenge.find(@public_oauth_token, @challenge_id)
+	  it "should return the correct challenge with correct keys for public request" do
+	  	VCR.use_cassette "models/challenge/find_public" do
+		  	results = Challenge.find(@public_oauth_token, @challenge_id, false)
 		  	results.should have_key('discussion_board')
 		  	results.should have_key('prize_type')
 		  	results.should have_key('total_prize_money')
@@ -135,7 +134,6 @@ describe Challenge do
 		  	results[:success].should == false
 		  	results[:challengeId].should be_nil
 		  	results[:errors].count.should >= 0
-		  	puts results
 		  end
 	  end
   end  	  

@@ -4,8 +4,9 @@ describe Category do
 
   # get oauth tokens for different users
   before(:all) do
-	VCR.use_cassette "shared/public_oauth_token", :record => :all do
-	  @public_oauth_token = SfdcHelper.public_access_token
+		VCR.use_cassette "shared/public_oauth_token", :record => :all do
+		  @public_oauth_token = SfdcHelper.public_access_token
+		end
 	end
 
   describe "all categories" do

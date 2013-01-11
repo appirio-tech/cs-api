@@ -1,33 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=shareduser%40cloudspokes.com.sandbox&password=i3769XDAF7Q
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Wed, 05 Dec 2012 19:29:23 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000NdzaIAC","issued_at":"1354735763200","instance_url":"https://cs11.salesforce.com","signature":"0bKqkWkDww3fJ7rcGtEerXVXSCzChTTb3rAkWmsKDtE=","access_token":"00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F"}'
-    http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:23 GMT
-- request:
     method: get
     uri: https://cs11.salesforce.com/services/apexrest/v.9/leaderboard?1=1&category=heroku&limit=1000
     body:
@@ -37,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:23 GMT
+      - Fri, 11 Jan 2013 16:04:38 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -53,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"total_money":"5000.0","wins":"1","country__c":null,"active":"0","profile_pic__c":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","username":"jeffdonthemic"}]'
+      string: ! '[{"total_money":"5000.0","wins":"1","country__c":null,"active":"1","profile_pic__c":"http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg","username":"jeffdonthemic"}]'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:23 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:04:38 GMT
+recorded_with: VCR 2.4.0

@@ -7,22 +7,23 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"challenge":{"detail":{"winner_announced__c":"2014-05-17","terms_of_service__c":"Standard
         Terms & Conditions","scorecard_type__c":"Sandbox Scorecard","submission_details__c":"<em>&#39;Some
-        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","status__c":"Created","start_date__c":"2012-03-17T18:02:00.000+0000","requirements__c":"Hello
+        submission details&#39;<br><br>Another double quoted stuff &quot;fdfdfd&quot;</em>","status__c":"Winner
+        Selected","start_date__c":"2012-03-17T18:02:00.000+0000","requirements__c":"Hello
         this is a sample requirement with some interesting stuff","name":"RSpec Challenge
         for Testing","end_date__c":"2014-04-17T18:02:00.000+0000","description__c":"sample
-        Description","challenge_id__c":"77"}}}'
+        Description","challenge_id__c":"106"}}}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:28:32 GMT
+      - Fri, 11 Jan 2013 15:06:41 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -31,7 +32,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"success":true,"errors":[],"challengeId":"77"}'
+      string: ! '{"success":true,"errors":[],"challengeId":"106"}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:28:33 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:06:42 GMT
+recorded_with: VCR 2.4.0

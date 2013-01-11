@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+challenge__r.challenge_id__c%2C+%0A++++++++member__r.name+from+challenge_participant__c+limit+1
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+challenge__r.challenge_id__c%2C+%0A++++++++member__r.name+from+challenge_participant__c+limit+1
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 14 Dec 2012 15:03:20 GMT
+      - Fri, 11 Jan 2013 16:03:49 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,12 +33,12 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2Q3UrDQBBG32WugxtLBcldECwpRFqEIoqEyWZot2yzYXYS
-        aEPe3V21ohf+4F7NDt/MOcwI4gTtvTkRZJcJNK4NhXBPCTBpx42H7GkEFGFT
-        90LhO4Icu5CCmx1aS+2WqhWyGG06bKWqNCTQsw0B5YkHo8mrBgXVMJtfpMq7
-        ek9avPpuXGGaP6Zvr71+OJV5AVPyiVZxlPhF6R8ar+jFO/pqs3bbMl98RRdN
-        XJzBLLZLOtTEP+mcE391+cgHkeJ8g9vjclPmaSTe4SGu9Wi7cDI3GJim5+kF
-        bGa9TMUBAAA=
+        H4sIAAAAAAAAAJ2QTUvEMBBA/8uci8kqu4feirrSlYrgRRQp03TQaNuUyXTZ
+        tfS/m6yu6MEPNqeEvMx7ZARxgs2NfSVIZwnUrgsb4YESYDKOaw/p/QgowrYa
+        hMJxBNn2gYLTJ2wa6h6pvEYWa2yPnZSlgQQGbgKgPPHaGvKqRkG1Pl4caeVd
+        9UxGvPrpuUKd3en35S7ppMjOYUq+2EqOEX8kHZCxU198qOcvmzNfZPl3dV7H
+        wSnM9CJeFNRWxL8F7Yn/1nzyISXf/8Jyu7otMh2NV9jGsdjTJoik3eEwTQ/T
+        G4vIKITLAQAA
     http_version: '1.1'
-  recorded_at: Fri, 14 Dec 2012 15:03:20 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:03:49 GMT
+recorded_with: VCR 2.4.0

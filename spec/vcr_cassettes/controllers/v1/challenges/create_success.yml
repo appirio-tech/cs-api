@@ -12,19 +12,19 @@ http_interactions:
         style=\"text-align: center; \">Links <br><br><a href=\"http://developer.force.com\"
         target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
         - Italics<br></em></strike><br><br>","name":"RSpec Challenge","end_date__c":"2014-04-17T18:02:00.000+0000","description__c":"sample
-        Description","comments__c":"My challenge comments","challenge_type__c":"Design"},"reviewers":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories":[{"name":"java"},{"name":"heroku"}],"prizes":[{"place__c":"2","points__c":"222","prize__c":"122","value__c":"1212"},{"place__c":"1","points__c":"2120","prize__c":"1000","value__c":"21212"}],"commentNotifiers":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}],"assets":[{"filename__c":"img.png"},{"filename__c":"logo.jpg"}],"reviewers_to_delete":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories_to_delete":[{"name":"java"},{"name":"heroku"}],"prizes_to_delete":[{"place__c":"2","points__c":"222","prize__c":"122","value__c":"1212"},{"place__c":"1","points__c":"2120","prize__c":"1000","value__c":"21212"}],"commentNotifiers_to_delete":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}]}}'
+        Description","comments__c":"My challenge comments","challenge_type__c":"Design"},"reviewers":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories":[{"name":"java"},{"name":"heroku"}],"prizes":[{"place__c":"2","points__c":"222","prize__c":"122","value__c":"1212"},{"place__c":"1","points__c":"2120","prize__c":"1000","value__c":"21212"}],"commentNotifiers":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}],"assets":[{"filename__c":"img.png"},{"filename__c":"logo.jpg"}],"reviewers_to_delete":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories_to_delete":[{"name":"java"},{"name":"heroku"}],"prizes_to_delete":[{"place__c":"2","points__c":"222","prize__c":"122","value__c":"1212"},{"place__c":"1","points__c":"2120","prize__c":"1000","value__c":"21212"}],"commentNotifiers_to_delete":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}],"assets_to_delete":[{"filename__c":"img.png"},{"filename__c":"logo.jpg"}]}}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 03 Jan 2013 13:52:06 GMT
+      - Fri, 11 Jan 2013 16:02:41 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -33,7 +33,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"success":true,"errors":[],"challengeId":"84"}'
+      string: ! '{"success":true,"errors":[],"challengeId":"109"}'
     http_version: '1.1'
-  recorded_at: Thu, 03 Jan 2013 13:52:09 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:02:42 GMT
+recorded_with: VCR 2.4.0

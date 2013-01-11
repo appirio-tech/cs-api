@@ -5,19 +5,19 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=JZVSCG72&email__c=JZVSCG72%40rspec.cloudspokes.com&first_name__c=JZVSCG72&last_name__c=JZVSCG72&third_party_account__c=github&third_party_username__c=JZVSCG72%40rspec.cloudspokes.com
+      string: username__c=PNJCKS54&email__c=PNJCKS54%40rspec.cloudspokes.com&first_name__c=PNJCKS54&last_name__c=PNJCKS54&third_party_account__c=github&third_party_username__c=PNJCKS54%40rspec.cloudspokes.com
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNezypgbKXNUt1MudR1SgAfYvPQJVWLJYkv8gA.RUEXPDzpPfadr.563mVCHb3J2KemSjD1Qe2OG0WjPat.wW.OHm2Rj
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 16:27:56 GMT
+      - Fri, 11 Jan 2013 15:35:55 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"Success":"false","Message":"Username JZVSCG72 is not available."}'
+      string: ! '{"Success":"false","Message":"Username PNJCKS54 is not available."}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 16:27:54 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:35:55 GMT
+recorded_with: VCR 2.4.0

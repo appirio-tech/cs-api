@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cs11.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=jeffdonthemic%40m.cloudspokes.com.sandbox&password=%21cloudspokes963
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 11 Jan 2013 15:35:50 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1357918550291","instance_url":"https://cs11.salesforce.com","signature":"xT7GiG5Fr5yYwM/B0qjj20A4imkC/WjgUq8SsNLykKQ=","access_token":"00DZ00000007ybt!AQQAQB3Dcm2jDD7ZtpmnwG55YE5Mwb_2OueuyIwP9hYjtwVyQJsWyDvNe3_C1Rvan9Pev4zU5Utqq6Ws5xmA.KYlhmCLa1sq"}'
+    http_version: '1.1'
+  recorded_at: Fri, 11 Jan 2013 15:35:50 GMT
+recorded_with: VCR 2.4.0

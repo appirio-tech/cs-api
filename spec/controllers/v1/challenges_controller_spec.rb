@@ -32,7 +32,7 @@ describe V1::ChallengesController do
     it "should be successful" do
       VCR.use_cassette "controllers/v1/challenges/open" do
         request.env['oauth_token'] = @public_oauth_token
-        get 'open'
+        get 'all', 'open' => 'true'
         response.should be_success
       end
     end 
@@ -42,7 +42,7 @@ describe V1::ChallengesController do
     it "should be successful" do
       VCR.use_cassette "controllers/v1/challenges/closed" do
         request.env['oauth_token'] = @public_oauth_token
-        get 'closed'
+        get 'all', 'open' => 'false'
         response.should be_success
       end
     end 

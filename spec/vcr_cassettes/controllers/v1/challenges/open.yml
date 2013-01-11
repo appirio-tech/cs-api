@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 03 Jan 2013 13:52:03 GMT
+      - Fri, 11 Jan 2013 16:02:46 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,9 +26,14 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VzUgMAK"},"Name":"RSpec
-        Challenge","End_Date__c":"2013-01-09T22:13:42.000+0000","Total_Prize_Money__c":44848,"Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoSIAS"},"Display_Name__c":"Java","Id":"a08Z0000000RmoSIAS","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoiIAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmoiIAC","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmohIAC"},"Display_Name__c":"Java","Id":"a08Z0000000RmohIAC","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoTIAS"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmoTIAS","Challenge__c":"a0GZ0000005VzUgMAK"}]},"Registered_Members__c":1,"Challenge_Id__c":"70","Challenge_Type__c":"Race","Id":"a0GZ0000005VzUgMAK","Is_Open__c":"true","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
-        Description","Days_till_Close__c":6}]'
+      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005Vvh4MAC"},"Name":"Really
+        Awesome Challenge","End_Date__c":"2013-02-07T15:26:00.000+0000","Total_Prize_Money__c":350,"Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RNI2IAO"},"Display_Name__c":"Android","Id":"a08Z0000000RNI2IAO","Challenge__c":"a0GZ0000005Vvh4MAC"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RNI3IAO"},"Display_Name__c":"AWS","Id":"a08Z0000000RNI3IAO","Challenge__c":"a0GZ0000005Vvh4MAC"}]},"Registered_Members__c":0,"Challenge_Id__c":"30","Challenge_Type__c":"Design","Id":"a0GZ0000005Vvh4MAC","Is_Open__c":"true","Start_Date__c":"2012-11-19T16:52:00.000+0000","Description__c":"This
+        is my really cool challenge","Days_till_Close__c":27},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VzUgMAK"},"Name":"RSpec
+        Challenge","End_Date__c":"2013-03-07T21:09:00.000+0000","Total_Prize_Money__c":44848,"Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmohIAC"},"Display_Name__c":"Java","Id":"a08Z0000000RmohIAC","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoTIAS"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmoTIAS","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoSIAS"},"Display_Name__c":"Java","Id":"a08Z0000000RmoSIAS","Challenge__c":"a0GZ0000005VzUgMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RmoiIAC"},"Display_Name__c":"Heroku","Id":"a08Z0000000RmoiIAC","Challenge__c":"a0GZ0000005VzUgMAK"}]},"Registered_Members__c":1,"Challenge_Id__c":"70","Challenge_Type__c":"Race","Id":"a0GZ0000005VzUgMAK","Is_Open__c":"true","Start_Date__c":"2013-01-09T21:09:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":55},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005kxDOMAY"},"Name":"RSpec
+        Challenge","End_Date__c":"2014-04-17T18:02:00.000+0000","Total_Prize_Money__c":44848,"Challenge_Categories__r":{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000vEgOIAU"},"Display_Name__c":"Java","Id":"a08Z0000000vEgOIAU","Challenge__c":"a0GZ0000005kxDOMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000vEgPIAU"},"Display_Name__c":"Heroku","Id":"a08Z0000000vEgPIAU","Challenge__c":"a0GZ0000005kxDOMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000vEgYIAU"},"Display_Name__c":"Java","Id":"a08Z0000000vEgYIAU","Challenge__c":"a0GZ0000005kxDOMAY"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000vEgZIAU"},"Display_Name__c":"Heroku","Id":"a08Z0000000vEgZIAU","Challenge__c":"a0GZ0000005kxDOMAY"}]},"Registered_Members__c":1,"Challenge_Id__c":"99","Challenge_Type__c":"Design","Id":"a0GZ0000005kxDOMAY","Is_Open__c":"true","Start_Date__c":"2012-03-17T18:02:00.000+0000","Description__c":"sample
+        Description","Days_till_Close__c":461},{"attributes":{"type":"Challenge__c","url":"/services/data/v26.0/sobjects/Challenge__c/a0GZ0000005VyTfMAK"},"Name":"Test
+        Challenge","End_Date__c":"2013-02-22T21:10:00.000+0000","Total_Prize_Money__c":1000,"Challenge_Categories__r":{"totalSize":2,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RlmlIAC"},"Display_Name__c":"Android","Id":"a08Z0000000RlmlIAC","Challenge__c":"a0GZ0000005VyTfMAK"},{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RlmmIAC"},"Display_Name__c":"AWS","Id":"a08Z0000000RlmmIAC","Challenge__c":"a0GZ0000005VyTfMAK"}]},"Registered_Members__c":0,"Challenge_Id__c":"42","Challenge_Type__c":"Race","Id":"a0GZ0000005VyTfMAK","Is_Open__c":"true","Start_Date__c":"2012-11-19T16:52:00.000+0000","Description__c":"Testing_Desc","Days_till_Close__c":42}]'
     http_version: '1.1'
-  recorded_at: Thu, 03 Jan 2013 13:52:04 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:02:46 GMT
+recorded_with: VCR 2.4.0

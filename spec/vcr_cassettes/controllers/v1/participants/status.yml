@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:33 GMT
+      - Fri, 11 Jan 2013 16:05:33 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AZ0000000n8XuMAI"},"Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
-        Challenge","Id":"a0GZ0000005VQogMAG"},"Name":"CP-43722","Has_Submission__c":false,"Money_Awarded__c":0.00,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Valid_Submissions__c":0,"Name":"jeffdonthemic","Id":"a0IZ0000000FyJUMA0"},"Member__c":"a0IZ0000000FyJUMA0","Send_Discussion_Emails__c":true,"Id":"a0AZ0000000n8XuMAI","Status__c":"Watching","Challenge__c":"a0GZ0000005VQogMAG"}]'
+      string: ! '[{"attributes":{"type":"Challenge_Participant__c","url":"/services/data/v22.0/sobjects/Challenge_Participant__c/a0AZ0000000nIG3MAM"},"Challenge__r":{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005VQogMAG"},"Name":"RSpec
+        Challenge - 2","Id":"a0GZ0000005VQogMAG"},"Name":"CP-44123","Has_Submission__c":false,"Money_Awarded__c":0.00,"Member__r":{"attributes":{"type":"Member__c","url":"/services/data/v22.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Valid_Submissions__c":0,"Name":"jeffdonthemic","Id":"a0IZ0000000FyJUMA0"},"Member__c":"a0IZ0000000FyJUMA0","Send_Discussion_Emails__c":true,"Id":"a0AZ0000000nIG3MAM","Status__c":"Watching","Challenge__c":"a0GZ0000005VQogMAG"}]'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:33 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:05:33 GMT
+recorded_with: VCR 2.4.0

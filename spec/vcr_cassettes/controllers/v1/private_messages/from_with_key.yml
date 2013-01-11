@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+From__r.Name+%3D+%27jeffdonthemic%27%0A++++++order+by+lastmodifieddate+desc
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+From__r.Name+%3D+%27jeffdonthemic%27%0A++++++order+by+lastmodifieddate+desc
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 18:44:55 GMT
+      - Fri, 11 Jan 2013 16:06:01 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,25 +33,20 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAO3YW4+iMBQA4L9ieF2VUvDGm+PojiO43kdnszEVKuKoMLR4
-        m/jftw6Zy67FS7JuMkkNMdjDqYcTvtD0RaIeRbO2u8WSroCkZHsLdkaDECel
-        AFteYBNJ//kiIUoDdxRSzH6+SHTjs6ukRuAuEcVDExOCHDwcWlJSCoMZC8kE
-        B0vXwkS2EUXyEmppIBNvNMUWJfJhooyU748g+mSfak2zOJB2Salqs7k4oaRU
-        R/PXEnodMwUURWNDpQCzSe1b9sUiECgqi7Cjo2R1VdFBJs1m+Lafhl1sIEJN
-        z3bH7rkZHW9/g6wcUH0rp7K5fzCLb8Fg3xpuo0w8H+Hg/P68Xy9z/mz3fvNz
-        1j42YyPwxu4MDxuuFVU4odTXZXk2UdOO409o2vLm8gCqGDSGs1K4ptON0auU
-        nRrK1EvLfnc1HeSxvyyMVk3H8pf9SXsJiv0FbI5atUHHoetKs95v0ubEQpNS
-        gWyMLVCJq2hh99GvjKyBEa72VVUCb85rUTdqURS+fpO6fzZpisdj9lTTCZ67
-        1tFuaZ+6pa22fogGhR9bJay3N1N3cZODLZzvqbdmubxBGBnbe+z0hvRuczt4
-        nMNFUH/OlodGWC09VAhIBalyDhjOenZnIe25tu7XSm3UgNspClaOs6+vHb7e
-        SFQE8eY4QaIRVmSbIhqS4UdHWxjZH+Nvj2J3EUTjLezPXExeR0Ea7JL/XawR
-        L9bgilWPis3omqZDcIFYToYQK8QKsTFib3JmscoXG4UOxMITYtkbE2YvEnuQ
-        IcQKsUJsnFgYLxZyxSonxMKcnrlkVczJEGKFWCE2RmxxHSs2Ch2IBafEZvXM
-        ZavifYYixAqxQuw5Ykm8WMITCwonxIKsruYvErvPKAixQqwQe4bYQt4sFvli
-        o9BfYkE2zxMLU+xQlQ5U9AzUlTNWxccyhFgh9mpiWSu+pNQ8jZUahQ6kcveI
-        P7ljb0pNuUjqQYaQKqReTWqnTKJNmK9n1Yu36nGtcneH3+UBHWr6voSzrXIy
-        hFVh9XpW2Vs1ARNj1qPEk2vbLvY9b/Yl7U7j7U65drn7xJ8lwrN2nY5lCLvC
-        7lVXxP8W7a/db9scdzIbJQAA
+        H4sIAAAAAAAAAO2Va2+iQBSG/0ozX1dlwFvlW+tl2wrWe6WbDRnhCBgQOjOg
+        aPzvO5badlPtdrO73S+SCYFz5hze82aesEE85MQfeGtAajGH7HAhHjiNIYco
+        WCG1GVK/bRDhnHrTmIN43SCeRmIX6lIvIRxMHRgjDpimhXIopr5ISQxo4lnA
+        JJtwIiVKpYAlFk7nYHEmvS2UiPz1HmdXhfcv9QsDbXPo2ha9DqRyqEOCRwnj
+        oZ7HslIVoToF0dRuiJvIKFguikxelodyWRULVwuiw5ddG7FZI4zroe3NvHcq
+        zl9XDMPdgEIOvt7LaaU3d/rFPkl31hw0SodgCvTj/jzvlw58bPs8fCDsEx27
+        NJx5Pphdz8oUupxHqiT5brHgOJHLC1YYSIZSBNw1/Xq84vNUG7eaTpuUO/Vk
+        MlrOjXOIktp02XOsKJm4gwRfTBZKb9pvG0OHr1q9zqTHe65F3HqNpdoaF5kn
+        l+LRfdSaWoYWL3eqWjQMDlk0yizK0v/epNHPJs1hNhOnmrsQeNa7bpVeuVVa
+        rqOYGLXbtRx3BuncW1xWlT6cj4sNvdlMCRBtfQPO2ORXacO4D5QF7TxUmqYW
+        X9fvWgznab5ZxZqz8q8sUnporybt+oB0lfWc0KXj7PQN4sdBMhEsDOCMZREh
+        csAJj5n54mgfiP0S3x/F0YJm8T5EvgfsMYoLeJv7ZGIXjZtjxD6l3hBbPkos
+        rgwVRRULKx8k9qmipJblE7EnYj+FWGEFPyv/IavKf2H19jirtwdZrfyK1ZKK
+        5d9lFZ9YPbH6iaxW/sJ/9fv2Bx0hUv4xCwAA
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 18:44:54 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:06:01 GMT
+recorded_with: VCR 2.4.0

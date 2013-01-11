@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+To__r.Name+%3D+%27jeffdonthemic%27+OR+%28From__r.Name+%3D+%27jeffdonthemic%27+AND+Replies__c+%3E+0%29%0A++++++order+by+lastmodifieddate+desc
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+To__r.Name+%3D+%27jeffdonthemic%27+OR+%28From__r.Name+%3D+%27jeffdonthemic%27+AND+Replies__c+%3E+0%29%0A++++++order+by+lastmodifieddate+desc
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 16:31:02 GMT
+      - Fri, 11 Jan 2013 15:15:03 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,22 +33,18 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAO2X/W+iMBjH/5WFX0+lvOiU3zwnt01w+Drd5UIqVMADYW1B
-        cfF/vzKj2+5wbrlsl0sgDYE+fR6+/dJPCg8cDSn0B94GcUq1xNnhkl1QHKMS
-        h5EVYptwyvcHDlKKvVlMEbt94GgasVGcgb0EUmTqiBDoINO0uBIXY5+FeIJw
-        4lmI8DakkE9EuQJ4Es4WyKKE/zORh8K3O7A7aj/rHb3Z47Yl7spmtXJCJa4L
-        g0cJ46FeBqBaZ10tjFhR+4KdWEQEglhmTRKGQkMRJUUWK6zCl6wMG6xBQvXQ
-        9ube8wypDATWhkJNkQQFvMgYhtkEmRxwtZejptcjvbkP4syaXKN0FMwQfrs/
-        h/F8zsO2h8kv0HzOXhh1UeBlpQ0czj0fmYZn7aS6lEYKz/uuXHGcyKUVKwx4
-        ebWJYjht3GyEuDtIF97y67nYR/WxdKG32ylEUNtcI2ds0sv0YnoXiEvcva+1
-        TS2+at2qBJRxuX0ONGftX1pQvu+sJ53WABriZgHxynEyfSoOgzyzbndm7cIf
-        b9ftS7sCttpedUl65tJUlBAwTL8Vr+ki1cZq2+nAareVTEarxbSOoqQxW/Uc
-        K0om7iABzclS7M36nenQoWu11530aM+1oNtqkFTbAIl4ghyP7iJ1Zk21eJWp
-        GsSP8ncahojQM5GpG1BIY2I+OThasmVtP0X2y7C/6+2jyPcQeexjpmxLn87q
-        6DirozxWa+AUq7ICpNOsvpZRsFqw+qGs5pHaz+X0wO9zUsE/IdU4TqqRu6s2
-        Tu+q1Tfsqq9lFKQWpBak/k6qepxUNZfU89OkSuC9pL7MKEgtSP3Y71/hv2S1
-        eZzVZi6rtROsCkCRGu9jVVSqcsFqweqnsJqRcEbDs2v2Sv+SWPbTtv2x/QXp
-        ykZKhRIAAA==
+        H4sIAAAAAAAAALWSb4+aQBDGv0qzb6uy4J87fWdRep5gVdQTm4YssMISEG53
+        QcH43btIvLumtumbkg1h55kZnvllzoAnHEUmKTEYyA3gJQfxwWmGG4BiN6Ee
+        A4PvZ4A4p8TJOBbXM+BFKrLAnJIccWwbmDHkY9t2QQNkNBKSxDDNiYuZ5CGO
+        pFzptaDEEifELmfS74USkr/uYP30DqNnY2iBSwNMPNHrjtQAMxRfLWxWRhPK
+        SleEVIpFU28kXkJRoNwWShP2VooyEAcqLdHhc9VGJOuIcSPxyJ78qaIz6Mof
+        K1ZJNaCwAyc3O1rx/GIMbyKt0NwFZeDYwfTf+bzlS3d+dnkbPhb4RMc5TfYk
+        wvacuLXDgPN0IElR0G75fhrwlpvEkqW0MZzbkZqdeFjoG23sT1F3pubb9TG0
+        HnGa953jwnfTfBuYORxuD8rCWU6tlc9P2mK2XfBF4KJA7bNCL2GbEbmTrXep
+        5riWnh0rVxpN4nuI1jWiWv7/kNa/Qgrxfi+2mgc4Ju5faXU+0OocyzRDVv9b
+        KWczswjJ4cuDssSPm/bIGI8LhJFePmN/Y/OnYmTtYuVAZ6+9sa1nE/VFY7BJ
+        m+MHqPun6MlFndfpaTtVTTRXyhDRo+9X/szsOkhtQqDgn6olNjniGbPfWS4x
+        8t7jtyVcH2gdX+I0Iphdo2LBLz8uPwETxfs50wMAAA==
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 16:31:03 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:15:03 GMT
+recorded_with: VCR 2.4.0

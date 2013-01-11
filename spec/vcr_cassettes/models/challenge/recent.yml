@@ -2,33 +2,53 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/challenges/recent
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=SELECT+Blog_URL__c%2C+Name%2C+Description__c%2C+End_Date__c%2C+Challenge_Id__c%2C+License_Type__r.Name%2C+Source_Code_URL__c%2C%0A++++++++Total_Prize_Money__c%2C+Top_Prize__c%2C+%28SELECT+Money_Awarded__c%2CPlace__c%2CMember__c%2C%0A++++++++Member__r.Name%2C+Points_Awarded__c%2CScore__c%2CStatus__c+FROM+Challenge_Participants__r+where+Has_Submission__c+%3D+true%29%2C+%0A++++++++%28Select+Name%2C+Category__c%2C+Display_Name__c+From+Challenge_Categories__r%29+%0A++++++++FROM+Challenge__c+where+Status__c+%3D+%27Winner+Selected%27+Order+By+End_Date__c+DESC+LIMIT+25+OFFSET+0
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      content-type:
-      - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:28:39 GMT
+      - Fri, 11 Jan 2013 15:06:51 GMT
       content-type:
       - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
-      encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Challenge__c","url":"/services/data/v22.0/sobjects/Challenge__c/a0GZ0000005Vtz1MAC"},"Name":"Test
-        Challenge - Design","Total_Prize_Money__c":0,"End_Date__c":"2012-11-26T02:30:00.000+0000","Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v22.0/sobjects/Challenge_Category__c/a08Z0000000RMChIAO"},"Name":"CC-16799","Category__c":"a07Z0000001S9WlIAK","Display_Name__c":"Heroku","Id":"a08Z0000000RMChIAO","Challenge__c":"a0GZ0000005Vtz1MAC"}]},"Top_Prize__c":"$100","Challenge_Id__c":"15","Id":"a0GZ0000005Vtz1MAC","Description__c":"My
-        cool challenge"}]'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAANVWW2/aMBT+K8ja26BxTMrtLQtsS9esqNBW7VRFbuKGtCGO
+        bIeNIv77bAglpWlhjN7yFNvn4u98Pp/OBAgqcNQL7whoVcvAp7H8ESwlZcCI
+        R5nPQevXBGAhWHiVCiKXEyDGibQC1gBHEYkD4roeKIOURXJT44SNQo9wzccC
+        ayNU24Map1c3xBNcy7toGH67gLNv//ZPmzumDaZl8CWigXtyfKiCtuI0isrg
+        Jx6qfMe9hHil+xCla8pKfcJFGAcyfZtwj4WJCGk8cwUcD5OIlHL70qoT+24b
+        CzI3QVA3KtCo6PW+3mhB1IJwT17ns7qTNF7e1vbnDjqsyf1DiS/mxO3LOrgu
+        W1yzR1PmEdeiPlkB0FdFdrtMltl1ZInHszOEDGTsQXWcZIdZkpXsXcxE6IUJ
+        jgXP5VsaWBJRQFlI5seTPKtoa1azqONt6M35Sp4bGc9w1BnUbbOjeM5ItSxZ
+        /Wq9oQDn8rUAhvXMS+81z6ht/lAkhzyJ8NhVznOzAzzCMtwbgWkUgmmuARM9
+        BeY7YfQ2BdPL6QaIdtF0R455/k9N91qN1mzurs8Mo2E0XrzPjPfVZ8GRbZ48
+        epr7H7PPgm4hmP/us7eCc14Ep4Y+JjcXhWCqH0MDT8Wd7pjW8xqohozc3FFR
+        UhcGcZEWOuOSR2lU8nKC+UgKUUXXK6jWlzpYhetnjv3dSSEskMFP+joZ3NE8
+        kYu7DXEP3SWJ5uIRxu3TtmMiReIcqvkbM5/M66dUXqHuRthbCL/M7ZDhFWGL
+        l2kvQn0dH5w4JswZzPAXIluG2AzKvb1WkHDZQDfk+lpWWAzIMPTUfpeGiok8
+        qBminqw8yS0FFinPEMoHOwO8iSy8JC/2k7yskoKeJeXstUk5e0jKkHC+JRco
+        9hdcXE43nSb09zRNHDvWwDaPVkS+Vm/uYtC9nP4FcWTtUIUOAAA=
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:28:39 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:06:51 GMT
+recorded_with: VCR 2.4.0

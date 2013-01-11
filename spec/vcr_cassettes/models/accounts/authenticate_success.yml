@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cs11.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=JZVSCG72%40m.cloudspokes.com.sandbox&password=abcd123456
+    uri: https://cs11.salesforce.com/services/oauth2/token
     body:
       encoding: US-ASCII
-      string: ''
+      string: grant_type=password&client_id=3MVG9GiqKapCZBwGOHUAkVGnJthYd5cbgyXDe2yCmPbeY8MobHsskb7M8Rd1hZh3kAWqtndc1H6hbeEhKrJTL&client_secret=689404370964402276&username=PNJCKS54%40m.cloudspokes.com.sandbox&password=abcd123456
     headers:
       accept:
       - ! '*/*'
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Sun, 06 Jan 2013 16:27:50 GMT
+      - Fri, 11 Jan 2013 15:29:47 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005Z0000000gVRIIA2","issued_at":"1357489670243","instance_url":"https://cs11.salesforce.com","signature":"RmG8CaO9Bm1nRL7gNMqbB4A3FwxFUIYtRdmMYfYzNVs=","access_token":"00DZ00000007ybt!AQQAQBhDwFDymqINknN6OTO_ae4s1x5oEi7D2Igz2_rQhimoxWbiaasWdV4hriCK2oy.Zun4akkOrWg3rHIBDyq8stUDAS.b"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005Z0000000gfChIAI","issued_at":"1357918188168","instance_url":"https://cs11.salesforce.com","signature":"qr7ij6Q/qk0H6b6F5W4b4JWfw/JwlaFaSkaLY7gQBVg=","access_token":"00DZ00000007ybt!AQQAQG2blZu5qFfCSM0.qeNfaNLELm1nQ3RJIOLnwCL0T3S1lyd0R7d5vgiE7X2Q8jHd0I0MEnHK094cFyL.inueetXlVHLZ"}'
     http_version: '1.1'
-  recorded_at: Sun, 06 Jan 2013 16:27:48 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:29:48 GMT
+recorded_with: VCR 2.4.0

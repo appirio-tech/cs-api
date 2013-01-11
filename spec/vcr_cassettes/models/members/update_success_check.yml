@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQAQxXqROhCnRnkLvnw7ksHa9BcFTtMx_WvFGDOpjHTc4WnFO42bfhJeKK9VEJntkt31rfjTIGNGU010EqXlZs26jjMXc
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Mon, 31 Dec 2012 18:22:09 GMT
+      - Fri, 11 Jan 2013 15:13:48 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Jabber__c":"somejabbername","Id":"a0IZ0000000FyJUMA0"}]'
     http_version: '1.1'
-  recorded_at: Mon, 31 Dec 2012 18:22:08 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:13:48 GMT
+recorded_with: VCR 2.4.0

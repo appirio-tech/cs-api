@@ -12,7 +12,7 @@ gem 'dalli'
 gem 'debugger'
 gem 'airbrake'
 gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
-gem 'savon'
+gem 'savon', '1.2.0'
 gem 'bunny'
 
 group :development, :test do

@@ -5,19 +5,19 @@ http_interactions:
     uri: https://cs11.salesforce.com/services/apexrest/v.9/members
     body:
       encoding: US-ASCII
-      string: username__c=test-rspec-create1&password=1111AAAAA!&email__c=test-rspec-create1%40test.com&first_name__c=test-rspec-create1&last_name__c=test-rspec-create1
+      string: username__c=test-rspec-create1&email__c=test-rspec-create1%40test.com&password=1111AAAAA!&first_name__c=test-rspec-create1&last_name__c=test-rspec-create1
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQG6DwQV679YzffbWjdS6wzSosOvdWBEDgKxf90uQq737FZu31lu2e9YbecJaMwYDofUw0k.2vCYEz.1dwTwa_FCKOS1F
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Wed, 05 Dec 2012 19:29:13 GMT
+      - Fri, 11 Jan 2013 15:38:05 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -29,5 +29,5 @@ http_interactions:
       string: ! '{"Success":"false","Message":"Username test-rspec-create1 is not
         available."}'
     http_version: '1.1'
-  recorded_at: Wed, 05 Dec 2012 19:29:14 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:38:05 GMT
+recorded_with: VCR 2.4.0

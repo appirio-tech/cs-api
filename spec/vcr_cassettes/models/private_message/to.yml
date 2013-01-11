@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+To__r.Name+%3D+%27jeffdonthemic%27%0A++++++order+by+lastmodifieddate+desc
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+Id%2C+Name%2C+CreatedDate%2C+LastModifiedDate%2C+%0A++++++To__c%2C+To__r.Name%2C+To__r.Profile_Pic__c%2C+From__c%2C+From__r.Name%2C+From__r.Profile_Pic__c%2C+Subject__c%2C+%0A++++++Status_From__c%2C+Status_To__c%2C+Replies__c%0A++++++from+Private_Message__c+where+To__r.Name+%3D+%27jeffdonthemic%27%0A++++++order+by+lastmodifieddate+desc
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQLl6W1V5dpMC3yzNAqy7gELIh4kQY3e.WF0KmXbgMiqqX4z4w1a9Wb.yOfXaK3iW4ipOhg71Qqd6XgUQdFkkJH7QlfhL
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 01 Jan 2013 16:30:59 GMT
+      - Fri, 11 Jan 2013 15:15:10 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,22 +33,8 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAO2Xa2+bMBSG/0rF1yXBXHLjW5aGtQ2k5Nqk04QccIAMArUN
-        CYny32ca9baRptXUTpNAFgIfn8PrFz8y7DgaUugPvS3ilGqJs8MVu6A4RiUO
-        IyvENuGU7zsOUoq9eUwRu91xNI3YKM7AXgIpMnVECHSQaVpciYuxz0I8QTjx
-        LER4G1LIJ6JcATwJ50tkUcL/mchD4dstOBy1n42u3upz+xJ3abNaOaES14PB
-        vYTJSC8DUG2wrjZGrKh9zk4sIgJBLLMmCSOhqYiSIosVVuFLVoYN1iChemh7
-        C+95hlQGAmsjoaYIdQW8yBiF2QSZHHD5IEdNr8Z66yGIM2tyjdJRMEf47f48
-        judzHrZ/nPwSLRbshVEXBV5W2sDhwvORaXjWQapLaaTwvO/KFceJXFqxwoCX
-        19sohrPm9VaIe8N06a2+1sUBakykc73TSSGC2vYKOROTXqTns9tAXOHeXa1j
-        avFl+0YloIzLnTrQnI1/YUH5rruZdttDaIjbJcRrx8n0qTgM8sy6OZh1CH+8
-        XTcv7QrYanvVJemZSzNRQsAw/Xa8octUm6gdpwurvXYyHa+XswaKkuZ83Xes
-        KJm6wwS0piuxPx90ZyOHbtR+b9qnfdeCbrtJUm0LJOIJcjy+jdS5NdPidaZq
-        GN/LP2gYIULPRKZuSCGNifnk4HjFlrX9FHlYhoND7wBFvofIfZ9UAfvSp7M6
-        Ps7qOI/VGjjFqqwA6TSrr2UUrBasfiireaQOcjl95Pc5qeCfkGocJ9XI3VWb
-        p3fV6ht21dcyClILUgtSfydVPU6qmktq/TSpEngvqS8zClILUj/2+1f4L1lt
-        HWe1lctq7QSrAlCk5vtYFZWqXLBasPoprGYknNHw7Iq90r8kNvtj/bH/BcmS
-        e4OFEgAA
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
     http_version: '1.1'
-  recorded_at: Tue, 01 Jan 2013 16:31:00 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:15:10 GMT
+recorded_with: VCR 2.4.0

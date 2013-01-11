@@ -48,6 +48,7 @@ describe PrivateMessage do
         data = { 'from' => 'badmember', 'to' => 'mess', 
           'subject' => 'some subject', 'body' => 'the<br/>body' }
         results = PrivateMessage.create(@public_oauth_token, data)
+        puts results
         results[:success].should == false
         results[:message].should == 'Member badmember not found.'
       end

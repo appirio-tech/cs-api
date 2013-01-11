@@ -143,21 +143,19 @@ describe Account do
       end
     end
 
-    it "should display the correct message if no password match" do
+    it "should return false if no password match" do
       VCR.use_cassette "models/accounts/authenticate_failure_bad_password" do
         results = Account.authenticate(@public_oauth_token, 
           @rspec_test_membername, 'bad-password')
         results[:success].should == 'false'
-        results[:message].should == 'authentication failure - Invalid Password'
       end
     end   
 
-    it "should display the correct message if invalid username" do
+    it "should return false if invalid username" do
       VCR.use_cassette "models/accounts/authenticate_failure_bad_username" do
         results = Account.authenticate(@public_oauth_token, 
           'non-existent-user', 'bad-password')
         results[:success].should == 'false'
-        results[:message].should == 'expired access/refresh token'
       end
     end 
 

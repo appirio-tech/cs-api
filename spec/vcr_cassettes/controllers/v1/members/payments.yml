@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2Cname%2Cchallenge__r.name%2Cchallenge__r.challenge_id__c%2Cmoney__c%2Cplace__c%2Creason__c%2Cstatus__c%2Ctype__c%2CReference_Number__c%2Cpayment_sent__c+from+payment__c+where+member__r.name+%3D+%27jeffdonthemic%27+order+by+id
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2Cname%2Cchallenge__r.name%2Cchallenge__r.challenge_id__c%2Cmoney__c%2Cplace__c%2Creason__c%2Cstatus__c%2Ctype__c%2CReference_Number__c%2Cpayment_sent__c+from+payment__c+where+member__r.name+%3D+%27jeffdonthemic%27+order+by+id
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQAQxXqROhCnRnkLvnw7ksHa9BcFTtMx_WvFGDOpjHTc4WnFO42bfhJeKK9VEJntkt31rfjTIGNGU010EqXlZs26jjMXc
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Mon, 31 Dec 2012 18:19:35 GMT
+      - Fri, 11 Jan 2013 16:05:06 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,16 +33,16 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAO3XT0/CMBQA8K9Ceh5sQ6bCbUFDlgACQ4IaQ8r2xJmxQdsN
-        gfDd7f6gk3SJF4Pgdlrf62tf+8sO2yLmM+yazgZQ41pCtu/xF0YCkBAByyc2
-        RY2nLcKMEWcaMODDLWLrBZ+Feng9B49NJhaSUEBcHpIpkNCxgMo2ZlgOq7WK
-        IlN/+gYWo/JXgYyV6aOSPO/tZdvQ79FOQobN1xCkJNTF83hL/aF8Ua8pPNJ8
-        xa4L3gwmExI1JWwxM+mnTWZLeJuttBdt1PdnHb0VtZk2MzAXYJU+55fKpeq3
-        vgw72rWBqlFNh9/sOh6rFUVCPRdbkKRVXjQATH0vGTd9jx+ClRbJbfGsyTAL
-        aJK9W4HNQ0N+vjjgBa4b1b8AAY8v2Q3mUyCZ1P7SzZQqDu+kXzft55v2RaZq
-        YfrnTUf5piORafWcTQcQOrACskelp6k6Dl1DvxWqpqlD1ctjqLKN2tGbGdVh
-        9D1lUW+AOjNPKKtqB7R8yf/wxY7DZb7tUmR7VdiejG2YbxuKbK8L21OxXSm5
-        tknq0LZe2J6MrZZvqwlstaP87Zyl7fPuA63JFPHxDgAA
+        H4sIAAAAAAAAAO3XW2+CMBQA4L9i+oxy2XDTN+IWQ6LO24zbspgCZ44FQduC
+        U+N/XwHdmCnJXhangyd6Tk972i88sEEsYNgbuGtA9WsJOYHPXxgJQUIE7IA4
+        FNWfNggzRlwrZMCHG8RWcz4LdfFqBj6bTGwkoZB4PCRTIJFrA5UdzLAcadWK
+        ItPAegObUfmrQMaK9aikz3tr0TKNe7SVkOnwNQQpCXXwLNnSeChf1C4VHmm8
+        Ys8DfwqTCYmbEraYmfTTJrMlvM3mrhd91AumbaMZt7lrpj+Yg136nF8ql7Rv
+        fZlOvGsdaXFNm9/sKhmrFUVCXQ/bkKZVXtQHTAM/HTcCnx+ClebpbfHsgGEW
+        0jR7twSHh4b8fEnADz0vrn8BAj5fshPOLCCZ1P7SBzuqJLyVft20l2/aE5mq
+        hemfNx3lm45Epto5m/YhcmEJZI9KT1N1HHmmcStU3aUOVavHUGVrtW00MqrD
+        +HvKot4Adae+UFbVD2j5kv/hix1Hi3zbhcj2qrA9Gdso3zYS2V4Xtqdiu1Ry
+        bdPUoW2tsD0ZWz3fVhfY6kf52zlL2+ftB6HAE/XxDgAA
     http_version: '1.1'
-  recorded_at: Mon, 31 Dec 2012 18:19:35 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:05:06 GMT
+recorded_with: VCR 2.4.0

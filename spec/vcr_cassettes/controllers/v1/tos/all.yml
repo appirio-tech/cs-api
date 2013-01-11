@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id%2C+name%2C+terms__c%2C+default_tos__c+%0A++++++from+terms_of_service__c+order+by+name
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+name%2C+terms__c%2C+default_tos__c+%0A++++++from+terms_of_service__c+order+by+name
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQBMNftGeIOy_SCVHgcArUfJlBW_vCdAWstNBN6.EMeK.9em_hPKSd7k.2wWG4frc6vq8tPEH6tgCpJkERIWeDIR0JQio
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 13 Dec 2012 12:26:28 GMT
+      - Fri, 11 Jan 2013 16:08:58 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,11 +33,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAG1QsWoDMQz9FaOhk6mvodNtJYUSCs3gLG0pRjkr4OZyCrYc
-        mh7371VyHaNJenrv6aERhAV7n34J2gcLkQdtJFeykKnjHAu0nyOgSE7bKqTj
-        CHI+Kgs2lA8l8C54yqfUUQgdWKi5150rM1ZcREF3WjzeN67w9ps6Ke6G0mGz
-        /2jmej+/NKunV5gsrKKa3VhZeMPDJYQXHCLmaK6e5s4seYhJEg9FSfMhzdXC
-        suca/ZH3VMwz7bD2YjZrr7ofUeY/FBS68i8/mL6mPzqfgDMhAQAA
+        H4sIAAAAAAAAAG1QsWoDMQz9FaOhk6mvGTrcVlIoodAMztKWYpSzAm4up2DL
+        oelx/14l1zGapKf3nh4aQViw9+mXoH2wEHnQRnIlC5k6zrFA+zkCiuS0rUI6
+        jiDno7JgQ/lQAu+Cp3xKHYXQgYWae925MmPFRRR0p8XjfeMKb7+pk+JuKB02
+        +49mrvfzS7N6eoXJwiqq2Y2VhTc8XEJ4wSFijubqae7MkoeYJPFQlDQf0lwt
+        LHuu0R95T8U80w5rL2az9qr7EWX+Q0GhK//yg+lr+gPVPWA+IQEAAA==
     http_version: '1.1'
-  recorded_at: Thu, 13 Dec 2012 12:26:28 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:08:58 GMT
+recorded_with: VCR 2.4.0

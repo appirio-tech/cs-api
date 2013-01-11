@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQHF_Sw.nvbytsEtb_B0UN7Lr9LypWB32ha83AgdXmzwcml8y8ci5_1KR_JlnQND0ZktSjUVQ1pGgybRPqzS0gfJrx4YK
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 03 Jan 2013 13:52:06 GMT
+      - Fri, 11 Jan 2013 16:02:42 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -40,5 +40,5 @@ http_interactions:
         Challenge - Design","End_Date__c":"2012-11-26T02:30:00.000+0000","Total_Prize_Money__c":0,"Challenge_Categories__r":{"totalSize":1,"done":true,"records":[{"attributes":{"type":"Challenge_Category__c","url":"/services/data/v26.0/sobjects/Challenge_Category__c/a08Z0000000RMChIAO"},"Display_Name__c":"Heroku","Id":"a08Z0000000RMChIAO","Challenge__c":"a0GZ0000005Vtz1MAC"}]},"Registered_Members__c":2,"Challenge_Id__c":"15","Challenge_Type__c":"Design","Id":"a0GZ0000005Vtz1MAC","Is_Open__c":"false","Start_Date__c":"2012-11-21T14:22:00.000+0000","Description__c":"My
         cool challenge","Days_till_Close__c":0}]'
     http_version: '1.1'
-  recorded_at: Thu, 03 Jan 2013 13:52:07 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 16:02:42 GMT
+recorded_with: VCR 2.4.0

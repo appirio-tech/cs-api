@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/novaliduser/challenges
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/credentials?username=jeffdonthemic&service=github
     body:
       encoding: US-ASCII
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 15:13:40 GMT
+      - Fri, 11 Jan 2013 15:38:04 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[]'
+      string: ! '{"Success":"true","Profile_Pic":"http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg","SFusername":"jeffdonthemic@m.cloudspokes.com.sandbox","Username":"jeffdonthemic","SFuserId":"005U0000000M1nPIAS","Message":"Query
+        Ran","AccountId":"001Z000000IVCjUIAX","Email":"jdouglas@appirio.com","Service":"github"}'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:13:40 GMT
+  recorded_at: Fri, 11 Jan 2013 15:38:04 GMT
 recorded_with: VCR 2.4.0

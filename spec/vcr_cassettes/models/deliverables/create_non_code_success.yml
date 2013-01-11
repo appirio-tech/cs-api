@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v24.0/query?q=select+id+from+challenge_participant__c+where+member__r.name+%3D+%27salpartovi%27+%0A++++++and+challenge__r.challenge_id__c+%3D+%272%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id+from+challenge_participant__c+where+member__r.name+%3D+%27apextestmember%27+%0A++++++and+challenge__r.challenge_id__c+%3D+%27106%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 14 Dec 2012 14:54:34 GMT
+      - Fri, 11 Jan 2013 15:13:08 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,23 +33,23 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAHWMwQrCMBBE/2XPwVTxIL0VTz0IQi+iSNgmi0ZCUjbbgi39
-        dwNedU4zzJtZQJJg6PxMUG8VuBSLER5JAZNN7DLUtwVQhH0/CpW4gLyHQsHx
-        iSFQfJA5I4u3fsAoxlhQMHIogM7Ek7eUtUNBPe32m0rn1L/IStb/5hqr5lp9
-        FQ+X+dS0sCpoXXn8Vd3XDwHv3HXGAAAA
+        H4sIAAAAAAAAAHWMwQrCMBBE/2XPwVQFD70V8SAiCN4UCdtk0UhoymZT0NB/
+        N+BV5zTDvJkCEgXD2b8J2qUCF4dqhDMpYLKRXYL2WgBF2PdZqMYC8horBdsH
+        hkDDncwJWbz1Iw5ijAUFmUMFdCKevKWkHQrqabVZNDrF/klWkv4319h0l+ar
+        eKD1sdvBrGDv6uOv6jZ/ABYiOXHGAAAA
     http_version: '1.1'
-  recorded_at: Fri, 14 Dec 2012 14:54:34 GMT
+  recorded_at: Fri, 11 Jan 2013 15:13:08 GMT
 - request:
     method: post
-    uri: https://cs11.salesforce.com/services/data/v24.0/sobjects/Submission_Deliverable__c
+    uri: https://cs11.salesforce.com/services/data/v26.0/sobjects/Submission_Deliverable__c
     body:
       encoding: UTF-8
-      string: ! '{"type__c":"Demo URL","url__c":"http://www.google.com","challenge_participant__c":"a0AZ0000000n8XzMAI"}'
+      string: ! '{"type__c":"Demo URL","url__c":"http://www.google.com","challenge_participant__c":"a0AZ0000000oKe3MAE"}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQJzRLj07Dh6p2PT7yF4pwf73qMX4R1.KUiHkODDdv0M5TGIRckozSi7PfA8AFox9.qR_ZayC6WgXS4rlYYeORnz_6Wg.
+      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
       accept:
       - ! '*/*'
       user-agent:
@@ -60,9 +60,9 @@ http_interactions:
       message: Created
     headers:
       date:
-      - Fri, 14 Dec 2012 14:54:35 GMT
+      - Fri, 11 Jan 2013 15:13:09 GMT
       location:
-      - /services/data/v24.0/sobjects/Submission_Deliverable__c/a19Z0000000A1DQIA0
+      - /services/data/v26.0/sobjects/Submission_Deliverable__c/a19Z0000000A6u1IAC
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -71,7 +71,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"a19Z0000000A1DQIA0","success":true,"errors":[]}'
+      string: ! '{"id":"a19Z0000000A6u1IAC","success":true,"errors":[]}'
     http_version: '1.1'
-  recorded_at: Fri, 14 Dec 2012 14:54:35 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Fri, 11 Jan 2013 15:13:09 GMT
+recorded_with: VCR 2.4.0
