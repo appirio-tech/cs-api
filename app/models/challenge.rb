@@ -40,6 +40,9 @@ class Challenge < Salesforce
       challenge['challenge_comment_notifiers__r'] = query_salesforce(access_token, 
         "select id, member__r.name from challenge_comment_notifier__c 
         where challenge__r.challenge_id__c = '#{challenge_id}'")
+      challenge['assets__r'] = query_salesforce(access_token, 
+        "select id, name, key__c, filename__c from asset__c 
+        where challenge__r.challenge_id__c = '#{challenge_id}'")      
     end
     challenge
   end 
