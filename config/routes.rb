@@ -23,6 +23,10 @@ CsApi::Application.routes.draw do
 		match "/accounts/reset_password/:membername" => "accounts#reset_password", :via => :get
 		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put
 
+		#preferences
+		match "/preferences/:membername" => "preferences#all", :via => :get
+		match "/preferences/:membername" => "preferences#update", :via => :post
+
 		# challenges	
 		match "/challenges" => "challenges#all", :open => 'true', :via => :get
 		match "/challenges" => "challenges#create", :via => :post		
@@ -73,6 +77,8 @@ CsApi::Application.routes.draw do
 	  # stats
 	  match "/stats" => "stats#public", :via => :get
 	  # misc
+	  match "/platforms" => "platforms#all", :via => :get	
+	  match "/technologies" => "technologies#all", :via => :get			
 	  match "/categories" => "categories#all", :via => :get	
 	  match "/tos" => "tos#all", :via => :get		
 	  match "/tos/:id" => "tos#find", :via => :get		

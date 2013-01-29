@@ -43,6 +43,8 @@ class V1::ChallengesController < V1::ApplicationController
   #   
   def all
     expose Challenge.all(@oauth_token, params[:open], 
+      params[:technology] ||= nil, 
+      params[:platform] ||= nil, 
       params[:category] ||= nil, 
       enforce_order_by_params(params[:order_by], 'name'),
       params[:limit] ||= 25,

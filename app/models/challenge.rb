@@ -75,15 +75,18 @@ class Challenge < Salesforce
     {:success => results['Success'], :message => results['Message']}
   end    
 
-  def self.all(access_token, open, category, order_by, limit=25, offset=0) 
-    set_header_token(access_token)   
-    qry_category = category.nil? ? '' : "&category=#{esc category}"    
-    get_apex_rest("/challengesearch?fields=Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name&open=#{open}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}"+qry_category)
+  def self.all(access_token, open, technology, platform, category, order_by, limit=25, offset=0) 
+    params = {:open => open, :orderby => order_by, :limit => limit, :offset => offset,
+      :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name'}
+    params.merge!(:technology => technology) if technology
+    params.merge!(:platform => platform) if platform
+    params.merge!(:category => category) if category
+    set_header_token(access_token)      
+    get_apex_rest("/challengeslist?#{params.to_param}")
   end
 
-
   #
-  # Performs a simple (name-only_, keyword search against open challenges
+  # Performs a simple, name-only, keyword search against open challenges
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - keyword -> the keyword to search for
