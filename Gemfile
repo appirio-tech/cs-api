@@ -15,6 +15,10 @@ gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
 gem 'savon', '1.2.0'
 gem 'bunny'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.6'
@@ -26,6 +30,8 @@ group :test do
   gem 'rake'
 end
 
-group :production do
-  gem 'pg'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request', '0.2.1' # see https://github.com/dejan/rails_panel
 end
