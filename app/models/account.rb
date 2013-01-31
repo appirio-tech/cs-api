@@ -137,6 +137,52 @@ class Account < Salesforce
   end  
 
   #
+  # Changes member's password in salesforce if CloudSpokes is managing their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  #   - new_password -> the new password to change their account to
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.update_password_token(access_token, membername, token)
+    set_header_token(access_token)
+    # get the id of the user to make life a little harder
+    user_results = query_salesforce(access_token, "select id from user 
+      where id in (select sfdc_user__c from member__c where name = '#{membername}')")
+    data = {:id => user_results.first.id, :token => token}
+    results = put(ENV['SFDC_APEXREST_URL'] + "/password-change?#{data.to_param}") 
+    {:success => results['Success'], :message => results['Message']}
+  rescue Exception => e
+    {:success => 'false', :message => "Error updating passcode." }
+  end     
+
+  #
+  # Changes member's password in salesforce if CloudSpokes is managing their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  #   - new_password -> the new password to change their account to
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.change_password_with_token(access_token, membername, token, new_password)
+    set_header_token(access_token)
+    # get the id of the user to make life a little harder
+    user_results = query_salesforce(access_token, "select id from user 
+      where id in (select sfdc_user__c from member__c where name = '#{membername}')")
+    data = {:id => user_results.first.id, :token => token, :password => new_password}
+    results = put(ENV['SFDC_APEXREST_URL'] + "/password-change?#{data.to_param}") 
+    {:success => results['Success'], :message => results['Message']}
+  rescue Exception => e
+    {:success => 'false', :message => "Error changing password." }
+  end   
+
+  #
   # Activates a member and their sfdc account
   # * *Args*    :
   #   - access_token -> the oauth token to use

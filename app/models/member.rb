@@ -128,6 +128,22 @@ class Member < Salesforce
   end    
 
   #
+  # Returns the login type for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the login type for
+  # * *Returns* :
+  #   - the login_managed_by value 
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.login_type(access_token, membername)  
+    query_salesforce(access_token, "select login_managed_by__c from member__c 
+      where name = '#{membername}'").first['login_managed_by']
+  rescue
+  end    
+
+  #
   # Returns a collection of all recommendations for a member
   # * *Args*    :
   #   - access_token -> the oauth token to use

@@ -11,6 +11,7 @@ CsApi::Application.routes.draw do
 	  match "/members/:membername/referrals" => "members#referrals", :via => :get
 	  match "/members/:membername/recommendations" => "members#recommendations", :via => :get
 	  match "/members/:membername/recommendations/create" => "members#recommendation_create", :via => :post
+	  match "/members/:membername/login_type" => "members#login_type", :via => :get
 	  match "/members/:membername" => "members#find_by_membername", :via => :get	
 	  match "/members/:membername" => "members#update", :via => :put  
 
@@ -20,8 +21,10 @@ CsApi::Application.routes.draw do
 		match "/accounts/disable/:membername" => "accounts#disable", :via => :get		
 		match "/accounts/create" => "accounts#create", :via => :post
 		match "/accounts/find_by_service" => "accounts#find_by_service", :via => :get
-		match "/accounts/reset_password/:membername" => "accounts#reset_password", :via => :get
-		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put
+		match "/accounts/reset_password/:membername" => "accounts#reset_password", :via => :get # deprecated
+		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put # deprecated
+		match "/accounts/update_password_token/:membername" => "accounts#update_password_token", :via => :put
+		match "/accounts/change_password_with_token/:membername" => "accounts#change_password_with_token", :via => :put
 
 		#preferences
 		match "/preferences/:membername" => "preferences#all", :via => :get

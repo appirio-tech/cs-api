@@ -5,7 +5,7 @@ class V1::ApplicationController < RocketPants::Base
 	before_filter :set_oauth_token
 
   # initiliaze default fields for CloudSpokes API request -- include '__c' for each field
-  DEFAULT_MEMBER_FIELDS         = 'id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c'
+  DEFAULT_MEMBER_FIELDS         = 'id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c,active_challenges__c'
   MEMBER_SEARCH_FIELDS          = 'id,name,profile_pic__c,summary_bio__c,challenges_entered__c,active_challenges__c,total_wins__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,total_public_money__c'
   DEFAULT_RECOMMENDATION_FIELDS = 'recommendation_from__r.name,recommendation_from__r.profile_pic__c,recommendation__c,createddate'
   DEFAULT_CHALLENGE_FIELDS      = 'id,name,createddate,description__c'

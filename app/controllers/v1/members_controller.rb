@@ -1,7 +1,8 @@
 class V1::MembersController < V1::ApplicationController
   jsonp
 
-	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, :referrals]
+	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, 
+    :referrals, :login_type]
 
 	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -129,6 +130,20 @@ class V1::MembersController < V1::ApplicationController
 	def payments
 		expose Member.payments(@oauth_token, params[:membername], payments_fields, payments_order_by)
 	end	
+
+  #
+  # Returns the login type for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the login type for
+  # * *Returns* :
+  #   - the login_managed_by value 
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def login_type
+    expose Member.login_type(@oauth_token, params[:membername])
+  end   
 
   #
   # Returns the recommendations for a member
