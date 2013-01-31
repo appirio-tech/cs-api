@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+passcode__c+from+user+where+%0A++++++++++username+%3D+%27PNJCKS54%40m.cloudspokes.com.sandbox%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+passcode__c+from+user+where+%0A++++++++++username+%3D+%27CTFTDH22%40m.cloudspokes.com.sandbox%27
     body:
       encoding: US-ASCII
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQB3Dcm2jDD7ZtpmnwG55YE5Mwb_2OueuyIwP9hYjtwVyQJsWyDvNe3_C1Rvan9Pev4zU5Utqq6Ws5xmA.KYlhmCLa1sq
+      - OAuth 00DZ00000007ybt!AQQAQDpkkzGIrTY24z57TzIvUwMm2ImC_aRBwk5kwkDRB3EbQxES8RZdGp1Yt8.DK5oktEyzfE1Us5St.RspW2j9M2qcDL3n
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 15:36:04 GMT
+      - Thu, 31 Jan 2013 15:36:41 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,10 +33,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAACWMywrCMBBF/+Wug4mvKt2Jq+4EcaNISZPRVoqRzKSgpf9u
-        xLs6Bw53hASx/bH7EMq5gg/PDBITKURyIXpGeRlhRWLXJKGsI+T9yhVOTBEK
-        KfZZdJahc8TaW7F6WBQzozk0D3LC+pdqY9Zn89/9tm+rXYVJ4WCZXfBU1y7f
-        bJfFaoPpOn0B9rE7LZoAAAA=
+        H4sIAAAAAAAAACWMsQrCMBRF/+XOwaSiAbt1FBdBHFSkpMkbKqUpeS8FLf13
+        I97pHDjcBRLFDZf+Q6grhRDHApIyKSTyMQVG/VjgRFLfZaGiC+Q9lQpXpgSF
+        nIYiusjce2IdnDg9b+3GaI7di7yw/qXamP3d/De5U3NsblgVzo7Zx0Bt68uN
+        3VX2gPW5fgHdSZgEmgAAAA==
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:36:04 GMT
+  recorded_at: Thu, 31 Jan 2013 15:36:41 GMT
 recorded_with: VCR 2.4.0

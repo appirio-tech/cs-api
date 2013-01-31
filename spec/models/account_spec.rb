@@ -206,7 +206,7 @@ describe Account do
         puts "Updating password ...."
         results = Account.update_password(@public_oauth_token, @rspec_test_membername, @passcode, 'A')
         results[:success].should == 'false'
-        results[:message].should == "INVALID_NEW_PASSWORD: Your password must be at least 5 characters long."
+        results[:message].should == "INVALID_NEW_PASSWORD: Your password must be at least 8 characters long."
       end
     end      
 

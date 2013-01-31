@@ -12,19 +12,19 @@ http_interactions:
         style=\"text-align: center; \">Links\u00a0<br><br><a href=\"http://developer.force.com\"
         target=\"_blank\">http://developer.force.com<br></a><br><strong>Bold Text</strong></div>\n<br><strike><em>Crossed
         - Italics<br></em></strike><br><br>","name":"RSpec Challenge","status__c":"Planned","description__c":"sample
-        Description","challenge_id__c":"106"},"reviewers":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories":[{"name":"java"},{"name":"heroku"}],"prizes":[{"place__c":2,"points__c":222,"prize__c":"122","value__c":1212},{"place__c":1,"points__c":2120,"prize__c":"1000","value__c":21212}],"commentNotifiers":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}]}}'
+        Description","challenge_id__c":"113"},"reviewers":[{"name":"mess"},{"name":"jeffdonthemic"}],"categories":[{"name":"java"},{"name":"heroku"}],"prizes":[{"place__c":2,"points__c":222,"prize__c":"122","value__c":1212},{"place__c":1,"points__c":2120,"prize__c":"1000","value__c":21212}],"commentNotifiers":[{"email__c":"jdouglas@appirio.com"},{"name":"mess"}]}}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 15:06:52 GMT
+      - Thu, 31 Jan 2013 15:29:47 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -33,7 +33,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"success":true,"errors":[],"challengeId":"106"}'
+      string: ! '{"success":true,"errors":[],"challengeId":"113"}'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:06:54 GMT
+  recorded_at: Thu, 31 Jan 2013 15:29:49 GMT
 recorded_with: VCR 2.4.0

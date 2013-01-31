@@ -11,19 +11,19 @@ http_interactions:
         Selected","start_date__c":"2012-03-17T18:02:00.000+0000","requirements__c":"Hello
         this is a sample requirement with some interesting stuff","name":"RSpec Challenge
         for Testing","end_date__c":"2014-04-17T18:02:00.000+0000","description__c":"sample
-        Description","challenge_id__c":"106"}}}'
+        Description","challenge_id__c":"113"}}}'
     headers:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 15:06:41 GMT
+      - Thu, 31 Jan 2013 15:29:31 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -32,7 +32,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"success":true,"errors":[],"challengeId":"106"}'
+      string: ! '{"success":true,"errors":[],"challengeId":"113"}'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:06:42 GMT
+  recorded_at: Thu, 31 Jan 2013 15:29:37 GMT
 recorded_with: VCR 2.4.0

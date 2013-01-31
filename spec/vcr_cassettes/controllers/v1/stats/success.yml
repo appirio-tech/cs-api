@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://cs-sandbox.s3.amazonaws.com/cloudspokes-stats-wsdl.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      x-amz-id-2:
+      - aKrKvV9qREShDUy9m6EzmCcNCmchAcd6zpd90NLqSbs8RKV/hZR6OydA/6fxBtQr
+      x-amz-request-id:
+      - 59B2EC71DD401832
+      date:
+      - Thu, 31 Jan 2013 15:41:26 GMT
+      last-modified:
+      - Wed, 21 Nov 2012 14:26:16 GMT
+      etag:
+      - ! '"ebb567288b837a74cdfbb0b6e37a5298"'
+      accept-ranges:
+      - bytes
+      content-type:
+      - application/xml
+      content-length:
+      - '7000'
+      server:
+      - AmazonS3
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!--\n Web Services API
+        : StatsWS\n-->\n<definitions targetNamespace=\"http://soap.sforce.com/schemas/class/StatsWS\"
+        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://schemas.xmlsoap.org/wsdl/\"
+        xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" xmlns:tns=\"http://soap.sforce.com/schemas/class/StatsWS\">\n
+        <types>\n  <xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"http://soap.sforce.com/schemas/class/StatsWS\">\n
+        \  <xsd:element name=\"DebuggingInfo\">\n    <xsd:complexType>\n     <xsd:sequence>\n
+        \     <xsd:element name=\"debugLog\" type=\"xsd:string\"/>\n     </xsd:sequence>\n
+        \   </xsd:complexType>\n   </xsd:element>\n   <xsd:simpleType name=\"ID\">\n
+        \   <xsd:restriction base=\"xsd:string\">\n     <xsd:length value=\"18\"/>\n
+        \    <xsd:pattern value=\"[a-zA-Z0-9]{18}\"/>\n    </xsd:restriction>\n   </xsd:simpleType>\n
+        \  <xsd:simpleType name=\"LogCategory\">\n    <xsd:restriction base=\"xsd:string\">\n
+        \    <xsd:enumeration value=\"Db\"/>\n     <xsd:enumeration value=\"Workflow\"/>\n
+        \    <xsd:enumeration value=\"Validation\"/>\n     <xsd:enumeration value=\"Callout\"/>\n
+        \    <xsd:enumeration value=\"Apex_code\"/>\n     <xsd:enumeration value=\"Apex_profiling\"/>\n
+        \    <xsd:enumeration value=\"Visualforce\"/>\n     <xsd:enumeration value=\"System\"/>\n
+        \    <xsd:enumeration value=\"All\"/>\n    </xsd:restriction>\n   </xsd:simpleType>\n
+        \  <xsd:simpleType name=\"LogCategoryLevel\">\n    <xsd:restriction base=\"xsd:string\">\n
+        \    <xsd:enumeration value=\"Internal\"/>\n     <xsd:enumeration value=\"Finest\"/>\n
+        \    <xsd:enumeration value=\"Finer\"/>\n     <xsd:enumeration value=\"Fine\"/>\n
+        \    <xsd:enumeration value=\"Debug\"/>\n     <xsd:enumeration value=\"Info\"/>\n
+        \    <xsd:enumeration value=\"Warn\"/>\n     <xsd:enumeration value=\"Error\"/>\n
+        \   </xsd:restriction>\n   </xsd:simpleType>\n   <xsd:complexType name=\"LogInfo\">\n
+        \   <xsd:sequence>\n     <xsd:element name=\"category\" type=\"tns:LogCategory\"/>\n
+        \    <xsd:element name=\"level\" type=\"tns:LogCategoryLevel\"/>\n    </xsd:sequence>\n
+        \  </xsd:complexType>\n   <xsd:simpleType name=\"LogType\">\n    <xsd:restriction
+        base=\"xsd:string\">\n     <xsd:enumeration value=\"None\"/>\n     <xsd:enumeration
+        value=\"Debugonly\"/>\n     <xsd:enumeration value=\"Db\"/>\n     <xsd:enumeration
+        value=\"Profiling\"/>\n     <xsd:enumeration value=\"Callout\"/>\n     <xsd:enumeration
+        value=\"Detail\"/>\n    </xsd:restriction>\n   </xsd:simpleType>\n   <xsd:element
+        name=\"DebuggingHeader\">\n    <xsd:complexType>\n     <xsd:sequence>\n      <xsd:element
+        name=\"categories\" minOccurs=\"0\" maxOccurs=\"unbounded\" type=\"tns:LogInfo\"/>\n
+        \     <xsd:element name=\"debugLevel\" type=\"tns:LogType\"/>\n     </xsd:sequence>\n
+        \   </xsd:complexType>\n   </xsd:element>\n   <xsd:element name=\"CallOptions\">\n
+        \   <xsd:complexType>\n     <xsd:sequence>\n      <xsd:element name=\"client\"
+        type=\"xsd:string\"/>\n     </xsd:sequence>\n    </xsd:complexType>\n   </xsd:element>\n
+        \  <xsd:element name=\"SessionHeader\">\n    <xsd:complexType>\n     <xsd:sequence>\n
+        \     <xsd:element name=\"sessionId\" type=\"xsd:string\"/>\n     </xsd:sequence>\n
+        \   </xsd:complexType>\n   </xsd:element>\n   <xsd:element name=\"AllowFieldTruncationHeader\">\n
+        \   <xsd:complexType>\n     <xsd:sequence>\n      <xsd:element name=\"allowFieldTruncation\"
+        type=\"xsd:boolean\"/>\n     </xsd:sequence>\n    </xsd:complexType>\n   </xsd:element>\n
+        \  <xsd:complexType name=\"PlatformStats\">\n    <xsd:sequence>\n     <xsd:element
+        name=\"chalenges_won\" minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n
+        \    <xsd:element name=\"challenes_open\" minOccurs=\"0\" type=\"xsd:string\"
+        nillable=\"true\"/>\n     <xsd:element name=\"entries_submitted\" minOccurs=\"0\"
+        type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element name=\"featured_challenge_details\"
+        minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element
+        name=\"featured_challenge_id\" minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n
+        \    <xsd:element name=\"featured_challenge_name\" minOccurs=\"0\" type=\"xsd:string\"
+        nillable=\"true\"/>\n     <xsd:element name=\"featured_challenge_prize\" minOccurs=\"0\"
+        type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element name=\"featured_member_active\"
+        minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element
+        name=\"featured_member_money\" minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n
+        \    <xsd:element name=\"featured_member_pic\" minOccurs=\"0\" type=\"xsd:string\"
+        nillable=\"true\"/>\n     <xsd:element name=\"featured_member_username\" minOccurs=\"0\"
+        type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element name=\"featured_member_wins\"
+        minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n     <xsd:element
+        name=\"members\" minOccurs=\"0\" type=\"xsd:string\" nillable=\"true\"/>\n
+        \    <xsd:element name=\"money_pending\" minOccurs=\"0\" type=\"xsd:string\"
+        nillable=\"true\"/>\n     <xsd:element name=\"money_up_for_grabs\" minOccurs=\"0\"
+        type=\"xsd:string\" nillable=\"true\"/>\n    </xsd:sequence>\n   </xsd:complexType>\n
+        \  <xsd:element name=\"platformStats\">\n    <xsd:complexType>\n     <xsd:sequence/>\n
+        \   </xsd:complexType>\n   </xsd:element>\n   <xsd:element name=\"platformStatsResponse\">\n
+        \   <xsd:complexType>\n     <xsd:sequence>\n      <xsd:element name=\"result\"
+        type=\"tns:PlatformStats\" nillable=\"true\"/>\n     </xsd:sequence>\n    </xsd:complexType>\n
+        \  </xsd:element>\n  </xsd:schema>\n </types>\n <!-- Message for the header
+        parts -->\n <message name=\"Header\">\n  <part name=\"AllowFieldTruncationHeader\"
+        element=\"tns:AllowFieldTruncationHeader\"/>\n  <part name=\"CallOptions\"
+        element=\"tns:CallOptions\"/>\n  <part name=\"DebuggingHeader\" element=\"tns:DebuggingHeader\"/>\n
+        \ <part name=\"DebuggingInfo\" element=\"tns:DebuggingInfo\"/>\n  <part name=\"SessionHeader\"
+        element=\"tns:SessionHeader\"/>\n </message>\n <!-- Operation Messages -->\n
+        <message name=\"platformStatsRequest\">\n  <part element=\"tns:platformStats\"
+        name=\"parameters\"/>\n </message>\n <message name=\"platformStatsResponse\">\n
+        \ <part element=\"tns:platformStatsResponse\" name=\"parameters\"/>\n </message>\n
+        <portType name=\"StatsWSPortType\">\n  <operation name=\"platformStats\">\n
+        \  <input message=\"tns:platformStatsRequest\"/>\n   <output message=\"tns:platformStatsResponse\"/>\n
+        \ </operation>\n </portType>\n <binding name=\"StatsWSBinding\" type=\"tns:StatsWSPortType\">\n
+        \ <soap:binding style=\"document\" transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n
+        \ <operation name=\"platformStats\">\n   <soap:operation soapAction=\"\"/>\n
+        \  <input>\n    <soap:header use=\"literal\" part=\"SessionHeader\" message=\"tns:Header\"/>\n
+        \   <soap:header use=\"literal\" part=\"CallOptions\" message=\"tns:Header\"/>\n
+        \   <soap:header use=\"literal\" part=\"DebuggingHeader\" message=\"tns:Header\"/>\n
+        \   <soap:header use=\"literal\" part=\"AllowFieldTruncationHeader\" message=\"tns:Header\"/>\n
+        \   <soap:body use=\"literal\" parts=\"parameters\"/>\n   </input>\n   <output>\n
+        \   <soap:header use=\"literal\" part=\"DebuggingInfo\" message=\"tns:Header\"/>\n
+        \   <soap:body use=\"literal\"/>\n   </output>\n  </operation>\n </binding>\n
+        <service name=\"StatsWSService\">\n  <documentation></documentation>\n  <port
+        binding=\"tns:StatsWSBinding\" name=\"StatsWS\">\n   <soap:address location=\"https://cs11-api.salesforce.com/services/Soap/class/StatsWS\"/>\n
+        \ </port>\n </service>\n</definitions>"
+    http_version: '1.1'
+  recorded_at: Thu, 31 Jan 2013 15:41:25 GMT
+- request:
+    method: post
+    uri: https://cs11-api.salesforce.com/services/Soap/class/StatsWS
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://soap.sforce.com/schemas/class/StatsWS"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://soap.sforce.com/schemas/class/StatsWS"
+        xmlns:stat="http://soap.sforce.com/schemas/class/StatsWS"><env:Header><stat:SessionHeader><stat:sessionId>00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u</stat:sessionId></stat:SessionHeader></env:Header><env:Body><ins0:platformStats></ins0:platformStats></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"platformStats"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '666'
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 31 Jan 2013 15:41:26 GMT
+      content-type:
+      - text/xml;charset=UTF-8
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns="http://soap.sforce.com/schemas/class/StatsWS"><soapenv:Body><platformStatsResponse><result><challenges_open>4</challenges_open><challenges_won>3</challenges_won><competing_today>000</competing_today><countries_working>000</countries_working><entries_submitted>5</entries_submitted><featured_challenge_details>sample
+        Description</featured_challenge_details><featured_challenge_id>2</featured_challenge_id><featured_challenge_name>RSpec
+        Challenge - 2</featured_challenge_name><featured_challenge_prize>1000</featured_challenge_prize><featured_member_active>1</featured_member_active><featured_member_money>5002.00</featured_member_money><featured_member_pic>http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg</featured_member_pic><featured_member_username>jeffdonthemic</featured_member_username><featured_member_wins>1</featured_member_wins><members>174</members><money_pending>6753.0</money_pending><money_up_for_grabs>45849.0</money_up_for_grabs></result></platformStatsResponse></soapenv:Body></soapenv:Envelope>
+    http_version: '1.1'
+  recorded_at: Thu, 31 Jan 2013 15:41:27 GMT
+recorded_with: VCR 2.4.0

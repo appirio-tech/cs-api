@@ -18,3 +18,4 @@ config/initializers/development_settings.rb
 .env
 .env-production
 coverage
+rspec-notes.txt

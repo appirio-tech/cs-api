@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+sfdc_user__c+%0A++++++++from+member__c+where+name+%3D+%27idonotexist%27
+    uri: https://cs11.salesforce.com/services/data/v26.0/query?q=select+id%2C+name%2C+terms__c%2C+default_tos__c+%0A++++++from+terms_of_service__c+order+by+name
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 31 Jan 2013 15:33:05 GMT
+      - Thu, 31 Jan 2013 15:34:26 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -33,8 +33,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
-        rKJjawGoICe+KAAAAA==
+        H4sIAAAAAAAAAG1QsWoDMQz9FaOhk6mvGTrcVlIoodAMztKWYpSzAm4up2DL
+        oelx/14l1zGapKf3nh4aQViw9+mXoH2wEHnQRnIlC5k6zrFA+zkCiuS0rUI6
+        jiDno7JgQ/lQAu+Cp3xKHYXQgYWae925MmPFRRR0p8XjfeMKb7+pk+JuKB02
+        +49mrvfzS7N6eoXJwiqq2Y2VhTc8XEJ4wSFijubqae7MkoeYJPFQlDQf0lwt
+        LHuu0R95T8U80w5rL2az9qr7EWX+Q0GhK//yg+lr+gPVPWA+IQEAAA==
     http_version: '1.1'
-  recorded_at: Thu, 31 Jan 2013 15:33:05 GMT
+  recorded_at: Thu, 31 Jan 2013 15:34:26 GMT
 recorded_with: VCR 2.4.0

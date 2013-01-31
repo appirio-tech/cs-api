@@ -49,7 +49,7 @@ describe Challenge do
   describe "'Open' challenges" do
 	  it "should return challenge that are open" do
 	  	VCR.use_cassette "models/challenge/all_open" do
-		  	results = Challenge.all(@public_oauth_token, true, nil, 'name')
+		  	results = Challenge.all(@public_oauth_token, true, nil, nil, nil, 'name')
 		  	results.first.should have_key('name')
 		  	results.first.should have_key('total_prize_money')
 		  	results.first.should have_key('end_date')
@@ -61,8 +61,6 @@ describe Challenge do
 		  	results.first.should have_key('start_date')
 		  	results.first.should have_key('description')
 		  	results.first.should have_key('days_till_close')
-		  	results.first.should have_key('challenge_categories__r')
-		  	results.first['challenge_categories__r']['records'].first.should have_key('display_name')
 		  end
 	  end
   end      

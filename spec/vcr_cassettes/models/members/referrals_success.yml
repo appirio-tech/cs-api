@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 15:13:44 GMT
+      - Thu, 31 Jan 2013 15:33:00 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '[{"signup_date":"2011-11-23T12:55:46.000Z","referral_money":105.000,"referral_id":"a11Z0000000RU3xIAG","profile_pic":"http://cloudspokes.s3.amazonaws.com/Cloud_th_100.jpg","membername":"testreferral1","first_year_money":1050.00},{"signup_date":"2012-12-18T20:30:00.000Z","referral_money":0.000,"referral_id":"a11Z0000000RU4lIAG","profile_pic":"http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg","membername":"testreferral2","first_year_money":0.00}]'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:13:44 GMT
+  recorded_at: Thu, 31 Jan 2013 15:33:00 GMT
 recorded_with: VCR 2.4.0

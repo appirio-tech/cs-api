@@ -10,22 +10,13 @@ describe Category do
 	end
 
   describe "all categories" do
-	  it "should return an array of categories" do
+	  it "should return an array of strings" do
 	    VCR.use_cassette "models/categories/list" do
 	      results = Category.all(@public_oauth_token)
+	      puts "===== results #{results}"
 	      results.count.should > 0
 	    end
 	  end
-  end  	
-
-  describe "a category" do
-	  it "should have the correct keys" do
-	    VCR.use_cassette "models/categories/list" do
-	      results = Category.all(@public_oauth_token)
-	      results.first.should have_key('name')
-	      results.first.should have_key('color')
-	    end
-	  end
-  end  	  
+  end  		  
 
 end

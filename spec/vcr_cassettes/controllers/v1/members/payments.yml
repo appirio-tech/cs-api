@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 16:05:06 GMT
+      - Thu, 31 Jan 2013 15:40:22 GMT
       content-type:
       - application/json;charset=UTF-8
       content-encoding:
@@ -44,5 +44,5 @@ http_interactions:
         +HvKot4Adae+UFbVD2j5kv/hix1Hi3zbhcj2qrA9Gdso3zYS2V4Xtqdiu1Ry
         bdPUoW2tsD0ZWz3fVhfY6kf52zlL2+ftB6HAE/XxDgAA
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 16:05:06 GMT
+  recorded_at: Thu, 31 Jan 2013 15:40:23 GMT
 recorded_with: VCR 2.4.0

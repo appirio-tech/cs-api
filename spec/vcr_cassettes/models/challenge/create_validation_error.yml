@@ -11,14 +11,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       date:
-      - Fri, 11 Jan 2013 15:06:49 GMT
+      - Thu, 31 Jan 2013 15:29:45 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -30,5 +30,5 @@ http_interactions:
       string: ! '{"success":false,"errors":[{"errorMessage":"Required fields are missing:
         [End_Date__c, Start_Date__c]","errorCode":"REQUIRED_FIELD_MISSING"}],"challengeId":null}'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 15:06:50 GMT
+  recorded_at: Thu, 31 Jan 2013 15:29:46 GMT
 recorded_with: VCR 2.4.0

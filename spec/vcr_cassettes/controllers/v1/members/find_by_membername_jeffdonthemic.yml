@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c,active_challenges__c
     body:
       encoding: US-ASCII
       string: ''
@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQNm4Ld6V8EeM7SMS8uBfefzK.8v5iIOfAZilQlsQVmKe_fKPXqWkDU0sQWry_dd6GcVVzkQZrGjoNTCGogVNoKPlipVo
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 11 Jan 2013 16:05:01 GMT
+      - Thu, 31 Jan 2013 15:40:22 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,9 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Valid_Submissions__c":0,"Total_2nd_Place__c":0,"Total_1st_Place__c":1,"Total_Public_Money__c":5002.00,"Name":"jeffdonthemic","Jabber__c":"somejabbername","Total_Points__c":0,"Challenges_Entered__c":1,"Time_Zone__c":"(GMT-07:00)
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Valid_Submissions__c":0,"Total_2nd_Place__c":0,"Country__c":"United
+        States","Total_1st_Place__c":1,"Total_Public_Money__c":5002.00,"Name":"jeffdonthemic","Jabber__c":"somejabbername","Total_Points__c":0,"Challenges_Entered__c":1,"Active_Challenges__c":1,"Time_Zone__c":"(GMT-07:00)
         Pacific Daylight Time (America/Los_Angeles)","Id":"a0IZ0000000FyJUMA0","Total_Wins__c":1,"Profile_Pic__c":"http://lh4.ggpht.com/4wzpuaY9Oz1uNSyjinB72Re8V3DMEEyaeaLzJegV_tHyDYZm2nrNq6E_LuICWFs0-r-E70LgxlHca4qKxXKCSaP2zjarwgg","Total_3st_Place__c":0}]'
     http_version: '1.1'
-  recorded_at: Fri, 11 Jan 2013 16:05:01 GMT
+  recorded_at: Thu, 31 Jan 2013 15:40:22 GMT
 recorded_with: VCR 2.4.0

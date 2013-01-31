@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs11.salesforce.com/services/data/v20.0/sobjects/terms_of_service__c/a0kZ0000000YyG0IAK
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/json
+      authorization:
+      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 31 Jan 2013 15:34:27 GMT
+      last-modified:
+      - Wed, 21 Nov 2012 14:07:24 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"attributes":{"type":"Terms_of_Service__c","url":"/services/data/v20.0/sobjects/Terms_of_Service__c/a0kZ0000000YyG0IAK"},"Id":"a0kZ0000000YyG0IAK","OwnerId":"005U0000000M1nPIAS","IsDeleted":false,"Name":"Standard
+        Terms & Conditions","CreatedDate":"2012-11-21T14:07:24.000+0000","CreatedById":"005U0000000M1nPIAS","LastModifiedDate":"2012-11-21T14:07:24.000+0000","LastModifiedById":"005U0000000M1nPIAS","SystemModstamp":"2012-11-21T14:07:24.000+0000","LastActivityDate":null,"Terms__c":"CloudSpokes
+        Default TOS Text","Default_TOS__c":true}'
+    http_version: '1.1'
+  recorded_at: Thu, 31 Jan 2013 15:34:27 GMT
+recorded_with: VCR 2.4.0
