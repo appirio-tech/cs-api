@@ -1,9 +1,8 @@
 class V1::MembersController < V1::ApplicationController
   jsonp
 
-  # commented out for now during development
-	# before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, 
- #    :referrals, :login_type]
+	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, 
+    :referrals, :login_type]
 
 	# inherit from actual member model. Members in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
