@@ -82,15 +82,26 @@ describe Member do
   describe "update member" do
 	  it "should update successfully" do
 	    VCR.use_cassette "models/members/update_success" do
-	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'Jabber__c' => 'somejabbername'})
+	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'Jabber__c' => 'somejabbername1'})
         results[:success].should == 'true'
 	    end
 	    # make sure it was updated successfully
 	    VCR.use_cassette "models/members/update_success_check" do
         results2 = Member.find_by_membername(@public_oauth_token, 'jeffdonthemic', 'jabber__c')
-        results2.first['jabber'].should == 'somejabbername'
+        results2.first['jabber'].should == 'somejabbername1'
 	    end
 	  end
+	  it "should update successfully without __c" do
+	    VCR.use_cassette "models/members/update_success_new_style" do
+	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'jabber' => 'somejabbername2'})
+        results[:success].should == 'true'
+	    end
+	    # make sure it was updated successfully
+	    VCR.use_cassette "models/members/update_success_check_new_style" do
+        results2 = Member.find_by_membername(@public_oauth_token, 'jeffdonthemic', 'jabber__c')
+        results2.first['jabber'].should == 'somejabbername2'
+	    end	    
+	  end	  
 	  it "should not update successfully with a bad field" do
 	    VCR.use_cassette "models/members/update_failure" do
 	      results = Member.update(@public_oauth_token, 'jeffdonthemic', {'Email__c' => 'bademail'})

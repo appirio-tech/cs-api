@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?Jabber__c=somejabbername
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?Jabber__c=somejabbername1
     body:
       encoding: US-ASCII
       string: ''
@@ -10,14 +10,14 @@ http_interactions:
       content-type:
       - application/json
       authorization:
-      - OAuth 00DZ00000007ybt!AQQAQE_J1WaEneAuOm04NX9b0WOp8ntOCcfoUpNHQ4TGbwouFn0f8UxzqPYX1Xb.e.zKho62CxGQiv2.pZG4jvl355egw11u
+      - OAuth 00DZ00000007ybt!AQQAQPCrgjRQKbllDYwtxO_ehgSeyix6xCMiGEJrTvblG.BAOJAvZyBkXi95rIuIMT7AoWFUhm5MYnGb1ENJO0gszIu.gsru
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 31 Jan 2013 15:33:01 GMT
+      - Tue, 05 Feb 2013 14:25:31 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -28,5 +28,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"Success":"true","Message":"a0IZ0000000FyJUMA0"}'
     http_version: '1.1'
-  recorded_at: Thu, 31 Jan 2013 15:33:02 GMT
+  recorded_at: Tue, 05 Feb 2013 14:25:31 GMT
 recorded_with: VCR 2.4.0

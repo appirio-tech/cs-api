@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?fields=jabber__c
+    method: put
+    uri: https://cs11.salesforce.com/services/apexrest/v.9/members/jeffdonthemic?jabber__c=somejabbername2
     body:
       encoding: US-ASCII
       string: ''
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Jabber__c":"somejabbername1","Id":"a0IZ0000000FyJUMA0"}]'
+      string: ! '{"Success":"true","Message":"a0IZ0000000FyJUMA0"}'
     http_version: '1.1'
   recorded_at: Tue, 05 Feb 2013 14:25:32 GMT
 recorded_with: VCR 2.4.0

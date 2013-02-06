@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 05 Feb 2013 14:25:32 GMT
+      - Tue, 05 Feb 2013 14:25:33 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,7 +26,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Jabber__c":"somejabbername1","Id":"a0IZ0000000FyJUMA0"}]'
+      string: ! '[{"attributes":{"type":"Member__c","url":"/services/data/v26.0/sobjects/Member__c/a0IZ0000000FyJUMA0"},"Jabber__c":"somejabbername2","Id":"a0IZ0000000FyJUMA0"}]'
     http_version: '1.1'
-  recorded_at: Tue, 05 Feb 2013 14:25:32 GMT
+  recorded_at: Tue, 05 Feb 2013 14:25:33 GMT
 recorded_with: VCR 2.4.0

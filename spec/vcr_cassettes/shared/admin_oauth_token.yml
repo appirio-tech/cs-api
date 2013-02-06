@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 31 Jan 2013 15:36:40 GMT
+      - Tue, 05 Feb 2013 14:25:30 GMT
       pragma:
       - no-cache
       cache-control:
@@ -30,7 +30,7 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1359646600544","instance_url":"https://cs11.salesforce.com","signature":"aEFo0b5f04nTD9OR8bkfYSUMrlXHUEOyINwUvA/qg+Y=","access_token":"00DZ00000007ybt!AQQAQDpkkzGIrTY24z57TzIvUwMm2ImC_aRBwk5kwkDRB3EbQxES8RZdGp1Yt8.DK5oktEyzfE1Us5St.RspW2j9M2qcDL3n"}'
+      string: ! '{"id":"https://test.salesforce.com/id/00DZ00000007ybtMAA/005U0000000M1nPIAS","issued_at":"1360074330801","instance_url":"https://cs11.salesforce.com","signature":"XtzPlnEahztqPiYJBKYC9w2yvcDS9VKWJBfZy6MlyV8=","access_token":"00DZ00000007ybt!AQQAQE_7PlGo7f70rWpjgUjerk.U6woxAnfgIJroKCW5n.5L7yB2BhOP5U_.DPbP4FHJl4uU2oSdz3eOjyVZzqcniDqXDSym"}'
     http_version: '1.1'
-  recorded_at: Thu, 31 Jan 2013 15:36:40 GMT
+  recorded_at: Tue, 05 Feb 2013 14:25:30 GMT
 recorded_with: VCR 2.4.0
