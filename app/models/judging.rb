@@ -7,7 +7,7 @@ class Judging  < Salesforce
 		query_salesforce(access_token, "select id, challenge_id__c, name, status__c, number_of_reviewers__c, 
 			end_date__c, review_date__c,
 			(select display_name__c from challenge_categories__r) 
-			from Challenge__c where community_judging__c = true and status__c NOT IN ('Planned','Hidden')
+			from Challenge__c where community_judging__c = true and status__c NOT IN ('Created','Submission','Review')
 			and number_of_reviewers__c < 2 order by end_date__c")
 	end
 
