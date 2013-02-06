@@ -32,9 +32,12 @@ class Member < Salesforce
   # * *Raises* :
   #   - ++ ->
   #   
+  # TODO -- remove temp_fix_parameters as supports old style key
+  # names like 'first_name__c'
   def self.update(access_token, membername, params)
     set_header_token(access_token)   
-    results = put(ENV['SFDC_APEXREST_URL'] + "/members/#{esc membername}",:query => params)
+    results = put(ENV['SFDC_APEXREST_URL'] + "/members/#{esc membername}",
+      :query => temp_fix_params(params))
     {:success => results['Success'], :message => results['Message']}
   end  
   
@@ -236,6 +239,13 @@ class Member < Salesforce
         from member__c where name = '#{membername}'")
       raise "Member #{membername} not found." if results.empty?
       results.first
+    end
+
+    def self.temp_fix_params(params)
+      has_old_style = false
+      params.each_key { |key| has_old_style = true if key.to_s.include?('__c') }
+      params = Forcifier::JsonMassager.enforce_json(params) if !has_old_style
+      params
     end
 
 end
