@@ -20,7 +20,8 @@ CsApi::Application.routes.draw do
 		match "/accounts/activate/:membername" => "accounts#activate", :via => :get
 		match "/accounts/disable/:membername" => "accounts#disable", :via => :get		
 		match "/accounts/create" => "accounts#create", :via => :post
-		match "/accounts/find_by_service" => "accounts#find_by_service", :via => :get
+		match "/accounts/find_by_service" => "accounts#find_by_service", :via => :get		
+		match "/accounts/:membername" => "accounts#find", :via => :get
 		match "/accounts/reset_password/:membername" => "accounts#reset_password", :via => :get # deprecated
 		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put # deprecated
 		match "/accounts/update_password_token/:membername" => "accounts#update_password_token", :via => :put

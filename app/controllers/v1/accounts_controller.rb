@@ -1,6 +1,6 @@
 class V1::AccountsController < V1::ApplicationController
 
-	before_filter :restrict_access
+	#before_filter :restrict_access
 
   #
   # Post method to create a new member in db.com and send welcome email
@@ -60,6 +60,21 @@ class V1::AccountsController < V1::ApplicationController
   def disable
     expose Account.disable(@oauth_token, params[:membername])
   end    
+
+  #
+  # Finds a member's account info by their membername.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to find
+  # * *Returns* :
+  #   - JSON containing the following keys: username, sfdc_username, success
+  #     profile_pic, email and accountid
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def find
+    expose Account.find(@oauth_token, params[:membername])
+  end  
 
   #
   # Finds a user by their membername and service ('cloudspokes' or third party).

@@ -31,6 +31,34 @@ class Account < Salesforce
   end
 
   #
+  # Finds a member's account info by their membername.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to find
+  # * *Returns* :
+  #   - JSON containing the following keys: username, sfdc_username, success
+  #     profile_pic, email and accountid
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.find(access_token, membername)
+    set_header_token(access_token) 
+    # do rest query and find member and all their info
+    query_results = query_salesforce(access_token, "select id, name, profile_pic__c, email__c, 
+      sfdc_user__r.username, account__c from member__c 
+      where username__c='" + membername + "'")
+
+    unless query_results.empty?
+      m = query_results.first
+      {:success => 'true', :username => m['name'], :sfdc_username => m['sfdc_user__r']['username'], 
+      :profile_pic => m['profile_pic'], :email => m['email'], :accountid => m['account']}
+    else        
+      puts "[WARN][Account] Account not found for #{membername}." 
+      {:success => 'false', :message => "Account not found for #{membername}."}
+    end
+  end  
+
+  #
   # Activites a user and returns the users info. only sysadmin profiles
   # should be able to run this. Non-SysAdmin will throw an error as they
   # do not have access to all fields (account__c) if fetching a 
