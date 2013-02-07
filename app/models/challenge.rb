@@ -54,7 +54,7 @@ class Challenge < Salesforce
 
   def self.participants(access_token, challenge_id)  
     set_header_token(access_token) 
-    get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
+    get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Public_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
   end  	      
 
   def self.comments(access_token, challenge_id)  
@@ -77,7 +77,7 @@ class Challenge < Salesforce
 
   def self.all(access_token, open, technology, platform, category, order_by, limit=25, offset=0) 
     params = {:open => open, :orderby => order_by, :limit => limit, :offset => offset,
-      :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Participating_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name'}
+      :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,articipating_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name'}
     params.merge!(:technology => technology) if technology
     params.merge!(:platform => platform) if platform
     params.merge!(:category => category) if category

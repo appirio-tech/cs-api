@@ -26,7 +26,7 @@ class V1::ParticipantsController < V1::ApplicationController
 	end			
 
   #
-  # Creates a new challenge_participant records
+  # Creates a new challenge_participant record
   # if the member/challenge combination doesn't
   # exixt (this is handled in the Apex REST)
   # * *Args*    :
@@ -45,7 +45,7 @@ class V1::ParticipantsController < V1::ApplicationController
 	end			
 
   #
-  # Updaes an existing challenge_participant record
+  # Updates an existing challenge_participant record
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - membername -> the participant's cloudspokes member name

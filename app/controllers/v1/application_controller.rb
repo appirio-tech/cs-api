@@ -19,6 +19,7 @@ class V1::ApplicationController < RocketPants::Base
     if request.headers['oauth_token']     
       puts "[INFO][Application] Using passed oauth token"      
       @oauth_token = request.headers['oauth_token'].split(':').first
+      puts "[INFO][Application] OAuth token: #{@oauth_token}"    
     # fetch the public token from cache (if present) or sfdc
     else
       puts "[INFO][Application] Fetching new oauth token"
