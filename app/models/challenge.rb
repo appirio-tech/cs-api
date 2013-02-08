@@ -64,7 +64,7 @@ class Challenge < Salesforce
 
   def self.scorecards(access_token, challenge_id)  
     set_header_token(access_token) 
-    get_apex_rest("/challenges/#{challenge_id}/scorecards")
+    get_apex_rest("/challenges/#{challenge_id}/scorecards?fields=id,name,member__r.name,member__r.profile_pic__c,member__r.country__c,challenge__c,money_awarded__c,prize_awarded__c,place__c,score__c,submitted_date__c")
   end        
 
   def self.comments(access_token, challenge_id)  
