@@ -41,6 +41,8 @@ CsApi::Application.routes.draw do
 		match "/challenges/:challenge_id" => "challenges#update", :via => :put		
 		match "/challenges/:challenge_id/comments" => "challenges#comments", :via => :get
 		match "/challenges/:challenge_id/participants" => "challenges#participants", :via => :get
+		match "/challenges/:challenge_id/scorecards" => "challenges#scorecards", :via => :get
+		match "/challenges/:challenge_id/submission_deliverables" => "challenges#submission_deliverables", :via => :get
 		match "/challenges/:challenge_id/survey" => "challenges#survey", :via => :post
 		match "/challenges/:challenge_id/comment" => "challenges#comment", :via => :post
 		match "/challenges/:challenge_id/admin" => "challenges#find", :admin => true, :via => :get	

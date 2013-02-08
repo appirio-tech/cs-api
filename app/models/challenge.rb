@@ -57,6 +57,16 @@ class Challenge < Salesforce
     get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Public_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
   end  	      
 
+  def self.submission_deliverables(access_token, challenge_id)  
+    set_header_token(access_token) 
+    get_apex_rest("/submissions?challengeid=#{challenge_id}&fields=id,name,challenge__r.name,url__c,comments__c,type__c,username__c,challenge_participant__r.place__c&orderby=username__c")
+  end  
+
+  def self.scorecards(access_token, challenge_id)  
+    set_header_token(access_token) 
+    get_apex_rest("/challenges/#{challenge_id}/scorecards")
+  end        
+
   def self.comments(access_token, challenge_id)  
     set_header_token(access_token) 
     get_apex_rest("/comments/#{challenge_id}")
@@ -82,6 +92,7 @@ class Challenge < Salesforce
     params.merge!(:platform => platform) if platform
     params.merge!(:category => category) if category
     set_header_token(access_token)      
+    puts "running query: /challengeslist?#{params.to_param}"
     get_apex_rest("/challengeslist?#{params.to_param}")
   end
 
