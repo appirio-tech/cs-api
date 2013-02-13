@@ -52,6 +52,26 @@ class V1::DeliverablesController < V1::ApplicationController
   #   
   def update
     expose Deliverable.update(@oauth_token, params[:data])
-  end       
+  end    
+
+  #
+  # This will go away with the new submission process
+  #  
+  def current_submssions
+    expose Deliverable.current_submssions(@oauth_token, params[:membername].strip,
+      params[:challenge_id].strip)
+  end  
+
+  #
+  # This will go away with the new submission process
+  #  
+  def submission_url_file
+    expose Deliverable.create_url_or_file_submission(@oauth_token, params[:membername].strip,
+      params[:challenge_id].strip, params)  
+  end
+
+  def delete_submission_url_file
+    expose Deliverable.delete_url_or_file_submission(@oauth_token, params[:submission_id])  
+  end
 
 end

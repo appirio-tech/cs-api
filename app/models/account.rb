@@ -165,7 +165,7 @@ class Account < Salesforce
   end  
 
   #
-  # Changes member's password in salesforce if CloudSpokes is managing their account.
+  # Changes member's password token in salesforce if CloudSpokes is managing their account.
   # * *Args*    :
   #   - access_token -> the oauth token to use
   #   - membername -> the cloudspokes member name (mess) to reset

@@ -54,6 +54,10 @@ CsApi::Application.routes.draw do
 		match "/participants/:membername/:challenge_id/deliverables" => "deliverables#all", :via => :get
 		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#create", :via => :post
 		match "/participants/:membername/:challenge_id/deliverable" => "deliverables#update", :via => :put
+		# temp.. these will go away with new submissions functionality
+		match "/participants/:membername/:challenge_id/current_submssions" => "deliverables#current_submssions", :via => :get
+		match "/participants/:membername/:challenge_id/delete_submission_url_file" => "deliverables#delete_submission_url_file", :via => :get
+		match "/participants/:membername/:challenge_id/submission_url_file" => "deliverables#submission_url_file", :via => :post
 
 		# private messages
 		match "/messages" => "private_messages#create", :via => :post		
