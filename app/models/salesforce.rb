@@ -65,6 +65,20 @@ class Salesforce
   end    
 
   #
+  # Makes generic 'put' to CloudSpokes Apex REST services
+  # * *Args*    :
+  #   - url_string -> the string to be appended to teh end of the url
+  # * *Returns* :
+    #   - a results object
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.put_apex_rest(url_string, params={})
+    puts "======== #{url_string}?#{params.to_param}"
+    Forcifier::JsonMassager.deforce_json(put(ENV['SFDC_APEXREST_URL']+"#{url_string}?#{params.to_param}"))
+  end   
+
+  #
   # Makes generic 'get' to CloudSpokes Apex REST services
   # and returns success
   # * *Args*    :
