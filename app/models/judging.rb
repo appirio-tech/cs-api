@@ -6,7 +6,9 @@ class Judging  < Salesforce
 	def self.queue(access_token)
 		query_salesforce(access_token, "select id, challenge_id__c, name, status__c, number_of_reviewers__c, 
 			end_date__c, review_date__c,
-			(select display_name__c from challenge_categories__r) 
+			(select display_name__c from challenge_categories__r),
+			(select name from challenge_platforms__r),
+			(select name from challenge_technologies__r) 
 			from Challenge__c where community_judging__c = true and status__c IN ('Created','Submission','Review')
 			and number_of_reviewers__c < 2 order by end_date__c")
 	end
