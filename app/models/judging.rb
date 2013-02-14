@@ -3,6 +3,17 @@ require 'challenge'
 
 class Judging  < Salesforce
 
+	def self.outstanding_scorecards_by_member(access_token, membername)
+		query_salesforce(access_token, "select id, challenge_participant__c, challenge_participant__r.challenge__r.name, 
+	    challenge_participant__r.member__r.name, challenge_participant__r.submitted_date__c,
+	    challenge_participant__r.score__c, total_raw_score__c, challenge_participant__r.challenge__r.challenge_id__c 
+	    from qwikscore_scorecard__c 
+	    where reviewer__r.name = '"+membername+"' and scored__c = false 
+	    and challenge_participant__r.has_submission__c = true
+	    order by challenge_participant__r.challenge__r.end_date__c, challenge_participant__r.challenge__r.name, 
+	    Total_Raw_Score__c desc, challenge_participant__r.submitted_date__c")
+	end	
+
 	def self.queue(access_token)
 		query_salesforce(access_token, "select id, challenge_id__c, name, status__c, number_of_reviewers__c, 
 			end_date__c, review_date__c,
