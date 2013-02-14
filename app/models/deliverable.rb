@@ -36,7 +36,7 @@ class Deliverable < Salesforce
   # this will go away with the new submissions process
   def self.current_submssions(access_token, membername, challenge_id) 
     set_header_token(access_token)
-    get_apex_rest("/submissions?participantid=#{challenge_participant_id(membername, challenge_id)}")
+    get_apex_rest("/submissions?participantid=#{challenge_participant_id(access_token, membername, challenge_id)}")
   end
 
   # this will go away with the new submissions process
@@ -44,7 +44,7 @@ class Deliverable < Salesforce
     set_header_token(access_token)
     options = {
       :body => {
-          :challenge_participant__c => challenge_participant_id(membername, challenge_id),
+          :challenge_participant__c => challenge_participant_id(access_token, membername, challenge_id),
           :url__c => params[:link],
           :type__c => params[:type],
           :comments__c => params[:comments]
@@ -60,7 +60,7 @@ class Deliverable < Salesforce
 
   private
 
-    def self.challenge_participant_id(membername, challenge_id)
+    def self.challenge_participant_id(access_token, membername, challenge_id)
       query_salesforce(access_token, 
         "select id from challenge_participant__c where member__r.name = '#{membername}' 
         and challenge__r.challenge_id__c = '#{challenge_id}'").first['id'] 
