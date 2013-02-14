@@ -63,7 +63,7 @@ class Deliverable < Salesforce
     def self.challenge_participant_id(membername, challenge_id)
       query_salesforce(access_token, 
         "select id from challenge_participant__c where member__r.name = '#{membername}' 
-        and challenge__r.challenge_id__c = '#{challenge_id}'").first['id']
+        and challenge__r.challenge_id__c = '#{challenge_id}'").first['id'] 
     end
 
 end
