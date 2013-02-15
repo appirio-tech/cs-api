@@ -3,7 +3,7 @@ require 'challenge'
 
 class Judging  < Salesforce
 
-	def find_scorecard_by_participant(participant_id, judge_membername)
+	def self.find_scorecard_by_participant(participant_id, judge_membername)
     set_header_token(access_token) 
     get_apex_rest("/scorecard/#{participant_id}?reviewer=#{judge_membername}")
 	end
