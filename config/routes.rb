@@ -77,6 +77,7 @@ CsApi::Application.routes.draw do
 		match "/judging" => "judging#queue", :via => :get
 		match "/judging/add" => "judging#add", :via => :post
 		match "/judging/outstanding/:membername" => "judging#outstanding_scorecards_by_member", :via => :get
+		match "/judging/scorecard/:id" => "judging#find_scorecard_by_participant", :via => :get
 
 		# communities
 		match "/communities" => "communities#all", :via => :get

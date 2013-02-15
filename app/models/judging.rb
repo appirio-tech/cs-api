@@ -3,6 +3,11 @@ require 'challenge'
 
 class Judging  < Salesforce
 
+	def find_scorecard_by_participant(participant_id, judge_membername)
+    set_header_token(access_token) 
+    get_apex_rest("/scorecard/#{participant_id}?reviewer=#{judge_membername}")
+	end
+
 	def self.outstanding_scorecards_by_member(access_token, membername)
 		query_salesforce(access_token, "select id, challenge_participant__c, challenge_participant__r.challenge__r.name, 
 	    challenge_participant__r.member__r.name, challenge_participant__r.member__r.profile_pic__c, 

@@ -12,6 +12,10 @@ class V1::JudgingController < V1::ApplicationController
 
   def outstanding_scorecards_by_member
     expose Judging.outstanding_scorecards_by_member(@oauth_token, params[:membername])
-  end     
+  end
+
+  def find_scorecard_by_participant
+    expose Judging.find_scorecard_by_participant(@oauth_token, params[:id], params[:judge_membername])
+  end      
 
 end
