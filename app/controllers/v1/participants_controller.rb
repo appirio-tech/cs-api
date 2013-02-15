@@ -9,6 +9,23 @@ class V1::ParticipantsController < V1::ApplicationController
 	end	
 
   #
+  # Returns a specific participant
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - participant_id -> the id of the participant to fetch
+  # * *Returns* :
+  #   - JSON a challenge object containing a terms_of_service__r
+  #   and collection of challenge_categories__r and challenge_prizes__r
+  # * *Raises* :
+  #   - ++ -> 404 if not found
+  #   
+  def find
+    participant = Participant.find(@oauth_token, params[:participant_id].strip)
+    error! :not_found unless participant
+    expose participant
+  end       
+
+  #
   # Returns the status for a member for a challenge
   # * *Args*    :
   #   - access_token -> the oauth token to use

@@ -48,6 +48,7 @@ CsApi::Application.routes.draw do
 		match "/challenges/:challenge_id/admin" => "challenges#find", :admin => true, :via => :get	
 
 		# participants
+		match "/participants/:participant_id" => "participants#find", :via => :get
 		match "/participants/:membername/:challenge_id" => "participants#current_status", :via => :get
 		match "/participants/:membername/:challenge_id" => "participants#create", :via => :post		
 		match "/participants/:membername/:challenge_id" => "participants#update", :via => :put

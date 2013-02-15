@@ -1,5 +1,14 @@
 class Participant < Salesforce
 
+  def self.find(access_token, participant_id)  
+    query_salesforce(access_token, "select Id, Member__c, Member__r.name, 
+      Member__r.Profile_Pic__c, Member__r.Country__c, Challenge__c, Challenge__r.Name, 
+      Challenge__r.Challenge_Id__c, Money_Awarded__c, Place__c, Points_Awarded__c, 
+      Score__c, Status__c, Has_Submission__c, Completed_Scorecards__c, 
+      Submitted_Date__c, Send_Discussion_Emails__c 
+      from Challenge_Participant__c where id = '#{participant_id}'").first
+  end   
+
   #
   # Returns the status for a member for a challenge
   # * *Args*    :
