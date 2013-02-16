@@ -15,7 +15,13 @@ class V1::JudgingController < V1::ApplicationController
   end
 
   def find_scorecard_by_participant
-    expose Judging.find_scorecard_by_participant(@oauth_token, params[:id], params[:judge_membername])
+    expose Judging.find_scorecard_by_participant(@oauth_token, params[:id], 
+      params[:judge_membername])
   end      
+
+  def save_scorecard_for_participant
+    expose Judging.save_scorecard_for_participant(@oauth_token, params[:id], 
+      params[:answers], params[:options])
+  end
 
 end

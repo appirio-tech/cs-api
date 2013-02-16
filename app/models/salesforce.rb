@@ -74,7 +74,6 @@ class Salesforce
   #   - ++ ->
   #  
   def self.put_apex_rest(url_string, params={})
-    puts "======== #{url_string}?#{params.to_param}"
     Forcifier::JsonMassager.deforce_json(put(ENV['SFDC_APEXREST_URL']+"#{url_string}?#{params.to_param}"))
   end   
 
