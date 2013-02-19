@@ -45,13 +45,14 @@ class Account < Salesforce
     set_header_token(access_token) 
     # do rest query and find member and all their info
     query_results = query_salesforce(access_token, "select id, name, profile_pic__c, email__c, 
-      sfdc_user__r.username, account__c from member__c 
+      sfdc_user__r.username, account__c, time_zone__c from member__c 
       where username__c='" + membername + "'")
 
     unless query_results.empty?
       m = query_results.first
       {:success => 'true', :username => m['name'], :sfdc_username => m['sfdc_user__r']['username'], 
-      :profile_pic => m['profile_pic'], :email => m['email'], :accountid => m['account']}
+      :profile_pic => m['profile_pic'], :email => m['email'], :accountid => m['account'], 
+      :time_zone => m['time_zone']}
     else        
       puts "[WARN][Account] Account not found for #{membername}." 
       {:success => 'false', :message => "Account not found for #{membername}."}
