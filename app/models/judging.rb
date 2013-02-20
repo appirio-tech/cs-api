@@ -3,20 +3,20 @@ require 'challenge'
 
 class Judging  < Salesforce
 
-	def self.save_scorecard_for_participant(accesss_token, participant_id, answers, options)
+	def self.save_scorecard_for_participant(access_token, participant_id, answers, options)
 
 		begin
 
 			# mark the scorecard as rejected
 			if options[:delete_scorecard]
-		    update_in_salesforce(accesss_token, 'Challenge_Participant__c', {'id' => participant_id, 
+		    update_in_salesforce(access_token, 'Challenge_Participant__c', {'id' => participant_id, 
 		      'Has_Submission__c' => false, 'Status__c' => 'Submission Rejected'})
 		    results_hash = {:success => true, :message => 'Scorecard marked as invalid and submission rejected.'}	
 
 			# update the answer for each question
 			else
 				answers.each do |key, value| 
-		      results = update_in_salesforce(accesss_token, 'QwikScore_Question_Answer__c', 
+		      results = update_in_salesforce(access_token, 'QwikScore_Question_Answer__c', 
 		      	{'id' => key, 'answer_text__c' => value})
 				end
 				results_hash = {:success => true, :message => 'Scorecard has been saved successfully.'}	
@@ -45,7 +45,7 @@ class Judging  < Salesforce
 
 	end
 
-	def self.find_scorecard_by_participant(accesss_token, participant_id, judge_membername)
+	def self.find_scorecard_by_participant(access_token, participant_id, judge_membername)
     set_header_token(access_token) 
     get_apex_rest("/scorecard/#{participant_id}?reviewer=#{judge_membername}")
 	end

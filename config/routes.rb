@@ -26,6 +26,7 @@ CsApi::Application.routes.draw do
 		match "/accounts/update_password/:membername" => "accounts#update_password", :via => :put # deprecated
 		match "/accounts/update_password_token/:membername" => "accounts#update_password_token", :via => :put
 		match "/accounts/change_password_with_token/:membername" => "accounts#change_password_with_token", :via => :put
+		match "/accounts/:membername/referred_by" => "accounts#referred_by", :via => :put
 
 		#preferences
 		match "/preferences/:membername" => "preferences#all", :via => :get
@@ -100,5 +101,7 @@ CsApi::Application.routes.draw do
 	end  
 
 	root :to => redirect("http://www.cloudspokes.com")
+
+	mount_sextant if Rails.env.development? # https://github.com/schneems/sextant
 
 end

@@ -92,7 +92,6 @@ class Challenge < Salesforce
     params.merge!(:platform => platform) if platform
     params.merge!(:category => category) if category
     set_header_token(access_token)      
-    puts "running query: /challengeslist?#{params.to_param}"
     get_apex_rest("/challengeslist?#{params.to_param}")
   end
 

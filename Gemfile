@@ -24,6 +24,7 @@ group :development, :test do
 	gem 'rspec-rails', '~> 2.6'
 	gem 'vcr'
 	gem 'fakeweb'
+	gem 'sextant'
 end
 
 group :test do

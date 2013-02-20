@@ -241,6 +241,56 @@ class Account < Salesforce
     get_apex_rest_return_boolean("/disable/#{membername}")
   end   
 
+  #
+  # Sets a member as being referred by another member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to set the referral fro
+  #   - referral_id_or_membername -> the referral id or member name of the referring member
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.referred_by(access_token, converted_member_name, referral_id_or_membername)
+    set_header_token(access_token)
+
+    referred_by_member = query_salesforce(access_token, "select id from member__c 
+      where name = '#{referral_id_or_membername}'")   
+    converted_member = query_salesforce(access_token, "select id from member__c 
+      where name = '#{converted_member_name}'") 
+
+    # update an existing referral record by id since we didn't find a member by name
+    if referred_by_member.empty?
+
+      # update the referral as converted since we have the referral id
+      update_in_salesforce(access_token, 'Referral__c', {'id' => referral_id_or_membername, 
+        'Converted__c' => true, 'Converted_To_Member__c' => converted_member.first.id})
+
+      {:success => true, :message => "Referral #{referral_id_or_membername} assigned to newly 
+        converted member #{converted_member.first.id}." }             
+
+    # ad hoc signup with referral so create the referral record
+    else
+
+      create_results = create_in_salesforce(access_token, 'Referral__c', 
+        { 'Converted_To_Member__c' => converted_member.first.id, 
+          'Referred_By_Member__c' => referred_by_member.first.id, 
+          'Converted__c' => true,
+          'Include_in_Member_Count__c' => false,
+          'Source__c' => 'Member',
+        }
+      )
+
+      {:success => true, :message => "Referral for #{converted_member.first.id} assigned to 
+        #{referred_by_member.first.id}." }    
+
+    end
+
+  rescue Exception => e
+    {:success => false, :message => "Error updating referral: #{e.message}" }
+  end   
+
   private
 
     def self.create_options(params)

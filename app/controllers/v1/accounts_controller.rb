@@ -157,4 +157,19 @@ class V1::AccountsController < V1::ApplicationController
     expose Account.change_password_with_token(@oauth_token, params[:membername], params[:token], params[:new_password])
   end    
 
+  #
+  # Sets a member as being referred by another member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to set the referral fro
+  #   - referral_id_or_membername -> the referral id or member name of the referring member
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def referred_by
+    expose Account.referred_by(@oauth_token, params[:membername], params[:referral_id_or_membername])
+  end      
+
 end
