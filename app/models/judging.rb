@@ -75,7 +75,7 @@ class Judging  < Salesforce
 	def self.add(access_token, challenge_id, membername)
 
 		# make sure the challenge is in the right status
-		challenge_status = query_salesforce(access_token, "select id from challenge__c where status__c IN ('Planned','Created') 
+		challenge_status = query_salesforce(access_token, "select id from challenge__c where status__c IN ('Planned','Created','Review') 
 			and challenge_id__c = '#{challenge_id}'")		
 		# make sure all of the judging spots haven't been filled yet
 		total_judges = query_salesforce(access_token, "select id from challenge_reviewer__c 
