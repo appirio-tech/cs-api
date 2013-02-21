@@ -135,7 +135,7 @@ class Challenge < Salesforce
     oauth_token = access_token
 
     # get all of the public, open challenges
-    Challenge.all(oauth_token, 'true', nil, 'name').each do |c|
+    Challenge.all(oauth_token, 'true', nil, nil, nil, 'name', 1000, 0).each do |c|
 
       # get the comments for the challenge
       comments = Forcifier::JsonMassager.deforce_json(query_salesforce(access_token, 
