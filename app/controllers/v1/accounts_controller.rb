@@ -170,6 +170,21 @@ class V1::AccountsController < V1::ApplicationController
   #  
   def referred_by
     expose Account.referred_by(@oauth_token, params[:membername], params[:referral_id_or_membername])
-  end      
+  end     
+
+  #
+  # Updates the marketing info for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to set the referral fro
+  #   - params -> params containing the marketing info to update
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def apply_marketing_info
+    expose Account.apply_marketing_info(@oauth_token, params[:membername], params)
+  end    
 
 end

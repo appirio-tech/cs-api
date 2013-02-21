@@ -282,14 +282,50 @@ class Account < Salesforce
         }
       )
 
-      {:success => true, :message => "Referral for #{converted_member.first.id} assigned to 
-        #{referred_by_member.first.id}." }    
+      {:success => true, :message => "Referral for #{converted_member.first.id} assigned to #{referred_by_member.first.id}." }    
 
     end
 
   rescue Exception => e
     {:success => false, :message => "Error updating referral: #{e.message}" }
   end   
+
+  #
+  # Updates the marketing info for a member
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to set the referral fro
+  #   - params -> params containing the marketing info to update
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.apply_marketing_info(access_token, membername, params)
+
+    # update the member with the marketing info
+    update_in_salesforce(access_token, 'Member__c', {'id' => Member.salesforce_member_id(access_token, membername), 
+      'Campaign_Source__c' => params[:campaign_source], 
+      'Campaign_Medium__c' => params[:campaign_medium], 
+      'Campaign_Name__c' => params[:campaign_name]})
+
+    matching_community = query_salesforce(access_token, "select id, name, community_id__c from community__c 
+      where Marketing_Campaign__c = '#{params[:campaign_name]}'") 
+
+    # if there's a community with the same marketing campaign, add the member to it
+    unless matching_community.empty?
+      community_results = Community.add_member(access_token, 
+        {:membername => membername, :community_id => matching_community.first.community_id})
+
+      {:success => true, :message => "#{membername} updated with marketing info. Added to community: #{community_results[:message]}" } 
+    else
+      {:success => true, :message => "#{membername} updated with marketing info. No matching community." } 
+    end
+
+  rescue Exception => e
+    puts "[INFO][Account] Error updating #{membername} with marketing info: #{e.message}"
+    {:success => false, :message => "Error updating #{membername} with marketing info: #{e.message}" }
+  end     
 
   private
 
