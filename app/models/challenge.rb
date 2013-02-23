@@ -44,6 +44,7 @@ class Challenge < Salesforce
         "select id, name, key__c, filename__c from asset__c 
         where challenge__r.challenge_id__c = '#{challenge_id}'")      
     end
+    return nil if challenge.has_key?('errorcode')
     challenge
   end 
 
@@ -61,6 +62,11 @@ class Challenge < Salesforce
     set_header_token(access_token) 
     get_apex_rest("/submissions?challengeid=#{challenge_id}&fields=id,name,challenge__r.name,url__c,comments__c,type__c,username__c,challenge_participant__r.place__c&orderby=username__c")
   end  
+
+  def self.scorecard(access_token, challenge_id)  
+    set_header_token(access_token) 
+    get_apex_rest("/scorecard/#{challenge_id}/questions")
+  end          
 
   def self.scorecards(access_token, challenge_id)  
     set_header_token(access_token) 

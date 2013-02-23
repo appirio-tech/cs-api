@@ -203,4 +203,18 @@ class V1::ChallengesController < V1::ApplicationController
       params[:data])
   end   
 
+  #
+  # Returns the scorecard for a challenge
+  # * *Args*    :
+  #   - access_token -> the oauth token to use 
+  #   - challenge_id -> the id of the challenge to fetch the scorecard fro
+  # * *Returns* :
+  #   - a JSON collection of scorecard questions
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def scorecard
+    expose Challenge.scorecard(@oauth_token, params[:challenge_id].strip)
+  end   
+
 end
