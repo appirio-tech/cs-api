@@ -14,6 +14,8 @@ gem 'airbrake'
 gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
 gem 'savon', '1.2.0'
 gem 'bunny'
+gem 'ratchetio', '~> 0.6.0'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'pg'

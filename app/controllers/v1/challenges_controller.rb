@@ -46,7 +46,7 @@ class V1::ChallengesController < V1::ApplicationController
       params[:technology] ||= nil, 
       params[:platform] ||= nil, 
       params[:category] ||= nil, 
-      enforce_order_by_params(params[:order_by], 'name'),
+      enforce_order_by_params(params[:order_by], 'end_date__c'),
       params[:limit] ||= 25,
       params[:offset] ||= 0)
   end   
