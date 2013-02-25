@@ -44,7 +44,12 @@ class Challenge < Salesforce
         "select id, name, key__c, filename__c from asset__c 
         where challenge__r.challenge_id__c = '#{challenge_id}'")      
     end
-    return nil if challenge.has_key?('errorcode')
+
+    # check for sfdc internal errors
+    unless challenge.nil?
+      return nil if challenge.has_key?('errorcode')
+    end
+
     challenge
   end 
 
@@ -93,7 +98,7 @@ class Challenge < Salesforce
 
   def self.all(access_token, open, technology, platform, category, order_by, limit=25, offset=0) 
     params = {:open => open, :orderby => order_by, :limit => limit, :offset => offset,
-      :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Participating_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name'}
+      :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Participating_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name,Community__r.Community_Id__c'}
     params.merge!(:technology => technology) if technology
     params.merge!(:platform => platform) if platform
     params.merge!(:category => category) if category
