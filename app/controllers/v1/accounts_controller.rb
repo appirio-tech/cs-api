@@ -175,7 +175,7 @@ class V1::AccountsController < V1::ApplicationController
   #
   # Updates the marketing info for a member
   # * *Args*    :
-  #   - access_token -> the oauth token to use
+  #   - access_token -> the oauth token to use -- ALWAYS USES ADMIN TOKEN FOR SECURITY
   #   - membername -> the cloudspokes member name (mess) to set the referral fro
   #   - params -> params containing the marketing info to update
   # * *Returns* :
@@ -184,7 +184,7 @@ class V1::AccountsController < V1::ApplicationController
   #   - ++ ->
   #  
   def apply_marketing_info
-    expose Account.apply_marketing_info(@oauth_token, params[:membername], params)
+    expose Account.apply_marketing_info(admin_oauth_token, params[:membername], params)
   end    
 
 end
