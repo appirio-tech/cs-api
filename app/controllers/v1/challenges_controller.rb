@@ -18,12 +18,13 @@ class V1::ChallengesController < V1::ApplicationController
   #   - JSON a challenge object containing a terms_of_service__r
   #   and collection of challenge_categories__r and challenge_prizes__r
   # * *Raises* :
-  #   - ++ -> 404 if not found
+  #   - ++ -> 404 if not found or hidden
   #  	
 	def find
 		challenge = Challenge.find(@oauth_token, params[:challenge_id].strip, 
       params[:admin] ||= false)
 		error! :not_found unless challenge
+    error! :not_found if challenge['status'].downcase == 'hidden'
 		expose challenge
 	end					
 
