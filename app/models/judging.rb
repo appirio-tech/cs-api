@@ -69,7 +69,7 @@ class Judging  < Salesforce
 			(select name__c from challenge_platforms__r),
 			(select name__c from challenge_technologies__r) 
 			from Challenge__c where community_judging__c = true and status__c IN ('Created','Submission','Review')
-			and number_of_reviewers__c < 2 order by end_date__c")
+			and number_of_reviewers__c < 3 order by end_date__c")
 	end
 
 	def self.add(access_token, challenge_id, membername)
