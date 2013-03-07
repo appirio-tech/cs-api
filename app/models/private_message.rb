@@ -55,6 +55,8 @@ class PrivateMessage < Salesforce
       }.to_json
     }
     post_private_message(options) 
+  rescue Exception => e
+    {:success => false, :message => e.message}
   end 
 
   def self.reply(access_token, id, data)
