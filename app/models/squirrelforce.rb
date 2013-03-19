@@ -20,7 +20,9 @@ class Squirrelforce  < Salesforce
 
 		puts deliverable.to_json
 
-		b = Bunny.new ENV['CLOUDAMQP_URL']
+		b = Bunny.new(:host => ENV['CLOUDAMQP_URL'], 
+			:user => ENV['CLOUDAMQP_USERNAME'], 
+			:password => ENV['CLOUDAMQP_PASSWORD'])
 		b.start
 		q = b.queue(ENV['SQUIRRELFORCE_QUEUE'])
 		q.publish(deliverable.to_json)
