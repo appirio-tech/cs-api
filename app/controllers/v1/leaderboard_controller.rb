@@ -26,4 +26,18 @@ class V1::LeaderboardController < V1::ApplicationController
       :category => params[:category] || nil, :limit => params[:limit] || 1000)
 	end
 
+  #
+  # Returns the referral leaderboard.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   work correctly as expected.
+  # * *Returns* :
+  #   - JSON an array leaderboard objects
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def referral
+    expose Leaderboard.referral(@oauth_token)
+  end  
+
 end

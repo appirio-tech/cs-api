@@ -34,4 +34,33 @@ class Leaderboard < Salesforce
 
 	end
 
+  #
+  # Returns the referral leaderbaord (FOR APPIRIO ONLY!!)
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - options -> a hash with the period to select, category and limit
+  # * *Returns* :
+  #   - JSON containing a collection of members with their leaderboard scores
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def self.referral(access_token)
+    leaderboard = query_salesforce(access_token, "select count(id)total, referred_by_member__r.name, 
+      referred_by_member__r.profile_pic__c, referred_by_member__r.country__c from Referral__c 
+      where converted__c = true and referred_by_member__r.account__r.name = 'appirio' 
+      group by referred_by_member__r.name, referred_by_member__r.profile_pic__c, referred_by_member__r.country__c")
+    
+    leaderboard.sort_by! { |key| key['total'].to_i }
+    # reverse the order so the largest is at the top
+    leaderboard.reverse!
+    # add a rank to each one
+    rank = 1
+    leaderboard.each do |record| 
+      record.merge!({'rank' => rank})
+      rank = rank + 1
+    end    
+
+    leaderboard
+  end
+
 end

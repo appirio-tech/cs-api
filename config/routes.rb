@@ -91,6 +91,7 @@ CsApi::Application.routes.draw do
 
 		# leaderboard
 	  match "/leaderboard" => "leaderboard#public", :via => :get
+	  match "/leaderboard/referral" => "leaderboard#referral", :via => :get
 	  # stats
 	  match "/stats" => "stats#public", :via => :get
 	  # misc
