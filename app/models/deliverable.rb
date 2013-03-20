@@ -19,6 +19,9 @@ class Deliverable < Salesforce
   end 
 
   def self.create(access_token, membername, challenge_id, data)
+
+    data.remove_key!('raw_data')
+
     # get the challenge participant's id
     data['challenge_participant'] = query_salesforce(access_token, 
       "select id from challenge_participant__c where member__r.name = '#{membername}' 
@@ -57,6 +60,12 @@ class Deliverable < Salesforce
     set_header_token(access_token)
     put_apex_rest("/submissions/#{submission_id}", {'deleted__c' => 'true'})
   end      
+
+  def self.find(access_token, submission_id)
+    query_salesforce(access_token, 
+      "select Id, Comments__c, Type__c, URL__c, Username__c 
+      from Challenge_Submission__c where id = '#{submission_id}'").first
+  end
 
   private
 

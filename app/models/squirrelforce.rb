@@ -18,8 +18,6 @@ class Squirrelforce  < Salesforce
 		# remove the old key
 		deliverable.remove_key!('challenge_participant__r')
 
-		puts deliverable.to_yaml
-
 		b = Bunny.new ENV['CLOUDAMQP_URL']
 		b.start
 		q = b.queue(ENV['SQUIRRELFORCE_QUEUE'])
