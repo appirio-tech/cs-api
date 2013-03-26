@@ -22,7 +22,7 @@ class Participant < Salesforce
   #  
   def self.status(access_token, membername, challenge_id) 
     set_header_token(access_token)  
-    get_apex_rest("/participants/#{esc membername}?challengeId=#{challenge_id}&fields=id,name,send_discussion_emails__c,override_submission_upload__c,status__c,place__c,money_awarded__c,has_submission__c,challenge__r.name,challenge__r.challenge_id__c,member__r.name,member__r.valid_submissions__c").first
+    get_apex_rest("/participants/#{esc membername}?challengeId=#{challenge_id}&fields=id,name,send_discussion_emails__c,override_submission_upload__c,status__c,place__c,money_awarded__c,has_submission__c,apis__c,paas__c,languages__c,technologies__c,submission_overview__c,challenge__r.name,challenge__r.challenge_id__c,member__r.name,member__r.valid_submissions__c").first
   end		
 
   #
