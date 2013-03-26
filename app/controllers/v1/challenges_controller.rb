@@ -1,7 +1,7 @@
 class V1::ChallengesController < V1::ApplicationController
   jsonp
 
-	before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables]
+	before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables, :comment]
 
 	# inherit from actual challenge model. Challenges in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.
@@ -134,7 +134,7 @@ class V1::ChallengesController < V1::ApplicationController
   # Returns a collection of scorecards for a challenge
   # * *Args*    :
   #   - access_token -> the oauth token to use
-  #   - challenge_id -> the id of the challenge to fetch participants for   
+  #   - challenge_id -> the id of the challenge to fetch scorecards for   
   # * *Returns* :
   #   - JSON a collection of scorecards records
   # * *Raises* :
@@ -173,7 +173,6 @@ class V1::ChallengesController < V1::ApplicationController
 		expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
 	end		
 
-  # DO NOT USE THIS WITH THE CURRENT SITE
   # Creates a new discussion board comment for the challenge
   # * *Args*    :
   #   - access_token -> the oauth token to use   
