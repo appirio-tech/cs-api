@@ -109,6 +109,7 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   # 
+  # TODO -- This may go away
   def challenges_as_admin
     expose Member.challenges_as_admin(@oauth_token, params[:membername])
   end   

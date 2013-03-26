@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cs9.salesforce.com/services/data/v26.0/query?q=select+name%2C+community_id__c%2C+about__c%2C+members__c+from+community__c+order+by+name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - OAuth 00DK0000008yRYr!AQQAQDUsGHDebUMHJPFRqWpm7trZw1q3CMhD5GbB6rcm2epUjrgnu7nYraKmdoa2UCvo3UElFB8rr_3XuSV17_7h8CEhnm1q
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 25 Mar 2013 11:46:23 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKtWKskvScwJzqxKVbIy0FFKyc8DMkqKSlN1lIpSk/OLUoqV
+        rKJjawGoICe+KAAAAA==
+    http_version: '1.1'
+  recorded_at: Mon, 25 Mar 2013 11:46:23 GMT
+recorded_with: VCR 2.4.0

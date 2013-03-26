@@ -237,10 +237,24 @@ describe Account do
       VCR.use_cassette "models/accounts/activate" do
         results = Account.activate(@public_oauth_token, 
           @rspec_test_membername)
-        puts results.should == true
+        results.should == true
       end
     end
+  end  
 
+  describe "disable" do
+    it "should successfully disable an account" do
+      VCR.use_cassette "models/accounts/disable" do
+        results = Account.disable(@admin_oauth_token, 
+          @rspec_test_membername)
+        results.should == true
+      end
+      VCR.use_cassette "models/accounts/reactivate" do
+        results = Account.activate(@public_oauth_token, 
+          @rspec_test_membername)
+        results.should == true
+      end      
+    end
   end      
 
 end

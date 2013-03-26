@@ -8,6 +8,10 @@ describe V1::AccountsController do
       @public_oauth_token = SfdcHelper.public_access_token
     end
 
+    VCR.use_cassette "shared/admin_oauth_token", :record => :all do
+      @admin_oauth_token = SfdcHelper.admin_access_token
+    end    
+
     ApiKey.create!
     @api_key = ApiKey.first.access_key
 
@@ -85,6 +89,22 @@ describe V1::AccountsController do
       end
     end 
   end    
+
+  describe "'disable' account" do
+    it "should be successful" do
+      VCR.use_cassette "controllers/v1/accounts/disable" do
+        request.env['oauth_token'] = @admin_oauth_token
+        request.env['Authorization'] = 'Token token="'+@api_key+'"'
+        get 'disable', 'membername' => @rspec_user_name
+      end  
+      VCR.use_cassette "controllers/v1/accounts/reactivate" do
+        request.env['oauth_token'] = @public_oauth_token
+        request.env['Authorization'] = 'Token token="'+@api_key+'"'
+        get 'activate', 'membername' => @rspec_user_name
+        response.should be_success
+      end    
+    end 
+  end   
 
   describe "'authenticate' account" do
     it "should be successful" do

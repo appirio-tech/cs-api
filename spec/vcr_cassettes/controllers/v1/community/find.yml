@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://cs9.salesforce.com/services/apexrest/v.9/members
+    method: get
+    uri: https://cs9.salesforce.com/services/apexrest/v.9/communities/public
     body:
       encoding: US-ASCII
-      string: username__c=test-rspec-create1&email__c=test-rspec-create1%40test.com&password=1111AAAAA!&first_name__c=test-rspec-create1&last_name__c=test-rspec-create1
+      string: ''
     headers:
       content-type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Mon, 25 Mar 2013 12:15:34 GMT
+      - Mon, 25 Mar 2013 11:50:39 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -26,8 +26,8 @@ http_interactions:
       - close
     body:
       encoding: US-ASCII
-      string: ! '{"password":"1111AAAAA!","Success":"true","memberId":"a0IK0000006Z9EBMA0","sfdc_username":"on-deck-user@m.cloudspokes.com.sandbox","Message":"Member
-        created successfully.","username":"test-rspec-create1"}'
+      string: ! '{"leaderboard":[],"community":{"attributes":{"type":"Community__c","url":"/services/data/v24.0/sobjects/Community__c/a12K0000000Wn1eIAC"},"Name":"Public","Email_Domain__c":"@nothing.com","Id":"a12K0000000Wn1eIAC","About__c":"test","Public_Group__c":"all
+        members","Members__c":0},"challenges":[]}'
     http_version: '1.1'
-  recorded_at: Mon, 25 Mar 2013 12:15:34 GMT
+  recorded_at: Mon, 25 Mar 2013 11:50:40 GMT
 recorded_with: VCR 2.4.0
