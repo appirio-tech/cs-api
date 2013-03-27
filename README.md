@@ -16,7 +16,7 @@ The endpoint for the production environment is [https://api.cloudspokes.com](htt
 
 ## Sandbox Environment
 
-The endpoint for the sandbox environment is [https://api-sandbox.cloudspokes.com](https://api-sandbox.cloudspokes.com). There is a [small exmaple page](https://api-sandbox.cloudspokes.com/examples.html) for some standard calls that you might want to take a look at. You will need an API Key to make any non-public calls so please send a request to support@cloudspokes.com with the subject "Sandbox API Key Request".
+The endpoint for the sandbox environment is [http://api-sandbox.cloudspokes.com](http://api-sandbox.cloudspokes.com). There is a [small exmaple page](http://api-sandbox.cloudspokes.com/examples.html) for some standard calls that you might want to take a look at. You will need an API Key to make any non-public calls so please send a request to support@cloudspokes.com with the subject "Sandbox API Key Request".
 
 ## API Calls
 
