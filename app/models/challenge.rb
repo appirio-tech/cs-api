@@ -3,18 +3,36 @@ require 'health_check'
 class Challenge < Salesforce
 
   def self.create(access_token, data)
+    set_header_token(access_token)
+    # enforce the keys of each hash but not the hash key itself
+    data['challenge'].each do |key|
+      data['challenge'][key.first] = Forcifier::JsonMassager.enforce_json(key.second)
+    end
+    options = { :body => data.to_json }  
+    results = post(ENV['SFDC_APEXREST_URL_V1'] + "/admin/challenges", options)
+    {:success => results['success'], :challenge_id => results['challengeId'], 
+      :errors => results['errors']}    
+  rescue Exception => e
+    {:success => 'false', :challenge_id => challenge_id, :errors => e.message} 
+  end
+
+  def self.update(access_token, challenge_id, data)
     set_header_token(access_token) 
     # enforce the keys of each hash but not the hash key itself
     data['challenge'].each do |key|
       data['challenge'][key.first] = Forcifier::JsonMassager.enforce_json(key.second)
     end
     options = { :body => data.to_json }  
-    results = post(ENV['SFDC_APEXREST_URL'] + "/admin/challenges", options)
-    {:success => results['success'], :challenge_id => results['challengeId'], 
+    results = put(ENV['SFDC_APEXREST_URL_V1'] + "/admin/challenges", options)
+    {:success => results['success'], :challenge_id => challenge_id, 
       :errors => results['errors']}
-  end
+  rescue Exception => e
+    puts results.to_yaml
+    puts e.to_yaml
+    {:success => 'false', :challenge_id => challenge_id, :errors => e.message} 
+  end   
 
-  def self.update(access_token, challenge_id, data)
+  def self.update_original(access_token, challenge_id, data)
     set_header_token(access_token) 
     # enforce the keys of each hash but not the hash key itself
     data['challenge'].each do |key|
