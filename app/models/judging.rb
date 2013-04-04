@@ -102,7 +102,7 @@ class Judging  < Salesforce
 			{:success => true, :message => 'Thank you! You are now a judge for this challenge.'}
 		end
   rescue Exception => e
-    puts "[FATAL][Judging] Error adding judge: #{e.message}" 
+    Rails.logger.fatal "[FATAL][Judging] Error adding judge: #{e.message}" 
     {:success => false, :message => e.message} 
 	end
 
