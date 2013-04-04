@@ -6,9 +6,9 @@ class Squirrelforce  < Salesforce
 	def self.unleash_squirrel(access_token, submission_deliverable_id)
 
 		deliverable = query_salesforce(access_token, "select Id, Name, Language__c, 
-			URL__c, Challenge_Participant__c, Challenge_Participant__r.Member__r.Name 
-			Challenge_Participant__r.Challenge__r.Id, Challenge_Participant__r.Challenge__r.Challenge_Id__c,
-			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")		
+			URL__c, Challenge_Participant__c, Challenge_Participant__r.Member__r.Name,
+			Challenge_Participant__r.Challenge__r.Id, Challenge_Participant__r.Challenge__r.Challenge_Id__c
+			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")	
 
 		#rename the key from laugnage to type for rabbitmq
 		deliverable = Forcifier::JsonMassager.deforce_json(deliverable.first)
@@ -25,7 +25,8 @@ class Squirrelforce  < Salesforce
 		q.publish(deliverable.to_json)
 		b.stop
 		deliverable
-
+  rescue Exception => e
+    Rails.logger.fatal "[FATAL][SQUIRRELFORCE] Error unleasing squirrel for #{submission_deliverable_id}: #{e.message}" 
 	end
 
 	def self.reserve_server(access_token, membername)
