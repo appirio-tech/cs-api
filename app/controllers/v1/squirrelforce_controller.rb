@@ -15,4 +15,8 @@ class V1::SquirrelforceController < V1::ApplicationController
     expose Squirrelforce.release_server(admin_oauth_token, params[:reservation_id])
   end
 
+  def papertrail_system
+    expose Squirrelforce.papertrail_system(params[:participant_id])
+  end
+
 end

@@ -77,6 +77,7 @@ CsApi::Application.routes.draw do
 		match "/squirrelforce/reserve_server" => "squirrelforce#reserve_server", :via => :get
 		match "/squirrelforce/release_server" => "squirrelforce#release_server", :via => :get
 		match "/squirrelforce/unleash_squirrel/:submission_deliverable_id" => "squirrelforce#unleash_squirrel", :via => :get
+		match "/squirrelforce/system/:participant_id" => "squirrelforce#papertrail_system", :via => :get
 
 		# judging
 		match "/judging" => "judging#queue", :via => :get

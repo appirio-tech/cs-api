@@ -56,4 +56,13 @@ class Squirrelforce  < Salesforce
 		destroy_in_salesforce(access_token, 'Reservation__c', reservation_id)
 	end	
 
+	def self.papertrail_system(participant_id)
+  	auth = {
+  		:username => ENV['PAPERTRAIL_DIST_USERNAME'], 
+  		:password => ENV['PAPERTRAIL_DIST_PASSWORD']
+  	}
+		HTTParty::get("https://papertrailapp.com/api/v1/distributors/systems/#{participant_id}",
+			:basic_auth => auth).parsed_response
+	end		
+
 end
