@@ -27,8 +27,6 @@ class Challenge < Salesforce
     {:success => results['success'], :challenge_id => challenge_id, 
       :errors => results['errors']}
   rescue Exception => e
-    puts results.to_yaml
-    puts e.to_yaml
     {:success => 'false', :challenge_id => challenge_id, :errors => e.message} 
   end   
 
