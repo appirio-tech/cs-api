@@ -1,6 +1,10 @@
 include ActionController::HttpAuthentication::Token::ControllerMethods
+require 'new_relic/agent/instrumentation/rails3/action_controller'
 
 class V1::ApplicationController < RocketPants::Base
+
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  include NewRelic::Agent::Instrumentation::Rails3::ActionController  
 
 	before_filter :set_oauth_token
 
