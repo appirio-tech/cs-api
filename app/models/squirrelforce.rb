@@ -7,7 +7,7 @@ class Squirrelforce  < Salesforce
 
 		deliverable = query_salesforce(access_token, "select Id, Name, Language__c, 
 			URL__c, Challenge_Participant__c, Challenge_Participant__r.Member__r.Name,
-			Challenge_Participant__r.Challenge__r.Id, Challenge_Participant__r.Challenge__r.Challenge_Id__c
+			Challenge_Participant__r.Challenge__r.Challenge_Id__c
 			from Submission_Deliverable__c where id = '#{submission_deliverable_id}'")	
 
 		#rename the key from laugnage to type for rabbitmq
@@ -16,6 +16,7 @@ class Squirrelforce  < Salesforce
 		deliverable.rename_key!('language','type')
 		# make the membername a little easier to work with
 		deliverable['membername'] = deliverable['challenge_participant__r']['member__r']['name']
+		deliverable['challenge_id'] = deliverable['challenge_participant__r']['challenge__r']['challenge_id']
 		# remove the old key
 		deliverable.remove_key!('challenge_participant__r')
 
