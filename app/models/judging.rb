@@ -8,7 +8,7 @@ class Judging  < Salesforce
 		begin
 
 			# mark the scorecard as rejected
-			if options[:delete_scorecard]
+			if options[:delete_scorecard] == 'true'
 		    update_in_salesforce(access_token, 'Challenge_Participant__c', {'id' => participant_id, 
 		      'Has_Submission__c' => false, 'Status__c' => 'Submission Rejected'})
 		    results_hash = {:success => true, :message => 'Scorecard marked as invalid and submission rejected.'}	
@@ -21,7 +21,7 @@ class Judging  < Salesforce
 				end
 				results_hash = {:success => true, :message => 'Scorecard has been saved successfully.'}	
 
-				if options[:scored]
+				if options[:scored] == 'true'
 					# get the id of the scorecard for this member and judge
 					scorecard = query_salesforce(access_token, "select id from QwikScore_Scorecard__c 
 						where Challenge_Participant__c = '#{participant_id}' and 
