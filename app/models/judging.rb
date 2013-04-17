@@ -51,6 +51,8 @@ class Judging  < Salesforce
 	end
 
 	def self.outstanding_scorecards_by_member(access_token, membername)
+    # set_header_token(access_token) 
+    # get_apex_rest("/scorecard/#{participant_id}?reviewer=#{judge_membername}")
 		query_salesforce(access_token, "select id, challenge_participant__c, challenge_participant__r.challenge__r.name, 
 	    challenge_participant__r.member__r.name, challenge_participant__r.member__r.profile_pic__c, 
 	    challenge_participant__r.submitted_date__c,
@@ -68,14 +70,14 @@ class Judging  < Salesforce
 			(select display_name__c from challenge_categories__r),
 			(select name__c from challenge_platforms__r),
 			(select name__c from challenge_technologies__r) 
-			from Challenge__c where community_judging__c = true and status__c IN ('Created','Submission','Review')
+			from Challenge__c where community_judging__c = true and status__c IN ('Open for Submissions','Review')
 			and number_of_reviewers__c < 3 order by end_date__c")
 	end
 
 	def self.add(access_token, challenge_id, membername)
 
 		# make sure the challenge is in the right status
-		challenge_status = query_salesforce(access_token, "select id from challenge__c where status__c IN ('Planned','Created','Review') 
+		challenge_status = query_salesforce(access_token, "select id from challenge__c where status__c IN ('Draft','Open for Submissions','Review') 
 			and challenge_id__c = '#{challenge_id}'")		
 		# make sure all of the judging spots haven't been filled yet
 		total_judges = query_salesforce(access_token, "select id from challenge_reviewer__c 
