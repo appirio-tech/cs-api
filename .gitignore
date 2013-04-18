@@ -17,5 +17,6 @@
 config/initializers/development_settings.rb
 .env
 .env-production
+.env-sandbox
 coverage
 rspec-notes.txt

@@ -9,7 +9,9 @@ CsApi::Application.configure do
   config.action_controller.perform_caching = true
 
   # The underlying cache store to use.
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"].split(","),
+    {:username => ENV["MEMCACHIER_USERNAME"],
+    :password => ENV["MEMCACHIER_PASSWORD"]}
 
  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
