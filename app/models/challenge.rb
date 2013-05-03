@@ -81,7 +81,7 @@ class Challenge < Salesforce
 
   def self.submission_deliverables(access_token, challenge_id)  
     set_header_token(access_token) 
-    get_apex_rest("/submissions?challengeid=#{challenge_id}&fields=id,name,challenge__r.name,url__c,comments__c,type__c,username__c,challenge_participant__r.place__c&orderby=username__c")
+    get_apex_rest("/submissions?challengeid=#{challenge_id}&fields=id,name,challenge__r.name,url__c,comments__c,type__c,username__c,challenge_participant__r.place__c,challenge_participant__c&orderby=username__c")
   end  
 
   def self.scorecard(access_token, challenge_id)  
