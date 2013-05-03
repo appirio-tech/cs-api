@@ -81,7 +81,7 @@ class V1::DeliverablesController < V1::ApplicationController
   # This will go away with the new submission process
   # 
   def find
-    expose Deliverable.find(@oauth_token, params[:submission_id])  
+    expose Deliverable.find(admin_oauth_token, params[:submission_id])  
   end  
 
 end
