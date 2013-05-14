@@ -21,10 +21,26 @@ class V1::LeaderboardController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
+  # DEPRECATED - NO LONGER NEEDED
 	def public
 		expose Leaderboard.public(@oauth_token, :period => params[:period] || nil, 
       :category => params[:category] || nil, :limit => params[:limit] || 1000)
 	end
+
+  #
+  # Returns the current public leaderbaord in a group with all 3 types.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - limit -> the limit of records to return -- may not 
+  #   work correctly as expected.
+  # * *Returns* :
+  #   - JSON an array leaderboard objects
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def public_all
+    expose Leaderboard.public_all(@oauth_token, :limit => params[:limit] || 1000)
+  end  
 
   #
   # Returns the referral leaderboard.
