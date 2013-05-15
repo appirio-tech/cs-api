@@ -103,6 +103,20 @@ class V1::ChallengesController < V1::ApplicationController
 	end	
 
   #
+  # Performs advanced search
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - keyword -> a series of search parameters
+  # * *Returns* :
+  #   - JSON an array of challenges 
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def advsearch
+    expose Challenge.advsearch(@oauth_token, params)
+  end    
+
+  #
   # Performs simple, keyword search against open challenges
   # * *Args*    :
   #   - access_token -> the oauth token to use

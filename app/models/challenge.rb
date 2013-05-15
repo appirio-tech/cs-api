@@ -122,6 +122,14 @@ class Challenge < Salesforce
     get_apex_rest("/challengeslist?#{params.to_param}")
   end
 
+  def self.advsearch(access_token, params)  
+    set_header_token(access_token) 
+    # remove a few unwanted keys
+    params.remove_key!('controller')
+    params.remove_key!('action')
+    get_apex_rest("/advchallengesearch?#{params.to_param}")
+  end    
+
   #
   # Performs a simple, name-only, keyword search against open challenges
   # * *Args*    :
