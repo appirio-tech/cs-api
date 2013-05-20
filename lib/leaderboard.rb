@@ -6,7 +6,7 @@ class Leaderboard < Salesforce
   #   - access_token -> the oauth token to use
   #   - options -> a hash with the period to select, category and limit
   # * *Returns* :
-  #   - JSON containing a collection of members with their leaderboard scores
+  #   - JSON containing a collection of members with their leaderboard score
   # * *Raises* :
   #   - ++ ->
   #   
