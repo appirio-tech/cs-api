@@ -48,9 +48,6 @@ class Salesforce
   #   - ++ ->
   #  
   def self.get_apex_rest(url_string, version='v.9')
-    puts "================="
-    puts ENV['SFDC_APEXREST_ROOT_URL']+"/#{version}#{url_string}"
-    puts "================="
     Forcifier::JsonMassager.deforce_json(get(ENV['SFDC_APEXREST_ROOT_URL']+"/#{version}#{url_string}"))
   end  
 
