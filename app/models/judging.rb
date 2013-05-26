@@ -51,17 +51,8 @@ class Judging  < Salesforce
 	end
 
 	def self.outstanding_scorecards_by_member(access_token, membername)
-    # set_header_token(access_token) 
-    # get_apex_rest("/scorecard/#{participant_id}?reviewer=#{judge_membername}")
-		query_salesforce(access_token, "select id, challenge_participant__c, challenge_participant__r.challenge__r.name, 
-	    challenge_participant__r.member__r.name, challenge_participant__r.member__r.profile_pic__c, 
-	    challenge_participant__r.submitted_date__c,
-	    challenge_participant__r.score__c, total_raw_score__c, challenge_participant__r.challenge__r.challenge_id__c 
-	    from qwikscore_scorecard__c 
-	    where reviewer__r.name = '"+membername+"' and scored__c = false 
-	    and challenge_participant__r.has_submission__c = true
-	    order by challenge_participant__r.challenge__r.end_date__c, challenge_participant__r.challenge__r.name, 
-	    Total_Raw_Score__c desc, challenge_participant__r.submitted_date__c")
+    set_header_token(access_token) 
+    get_apex_rest("/members/#{membername}/outstandingscorecards", 'v1')
 	end	
 
 	def self.queue(access_token)
