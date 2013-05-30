@@ -1,13 +1,13 @@
 class V1::ChallengesController < V1::ApplicationController
   jsonp
 
-	before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables, :comment]
+  before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables, :comment]
 
-	# inherit from actual challenge model. Challenges in this controller uses the
-	# subclass so we can overrid any functionality for this version of api.
-	class Challenge < ::Challenge
+  # inherit from actual challenge model. Challenges in this controller uses the
+  # subclass so we can overrid any functionality for this version of api.
+  class Challenge < ::Challenge
 
-	end	
+  end	
 
   #
   # Returns a specific challange, categories, prizes and terms
@@ -20,13 +20,13 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ -> 404 if not found or hidden
   #  	
-	def find
-		challenge = Challenge.find(@oauth_token, params[:challenge_id].strip, 
+  def find
+    challenge = Challenge.find(@oauth_token, params[:challenge_id].strip, 
       params[:admin] ||= false)
-		error! :not_found unless challenge
+    error! :not_found unless challenge
     error! :not_found if challenge['status'].downcase == 'hidden'
-		expose challenge
-	end					
+    expose challenge
+  end					
 
   #
   # Returns all currently open or closed challenges
@@ -65,11 +65,11 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  	
-	def recent
-		expose Challenge.recent(@oauth_token,
+  def recent
+    expose Challenge.recent(@oauth_token,
       params[:limit] ||= 25,
       params[:offset] ||= 0)
-	end		
+  end		
 
   #
   # Creates a new challenge
@@ -82,9 +82,9 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  	
-	def create
-		expose Challenge.create(@oauth_token, params[:data])
-	end			
+  def create
+    expose Challenge.create(@oauth_token, params[:data])
+  end			
 
   #
   # Updates an existing challenge
@@ -97,10 +97,10 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  	
-	def update
-		expose Challenge.update(@oauth_token, params[:challenge_id].strip,
-			params[:data])
-	end	
+  def update
+    expose Challenge.update(@oauth_token, params[:challenge_id].strip,
+      params[:data])
+  end	
 
   #
   # Performs advanced search
@@ -140,9 +140,9 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  	
-	def participants
-		expose Challenge.participants(@oauth_token, params[:challenge_id].strip)
-	end			
+  def participants
+    expose Challenge.participants(@oauth_token, params[:challenge_id].strip)
+  end			
 
   #
   # Returns a collection of scorecards for a challenge
@@ -183,9 +183,9 @@ class V1::ChallengesController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def comments
-		expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
-	end		
+  def comments
+    expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
+  end		
 
   # Creates a new discussion board comment for the challenge
   # * *Args*    :
