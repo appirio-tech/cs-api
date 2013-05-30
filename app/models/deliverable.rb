@@ -14,7 +14,8 @@ class Deliverable < Salesforce
   def self.all(access_token, membername, challenge_id) 
     query_salesforce(access_token, "select Id, Type__c, Comments__c, Username__c, Password__c, Language__c, 
       URL__c, Hosting_Platform__c from Submission_Deliverable__c 
-      where Challenge_Participant__r.Member__r.Name = '#{membername}' and 
+      where Deleted__c = false and 
+      Challenge_Participant__r.Member__r.Name = '#{membername}' and 
       Challenge_Participant__r.Challenge__r.Challenge_Id__c = '#{challenge_id}'")
   end 
 
@@ -34,7 +35,7 @@ class Deliverable < Salesforce
   def self.update(access_token, data)
     update_in_salesforce(access_token, 'Submission_Deliverable__c', 
       Forcifier::JsonMassager.enforce_json(data))
-  end        
+  end
 
   # this will go away with the new submissions process
   def self.current_submssions(access_token, membername, challenge_id) 
