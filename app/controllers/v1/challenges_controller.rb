@@ -67,7 +67,10 @@ class V1::ChallengesController < V1::ApplicationController
   #  	
   def recent
     expose Challenge.recent(@oauth_token,
-      params[:limit] ||= 25,
+      params[:technology] ||= nil, 
+      params[:platform] ||= nil, 
+      params[:category] ||= nil,
+      params[:limit] ||= 25,       
       params[:offset] ||= 0)
   end		
 
