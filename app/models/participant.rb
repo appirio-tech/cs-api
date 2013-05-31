@@ -1,4 +1,5 @@
 class Participant < Salesforce
+  require 'uri' 
 
   def self.find(access_token, participant_id)  
     query_salesforce(access_token, "select Id, Member__c, Member__r.name, 
@@ -47,11 +48,11 @@ class Participant < Salesforce
     fields['username'] = membername
     fields['challengeid'] = challenge_id
     #add all of the fields to the body of the post request
-		options = {
-		  :body => fields
-		}	    		
-		results = post(ENV['SFDC_APEXREST_URL']+'/participants', options)	
-		{:success => results['Success'], :message => results['Message']}
+    options = {
+      :body => fields
+    }	    		
+    results = post(ENV['SFDC_APEXREST_URL']+'/participants', options)	
+    {:success => results['Success'], :message => results['Message']}
   end	
 
   #
@@ -71,7 +72,7 @@ class Participant < Salesforce
     # enforce the fields names
     fields = Forcifier::JsonMassager.enforce_json(fields)
     # create nvp to pass as part of the url    
-    field_nvp = fields.map{|k,v| "#{k}=#{v}"}.join('&')  
+    field_nvp = fields.map{|k,v| "#{k}=#{URI.escape(v)}"}.join('&')  
     results = put(ENV['SFDC_APEXREST_URL'] +
     	"/participants/#{esc membername}?challengeid=#{challenge_id}&#{field_nvp}")
     {:success => results['Success'], :message => results['Message']}
