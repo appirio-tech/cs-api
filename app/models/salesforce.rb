@@ -163,4 +163,21 @@ class Salesforce
     {:success => false, :message => e.message}   
   end 
 
+  #
+  # Makes generic destroy to delete a records in salesforce
+  # * *Args*    :
+  #   - sobject -> the sObject to create
+  #   - id -> the id of the record to delete
+  # * *Returns* :
+    #   - a hash containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.picklist_values(access_token, sobject, field)
+    restforce_client(access_token).picklist_values(sobject, field)
+  rescue Exception => e
+    puts "[FATAL][Salesforce] Exception getting picklist values: #{e.message}" 
+    {:success => false, :message => e.message}   
+  end   
+
 end
