@@ -1,12 +1,12 @@
 class V1::ParticipantsController < V1::ApplicationController
 
-	before_filter :restrict_access
+  before_filter :restrict_access
 
-	# inherit from actual participant model. Participants in this controller uses the
-	# subclass so we can overrid any functionality for this version of api.
-	class Participant < ::Participant
+  # inherit from actual participant model. Participants in this controller uses the
+  # subclass so we can overrid any functionality for this version of api.
+  class Participant < ::Participant
 
-	end	
+  end	
 
   #
   # Returns a specific participant
@@ -37,10 +37,10 @@ class V1::ParticipantsController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def current_status
-		expose Participant.status(@oauth_token, params[:membername].strip,
-			params[:challenge_id].strip)
-	end			
+  def current_status
+    expose Participant.status(@oauth_token, params[:membername].strip,
+      params[:challenge_id].strip)
+  end			
 
   #
   # Creates a new challenge_participant record
@@ -56,10 +56,10 @@ class V1::ParticipantsController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def create
-		expose Participant.create(@oauth_token, params[:membername].strip,
-			params[:challenge_id].strip, params[:fields])
-	end			
+  def create
+    expose Participant.create(@oauth_token, params[:membername].strip,
+      params[:challenge_id].strip, params[:fields])
+  end			
 
   #
   # Updates an existing challenge_participant record
@@ -73,9 +73,10 @@ class V1::ParticipantsController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def update
-		expose Participant.update(@oauth_token, params[:membername].strip,
-			params[:challenge_id].strip, params[:fields])
-	end				
+  def update
+    puts params[:fields]
+    expose Participant.update(@oauth_token, params[:membername].strip,
+      params[:challenge_id].strip, params[:fields])
+  end				
 
 end
