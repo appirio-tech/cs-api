@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-gem 'restforce'
+gem 'restforce', '1.0.4'
 gem 'forcifier', git: 'git://github.com/jeffdonthemic/forcifier.git'
 gem 'rocket_pants', '~> 1.0'
 gem 'httparty'
