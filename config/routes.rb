@@ -97,6 +97,14 @@ CsApi::Application.routes.draw do
     match "/platforms" => "platforms#all", :via => :get	
     match "/technologies" => "technologies#all", :via => :get			
     match "/categories" => "categories#all", :via => :get	
+
+    # platform metadata
+    # match "/stats" => "metadata#stats", :via => :get
+    # match "/platforms" => "metadata#platforms", :via => :get    
+    # match "/technologies" => "metadata#technologies", :via => :get          
+    # match "/categories" => "metadata#categories", :via => :get
+    match "/metadata/participant" => "metadata#participant", :via => :get
+
     match "/tos" => "tos#all", :via => :get		
     match "/tos/:id" => "tos#find", :via => :get		
 
