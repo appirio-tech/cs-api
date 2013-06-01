@@ -1,6 +1,6 @@
 class V1::AccountsController < V1::ApplicationController
 
-	before_filter :restrict_access
+  before_filter :restrict_access
 
   #
   # Post method to create a new member in db.com and send welcome email
@@ -175,7 +175,7 @@ class V1::AccountsController < V1::ApplicationController
   #
   # Updates the marketing info for a member
   # * *Args*    :
-  #   - access_token -> the oauth token to use -- ALWAYS USES ADMIN TOKEN FOR SECURITY
+  #   - admin_oauth_token -> the oauth token to use -- ALWAYS USES ADMIN TOKEN FOR SECURITY
   #   - membername -> the cloudspokes member name (mess) to set the referral fro
   #   - params -> params containing the marketing info to update
   # * *Returns* :
@@ -185,6 +185,20 @@ class V1::AccountsController < V1::ApplicationController
   #  
   def apply_marketing_info
     expose Account.apply_marketing_info(admin_oauth_token, params[:membername], params)
-  end    
+  end   
+
+  #
+  # Returns member & account info based
+  # * *Args*    :
+  #   - admin_oauth_token -> the oauth token to use -- ALWAYS USES ADMIN TOKEN FOR SECURITY
+  #   - params -> params containing either the email or member name
+  # * *Returns* :
+  #   - JSON containing the member info
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def whois
+    expose Account.whois(admin_oauth_token, params)
+  end   
 
 end

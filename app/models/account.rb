@@ -1,6 +1,31 @@
 class Account < Salesforce
 
   #
+  # Changes member's password in salesforce if CloudSpokes is managing their account.
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the cloudspokes member name (mess) to reset
+  #   - new_password -> the new password to change their account to
+  # * *Returns* :
+  #   - JSON containing the following keys: success, message
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.whois(access_token, params)
+    return whois_query(access_token, "name = '#{params[:membername]}'") if params[:membername]
+    return whois_query(access_token, "email__c = '#{params[:email]}'") if params[:email]
+    return {:success => 'false', :message => 'Parameters must include either membername or email.'} unless params[:membername] || params[:email]
+  end   
+
+  def self.whois_query(access_token, where_clause)
+    query_salesforce(access_token, "select id, name, createddate, email__c, 
+      first_name__c, last_name__c, sfdc_user__c, challenges_entered__c, account__r.name,
+      time_zone__c, total_money__c, total_points__c, profile_pic__c, account__c, 
+      total_wins__c, login_managed_by__c, active_challenges__c from member__c
+      where #{where_clause}")    
+  end
+
+  #
   # Uses the restforce gem to authenticates a user 
   # with sfdc and return a session token
   # * *Args*    :
