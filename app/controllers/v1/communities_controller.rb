@@ -7,7 +7,9 @@ class V1::CommunitiesController < V1::ApplicationController
   end	
 
   def find
-    expose Community.find(@oauth_token, params[:community_id])
+    community =  Community.find(@oauth_token, params[:community_id])
+    error! :not_found unless community
+    expose community
   end
 
   def add_member
