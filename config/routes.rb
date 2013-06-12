@@ -92,18 +92,12 @@ CsApi::Application.routes.draw do
     match "/leaderboard" => "leaderboard#public", :via => :get
     match "/leaderboard_all" => "leaderboard#public_all", :via => :get
     match "/leaderboard/referral" => "leaderboard#referral", :via => :get
-    # stats
-    match "/stats" => "stats#public", :via => :get
-    # misc
-    match "/platforms" => "platforms#all", :via => :get	
-    match "/technologies" => "technologies#all", :via => :get			
-    match "/categories" => "categories#all", :via => :get	
 
     # platform metadata
-    # match "/stats" => "metadata#stats", :via => :get
-    # match "/platforms" => "metadata#platforms", :via => :get    
-    # match "/technologies" => "metadata#technologies", :via => :get          
-    # match "/categories" => "metadata#categories", :via => :get
+    match "/stats" => "metadata#stats", :via => :get
+    match "/platforms" => "metadata#platforms", :via => :get    
+    match "/technologies" => "metadata#technologies", :via => :get          
+    match "/categories" => "metadata#categories", :via => :get
     match "/metadata/participant" => "metadata#participant", :via => :get
 
     match "/tos" => "tos#all", :via => :get		
