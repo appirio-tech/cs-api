@@ -17,8 +17,12 @@ class Member < Salesforce
   #   - ++ ->
   #   
   def self.all(access_token, fields, order_by, limit, offset) 
+    start = Time.now
+    puts "[DEBUG] starting member#all"
     set_header_token(access_token) 
-    get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}")
+    results = get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}")
+    puts "[DEBUG] ending member#all == #{Time.now - start}"
+    results
   end
 
   #
@@ -73,8 +77,12 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.find_by_membername(access_token, membername, fields)
+    start = Time.now
+    puts "[DEBUG] starting member#find_by_membername"
     set_header_token(access_token) 
-    get_apex_rest("/members/#{esc membername}?fields=#{esc fields}")
+    results = get_apex_rest("/members/#{esc membername}?fields=#{esc fields}")
+    puts "[DEBUG] ending member#find_by_membername == #{Time.now - start}"
+    results
   end
 
   #
@@ -88,8 +96,12 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.challenges(access_token, membername)
+    start = Time.now
+    puts "[DEBUG] starting member#challenges"
     set_header_token(access_token)
-    get_apex_rest("/members/#{esc membername}/challenges")
+    results = get_apex_rest("/members/#{esc membername}/challenges")
+    puts "[DEBUG] ending member#challenges == #{Time.now - start}"
+    results
   end
 
   #

@@ -6,7 +6,7 @@ class V1::ApplicationController < RocketPants::Base
   include NewRelic::Agent::Instrumentation::ControllerInstrumentation
   include NewRelic::Agent::Instrumentation::Rails3::ActionController  
 
-	before_filter :set_oauth_token
+  before_filter :set_oauth_token
 
   # initiliaze default fields for CloudSpokes API request -- include '__c' for each field
   DEFAULT_MEMBER_FIELDS         = 'id,name,school__c,years_of_experience__c,gender__c,time_zone__c,profile_pic__c,country__c,summary_bio__c,quote__c,challenges_entered__c,total_public_money__c,website__c,twitter__c,linkedin__c,icq__c,jabber__c,github__c,facebook__c,digg__c,myspace__c,total_wins__c,total_points__c,total_1st_place__c,total_2nd_place__c,total_3st_place__c,valid_submissions__c,badgeville_id__c,active_challenges__c'
@@ -19,6 +19,9 @@ class V1::ApplicationController < RocketPants::Base
   # to be used for all requests to db.com. If not found, it uses the
   # public oauth_token for all requests to db.com.
   def set_oauth_token
+    @request_start = Time.now
+    puts "[DEBUG] ================= NEW REQUEST =================  "
+    puts "[DEBUG] starting set_oauth_token"
     # use the access token if sent in the headers
     if request.headers['oauth_token']     
       puts "[INFO][Application] Using passed oauth token"      
@@ -29,15 +32,18 @@ class V1::ApplicationController < RocketPants::Base
       puts "[INFO][Application] Fetching new oauth token"
       @oauth_token = public_oauth_token
     end
+    puts "[DEBUG] ending set_oauth_token"
   end
 
   # Checks for the api_key passed in the header. If the api_key
   # from the header is found in the local database then access
   # is granted to the route. If not, returns a 401.
   def restrict_access
+    puts "[DEBUG] starting restrict_access"
     puts "[INFO][Application] Checking for API key"
     authorized = ApiKey.exists?(access_key: api_key_from_header)
     puts "[INFO][Application] Access authorized? #{authorized}"
+    puts "[DEBUG] ending restrict_access"
     error! :unauthenticated if !authorized
   end   
 
@@ -61,6 +67,7 @@ class V1::ApplicationController < RocketPants::Base
     # parses the api_key from the Authorization request header:
     # request.env['Authorization'] = 'Token token="THIS-IS-MY-TOKEN"'
     def api_key_from_header
+      puts "[DEBUG] starting api_key_from_header"
       token = ''
       if request.headers['Authorization'] 
         begin 
@@ -68,6 +75,7 @@ class V1::ApplicationController < RocketPants::Base
         rescue
         end
       end
+      puts "[DEBUG] ending api_key_from_header"
       token
     end
 

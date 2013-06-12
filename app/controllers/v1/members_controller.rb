@@ -1,14 +1,14 @@
 class V1::MembersController < V1::ApplicationController
   jsonp
 
-	before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, 
+  before_filter :restrict_access, :only => [:update, :payments, :recommendation_create, 
     :referrals, :login_type]
 
-	# inherit from actual member model. Members in this controller uses the
-	# subclass so we can overrid any functionality for this version of api.
-	class Member < ::Member
+  # inherit from actual member model. Members in this controller uses the
+  # subclass so we can overrid any functionality for this version of api.
+  class Member < ::Member
 
-	end	
+  end	
 
   #
   # Returns all members.
@@ -26,13 +26,17 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def index
-		expose Member.all(@oauth_token, 
+  def index
+    start = Time.now
+    puts "[DEBUG] starting member_controller#index"
+    expose Member.all(@oauth_token, 
       index_fields, 
       index_order_by,       
       params[:limit] ||= 25,
       params[:offset] ||= 0)
-	end
+    puts "[DEBUG] ending member_controller#index == #{Time.now - start}"
+    puts "[DEBUG] total request time == #{Time.now - @request_start}"
+  end
 
   #
   # Updates a member in sfdc
@@ -61,9 +65,9 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def search
-		expose Member.search(@oauth_token, params[:keyword], search_fields)
-	end
+  def search
+    expose Member.search(@oauth_token, params[:keyword], search_fields)
+  end
 
   #
   # Returns all data for the specified user. This includes their member info,
@@ -78,11 +82,15 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def find_by_membername
-		member = Member.find_by_membername(@oauth_token, params[:membername], find_by_membername_fields).first
-		error! :not_found unless member
-		expose member
-	end
+  def find_by_membername
+    start = Time.now
+    puts "[DEBUG] starting member_controller#find_by_membername"
+    member = Member.find_by_membername(@oauth_token, params[:membername], find_by_membername_fields).first
+    error! :not_found unless member
+    expose member
+    puts "[DEBUG] ending member_controller#find_by_membername == #{Time.now - start}"
+    puts "[DEBUG] total request time == #{Time.now - @request_start}"
+  end
 
   #
   # Returns all of the challenges that a member has been involved in
@@ -95,7 +103,11 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   # 
   def challenges
+    start = Time.now
+    puts "[DEBUG] starting member_controller#challenges"
     expose Member.challenges(@oauth_token, params[:membername])
+    puts "[DEBUG] ending member_controller#challenges == #{Time.now - start}"
+    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end   
 
   #
@@ -128,9 +140,9 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   # 
-	def payments
-		expose Member.payments(@oauth_token, params[:membername], payments_fields, payments_order_by)
-	end	
+  def payments
+    expose Member.payments(@oauth_token, params[:membername], payments_fields, payments_order_by)
+  end	
 
   #
   # Returns the login type for a member
@@ -158,9 +170,9 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def recommendations
-		expose Member.recommendations(@oauth_token, params[:membername], recommendations_fields)
-	end
+  def recommendations
+    expose Member.recommendations(@oauth_token, params[:membername], recommendations_fields)
+  end
 
   #
   # Creates a recommendation for the specified member
@@ -174,10 +186,10 @@ class V1::MembersController < V1::ApplicationController
   # * *Raises* :
   #   - ++ ->
   #  
-	def recommendation_create
-		expose Member.recommendation_create(@oauth_token, params[:membername], 
-			params[:recommendation_from_username], params[:recommendation_text])
-	end
+  def recommendation_create
+    expose Member.recommendation_create(@oauth_token, params[:membername], 
+      params[:recommendation_from_username], params[:recommendation_text])
+  end
 
   #
   # Returns all member referrals for a member
@@ -193,34 +205,34 @@ class V1::MembersController < V1::ApplicationController
     expose Member.referrals(@oauth_token, params[:membername])
   end   
 
-	protected
+  protected
 
-		def index_fields
-			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
-		end
+    def index_fields
+      params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
+    end
 
-		def index_order_by
+    def index_order_by
       enforce_order_by_params(params[:order_by], 'total_wins__c')
-		end
+    end
 
     def find_by_membername_fields
       params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_MEMBER_FIELDS
     end    
 
-		def search_fields
-			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
-		end
+    def search_fields
+      params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : MEMBER_SEARCH_FIELDS
+    end
 
-		def payments_fields
-			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_PAYMENT_FIELDS
-		end		
+    def payments_fields
+      params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_PAYMENT_FIELDS
+    end		
 
-		def payments_order_by
+    def payments_order_by
       enforce_order_by_params(params[:order_by], 'id')
-		end				
+    end				
 
-		def recommendations_fields
-			params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_RECOMMENDATION_FIELDS			
-		end		
+    def recommendations_fields
+      params[:fields] ? Forcifier::FieldMassager.enforce_fields(params[:fields]) : DEFAULT_RECOMMENDATION_FIELDS			
+    end		
 
 end

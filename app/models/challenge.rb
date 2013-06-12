@@ -44,7 +44,9 @@ class Challenge < Salesforce
       :errors => results['errors']}
   end  
 
-  def self.find(access_token, challenge_id, for_admin)  
+  def self.find(access_token, challenge_id, for_admin) 
+    start = Time.now
+    puts "[DEBUG] starting challenge#find"
     set_header_token(access_token) 
     fetch_comments = for_admin ? '' : '?comments=true'
     challenge = get_apex_rest("/challenges/#{challenge_id}#{fetch_comments}").first
@@ -65,7 +67,7 @@ class Challenge < Salesforce
     unless challenge.nil?
       return nil if challenge.has_key?('errorcode')
     end
-
+    puts "[DEBUG] ending challenge#find == #{Time.now - start}"
     challenge
   end 
 
@@ -74,9 +76,13 @@ class Challenge < Salesforce
     get_apex_rest("/challenges/#{challenge_id}").first
   end 	
 
-  def self.participants(access_token, challenge_id)  
+  def self.participants(access_token, challenge_id)
+    start = Time.now
+    puts "[DEBUG] starting challenge#participants" 
     set_header_token(access_token) 
-    get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Public_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
+    results = get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Public_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
+    puts "[DEBUG] ending challenge#participants == #{Time.now - start}"
+    results
   end  	      
 
   def self.submission_deliverables(access_token, challenge_id)  
@@ -94,9 +100,13 @@ class Challenge < Salesforce
     get_apex_rest("/challenges/#{challenge_id}/scorecards?fields=id,name,member__r.name,member__r.profile_pic__c,member__r.country__c,challenge__c,money_awarded__c,prize_awarded__c,place__c,score__c,submitted_date__c")
   end        
 
-  def self.comments(access_token, challenge_id)  
+  def self.comments(access_token, challenge_id) 
+    start = Time.now
+    puts "[DEBUG] starting challenge#comments"  
     set_header_token(access_token) 
-    get_apex_rest("/comments/#{challenge_id}")
+    results = get_apex_rest("/comments/#{challenge_id}")
+    puts "[DEBUG] ending challenge#comments == #{Time.now - start}"
+    results
   end  	 
 
   def self.comment(access_token, data)
@@ -113,13 +123,17 @@ class Challenge < Salesforce
   end    
 
   def self.all(access_token, open, technology, platform, category, order_by, limit=25, offset=0) 
+    start = Time.now
+    puts "[DEBUG] starting challenge#all"  
     params = {:open => open, :orderby => order_by, :limit => limit, :offset => offset,
       :fields => 'Id,Challenge_Id__c,Name,Description__c,Total_Prize_Money__c,Challenge_Type__c,Days_till_Close__c,Registered_Members__c,Participating_Members__c,Start_Date__c,End_Date__c,Is_Open__c,Community__r.Name,Community__r.Community_Id__c'}
     params.merge!(:technology => technology) if technology
     params.merge!(:platform => platform) if platform
     params.merge!(:category => category) if category
     set_header_token(access_token)      
-    get_apex_rest("/challengeslist?#{params.to_param}")
+    results = get_apex_rest("/challengeslist?#{params.to_param}")
+    puts "[DEBUG] ending challenge#all == #{Time.now - start}"
+    results
   end
 
   def self.advsearch(access_token, params)  
