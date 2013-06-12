@@ -105,7 +105,7 @@ CsApi::Application.routes.draw do
 
   end  
 
-  root :to => redirect("http://www.cloudspokes.com")
+  root :to => redirect("http://iodocs.cloudspokes.com/")
 
   mount_sextant if Rails.env.development? # https://github.com/schneems/sextant
 
