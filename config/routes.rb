@@ -5,7 +5,8 @@ CsApi::Application.routes.draw do
     # members
     match "/members" => "members#index", :via => :get
     match "/members/search" => "members#search", :via => :get 
-    match "/members/:membername/challenges" => "members#challenges", :via => :get	  
+    match "/members/:membername/challenges" => "members#challenges", :via => :get
+    match "/members/:membername/challenges/past" => "members#past_challenges", :via => :get   
     match "/members/:membername/challenges_as_admin" => "members#challenges_as_admin", :via => :get	  		
     match "/members/:membername/payments" => "members#payments", :via => :get
     match "/members/:membername/referrals" => "members#referrals", :via => :get

@@ -106,6 +106,27 @@ class Member < Salesforce
   end
 
   #
+  # Returns a collection of past challenges a member has ever been involved in
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - membername -> the member to return the challenges for
+  #   - offset -> the offset for the query locator
+  # * *Returns* :
+  #   - JSON containing a collection of challenges
+  # * *Raises* :
+  #   - ++ ->
+  #  
+  def self.past_challenges(access_token, membername, offset)
+    start = Time.now
+    puts "[DEBUG] starting member#past_challenges"
+    set_header_token(access_token)
+    results = get_apex_rest("/members/#{esc membername}/challenges/past", 'v1')
+    puts "[DEBUG] ending member#past_challenges == #{Time.now - start}"
+    puts "************ MEMBER PAST CHALLENGES ************ "
+    results
+  end  
+
+  #
   # Returns all of the challenges the member has been judge, 
   # contact or notifier
   # * *Args*    :
