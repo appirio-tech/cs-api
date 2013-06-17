@@ -116,7 +116,7 @@ class Member < Salesforce
   # * *Raises* :
   #   - ++ ->
   #  
-  def self.past_challenges(access_token, membername, offset)
+  def self.past_challenges(access_token, membername, offset=0)
     start = Time.now
     puts "[DEBUG] starting member#past_challenges"
     set_header_token(access_token)
