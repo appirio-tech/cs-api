@@ -120,7 +120,7 @@ class Member < Salesforce
     start = Time.now
     puts "[DEBUG] starting member#past_challenges"
     set_header_token(access_token)
-    results = get_apex_rest("/members/#{esc membername}/challenges/past", 'v1')
+    results = get_apex_rest("/members/#{esc membername}/challenges/past?offset=#{offset}", 'v1')
     puts "[DEBUG] ending member#past_challenges == #{Time.now - start}"
     puts "************ MEMBER PAST CHALLENGES ************ "
     results
