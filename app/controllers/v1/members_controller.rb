@@ -123,7 +123,7 @@ class V1::MembersController < V1::ApplicationController
   def past_challenges
     start = Time.now
     puts "[DEBUG] starting member_controller#past_challenges"
-    expose Member.past_challenges(@oauth_token, params[:membername], params[:offset])
+    expose Member.past_challenges(@oauth_token, params[:membername], params[:offset] || 0)
     puts "[DEBUG] ending member_controller#past_challenges == #{Time.now - start}"
     puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end     
