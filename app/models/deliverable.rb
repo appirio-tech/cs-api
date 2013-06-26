@@ -51,6 +51,7 @@ class Deliverable < Salesforce
           :challenge_participant__c => challenge_participant_id(access_token, membername, challenge_id),
           :url__c => params[:link],
           :type__c => params[:type],
+          :language__c => params[:language],
           :comments__c => params[:comments]
       }
     }         
