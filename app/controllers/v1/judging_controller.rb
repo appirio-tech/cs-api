@@ -21,7 +21,7 @@ class V1::JudgingController < V1::ApplicationController
 
   def save_scorecard_for_participant
     expose Judging.save_scorecard_for_participant(@oauth_token, params[:id], 
-      params[:answers], params[:options])
+      params[:answers], params[:comments], params[:options])
   end
 
 end
