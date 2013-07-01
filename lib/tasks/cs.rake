@@ -24,3 +24,13 @@ desc "Calculate success probability for open, public challenges"
 task :run_health_check => :environment do
 	Challenge.run_health_check
 end
+
+desc "Runs the /misc-util REST service"
+task :run_misc_util => :environment do
+  access_token = '00DU0000000H5Ip!AQQAQM2rAq._VRll7dBIidskdoQtCqjx3y3N.Vh6HtJpc_s_21OHRtWT_CUG0CYBGdYebg4anI_44KOa_Z3W5nbEfkFtMruU'
+  counter = 0
+  while counter < 1151
+    puts "#{counter} -- #{Utility.run(access_token).to_s}"
+    counter += 1
+  end
+end
