@@ -110,6 +110,7 @@ class Challenge < Salesforce
   end  	 
 
   def self.comment(access_token, data)
+    set_header_token(access_token) 
     options = {
       :body => {
           :username => data[:membername],
