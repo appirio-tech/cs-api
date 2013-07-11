@@ -67,37 +67,15 @@ class Judging  < Salesforce
   end
 
   def self.add(access_token, challenge_id, membername)
-
-    # make sure the challenge is in the right status
-    challenge_status = query_salesforce(access_token, "select id from challenge__c where status__c IN ('Draft','Open for Submissions','Review') 
-      and challenge_id__c = '#{challenge_id}'")		
-    # make sure all of the judging spots haven't been filled yet
-    total_judges = query_salesforce(access_token, "select id from challenge_reviewer__c 
-      where challenge__r.challenge_id__c = '#{challenge_id}'")		
-    # find out if the member is a judge already
-    current_judge = query_salesforce(access_token, "select id from challenge_reviewer__c where member__r.name = '#{membername}' 
-      and challenge__r.challenge_id__c = '#{challenge_id}'")
-    # find out if the member is a participant already
-    current_participant = query_salesforce(access_token, "select id from challenge_participant__c where member__r.name = '#{membername}' 
-      and challenge__r.challenge_id__c = '#{challenge_id}'")
-
-    if challenge_status.count == 0
-      {:success => false, :message => 'Judges cannot be added at this time.'}	
-    elsif current_judge.count > 0
-      {:success => false, :message => 'Unable to add you as a judge. You are already a judge for this challenge.'}				
-    elsif current_participant.count > 0
-      {:success => false, :message => 'Unable to add you as a judge. You are already a participant on this challenge.'}
-    elsif total_judges.count == 3
-      {:success => false, :message => 'Unable to add you as a judge. There are already a maximum of three judges for this challenge.'}				
-    else
-      create_in_salesforce(access_token, 'Challenge_Reviewer__c', 
-        {'Challenge__c' => Challenge.salesforce_id(access_token, challenge_id), 
-        'Member__c' => Member.salesforce_member_id(access_token, membername)})
-      {:success => true, :message => 'Thank you! You are now a judge for this challenge.'}
-    end
-  rescue Exception => e
-    Rails.logger.fatal "[FATAL][Judging] Error adding judge: #{e.message}" 
-    {:success => false, :message => e.message} 
+    options = {
+      :body => {
+          :challenge_id => challenge_id,
+          :memberName => membername
+      }.to_json
+    }
+    set_header_token(access_token) 
+    results = post_apex_rest('/judging', options)
+    {:success => results['success'].to_bool, :message => results['message']}
   end
 
 end
