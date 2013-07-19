@@ -54,7 +54,7 @@ class V1::ChallengesController < V1::ApplicationController
       params[:platform] ||= nil, 
       params[:category] ||= nil, 
       enforce_order_by_params(params[:order_by], 'end_date__c'),
-      params[:limit] ||= 25,
+      params[:limit] ||= 50,
       params[:offset] ||= 0)
     puts "[DEBUG] ending challenge_controller#all == #{Time.now - start}"
     puts "[DEBUG] total request time == #{Time.now - @request_start}"
