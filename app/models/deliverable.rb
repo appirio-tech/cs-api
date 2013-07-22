@@ -65,7 +65,7 @@ class Deliverable < Salesforce
 
   def self.find(access_token, submission_id)
     query_salesforce(access_token, 
-      "select Id, Comments__c, Type__c, URL__c, Username__c 
+      "select Id, Comments__c, Type__c, URL__c, Username__c, Language__c
       from Challenge_Submission__c where id = '#{submission_id}'").first
   end
 
