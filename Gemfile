@@ -15,10 +15,6 @@ gem 'ratchetio', '~> 0.6.0'
 gem 'newrelic_rpm'
 gem 'rack-timeout', '0.1.0beta2'
 
-group :production do
-  gem 'pg'
-end
-
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.6'
