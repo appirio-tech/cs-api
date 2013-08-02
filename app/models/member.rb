@@ -127,25 +127,6 @@ class Member < Salesforce
   end  
 
   #
-  # Returns all of the challenges the member has been judge, 
-  # contact or notifier
-  # * *Args*    :
-  #   - access_token -> the oauth token to use
-  #   - membername -> the member to return the challenges for
-  # * *Returns* :
-  #   - JSON containing a collection of challenges
-  # * *Raises* :
-  #   - ++ ->
-  #  
-  def self.challenges_as_admin(access_token, membername) 
-    set_header_token(access_token)
-    get_apex_rest("/members/#{esc membername}/admin/challenges")
-  rescue Exception => e
-    puts "[FATAL][Member] Error fetching admin challenges for #{membername}: #{e.message}"     
-    raise e.message
-  end    
-
-  #
   # Returns a collection of all payments for a member
   # * *Args*    :
   #   - access_token -> the oauth token to use
