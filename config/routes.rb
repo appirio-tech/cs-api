@@ -89,7 +89,7 @@ CsApi::Application.routes.draw do
     match "/communities/add_member" => "communities#add_member", :via => :post		
 
     # leaderboard
-    match "/leaderboard" => "leaderboard#public", :via => :get
+    match "/leaderboard" => "leaderboard#public", :via => :get # this has been deprecated
     match "/leaderboard_all" => "leaderboard#public_all", :via => :get
     match "/leaderboard/referral" => "leaderboard#referral", :via => :get
 
