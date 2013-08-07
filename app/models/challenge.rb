@@ -156,10 +156,10 @@ class Challenge < Salesforce
   #   - ++ ->
   #  
   def self.search(access_token, keyword)  
-    query_salesforce(access_token, "select name, end_date__c, total_prize_money__c, 
-      registered_members__c, challenge_id__c, challenge_type__c, id, start_date__c, 
-      description__c, days_till_close__c, (select id, display_name__c 
-      from challenge_categories__r) from challenge__c where name like '%#{keyword}%' order by name")
+    query_salesforce(access_token, "select name, status__c, end_date__c, total_prize_money__c, 
+      registered_members__c, challenge_id__c, challenge_type__c, id, start_date__c, participating_members__c,
+      description__c, days_till_close__c, platforms__c, technologies__c  from challenge__c where name like '%#{keyword}%' 
+      and status__c NOT IN ('hidden','draft') order by name")
   end    
 
   def self.recent(access_token, technology, platform, category, limit, offset)  
