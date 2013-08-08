@@ -165,9 +165,9 @@ class Challenge < Salesforce
   def self.recent(access_token, technology, platform, category, limit, offset)  
     # build any part of the where clause for tech, paltform and category
     query_where = ''
-    query_where << " and id in (select challenge__c from challenge_platform__c where name__c = '#{platform}') " if platform
-    query_where << " and id in (select challenge__c from challenge_technology__c where name__c = '#{technology}') " if technology
-    query_where << " and challenge_type__c = '#{category}' " if category
+    query_where << " and id in (select challenge__c from challenge_platform__c where name__c = '#{platform}') " unless platform.blank?
+    query_where << " and id in (select challenge__c from challenge_technology__c where name__c = '#{technology}') " unless technology.blank?
+    query_where << " and challenge_type__c = '#{category}' " unless category.blank?
     query_salesforce(access_token, "SELECT Blog_URL__c, Blogged__c, Auto_Blog_URL__c, Name, challenge_type__c, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, Source_Code_URL__c,
         Total_Prize_Money__c, Top_Prize__c,registered_members__c, participating_members__c, (SELECT Money_Awarded__c,Place__c,Member__c,
         Member__r.Name, Points_Awarded__c,Score__c,Status__c FROM Challenge_Participants__r where Has_Submission__c = true), 
