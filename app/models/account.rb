@@ -248,7 +248,7 @@ class Account < Salesforce
   #  
   def self.activate(access_token, membername)
     set_header_token(access_token)
-    get_apex_rest_return_boolean("/activate/#{membername}")
+    get_apex_rest_return_boolean("/activate/#{esc membername}")
   end 
 
   #
@@ -263,7 +263,7 @@ class Account < Salesforce
   #  
   def self.disable(access_token, membername)
     set_header_token(access_token)
-    get_apex_rest_return_boolean("/disable/#{membername}")
+    get_apex_rest_return_boolean("/disable/#{esc membername}")
   end   
 
   #
