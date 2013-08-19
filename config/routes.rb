@@ -29,10 +29,8 @@ CsApi::Application.routes.draw do
     match "/accounts/change_password_with_token/:membername" => "accounts#change_password_with_token", :via => :put
     match "/accounts/:membername/referred_by" => "accounts#referred_by", :via => :put
     match "/accounts/:membername/marketing" => "accounts#apply_marketing_info", :via => :put
-
-    #preferences
-    match "/preferences/:membername" => "preferences#all", :via => :get
-    match "/preferences/:membername" => "preferences#update", :via => :post
+    match "/accounts/:membername/preferences" => "preferences#all", :via => :get
+    match "/accounts/:membername/preferences" => "preferences#update", :via => :put
 
     # challenges	
     match "/challenges" => "challenges#all", :open => 'true', :via => :get
