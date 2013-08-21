@@ -260,6 +260,14 @@ class Member < Salesforce
       has_old_style = false
       params.each_key { |key| has_old_style = true if key.to_s.include?('__c') }
       params = Forcifier::JsonMassager.enforce_json(params) if !has_old_style
+
+      # look for any beta fields for geolocation. unconventional names (__s__c)
+      keys_to_rename = []
+      params.each do |key, value|
+        keys_to_rename << key if key.include?('__s__c')
+      end
+      keys_to_rename.each {|k| params.rename_key!(k, k.gsub('__s__c', '__s'))}
+
       params
     end
 
