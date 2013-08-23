@@ -80,7 +80,7 @@ class Challenge < Salesforce
     start = Time.now
     puts "[DEBUG] starting challenge#participants" 
     set_header_token(access_token) 
-    results = get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Public_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
+    results = get_apex_rest("/participants?challengeid=#{challenge_id}&fields=Member__r.Profile_Pic__c,Member__r.Name,Member__r.Total_Wins__c,Member__r.Total_Money__c,Member__r.Country__c,Member__r.summary_bio__c,Status__c,has_submission__c&limit=250&orderby=member__r.name")
     puts "[DEBUG] ending challenge#participants == #{Time.now - start}"
     results
   end  	      
