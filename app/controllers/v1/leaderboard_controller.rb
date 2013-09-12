@@ -30,7 +30,8 @@ class V1::LeaderboardController < V1::ApplicationController
   #
   # Returns the current public leaderbaord in a group with all 3 types.
   # * *Args*    :
-  #   - access_token -> the oauth token to use
+  #   - access_token -> ALWAYS USES THE ADMIN TOKEN so it will return payments
+  #   for private challenges
   #   - limit -> the limit of records to return -- may not 
   #   work correctly as expected.
   # * *Returns* :
@@ -39,7 +40,7 @@ class V1::LeaderboardController < V1::ApplicationController
   #   - ++ ->
   #  
   def public_all
-    expose Leaderboard.public_all(@oauth_token, :limit => params[:limit] || 1000)
+    expose Leaderboard.public_all(admin_oauth_token, :limit => params[:limit] || 1000)
   end  
 
   #
