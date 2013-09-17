@@ -27,15 +27,11 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   #  
   def index
-    start = Time.now
-    puts "[DEBUG] starting member_controller#index"
     expose Member.all(@oauth_token, 
       index_fields, 
       index_order_by,       
       params[:limit] ||= 25,
       params[:offset] ||= 0)
-    puts "[DEBUG] ending member_controller#index == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end
 
   #
@@ -83,13 +79,9 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   #  
   def find_by_membername
-    start = Time.now
-    puts "[DEBUG] starting member_controller#find_by_membername"
     member = Member.find_by_membername(@oauth_token, params[:membername], find_by_membername_fields).first
     error! :not_found unless member
     expose member
-    puts "[DEBUG] ending member_controller#find_by_membername == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end
 
   #
@@ -103,11 +95,7 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   # 
   def challenges
-    start = Time.now
-    puts "[DEBUG] starting member_controller#challenges"
     expose Member.challenges(@oauth_token, params[:membername])
-    puts "[DEBUG] ending member_controller#challenges == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end   
 
   #
@@ -121,11 +109,7 @@ class V1::MembersController < V1::ApplicationController
   #   - ++ ->
   # 
   def past_challenges
-    start = Time.now
-    puts "[DEBUG] starting member_controller#past_challenges"
     expose Member.past_challenges(@oauth_token, params[:membername], params[:offset] || 0)
-    puts "[DEBUG] ending member_controller#past_challenges == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end     
 
   #

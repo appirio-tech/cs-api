@@ -17,12 +17,8 @@ class Member < Salesforce
   #   - ++ ->
   #   
   def self.all(access_token, fields, order_by, limit, offset) 
-    start = Time.now
-    puts "[DEBUG] starting member#all"
     set_header_token(access_token) 
-    results = get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}")
-    puts "[DEBUG] ending member#all == #{Time.now - start}"
-    results
+    get_apex_rest("/members?fields=#{esc fields}&orderby=#{esc order_by}&limit=#{limit}&offset=#{offset}")
   end
 
   #
@@ -77,12 +73,8 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.find_by_membername(access_token, membername, fields)
-    start = Time.now
-    puts "[DEBUG] starting member#find_by_membername"
     set_header_token(access_token) 
-    results = get_apex_rest("/members/#{esc membername}?fields=#{esc fields}")
-    puts "[DEBUG] ending member#find_by_membername == #{Time.now - start}"
-    results
+    get_apex_rest("/members/#{esc membername}?fields=#{esc fields}")
   end
 
   #
@@ -96,13 +88,8 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.challenges(access_token, membername)
-    start = Time.now
-    puts "[DEBUG] starting member#challenges"
     set_header_token(access_token)
-    results = get_apex_rest("/members/#{esc membername}/challenges", 'v1')
-    puts "[DEBUG] ending member#challenges == #{Time.now - start}"
-    puts "************ MEMBER CHALLENGES ************ "
-    results
+    get_apex_rest("/members/#{esc membername}/challenges", 'v1')
   end
 
   #
@@ -117,13 +104,8 @@ class Member < Salesforce
   #   - ++ ->
   #  
   def self.past_challenges(access_token, membername, offset=0)
-    start = Time.now
-    puts "[DEBUG] starting member#past_challenges"
     set_header_token(access_token)
-    results = get_apex_rest("/members/#{esc membername}/challenges/past?offset=#{offset}", 'v1')
-    puts "[DEBUG] ending member#past_challenges == #{Time.now - start}"
-    puts "************ MEMBER PAST CHALLENGES ************ "
-    results
+    get_apex_rest("/members/#{esc membername}/challenges/past?offset=#{offset}", 'v1')
   end  
 
   #

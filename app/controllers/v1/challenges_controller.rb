@@ -21,15 +21,11 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ -> 404 if not found or hidden
   #  	
   def find
-    start = Time.now
-    puts "[DEBUG] starting challenge_controller#find"
     challenge = Challenge.find(@oauth_token, params[:challenge_id].strip, 
       params[:admin] ||= false)
     error! :not_found unless challenge
     error! :not_found if challenge['status'].downcase == 'hidden'
     expose challenge
-    puts "[DEBUG] ending challenge_controller#find == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end					
 
   #
@@ -47,8 +43,6 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #   
   def all
-    start = Time.now
-    puts "[DEBUG] starting challenge_controller#all"
     expose Challenge.all(@oauth_token, params[:open], 
       params[:technology] ||= nil, 
       params[:platform] ||= nil, 
@@ -56,8 +50,6 @@ class V1::ChallengesController < V1::ApplicationController
       enforce_order_by_params(params[:order_by], 'end_date__c'),
       params[:limit] ||= 50,
       params[:offset] ||= 0)
-    puts "[DEBUG] ending challenge_controller#all == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end   
 
   #
@@ -124,11 +116,7 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #  
   def advsearch
-    start = Time.now
-    puts "[DEBUG] starting challenge_controller#advsearch"
     expose Challenge.advsearch(@oauth_token, params)
-    puts "[DEBUG] ending challenge_controller#advsearch == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end    
 
   #
@@ -156,11 +144,7 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #  	
   def participants
-    start = Time.now
-    puts "[DEBUG] starting challenge_controller#participants"
     expose Challenge.participants(@oauth_token, params[:challenge_id].strip)
-    puts "[DEBUG] ending challenge_controller#participants == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end			
 
   #
@@ -203,11 +187,7 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #  
   def comments
-    start = Time.now
-    puts "[DEBUG] starting challenge_controller#comments"
     expose Challenge.comments(@oauth_token, params[:challenge_id].strip)
-    puts "[DEBUG] ending challenge_controller#comments == #{Time.now - start}"
-    puts "[DEBUG] total request time == #{Time.now - @request_start}"
   end		
 
   # Creates a new discussion board comment for the challenge
