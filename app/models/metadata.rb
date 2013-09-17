@@ -43,8 +43,6 @@ class Metadata< Salesforce
       end
       response.to_array(:platform_stats_response, :result).first
     end
-    public_member_stats['members'] = (public_member_stats['members'].to_i + 511792).to_s
-    public_member_stats
   end  
 
 end
