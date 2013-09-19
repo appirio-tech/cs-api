@@ -72,7 +72,10 @@ CsApi::Application.routes.draw do
     match "/messages/:id/reply" => "private_messages#reply", :via => :post
     match "/messages/inbox/:membername" => "private_messages#inbox", :via => :get			
     match "/messages/to/:membername" => "private_messages#to", :via => :get	
-    match "/messages/from/:membername" => "private_messages#from", :via => :get				
+    match "/messages/from/:membername" => "private_messages#from", :via => :get	
+
+    # corona
+    match "/corona" => "corona#create", :via => :post   			
 
     # judging
     match "/judging" => "judging#queue", :via => :get
