@@ -1,6 +1,6 @@
 class V1::CommunitiesController < V1::ApplicationController
 
-  before_filter :restrict_access, :only => [:add_member]  
+  #before_filter :restrict_access, :only => [:add_member]  
 
   def all
     expose Community.all(@oauth_token)

@@ -1,6 +1,6 @@
 class V1::JudgingController < V1::ApplicationController
 
-  before_filter :restrict_access
+  #before_filter :restrict_access
 
   def queue
     expose Judging.queue(@oauth_token)

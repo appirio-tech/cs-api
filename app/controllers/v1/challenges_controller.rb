@@ -1,7 +1,7 @@
 class V1::ChallengesController < V1::ApplicationController
   jsonp
 
-  before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables, :comment]
+  #before_filter :restrict_access, :only => [:create, :update, :survey, :submission_deliverables, :comment]
 
   # inherit from actual challenge model. Challenges in this controller uses the
   # subclass so we can overrid any functionality for this version of api.
