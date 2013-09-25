@@ -75,6 +75,28 @@ class V1::ChallengesController < V1::ApplicationController
   end		
 
   #
+  # Returns all challenges in review
+  # * *Args*    :
+  #   - access_token -> the oauth token to use
+  #   - limit -> the number of records to return
+  #   - offset -> specifies the starting row offset into the result set 
+  # returned by your query    
+  # * *Returns* :
+  #   - JSON a collection of challenge objects with 
+  #   challenge_categories__r and challenge_participants__r
+  # * *Raises* :
+  #   - ++ ->
+  #   
+  def review
+    expose Challenge.review(@oauth_token,
+      params[:technology] ||= nil, 
+      params[:platform] ||= nil, 
+      params[:category] ||= nil,
+      params[:limit] ||= 25,       
+      params[:offset] ||= 0)
+  end     
+
+  #
   # Creates a new challenge
   # * *Args*    :
   #   - access_token -> the oauth token to use	

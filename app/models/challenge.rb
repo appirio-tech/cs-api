@@ -158,9 +158,21 @@ class Challenge < Salesforce
         Total_Prize_Money__c, Top_Prize__c,registered_members__c, participating_members__c, (SELECT Money_Awarded__c,Place__c,Member__c,
         Member__r.Name, Points_Awarded__c,Score__c,Status__c FROM Challenge_Participants__r where Has_Submission__c = true), 
         (Select Name, Category__c, Display_Name__c From Challenge_Categories__r), (Select name__c From Challenge_Platforms__r), 
-        (Select name__c From Challenge_Technologies__r)   
+        (Select name__c From Challenge_Technologies__r), platforms__c, technologies__c
         FROM Challenge__c where Status__c = 'Winner Selected'  #{query_where} Order By End_Date__c DESC LIMIT #{limit} OFFSET #{offset}")
   end  
+
+  def self.review(access_token, technology, platform, category, limit, offset)  
+    # build any part of the where clause for tech, paltform and category
+    query_where = ''
+    query_where << " and id in (select challenge__c from challenge_platform__c where name__c = '#{platform}') " unless platform.blank?
+    query_where << " and id in (select challenge__c from challenge_technology__c where name__c = '#{technology}') " unless technology.blank?
+    query_where << " and challenge_type__c = '#{category}' " unless category.blank?
+    query_salesforce(access_token, "SELECT Name, challenge_type__c, Description__c, End_Date__c, Challenge_Id__c, License_Type__r.Name, 
+        Total_Prize_Money__c, Top_Prize__c,registered_members__c, participating_members__c, (SELECT Membername__c, Status__c 
+        FROM Challenge_Participants__r where Has_Submission__c = true), platforms__c, technologies__c
+        FROM Challenge__c where Status__c IN ('Review','Scored - Awaiting Approval')  #{query_where} Order By End_Date__c DESC LIMIT #{limit} OFFSET #{offset}")
+  end    
 
   def self.salesforce_id(access_token, challenge_id) 
     query_salesforce(access_token, "select id from challenge__c where challenge_id__c = '#{challenge_id}'").first['id']
