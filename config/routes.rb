@@ -103,7 +103,9 @@ CsApi::Application.routes.draw do
     match "/metadata/participant" => "metadata#participant", :via => :get
 
     match "/tos" => "tos#all", :via => :get		
-    match "/tos/:id" => "tos#find", :via => :get		
+    match "/tos/:id" => "tos#find", :via => :get	
+
+    match "/tc/member/:membername" => "topcoder#find_member", :via => :get	
 
   end  
 
