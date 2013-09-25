@@ -1,6 +1,6 @@
 class V1::PrivateMessagesController < V1::ApplicationController
 
-  #before_filter :restrict_access
+  before_filter :restrict_access
 
 	# inherit from actual member model. Categories in this controller uses the
 	# subclass so we can overrid any functionality for this version of api.

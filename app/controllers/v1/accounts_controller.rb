@@ -1,6 +1,6 @@
 class V1::AccountsController < V1::ApplicationController
 
-  #before_filter :restrict_access
+  before_filter :restrict_access
 
   #
   # Post method to create a new member in db.com and send welcome email
