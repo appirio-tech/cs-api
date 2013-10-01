@@ -34,7 +34,7 @@ class Metadata< Salesforce
   def self.stats(access_token)
     set_header_token(access_token)
     # get the members stats from the soap service or cache
-    public_member_stats = Rails.cache.fetch('public_member_stats', expires_in: 15.seconds) do
+    public_member_stats = Rails.cache.fetch('public_member_stats', expires_in: 30.minutes) do
       puts "[INFO][Stats] Fetching member count from SOAP service as cache expired."
       client = Savon.client(ENV['STATS_WSDL_URL'])
       response = client.request(:stat, :platform_stats) do
@@ -43,6 +43,9 @@ class Metadata< Salesforce
       end
       response.to_array(:platform_stats_response, :result).first
     end
+    # add in the topcoder open challenge count
+    public_member_stats[:challenges_open] = public_member_stats[:challenges_open].to_i + Topcoder.challenges_open.count
+    public_member_stats
   end  
 
 end
