@@ -6,4 +6,33 @@ class Topcoder < Salesforce
     get_apex_rest("/members/#{esc membername}?fields=#{esc fields}")
   end  
 
+  def self.challenges_open
+    Rails.cache.fetch('tc_challenges', expires_in: 30.minutes) do
+      tc_challenges = HTTParty::get("http://api.topcoder.com/rest/contests?user_key=#{ENV['TOPCODER_USER_KEY']}&listType=ALL")
+      cs_challenges = []
+      tc_challenges['data'].each do |c|
+
+        # need to rearrange the date from day.month to month.day
+        date_parts = c['submissionEndDate'].split('.')
+        end_date = DateTime.parse("#{date_parts[1]}-#{date_parts[0]}-#{date_parts[2]}")
+
+        cs_challenges << { :name => c['contestName'], 
+          :challenge_id => c['contestId'],
+          :challenge_type => 'TopCoder', 
+          :id => c['contestId'], 
+          :description => 'no description',
+          :start_date => DateTime.now, 
+          :end_date => end_date,
+          :total_prize_money => c['firstPrize'], 
+          :is_open => 'true', 
+          :days_till_close => 1,
+          :registered_members => c['numberOfRegistrants'], 
+          :participating_members => c['numberOfRegistrants'],
+          :technologies => [{:name => 'Other'}, {:name => 'TopCoder'}],
+          :platforms => [{:name => c['type']}] }
+      end
+      cs_challenges
+    end    
+  end
+
 end

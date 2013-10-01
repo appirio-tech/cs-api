@@ -43,13 +43,16 @@ class V1::ChallengesController < V1::ApplicationController
   #   - ++ ->
   #   
   def all
-    expose Challenge.all(@oauth_token, params[:open], 
+    challenges =  Challenge.all(@oauth_token, params[:open], 
       params[:technology] ||= nil, 
       params[:platform] ||= nil, 
       params[:category] ||= nil, 
       enforce_order_by_params(params[:order_by], 'end_date__c'),
       params[:limit] ||= 50,
       params[:offset] ||= 0)
+    # merge in the topcoder challenges
+    Topcoder.challenges_open.each {|c| challenges << c }
+    expose challenges
   end   
 
   #
