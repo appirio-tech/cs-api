@@ -8,7 +8,7 @@ class Topcoder < Salesforce
 
   def self.challenges_open
     Rails.cache.fetch('tc_challenges', expires_in: 30.minutes) do
-      tc_challenges = HTTParty::get("http://api.topcoder.com/rest/contests?user_key=#{ENV['TOPCODER_USER_KEY']}&listType=ALL")
+      tc_challenges = HTTParty::get("http://api.topcoder.com/rest/contests?user_key=#{ENV['TOPCODER_USER_KEY']}&listType=ACTIVE")
       cs_challenges = []
       tc_challenges['data'].each do |c|
 
