@@ -5,8 +5,8 @@ class Corona  < Salesforce
         'content__c' => params['content'], 
         'country__c' => params['country'], 
         'data_type__c' => params['eventType'],
-        'latitude__c' => params['long'], 
-        'longitude__c' => params['lat'], 
+        'latitude__c' => params['lat'], 
+        'longitude__c' => params['long'], 
         'profile_pic__c' => params['profile_pic']
       }
     )
