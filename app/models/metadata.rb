@@ -44,7 +44,7 @@ class Metadata< Salesforce
       response.to_array(:platform_stats_response, :result).first
     end
     # add in the topcoder open challenge count
-    public_member_stats[:challenges_open] = public_member_stats[:challenges_open].to_i + Topcoder.challenges_open.count
+    # public_member_stats[:challenges_open] = public_member_stats[:challenges_open].to_i + Topcoder.challenges_open.count
     public_member_stats
   end  
 
