@@ -20,7 +20,7 @@ class Topcoder < Salesforce
           :challenge_id => c['contestId'],
           :challenge_type => 'TopCoder', 
           :id => c['contestId'], 
-          :description => 'no description',
+          :description => c['description'],
           :start_date => DateTime.now, 
           :end_date => end_date,
           :total_prize_money => c['firstPrize'], 
