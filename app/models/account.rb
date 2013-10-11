@@ -363,20 +363,20 @@ class Account < Salesforce
         }
       }      
 
+      # if the name if blank
+      if params.has_key?(:name)
+        # split up the name into a first and last
+        names = params[:name].split
+        first_name = names[0]
+        last_name = first_name
+        last_name = names[1] if names.length > 1
+      else
+        first_name = params[:username]
+        last_name = params[:username]
+      end
+
       # third party      
       if params.has_key?(:provider)
-        
-        # if the name if blank
-        if params[:name].empty?
-          first_name = params[:username]
-          last_name = params[:username]
-        else
-          # split up the name into a first and last
-          names = params[:name].split
-          first_name = names[0]
-          last_name = first_name
-          last_name = names[1] if names.length > 1
-        end
         
         new_options = {
           :first_name__c => first_name,
@@ -387,11 +387,10 @@ class Account < Salesforce
       
       # cloudspokes        
       else
-
         new_options = {
           :password => params[:password],
-          :first_name__c => params[:username],
-          :last_name__c => params[:username] 
+          :first_name__c => first_name,
+          :last_name__c => last_name 
         }
 
       end 
