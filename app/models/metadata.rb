@@ -6,7 +6,7 @@ class Metadata< Salesforce
   end
 
   def self.categories(access_token) 
-    %w(Code Design Eval Rookie Sweepstakes Task TopCoder)
+    %w(Code Design Eval First2Finish Rookie Sweepstakes TopCoder)
   end
 
   def self.technologies(access_token) 
