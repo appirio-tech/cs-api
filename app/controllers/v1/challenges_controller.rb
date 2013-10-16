@@ -51,7 +51,7 @@ class V1::ChallengesController < V1::ApplicationController
       params[:limit] ||= 50,
       params[:offset] ||= 0)
     # merge in the topcoder challenges
-    Topcoder.challenges_open.each {|c| challenges << c } if ENV['TOPCODER_INCLUDE_DATA'] == 'true' 
+    Topcoder.challenges_open.each {|c| challenges << c } if params[:include_tc]
     expose challenges
   end   
 
