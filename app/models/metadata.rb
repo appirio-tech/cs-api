@@ -45,6 +45,7 @@ class Metadata< Salesforce
     end
     # add in the topcoder open challenge count
     #public_member_stats[:challenges_open] = public_member_stats[:challenges_open].to_i + Topcoder.challenges_open.count if ENV['TOPCODER_INCLUDE_DATA'] == 'true' 
+    public_member_stats[:challenges_open] = public_member_stats[:challenges_open].to_i
     public_member_stats
   end  
 
