@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.2'
 
-gem 'rails', '3.2.11'
+gem 'rails', '5.2.6.2'
 
 gem 'restforce', '1.1.0'
 gem 'forcifier', git: 'git://github.com/jeffdonthemic/forcifier.git'
@@ -17,10 +17,10 @@ gem 'rack-timeout', '0.1.0beta2'
 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'rspec-rails', '~> 2.6'
+	gem 'rspec-rails', '~> 2.12', '>= 2.12.1'
 	gem 'vcr'
 	gem 'fakeweb'
-	gem 'sextant'
+	gem 'sextant', '>= 0.1.3'
 end
 
 group :test do
